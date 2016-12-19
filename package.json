@@ -1,0 +1,30 @@
+{
+  "name": "trail-blazer",
+  "version": "1.0.0",
+  "description": "An app used to find outdoor trails and subsequent information about said trails in order for users to plan outdoor adventures.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiy-trailblazers/trailblazers.git"
+  },
+  "author": "Nick Galantowicz, Allie Rowan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tiy-trailblazers/trailblazers/issues"
+  },
+  "homepage": "https://github.com/tiy-trailblazers/trailblazers#readme",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
