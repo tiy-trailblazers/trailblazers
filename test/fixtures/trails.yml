@@ -6,6 +6,7 @@ one:
   start_lon: 9.99
   park: MyString
   state: MyString
+  name: 
 
 two:
   length: 1.5
@@ -13,3 +14,4 @@ two:
   start_lon: 9.99
   park: MyString
   state: MyString
+  name:

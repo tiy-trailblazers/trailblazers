@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219162007) do
+ActiveRecord::Schema.define(version: 20161219163704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "nodes", force: :cascade do |t|
+    t.integer  "trail_id"
+    t.decimal  "lat"
+    t.decimal  "lon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trails", force: :cascade do |t|
+    t.float    "length"
+    t.decimal  "start_lat"
+    t.decimal  "start_lon"
+    t.string   "park"
+    t.string   "state"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.string   "url"
+    t.text     "description"
+  end
+
+  create_table "trails_trips", id: false, force: :cascade do |t|
+    t.integer "trip_id"
+    t.integer "trail_id"
+  end
 
   create_table "trips", force: :cascade do |t|
     t.date     "start_date"
@@ -22,6 +48,20 @@ ActiveRecord::Schema.define(version: 20161219162007) do
     t.string   "camping_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "trips_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "trip_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

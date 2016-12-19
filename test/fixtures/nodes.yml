@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trail_id: 1
+  lat: 9.99
+  lon: 9.99
+
+two:
+  trail_id: 1
+  lat: 9.99
+  lon: 9.99
