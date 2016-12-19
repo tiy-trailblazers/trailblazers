@@ -21,6 +21,7 @@ gem 'simplecov'
 gem 'cancancan'
 gem 'mail'
 gem 'httparty'
+gem 'overpass-api-ruby'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
