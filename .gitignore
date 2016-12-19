@@ -18,3 +18,6 @@
 
 # Ignore node package files
 node_modules/
+
+# Ignore sas-cache
+.sass-cache/
