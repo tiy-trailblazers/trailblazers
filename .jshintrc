@@ -90,6 +90,9 @@
         "angular" : true,
         "$http" : true,
         "module" : true,
-        "inject": true
+        "inject": true,
+        "view": true,
+        "ol": true,
+        "map": true
         }        // additional predefined global variables
 }
