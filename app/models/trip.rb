@@ -1,0 +1,3 @@
+class Trip < ApplicationRecord
+  
+end

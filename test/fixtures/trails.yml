@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  length: 1.5
+  start_lat: 9.99
+  start_lon: 9.99
+  park: MyString
+  state: MyString
+
+two:
+  length: 1.5
+  start_lat: 9.99
+  start_lon: 9.99
+  park: MyString
+  state: MyString
