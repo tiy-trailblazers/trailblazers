@@ -17,12 +17,23 @@ class OverpassArea
     {
       timeout: 900,
       element_limit: 1073741824,
-      cache_expiration_time: 10
+      dont_use_cache: true
     }
   end
 
   def list_of_trails
     overpass = ::OverpassAPI.new(options)
     overpass.raw_query(query_string)
+  end
+
+  def all_nodes
+    list_of_trails.select {|object| object[:type] == "node"}
+  end
+
+  def all_trails
+  end
+
+  def trails_nested
+
   end
 end
