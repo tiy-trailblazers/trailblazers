@@ -1,0 +1,194 @@
+{
+  "places": [
+    {
+      "city": "Front Royal",
+      "state": "Virginia",
+      "country": "United States",
+      "name": "Bear Bottom Loop",
+      "parent_id": null,
+      "unique_id": 3833,
+      "directions": "This place is about an hour from Washington DC. This park is also near Shenandoah National Park which has some good hikes. &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;From Front Royal Virginia take 340 South for eight miles. There will be a large sign on the right for Shenandoah State Park. At the gate to the park you can get a map of all the trails in the park. Also it is $3 per car. ",
+      "lat": 38.84768,
+      "lon": -78.30591,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Bear Bottom Loop",
+          "unique_id": "2-2004",
+          "place_id": 3833,
+          "activity_type_id": 2,
+          "activity_type_name": "hiking",
+          "url": "http://www.tripleblaze.com/trail.php?c=3&i=2004",
+          "attribs": {
+            "\"length\"": "\"5\""
+          },
+          "description": "Bear Bottom Loop features 5 miles of hiking trails near Front Royal, VA.",
+          "length": 5,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:21Z",
+            "id": 2,
+            "name": "hiking",
+            "updated_at": "2012-08-15T16:12:21Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    },
+    {
+      "city": "Bentonville",
+      "state": "Virginia",
+      "country": "United States",
+      "name": "Shenandoah River State Park",
+      "parent_id": null,
+      "unique_id": 3837,
+      "directions": "From Front Royal VA take Route 340 (Stonewall Jackson Highway) South to &lt;br /&gt;&lt;br /&gt;350 Daughter Of Stars Dr, Bentonville, VA.  It is a State Park.  Entrance is on &lt;br /&gt;&lt;br /&gt;the West side of the road.  It is well marked.  From Luray travel North on &lt;br /&gt;&lt;br /&gt;Route 340.",
+      "lat": 38.8477,
+      "lon": -78.30617,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Shenandoah River State Park",
+          "unique_id": "2-2009",
+          "place_id": 3837,
+          "activity_type_id": 2,
+          "activity_type_name": "hiking",
+          "url": "http://www.tripleblaze.com/trail.php?c=3&i=2009",
+          "attribs": {
+            "\"length\"": "\"26\""
+          },
+          "description": "Shenandoah River State Park features 26 miles of hiking trails near Bentonville, VA.",
+          "length": 26,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:21Z",
+            "id": 2,
+            "name": "hiking",
+            "updated_at": "2012-08-15T16:12:21Z"
+          },
+          "thumbnail": "http://images.tripleblaze.com/2012/04/mix1-123-0.jpg",
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    },
+    {
+      "city": "Luray",
+      "state": "Virginia",
+      "country": "United States",
+      "name": "Appalachian Trail 072: Thornton Gap to Gravel Springs Gap",
+      "parent_id": null,
+      "unique_id": 5723,
+      "directions": "in va",
+      "lat": 38.659828,
+      "lon": -78.319725,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Appalachian Trail 072: Thornton Gap to Gravel Springs Gap",
+          "unique_id": "2-2382",
+          "place_id": 5723,
+          "activity_type_id": 2,
+          "activity_type_name": "hiking",
+          "url": "http://www.tripleblaze.com/trail.php?c=3&i=2382",
+          "attribs": {
+            "\"length\"": "\"15\""
+          },
+          "description": "This section of the A.T. runs 14.5 miles from Thornton Gap to Gravel Springs Gap. Along the way it passes the Pass Mountain Shelter, Pass Mountain, Elk Wallow, Hogback Mountain, Little Hogback Overlook, and the Gravel Springs Hut.&lt;br /&gt;<br />&lt;br /&gt;<br />This section of the AT lies in the Shenandoah National Park.&lt;br /&gt;<br />&lt;br /&gt;<br />Recommended parking spots:&lt;br /&gt;<br />&quot;Skyline Dr&quot; lat=38.7677227493, lon=-78.2335947105&lt;br /&gt;<br />&quot;Skyline Dr&quot; lat=38.7587469474, lon=-78.2621556539&lt;br /&gt;<br />&quot;Skyline Dr&quot; lat=38.7611039627, lon=-78.2823262856&lt;br /&gt;<br />&quot;Elk Wallow&quot; lat=38.7387592425, lon=-78.3085782481",
+          "length": 15,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:21Z",
+            "id": 2,
+            "name": "hiking",
+            "updated_at": "2012-08-15T16:12:21Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    },
+    {
+      "city": "Overall",
+      "state": "Virginia",
+      "country": "United States",
+      "name": "Appalachian Trail 073: Gravel Springs Gap to US 211 (Front Royal)",
+      "parent_id": null,
+      "unique_id": 5724,
+      "directions": "in va",
+      "lat": 38.767723,
+      "lon": -78.233595,
+      "description": null,
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Appalachian Trail 073: Gravel Springs Gap to US 211 (Front Royal)",
+          "unique_id": "2-2383",
+          "place_id": 5724,
+          "activity_type_id": 2,
+          "activity_type_name": "hiking",
+          "url": "http://www.tripleblaze.com/trail.php?c=3&i=2383",
+          "attribs": {
+            "\"length\"": "\"13\""
+          },
+          "description": "This section of the AT runs 13.2 miles from Gravel Springs Gap to US Hwy 211 (Front Royal) through Shenandoah National Park. This is the last section of the AT in Shenandoah. Along the way it passes North Marshall, Compton Peak, Compton Gap, and the Tom Floyd Wayside.",
+          "length": 13,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:21Z",
+            "id": 2,
+            "name": "hiking",
+            "updated_at": "2012-08-15T16:12:21Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    },
+    {
+      "city": "Bentonville",
+      "state": "Virginia",
+      "country": "United States",
+      "name": "Shenandoah River Raymond R.",
+      "parent_id": null,
+      "unique_id": 19635,
+      "directions": "The park is in Warren County, eight miles south of Front Royal and 15 miles north of Luray. It's off Rt. 340 in Bentonville.",
+      "lat": 38.852566,
+      "lon": -78.305291,
+      "description": "This park is on the South Fork of the Shenandoah River and has more than 1,600 acres along 5.2 miles of shoreline. The park opened in June 1999. In addition to meandering river frontage, the park offers scenic views of Massanutten Mountain to the west and Shenandoah National Park to the east. A large riverside picnic area, picnic shelters, trails, river access and a car-top boat launch make this a popular destination for families, anglers and canoeists. Ten riverfront tent campsites, a campground with water and electric sites, cabins, camping cabins and a group campground are available. With more than 24 miles of trails, the park has plenty of options for hiking, biking and horseback riding.",
+      "date_created": null,
+      "children": [],
+      "activities": [
+        {
+          "name": "Shenandoah River Raymond R. &quot;Andy&quot; Guest, Jr. State Park",
+          "unique_id": "2-5670",
+          "place_id": 19635,
+          "activity_type_id": 2,
+          "activity_type_name": "hiking",
+          "url": "http://www.tripleblaze.com/trail.php?c=3&i=5670",
+          "attribs": {
+            "\"length\"": "\"24\""
+          },
+          "description": "Excellent hiking.",
+          "length": 24,
+          "activity_type": {
+            "created_at": "2012-08-15T16:12:21Z",
+            "id": 2,
+            "name": "hiking",
+            "updated_at": "2012-08-15T16:12:21Z"
+          },
+          "thumbnail": null,
+          "rank": null,
+          "rating": 0
+        }
+      ]
+    }
+  ]
+}
