@@ -1,10 +1,10 @@
 (function() {
     'use strict';
 
-    angular.module('trailblazer', ['ui-router'])
-        .config('viewConfig');
+    angular.module('trailblazer', [  'openlayers-directive', 'ngSanitize', 'ui.router'])
+        .config(viewConfig);
 
-    viewConfig.$inject = [ '$statProvider', '$urlRouterProvider' ];
+    viewConfig.$inject = [ '$stateProvider', '$urlRouterProvider' ];
 
     function viewConfig($stateProvider, $urlRouterProvider) {
 
@@ -14,7 +14,9 @@
        .state({
          name: 'map',
          url: '/',
-         templateUrl:'templates/map.template.html'
+         templateUrl:'templates/map.template.html',
+         controller: 'MapController',
+         controllerAs: 'map'
         });
 
     }

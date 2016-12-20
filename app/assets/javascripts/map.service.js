@@ -4,7 +4,7 @@
     angular.module('trailblazer')
         .factory('MapService', MapService);
 
-    MapService.$inject = [ '$htpp' ];
+    MapService.$inject = [ '$http' ];
 
     function MapService($http){
 

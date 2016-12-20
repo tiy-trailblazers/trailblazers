@@ -5,7 +5,7 @@
 
         grunt.initConfig({
 
-            clean: ['public/js/', 'public/index.html', 'public/styles.css', 'public/styles.css.map'],
+            clean: ['public/js/app.js', 'public/index.html', 'public/styles.css', 'public/styles.css.map'],
 
             jshint: {
                 options: {
@@ -19,7 +19,8 @@
                         'lib/**',
                         'db/**',
                         'config/**',
-                        'bin/**'
+                        'bin/**',
+                        'app/assets/javascripts/all-angular-files/*.js'
                     ]
                 },
                 source: {
@@ -45,13 +46,22 @@
                             dest: 'public'
                         }
                     ]
-                }
-            },
-
-            concat: {
-                js: {
-                    src: [ 'app/assets/javascripts/**.*js'],
-                    dest: 'public/js/app.js'
+                },
+                css: {
+                    files: [
+                        {
+                            expand: true,
+                            cwd: 'node_modules/angular-openlayers-directive/dist',
+                            src: [ 'angular-openlayers-directive.css' ],
+                             dest: 'public/'
+                        },
+                        {
+                            expand: true,
+                            cwd: 'node_modules/openlayers/dist',
+                            src: 'ol.css',
+                            dest: 'public/'
+                        }
+                    ]
                 },
                 vendorjs: {
                     files: [
@@ -70,11 +80,40 @@
                         },
                         {
                             expand: true,
-                            cwd: 'node_modules/openlayers/dist',
-                            src: 'ol.css',
-                            dest: 'public/'
-                        }
+                            cwd: 'node_modules/angular-sanitize/',
+                            src: ['angular-sanitize.js'],
+                            dest: 'app/assets/javascripts/all-angular-files'
+                         },
+                         {
+                             expand: true,
+                             cwd: 'node_modules/angular-openlayers-directive/dist/',
+                             src: [ 'angular-openlayers-directive.js' ],
+                             dest: 'app/assets/javascripts/all-angular-files'
+                         },
+                         {
+                             expand: true,
+                             cwd: 'node_modules/angular-ui-router/release/',
+                             src: ['angular-ui-router.js'],
+                             dest: 'app/assets/javascripts/all-angular-files'
+                         },
+                         {
+                            expand: true,
+                            cwd : 'node_modules/angular/',
+                            src: ['angular.js'],
+                            dest: 'app/assets/javascripts/all-angular-files'
+                         },
                     ]
+                }
+            },
+
+            concat: {
+                js: {
+                    src: [ 'app/assets/javascripts/trailblazer.module.js', 'app/assets/javascripts/**.*js' ],
+                    dest: 'public/js/app.js'
+                },
+                vendorjs: {
+                    src: [ 'app/assets/javascripts/all-angular-files/angular.js', 'app/assets/javascripts/all-angular-files/*.js'],
+                    dest: 'public/js/all-angular-files.js'
                 }
             },
 
@@ -88,16 +127,16 @@
 
             watch: {
                 html: {
-                    files: ['app/assets/templates/index.html'],
+                    files: ['app/assets/templates/*.html', 'app/assets/index.html'],
                     tasks: ['copy:html']
                 },
                 sass: {
-                    files: ['app/assets/stylesheets/sass/**/*.scss'],
+                    files: ['app/assets/stylesheets/sass/*.scss'],
                     tasks: ['sass']
                 },
                 js: {
-                    files: ['app/assets/javascripts/**/*.js'],
-                    tasks: ['test', 'concat']
+                    files: ['app/assets/javascripts/*.js'],
+                    tasks: ['test', 'concat:js']
                 }
             }
         });
@@ -110,5 +149,5 @@
         grunt.loadNpmTasks('grunt-contrib-sass');
 
         grunt.registerTask('test', ['jshint'] );
-        grunt.registerTask('default', [ 'test', 'clean', 'copy', 'concat' ] );
+        grunt.registerTask('default', [ 'test', 'clean', 'copy:css', 'copy:html', 'concat:js' ] );
     };
