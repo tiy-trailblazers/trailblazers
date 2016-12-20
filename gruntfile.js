@@ -34,9 +34,15 @@
                     files: [
                         {
                             expand: true,
-                            cwd: 'app/assets/templates/',
+                            cwd: 'app/assets/',
                             src: 'index.html',
                             dest: 'public/'
+                        },
+                        {
+                            expand: true,
+                            cwd: 'app/assets',
+                            src: 'templates/**',
+                            dest: 'public'
                         }
                     ]
                 }
