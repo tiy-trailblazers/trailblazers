@@ -14,12 +14,11 @@
        .state({
          name: 'map',
          url: '/',
-         templateUrl:'templates/map.template.html',
-         controller: 'MapController',
-         controllerAs: 'map'
+         templateUrl:'templates/home.template.html',
         });
 
     }
+
 
 
 }());
