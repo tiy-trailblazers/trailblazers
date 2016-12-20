@@ -7,6 +7,8 @@ class OverpassArea
     @east = east
     @south = south
     @west = west
+    @all_trails = nil
+    @all_nodes = nil
   end
 
   def query_string
@@ -27,25 +29,42 @@ class OverpassArea
   end
 
   def all_nodes
-    list_of_trails.select {|object| object[:type] == "node"}
+    @all_nodes ||= list_of_trails.select {|object| object[:type] == "node"}
   end
 
   def all_trails
-    list_of_trails.select {|object| object[:type] == "way"}
+    @all_trails ||= list_of_trails.select {|object| object[:type] == "way"}
+  end
+
+  def members_as_nodes(trail)
+    line = []
+    nodes = all_nodes
+    trail[:members].each do |nd|
+      nodes.each do |node|
+        line << { lat: node[:lat], lon: node[:lon] } if node[:id] == nd[:ref]
+      end
+    end
+    return line
+  end
+
+  def length_of_trail(trail)
+    trail_nodes = members_as_nodes(trail)
+    polyline = trail_nodes.map do |node|
+      [node[:lat], node[:lon]]
+    end
+    geo_calc = GeoCalculation.new()
+    geo_calc.length_of_polyline(polyline)
   end
 
   def trails_nested
-    nodes = self.all_nodes
     all_trails.each do |trail|
-      line = []
-      trail[:members].each do |nd|
-        nodes.each do |node|
-          line << { lat: node[:lat], lon: node[:lon] } if node[:id] == nd[:ref]
-        end
-        trail.delete(:members)
-      end
+      trail[:length] = length_of_trail(trail)
+      line = members_as_nodes(trail)
+      trail[:head_lat] = line.first[:lat]
+      trail[:head_lon] = line.first[:lon]
+      trail[:name] = trail[:tags]["name"]
       trail[:line] = line
+      trail.delete(:members)
     end
-
   end
 end
