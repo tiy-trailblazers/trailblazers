@@ -13,10 +13,17 @@
         };
 
         function findTrails(coordinates){
+            console.log(coordinates);
+            var latitude = coordinates[0];
+            var longitude = coordinates[1];
+
             return $http({
                 url: '/trails',
                 params: {
-                    coordinates: coordinates
+                    north: latitude + 1,
+                    south: latitude ,
+                    west: longitude,
+                    east: longitude + 1
                 }
             })
             .then( function resovledResonse(response) {

@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('trailblazer')
-        .directive('map', [mapDirective]);
+        .directive('map', ['MapService', mapDirective]);
 
-    function mapDirective() {
+    function mapDirective(MapService) {
         return {
             templateUrl: 'templates/map.template.html',
             restrict: 'E',
@@ -44,6 +44,7 @@
 
                 map.on('click', function(evt) {
                       console.log(evt);
+                    MapService.findTrails(evt.coordinate);
                     var element = popup.getElement();
                     var coordinate = evt.coordinate;
                     var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(

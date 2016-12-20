@@ -83,9 +83,9 @@
     'use strict';
 
     angular.module('trailblazer')
-        .directive('map', [mapDirective]);
+        .directive('map', ['MapService', mapDirective]);
 
-    function mapDirective() {
+    function mapDirective(MapService) {
         return {
             templateUrl: 'templates/map.template.html',
             restrict: 'E',
@@ -125,6 +125,7 @@
 
                 map.on('click', function(evt) {
                       console.log(evt);
+                    MapService.findTrails(evt.coordinate);
                     var element = popup.getElement();
                     var coordinate = evt.coordinate;
                     var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
@@ -163,10 +164,17 @@
         };
 
         function findTrails(coordinates){
+            console.log(coordinates);
+            var latitude = coordinates[0];
+            var longitude = coordinates[1];
+
             return $http({
                 url: '/trails',
                 params: {
-                    coordinates: coordinates
+                    north: latitude + 1,
+                    south: latitude ,
+                    west: longitude,
+                    east: longitude + 1
                 }
             })
             .then( function resovledResonse(response) {
