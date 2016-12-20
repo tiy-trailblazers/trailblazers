@@ -34,4 +34,16 @@ class OverpassAreaTest < ActiveSupport::TestCase
     assert_equal 1887, nodes.size
   end
 
+  test "can get only trails" do
+    area = OverpassArea.new(38.71632, -78.3789, 38.716607, -78.256251)
+    trails = area.all_trails
+    assert_equal "way", trails.first[:type]
+    assert_equal 25, trails.size
+  end
+
+  test "can get nested trail structure" do
+    area = OverpassArea.new(38.71632, -78.3789, 38.716607, -78.256251)
+    assert_equal 25, area.trails_nested.size
+  end
+
 end

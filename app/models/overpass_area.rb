@@ -31,9 +31,21 @@ class OverpassArea
   end
 
   def all_trails
+    list_of_trails.select {|object| object[:type] == "way"}
   end
 
   def trails_nested
+    nodes = self.all_nodes
+    all_trails.each do |trail|
+      line = []
+      trail[:members].each do |nd|
+        nodes.each do |node|
+          line << { lat: node[:lat], lon: node[:lon] } if node[:id] == nd[:ref]
+        end
+        trail.delete(:members)
+      end
+      trail[:line] = line
+    end
 
   end
 end
