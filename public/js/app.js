@@ -31,50 +31,6 @@
 
     function MapController(){
 
-        // var vm = this;
-        // vm.baseLayer = new ol.layer.Tile({
-        //     source: new ol.source.XYZ({
-        //         url: 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmdhbGFudG93aWN6IiwiYSI6ImNpd3dsNmhyZjAxNWUydHFyNnhjbzZwc3QifQ._xkfHwZJ1FsueAu0K6oQeg' })
-        // });
-        //
-        // vm.map = new ol.Map({
-        //     target: 'map',
-        //     controls: ol.control.defaults().extend([
-        //         new ol.control.ZoomSlider()
-        //     ]),
-        //     renderer: 'canvas',
-        //     layers: [vm.baseLayer],
-        //     view: new ol.View({
-        //         center: [ -10853463.910959221, 4789639.227729736 ],
-        //         zoom: 4,
-        //         maxZoom: 18,
-        //         minZoom: 2
-        //     })
-        // });
-        //
-        // vm.popup = new ol.Overlay({
-        //     element: document.getElementById('popup')
-        //   });
-        // vm.map.addOverlay(vm.popup);
-        //
-        // vm.map.on('click', function(evt) {
-        //       console.log(evt);
-        //     var element = vm.popup.getElement();
-        //     var coordinate = evt.coordinate;
-        //     var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
-        //         coordinate, 'EPSG:3857', 'EPSG:4326'));
-        //     console.log(hdms);
-        //
-        //     $(element).popover('destroy');
-        //     vm.popup.setPosition(coordinate);
-        //     $(element).popover({
-        //       'placement': 'top',
-        //       'animation': false,
-        //       'html': true,
-        //       'content': '<p>The location you clicked was:</p><code>' + hdms + '</code>'
-        //     });
-        //     $(element).popover('show');
-        //   });
 
       }
 }());
@@ -93,13 +49,34 @@
                 title: '='
             },
 
-            link: function (scope) {
-                console.log(scope);
+            link: function () {
                 var element = 'map';
 
                 var baseLayer = new ol.layer.Tile({
                     source: new ol.source.XYZ({
                         url: 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmdhbGFudG93aWN6IiwiYSI6ImNpd3dsNmhyZjAxNWUydHFyNnhjbzZwc3QifQ._xkfHwZJ1FsueAu0K6oQeg' })
+                });
+
+                var source = new ol.source.Vector({wrapX: false});
+
+
+                var vector = new ol.layer.Vector({
+                    source: source,
+                    style: new ol.style.Style({
+                        fill: new ol.style.Fill({
+                            color: 'rgba(0, 255, 0, 0.5)'
+                        }),
+                        stroke: new ol.style.Stroke({
+                            color: '#ffcc33',
+                            width: 2
+                        }),
+                        image: new ol.style.Circle({
+                            radius: 7,
+                            fill: new ol.style.Fill({
+                            color: '#ffcc33'
+                            })
+                        })
+                    })
                 });
 
                 var map = new ol.Map({
@@ -108,7 +85,7 @@
                         new ol.control.ZoomSlider()
                     ]),
                     renderer: 'canvas',
-                    layers: [baseLayer],
+                    layers: [baseLayer, vector],
                     view: new ol.View({
                         center: [ -10853463.910959221, 4789639.227729736 ],
                         zoom: 4,
@@ -117,35 +94,34 @@
                     })
                 });
 
-                var popup = new ol.Overlay({
-                    element: document.getElementById('popup')
-                  });
-
-                map.addOverlay(popup);
-
-                map.on('click', function(evt) {
+                map.on('singleclick', function(evt) {
                       console.log(evt);
                     MapService.findTrails(evt.coordinate);
-                    var element = popup.getElement();
-                    var coordinate = evt.coordinate;
-                    var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
-                        coordinate, 'EPSG:3857', 'EPSG:4326'));
-                    console.log(hdms);
-
-                    $(element).popover('destroy');
-                    popup.setPosition(coordinate);
-                    $(element).popover({
-                      'placement': 'top',
-                      'animation': false,
-                      'html': true,
-                      'content': '<p>The location you clicked was:</p><code>' + hdms + '</code>'
-                    });
-                    $(element).popover('show');
+                    map.removeInteraction(draw);
                   });
-            }
 
-        };
-    }
+                  var draw; // global so we can remove it later
+                  function addInteraction() {
+
+                      draw = new ol.interaction.Draw({
+                          source: source,
+                          type: 'Circle',
+                          geometryFunction: ol.interaction.Draw.createBox()
+                      });
+
+                      map.addInteraction(draw);
+                      }
+
+                  addInteraction();
+
+                  draw.on('drawend',function(e){
+                      console.log('drawned', e.feature.getGeometry().getExtent());
+                      map.removeInteraction(draw);
+                  });
+
+             }
+         };
+     }
 
 }());
 
