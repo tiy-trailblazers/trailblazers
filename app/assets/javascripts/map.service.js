@@ -14,10 +14,10 @@
 
         function findTrails(coordinates){
             console.log(coordinates);
-            var north = coordinates[0];
-            var west = coordinates[1];
-            var south = coordinates[2];
-            var east = coordinates[3];
+            var west = coordinates[0];
+            var south = coordinates[1];
+            var east = coordinates[2];
+            var north = coordinates[3];
 
             return $http({
                 url: '/trails',

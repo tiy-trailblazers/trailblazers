@@ -112,18 +112,21 @@
                 })
             });
 
-            map.getView().on('change:resolution', function setRaduisBox(e) {
-                e.preventDefault();
-                console.log(map.getView().getZoom());
+            map.getView().on('change:resolution', function setRaduisBox() {
+                //e.preventDefault();
+                //console.log(map.getView().getZoom());
                 if (map.getView().getZoom() > 7) {
                         map.addInteraction(draw);
                     }
             });
 
             draw.on('drawend',function(e){
-                console.log('drawned', e.feature.getGeometry().getExtent());
-                console.log(e);
-                MapService.findTrails(e.feature.getGeometry().getExtent());
+                var coordArray = e.feature.getGeometry().v;
+                var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
+                var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
+                var coordinates = transCoordOne.concat(transCoordTwo);
+                console.log('coord', coordinates);
+                MapService.findTrails(coordinates);
                 map.removeInteraction(draw);
                 map.removeLayer(buildBaseLayer());
 
@@ -150,10 +153,10 @@
 
         function findTrails(coordinates){
             console.log(coordinates);
-            var north = coordinates[0];
-            var west = coordinates[1];
-            var south = coordinates[2];
-            var east = coordinates[3];
+            var west = coordinates[0];
+            var south = coordinates[1];
+            var east = coordinates[2];
+            var north = coordinates[3];
 
             return $http({
                 url: '/trails',

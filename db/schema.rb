@@ -30,17 +30,6 @@ ActiveRecord::Schema.define(version: 20161221181622) do
     t.text     "source"
   end
 
-  create_table "campsites", force: :cascade do |t|
-    t.decimal  "latitude"
-    t.decimal  "longitude"
-    t.string   "name"
-    t.integer  "park_id"
-    t.text     "description"
-    t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "nodes", force: :cascade do |t|
     t.integer  "trail_id"
     t.decimal  "lat"
@@ -49,33 +38,17 @@ ActiveRecord::Schema.define(version: 20161221181622) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "parks", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "trails", force: :cascade do |t|
     t.float    "length"
     t.decimal  "start_lat"
     t.decimal  "start_lon"
     t.string   "park"
     t.string   "state"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "name"
     t.string   "url"
     t.text     "description"
-    t.json     "source"
-    t.integer  "park_id"
-    t.integer  "elevation_gain_in_feet"
-    t.string   "difficulty"
-    t.boolean  "camping"
-    t.boolean  "loop"
-    t.string   "map_pdf"
   end
 
   create_table "trails_trips", id: false, force: :cascade do |t|
