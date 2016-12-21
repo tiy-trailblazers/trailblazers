@@ -1,0 +1,24 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  campground_type: MyString
+  drinking_water: MyString
+  waste: MyString
+  toilets: MyString
+  num_sites: 1
+  directions: MyString
+  latitude: 9.99
+  longitude: 9.99
+
+two:
+  name: Mathews Arm - Shenandoah National Park
+  campground_type: National Park (Monument, Rec Area)
+  drinking_water: nil,
+  waste: nil,
+  toilets: nil,
+  num_sites: 16,
+  directions: approx 5.2 mi E of Rileyville 38.751 -78.294
+  latitude: 38.751,
+  longitude: -78.294,
+  source: MATH/Mathews Arm - Shenandoah National Park  NP PH:540.999.3132 mid jun-late oct  SITES:165 EL:3041 AMEN:NH RS PA approx 5.2 mi E of Rileyville 38.751 -78.294
