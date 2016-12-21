@@ -154,10 +154,11 @@ class LoadCampgroundData
       drinking_water: drinking_water(waypoint),
       waste: dump(waypoint),
       toilets: toilets(waypoint),
-      num_sites: num_sites(waypoint),
+      num_sites: num_sites(waypoint).to_i,
       directions: directions(waypoint),
-      latitude: waypoint.attr("lat"),
-      longitude: waypoint.attr("lon")
+      latitude: waypoint.attr("lat").to_f,
+      longitude: waypoint.attr("lon").to_f,
+      source: waypoint.search("desc").text
     }
   end
 
