@@ -1,0 +1,2875 @@
+<?xml version="1.0"?>
+<gpx creator="GPS Visualizer http://www.gpsvisualizer.com/" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="41.651" lon="-73.098">
+  <name>BLAC</name>
+  <desc>BLAC/Black Rock State Park  SP PH:860.283.8088 early may-late sep  SITES:100  AMEN:NH DP RS approx 2.1 mi SW of Thomaston 41.651 -73.098</desc>
+</wpt>
+<wpt lat="41.484" lon="-72.342">
+  <name>DEVI</name>
+  <desc>DEVI/Devils Hopyard State Park  SP PH:860.526.2336 mid apr-late sep  SITES:20  AMEN:NH RS approx 7.0 mi E of East Haddam 41.484 -72.342</desc>
+</wpt>
+<wpt lat="41.534" lon="-71.811">
+  <name>GREE</name>
+  <desc>GREE/Green Falls - Pachaug State Forest  SF PH:860.376.4075   SITES:20  AMEN:NH NR  41.534 -71.811</desc>
+</wpt>
+<wpt lat="41.265" lon="-72.556">
+  <name>HAMM</name>
+  <desc>HAMM/Hammonasset State Park  SP PH:203.245.1817 early jun-late sep  SITES:550  AMEN:E DP DW SH RS approx 0.1 mi E of Madison 41.265 -72.556</desc>
+</wpt>
+<wpt lat="41.935" lon="-73.004">
+  <name>HAWS</name>
+  <desc>HAWS/Haws Memorial - American Legion State Forest  SF PH:860. 379.0922 mid apr-late sep  SITES:30  AMEN:NH RS PA approx 4.6 mi W of Barkhamsted 41.935 -73.004</desc>
+</wpt>
+<wpt lat="41.602" lon="-71.926">
+  <name>HOPE</name>
+  <desc>HOPE/Hopeville Pond State Park  SP PH:860.376.2920 mid may-late sep  SITES:80  AMEN:E DP RS approx 1.2 mi N  of Griswold 41.602 -71.926</desc>
+</wpt>
+<wpt lat="41.823" lon="-73.377">
+  <name>HOUS</name>
+  <desc>HOUS/Housatonic Meadows State Park  SP PH:860.672.6772 mid apr-late sep  SITES:100  AMEN:NH DP DW SH RS approx 6.4 mi SE of Sharon 41.823 -73.377</desc>
+</wpt>
+<wpt lat="41.421" lon="-73.205">
+  <name>KETT</name>
+  <desc>KETT/Kettletown State Park  SP PH:203.264.5169 mid may-late sep  SITES:65  AMEN:E DP RS approx 4.0 mi S  of Southbury 41.421 -73.205</desc>
+</wpt>
+<wpt lat="41.709" lon="-73.384">
+  <name>LAKE</name>
+  <desc>LAKE/Lake Waramaug State Park  SP PH:860.868.0220 mid may-late sep  SITES:75  AMEN:NH DP RS approx 4.9 mi E of Kent 41.709 -73.384</desc>
+</wpt>
+<wpt lat="41.777" lon="-73.494">
+  <name>MACE</name>
+  <desc>MACE/Macedonia Brook State Park  SP PH:860.927.3238 mid apr-late sep  SITES:50  AMEN:NH RS approx 3.7 mi N  of Kent 41.777 -73.494</desc>
+</wpt>
+<wpt lat="41.859" lon="-71.985">
+  <name>MASH</name>
+  <desc>MASH/Mashamoquet Brook State Park  SP PH:860.928.6121 early jun-late sep  SITES:20  AMEN:NH DP RS approx 2.3 mi SW of Pomfret Center 41.859 -71.985</desc>
+</wpt>
+<wpt lat="41.593" lon="-71.869">
+  <name>MOUN</name>
+  <desc>MOUN/Mount Misery - Pachaug State Forest  SF PH:860.376.4075   SITES:20  AMEN:NR approx 1.4 mi N  of Voluntown 41.593 -71.869</desc>
+</wpt>
+<wpt lat="41.71" lon="-73.224">
+  <name>POIN</name>
+  <desc>POIN/Point Folly - White Memorial  CP PH:860.567.0089   SITES:45  AMEN:NH DP approx 1.2 mi SE of Bantam 41.71 -73.224</desc>
+</wpt>
+<wpt lat="41.31" lon="-72.243">
+  <name>ROCK</name>
+  <desc>ROCK/Rocky Neck State Park  SP PH:860.739.5471   SITES:150  AMEN:NH DP DW SH RS approx 2.8 mi SW of Niantic 41.31 -72.243</desc>
+</wpt>
+<wpt lat="41.651" lon="-72.093">
+  <name>SALT</name>
+  <desc>SALT/Salt Rock State Park  SP PH:860.822.0884 mid may-late sep  SITES:71  AMEN:WES DP FT DW SH RS PA approx 2.4 mi N  of Baltic 41.651 -72.093</desc>
+</wpt>
+<wpt lat="41.954" lon="-71.894">
+  <name>WEST</name>
+  <desc>WEST/West Thompson Lake  COE PH:860.923.3121 mid may-late aug  SITES:20  AMEN:WE DP 45ft DW SH RS  41.954 -71.894</desc>
+</wpt>
+<wpt lat="41.727" lon="-73.216">
+  <name>WIND</name>
+  <desc>WIND/Windmill Hill - White Memorial  CP PH:860.567.0089   SITES:45  AMEN:NH DP approx 2.0 mi SW of Litchfield 41.727 -73.216</desc>
+</wpt>
+<wpt lat="41.852" lon="-71.971">
+  <name>WOLF</name>
+  <desc>WOLF/Wolf Den - Mashamoquet Brook State Park  SP PH:860.928.6121 early jun-late sep  SITES:35  AMEN:RS approx 2.5 mi S  of Pomfret Center 41.852 -71.971</desc>
+</wpt>
+<wpt lat="38.78" lon="-75.117">
+  <name>CAPE</name>
+  <desc>CAPE/Cape Henlopen State Park  SP PH:302.645.8983 early mar-late nov  SITES:155  AMEN:NH DP DW SH RS PA approx 1.3 mi E of Lewes 38.78 -75.117</desc>
+</wpt>
+<wpt lat="38.606" lon="-75.066">
+  <name>DELA</name>
+  <desc>DELA/Delaware Seashore State Park  SP PH:302.539.7202 early mar-late nov  SITES:330  AMEN:WES DP DW SH RS PA approx 8.0 mi S  of Rehoboth Beach 38.606 -75.066</desc>
+</wpt>
+<wpt lat="39.114" lon="-75.457">
+  <name>DOVE</name>
+  <desc>DOVE/Dover AFB Military  MIL PH:302.677.3959  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 4.7 mi SE of Dover 39.114 -75.457</desc>
+</wpt>
+<wpt lat="38.979" lon="-75.534">
+  <name>KILL</name>
+  <desc>KILL/Killens Pond State Park  SP PH:302.284.3412 all year  SITES:75  AMEN:WE DP DW SH RS PA approx 3.1 mi SE of Felton 38.979 -75.534</desc>
+</wpt>
+<wpt lat="39.548" lon="-75.718">
+  <name>LUMS</name>
+  <desc>LUMS/Lums Pond State Park  SP PH:302.368.6989 early mar-late dec  SITES:70  AMEN:NH DP DW SH RS approx 2.0 mi SW of Kirkwood 39.548 -75.718</desc>
+</wpt>
+<wpt lat="38.645" lon="-75.6">
+  <name>SORO</name>
+  <desc>SORO/Soroptimist Park  CP   COMM:unknown facilities SITES:20  AMEN:E approx  mi  of Seaford 38.645 -75.6</desc>
+</wpt>
+<wpt lat="38.53" lon="-75.476">
+  <name>TRAP</name>
+  <desc>TRAP/Trap Pond State Park  SP PH:302.875.2392 early mar-late nov  SITES:140  AMEN:E DP DW SH RS PA approx 5.5 mi E of Laurel 38.53 -75.476</desc>
+</wpt>
+<wpt lat="42.608" lon="-72.533">
+  <name>BART</name>
+  <desc>BART/Barton Cove  UTIL PH:413.863.9300   SITES:30  AMEN:NH SH approx 2.8 mi SW of Gill 42.608 -72.533</desc>
+</wpt>
+<wpt lat="42.205" lon="-73.292">
+  <name>BEAR</name>
+  <desc>BEAR/Beartown State Forest  SF PH:413.528.0904 early jun-late aug  SITES:12 EL:1643 AMEN:NH ND VT DW NS RS PA L$ approx 4.5 mi NW of Monterey 42.205 -73.292</desc>
+</wpt>
+<wpt lat="41.751" lon="-70.593">
+  <name>BOUR</name>
+  <desc>BOUR/Bourne Scenic City Park  CP PH:508.759.7873 mid apr-mid oct  SITES:458  AMEN:WE DP DW SH approx 0.7 mi NE of Bourne 41.751 -70.593</desc>
+</wpt>
+<wpt lat="42.254" lon="-72.934">
+  <name>CHES</name>
+  <desc>CHES/Chester - Blanford State Forest  SF PH:413. 354.6347   SITES:12  AMEN:NR approx 2.9 mi SE of Chester 42.254 -72.934</desc>
+</wpt>
+<wpt lat="42.734" lon="-73.076">
+  <name>CLAR</name>
+  <desc>CLAR/Clarksburg State Park  SP PH:413.664.8345 early jun-late aug  SITES:45  AMEN:NH DP DW SH RS PA approx 1.4 mi NE of Clarksburg 42.734 -73.076</desc>
+</wpt>
+<wpt lat="42.456" lon="-72.791">
+  <name>DARS</name>
+  <desc>DARS/DAR State Forest  SF PH:413.268.7098 early may-late sep  SITES:50  AMEN:NH 28ft RS PA approx 4.9 mi S  of Ashfield 42.456 -72.791</desc>
+</wpt>
+<wpt lat="42.607" lon="-72.408">
+  <name>ERVI</name>
+  <desc>ERVI/Erving State Forest  SF PH:978.544.3939 early jun-late aug  SITES:29  AMEN:NH ND DW NS RS PA approx 0.7 mi NW of Erving 42.607 -72.408</desc>
+</wpt>
+<wpt lat="42.161" lon="-70.706">
+  <name>FOUR</name>
+  <desc>FOUR/Fourth Cliff Military  MIL PH:781.837.6785  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 4.8 mi N  of Marshfield 42.161 -70.706</desc>
+</wpt>
+<wpt lat="42.053" lon="-72.969">
+  <name>GRAN</name>
+  <desc>GRAN/Granville State Forest  SF PH:413.357.6611 early jun-late aug  SITES:22  AMEN:NH ND DW SH RS PA approx 5.6 mi W of Granville 42.053 -72.969</desc>
+</wpt>
+<wpt lat="42.473" lon="-71.28">
+  <name>HANS</name>
+  <desc>HANS/Hanscom AFB Military  MIL PH:781.377.4670  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:E DP FT DW SH RS approx 1.2 mi S  of Bedford 42.473 -71.28</desc>
+</wpt>
+<wpt lat="42.611" lon="-71.091">
+  <name>HARO</name>
+  <desc>HARO/Harold Parker State Forest  SF PH:978.686.3391 early jun-late aug  SITES:89  AMEN:NH DP 40ft DW NS RS PA approx 4.0 mi SE of Andover 42.611 -71.091</desc>
+</wpt>
+<wpt lat="42.684" lon="-73.092">
+  <name>HIST</name>
+  <desc>HIST/Historic Valley  CP PH:413.662.3198   SITES:114  AMEN:E DP DW SH approx 1.5 mi SE of North Adams 42.684 -73.092</desc>
+</wpt>
+<wpt lat="41.5" lon="-71.041">
+  <name>HORS</name>
+  <desc>HORS/Horseneck Beach State Reservation  SR PH:508.636.8816 early may-late sep  SITES:100  AMEN:NH DP DW SH RS PA approx 9.6 mi S  of Westport 41.5 -71.041</desc>
+</wpt>
+<wpt lat="42.648" lon="-72.083">
+  <name>LAKE</name>
+  <desc>LAKE/Lake Dennison State Park  SP PH:978.939.8962 early jun-late aug  SITES:150  AMEN:E DP DW SH RS PA L$ approx 3.4 mi SW of Winchendon 42.648 -72.083</desc>
+</wpt>
+<wpt lat="41.87" lon="-70.985">
+  <name>MASS</name>
+  <desc>MASS/Massasoit State Park  SP PH:508.822.7405 all year  SITES:123  AMEN:E DP DW SH RS PA approx 2.4 mi E of East Taunton 41.87 -70.985</desc>
+</wpt>
+<wpt lat="42.642" lon="-72.941">
+  <name>MOHA</name>
+  <desc>MOHA/Mohawk Trail State Forest  SF PH:413.339.5504 early may-mid oct  SITES:56  AMEN:NH ND DW SH RS PA approx 3.8 mi W of Charlemont 42.642 -72.941</desc>
+</wpt>
+<wpt lat="42.632" lon="-73.188">
+  <name>MTGR</name>
+  <desc>MTGR/Mt. Greylock State Reservation  SR PH:413.499.4262 early jun-late sep  SITES:35 EL:2404 AMEN:NH RS PA approx 5.6 mi S  of Williamstown 42.632 -73.188</desc>
+</wpt>
+<wpt lat="41.867" lon="-70.667">
+  <name>MYLE</name>
+  <desc>MYLE/Myles Standish State Forest  SF PH:508.866.2526 mid may-late sep  SITES:475  AMEN:NH DP RS PA approx 6.3 mi S  of Plymouth 41.867 -70.667</desc>
+</wpt>
+<wpt lat="41.764" lon="-70.033">
+  <name>NICK</name>
+  <desc>NICK/Nickerson State Forest Park  SF PH:508.896.3491 early may-late oct  SITES:400  AMEN:E DP DW RS PA approx 2.6 mi E of Brewster 41.764 -70.033</desc>
+</wpt>
+<wpt lat="42.336" lon="-73.234">
+  <name>OCTO</name>
+  <desc>OCTO/October Mountain State Forest  SF PH:413.243.1778 early may-late sep  SITES:47  AMEN:NH DP 35ft DW SH RS PA  42.336 -73.234</desc>
+</wpt>
+<wpt lat="42.626" lon="-72.078">
+  <name>OTTE</name>
+  <desc>OTTE/Otter River State Forest  SF PH:978.939.8962 early may-late sep  SITES:85  AMEN:E DP DW SH RS PA L$ approx 1.2 mi N  of Baldwinville 42.626 -72.078</desc>
+</wpt>
+<wpt lat="42.655" lon="-71.758">
+  <name>PEAR</name>
+  <desc>PEAR/Pearl Hill State Park  SP PH:978.597.8802 early jun-late sep  SITES:51  AMEN:NH 35ft RS PA approx 1.8 mi SW of West Townsend 42.655 -71.758</desc>
+</wpt>
+<wpt lat="42.504" lon="-73.32">
+  <name>PITT</name>
+  <desc>PITT/Pittsfield State Forest  SF PH:413.442.8992 early jun-late sep  SITES:30 EL:2110 AMEN:NH RS PA approx 2.7 mi S  of Hancock 42.504 -73.32</desc>
+</wpt>
+<wpt lat="42.842" lon="-70.823">
+  <name>SALI</name>
+  <desc>SALI/Salisbury Beach State Reservation  SR PH:978.462.4482 early may-late nov COMM:allows dogs with proof of rabies shot SITES:484  AMEN:E DP 40ft DW SH RS PA approx 1.9 mi E of Salisbury 42.842 -70.823</desc>
+</wpt>
+<wpt lat="42.647" lon="-73.047">
+  <name>SAVO</name>
+  <desc>SAVO/Savoy Mountain State Forest  SF PH:413.663.8469 early jun-late sep  SITES:45 EL:1987 AMEN:NH DP DW SH RS PA approx 2.3 mi SW of Florida 42.647 -73.047</desc>
+</wpt>
+<wpt lat="41.778" lon="-70.506">
+  <name>SCUS</name>
+  <desc>SCUS/Scusset Beach State Park  SP PH:508.888.0859 all year  SITES:98  AMEN:E DP 40ft DW SH RS PA approx 1.4 mi NW of Sandwich 41.778 -70.506</desc>
+</wpt>
+<wpt lat="41.756" lon="-70.514">
+  <name>SHAW</name>
+  <desc>SHAW/Shawme Crowell State Forest  SF PH:508.888.0351 all year  SITES:280  AMEN:NH DP RS PA approx 1.0 mi W of Sandwich 41.756 -70.514</desc>
+</wpt>
+<wpt lat="42.145" lon="-73.05">
+  <name>TOLL</name>
+  <desc>TOLL/Tolland State Forest  SF PH:413.269.6002 early jun-late sep  SITES:93  AMEN:NH DP 35ft DW SH RS PA approx 4.0 mi SE of Otis 42.145 -73.05</desc>
+</wpt>
+<wpt lat="42.65" lon="-72.21">
+  <name>TULL</name>
+  <desc>TULL/Tully Lake  RES PH:978.249.4957  COMM:Walk-in- tent only   AMEN:NH FT SH RS approx 2.2 mi SW of Royalston 42.65 -72.21</desc>
+</wpt>
+<wpt lat="41.672" lon="-70.571">
+  <name>CAPE</name>
+  <desc>CAPE/USCG Cape Cod RV  MIL PH:508.968.6461 mid may-mid oct COMM:military only - do not use our lat/lon - contact them for directions and info SITES:5  AMEN:WES DP FT DW SH RS approx 8 mi S of Buzzards Bay 41.672 -70.571</desc>
+</wpt>
+<wpt lat="42.141" lon="-72.042">
+  <name>WELL</name>
+  <desc>WELL/Wells State Park  SF PH:508.347.9257 early may-late sep  SITES:60  AMEN:NH DP 35ft DW SH RS PA approx 3.0 mi NE of Sturbridge 42.141 -72.042</desc>
+</wpt>
+<wpt lat="42.19" lon="-72.554">
+  <name>WEST</name>
+  <desc>WEST/Westover ARB Military  MIL PH:413.557.2192  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:E DP FT DW SH RS  42.19 -72.554</desc>
+</wpt>
+<wpt lat="42.66" lon="-71.79">
+  <name>WILL</name>
+  <desc>WILL/Willard Brook State Forest  SF PH:978.597.8802 early jun-late aug  SITES:21  AMEN:NH ND DW NS RS PA L$ approx 4.3 mi W of Townsend 42.66 -71.79</desc>
+</wpt>
+<wpt lat="42.554" lon="-72.986">
+  <name>WIND</name>
+  <desc>WIND/Windsor State Forest  SF PH:413.684.0948 all year  SITES:24 EL:1850 AMEN:NH ND VT DW NS RS PA L$ approx 17.2 mi NW of Williamsburg 42.554 -72.986</desc>
+</wpt>
+<wpt lat="42.531" lon="-70.869">
+  <name>WINT</name>
+  <desc>WINT/Winter Island Park  CP PH:978.745.9430   SITES:55  AMEN:E DP approx 1.6 mi NE of Salem 42.531 -70.869</desc>
+</wpt>
+<wpt lat="42.2" lon="-70.846">
+  <name>WOMP</name>
+  <desc>WOMP/Wompatuck State Park  SP PH:781.749.7160 early may-mid oct  SITES:262  AMEN:E DP DW SH RS PA approx 3.6 mi SE of Hingham 42.2 -70.846</desc>
+</wpt>
+<wpt lat="39.485" lon="-76.159">
+  <name>ABER</name>
+  <desc>ABER/Aberdeen Proving Ground RV Park  MIL PH:410.278.5789 all year COMM:Get reservations! SITES:11  AMEN:RS approx 3 mi S of Aberdeen 39.485 -76.159</desc>
+</wpt>
+<wpt lat="38.785" lon="-76.882">
+  <name>ANDR</name>
+  <desc>ANDR/Andrews AFB Military  MIL PH:301.981.3279  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 1.6 mi NE of Clinton 38.785 -76.882</desc>
+</wpt>
+<wpt lat="38.99" lon="-76.472">
+  <name>ANNA</name>
+  <desc>ANNA/Annapolis Military  MIL PH:410.293.9200  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 1.4 mi NE of Annapolis 38.99 -76.472</desc>
+</wpt>
+<wpt lat="38.229" lon="-75.144">
+  <name>ASSA</name>
+  <desc>ASSA/Assateague State Park  SP PH:410.641.2120 early may-late oct  SITES:350  AMEN:E DP DW SH RS PA  38.229 -75.144</desc>
+</wpt>
+<wpt lat="38.208" lon="-75.162">
+  <name>BAYS</name>
+  <desc>BAYS/Bayside - Assateague National Seashore  NP PH:410.641.3030 mid april - mid oct  SITES:50  AMEN:NH RS PA approx 8.5 mi S  of Berlin 38.208 -75.162</desc>
+</wpt>
+<wpt lat="39.545" lon="-79.14">
+  <name>BIGR</name>
+  <desc>BIGR/Big Run State Park  SP PH:301.895.5453 all year  SITES:29 EL:1510 AMEN:NH ND DW NS RS PA approx 10.4 mi S  of Grantsville 39.545 -79.14</desc>
+</wpt>
+<wpt lat="38.618" lon="-76.514">
+  <name>BREE</name>
+  <desc>BREE/Breezy Point Beach  CP PH:410.535.0259  COMM:netted swimming (jellyfish) - 40 dollars a nite in 2012   AMEN:E DP DW SH RS approx 4.8 mi S  of Chesapeak Beac 38.618 -76.514</desc>
+</wpt>
+<wpt lat="39.307" lon="-77.613">
+  <name>BRUN</name>
+  <desc>BRUN/Brunswick City Campground  CP PH:301.695.5177     AMEN:E DP DW SH RS approx 0.9 mi SE of Brunswick 39.307 -77.613</desc>
+</wpt>
+<wpt lat="39.095" lon="-76.731">
+  <name>CAMP</name>
+  <desc>CAMP/Camp Meade RV Military  MIL PH:301.677.6196  COMM:voted best - military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 1.3 mi S  of Fort Meade 39.095 -76.731</desc>
+</wpt>
+<wpt lat="38.647" lon="-76.818">
+  <name>CEDA</name>
+  <desc>CEDA/Cedarville State Forest  SF PH:301.249.9220 early apr-late oct  SITES:27  AMEN:E ND DW SH RS PA approx 3.8 mi SE of Brandywine 38.647 -76.818</desc>
+</wpt>
+<wpt lat="39.516" lon="-79.31">
+  <name>DEEP</name>
+  <desc>DEEP/Deep Creek Lake State Park  SP PH:301.387.4111 mid apr-mid dec  SITES:112 EL:2568 AMEN:E DP DW SH RS PA approx 5.8 mi NW of Swanton 39.516 -79.31</desc>
+</wpt>
+<wpt lat="39.48" lon="-75.985">
+  <name>ELKN</name>
+  <desc>ELKN/Elk Neck State Park  SP PH:410.287.5333 all year  SITES:259  AMEN:WES RS PA approx 8.6 mi S  of North East 39.48 -75.985</desc>
+</wpt>
+<wpt lat="39.625" lon="-78.385">
+  <name>FIFT</name>
+  <desc>FIFT/Fifteen Mile Creek - C and O Canal National Park  NP PH:301.739.4200   SITES:10  AMEN:NH ND 20ft NS NR L$ approx 7.9 mi SE of Pratt 39.625 -78.385</desc>
+</wpt>
+<wpt lat="39.604" lon="-78.008">
+  <name>FORT</name>
+  <desc>FORT/Fort Frederick State Park  SP PH:301.842.2155 early may-late oct  SITES:29  AMEN:NH ND RS L$ approx 1.4 mi S  of Big Pool 39.604 -78.008</desc>
+</wpt>
+<wpt lat="39.459" lon="-77.492">
+  <name>GAMB</name>
+  <desc>GAMB/Gambrill State Park  SP PH:301.271.7574 mid apr-mid oct  SITES:34  AMEN:E DP DW SH RS PA approx 5.3 mi NW of Frederick 39.459 -77.492</desc>
+</wpt>
+<wpt lat="38.289" lon="-76.384">
+  <name>GOOS</name>
+  <desc>GOOS/Goose Creek Military  MIL PH:301.342.3648  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 2.3 mi SE of Patuxent River 38.289 -76.384</desc>
+</wpt>
+<wpt lat="39.657" lon="-78.457">
+  <name>GREE</name>
+  <desc>GREE/Green Ridge State Forest - Dispersed  SF PH:301.478.3124 all year COMM:dispersed - no facilities SITES:100  AMEN:NH ND NW NS NR L$ approx 6.8 mi SE of Flintstone 39.657 -78.457</desc>
+</wpt>
+<wpt lat="38.996" lon="-76.895">
+  <name>GREL</name>
+  <desc>GREL/Greenbelt Park  NP PH:301.344.3948 all year  SITES:175  AMEN:NH DP DW SH RS PA approx 1.2 mi SW of Greenbelt 38.996 -76.895</desc>
+</wpt>
+<wpt lat="39.536" lon="-77.617">
+  <name>GREB</name>
+  <desc>GREB/Greenbrier State Park  SP PH:301.791.4767 mid apr-late oct  SITES:165  AMEN:E DP DW SH RS PA approx 2.8 mi NE of Boonsboro 39.536 -77.617</desc>
+</wpt>
+<wpt lat="39.244" lon="-76.745">
+  <name>HILT</name>
+  <desc>HILT/Hilton - Patapsco Valley State Park  SP PH:410.461.5005 all year COMM:tent only SITES:12  AMEN:E ND DW SH RS PA approx 2.0 mi S  of Catonsville 39.244 -76.745</desc>
+</wpt>
+<wpt lat="39.295" lon="-76.787">
+  <name>HOLL</name>
+  <desc>HOLL/Hollofield - Patapsco Valley State Park  SP PH:410.461.5005 all year  SITES:73  AMEN:E DP DW SH RS PA approx 2.0 mi N of Ellicott City 39.295 -76.787</desc>
+</wpt>
+<wpt lat="39.619" lon="-77.466">
+  <name>HOUC</name>
+  <desc>HOUC/Houck Area - Cunningham Falls State Park  SP PH:301.271.7574 early may-late oct  SITES:140  AMEN:E DP DW SH RS PA approx 3.0 mi W of Thurmont 39.619 -77.466</desc>
+</wpt>
+<wpt lat="38.011" lon="-75.847">
+  <name>JANE</name>
+  <desc>JANE/Janes Island State Park  SP PH:410.968.1565 all year  SITES:100  AMEN:E DP SH RS PA approx 1.9 mi N of Crisfield 38.011 -75.847</desc>
+</wpt>
+<wpt lat="39.247" lon="-77.291">
+  <name>LITT</name>
+  <desc>LITT/Little Bennett Regional Park  CP PH:301.528.3430   SITES:90  AMEN:E DP RS approx 0.8 mi NW of Clarksburg 39.247 -77.291</desc>
+</wpt>
+<wpt lat="39.378" lon="-79.272">
+  <name>LOST</name>
+  <desc>LOST/Lost Land Run  - Potomac State Forest  SF PH:301.334.2038  COMM:dispersed - no toilets near sites SITES:6 EL:2352 AMEN:NH ND NW NS NR approx 7.5 mi E of Oakland 39.378 -79.272</desc>
+</wpt>
+<wpt lat="38.737" lon="-76.912">
+  <name>LOUI</name>
+  <desc>LOUI/Louise F. Cosca Regional Park  CP PH:301.868.1397   SITES:23  AMEN:WE DP DW SH RS approx 2 mi S  of Clinton 38.737 -76.912</desc>
+</wpt>
+<wpt lat="39.582" lon="-77.436">
+  <name>MANO</name>
+  <desc>MANO/Manor Area - Cunningham Falls State Park  SP PH:301.271.7574 early may-late oct  SITES:40  AMEN:E SH RS PA approx 3.2 mi SW of Thurmont 39.582 -77.436</desc>
+</wpt>
+<wpt lat="38.865" lon="-75.837">
+  <name>MART</name>
+  <desc>MART/Martinak State Park  SP PH:410.820.1668 all year  SITES:60  AMEN:E DP DW SH RS PA approx 1.4 mi S  of Denton 38.865 -75.837</desc>
+</wpt>
+<wpt lat="39.608" lon="-77.969">
+  <name>MCCO</name>
+  <desc>MCCO/McCoys Ferry - C and O Canal National Park  NP PH:301.739.4200 early apr-late sep  SITES:14  AMEN:NH ND 20ft DW NS NR L$ approx 7.9 mi W of Williamsport 39.608 -77.969</desc>
+</wpt>
+<wpt lat="38.128" lon="-75.491">
+  <name>MILB</name>
+  <desc>MILB/Milburn Landing - Pocomoke State Park  SP PH:410.632.2566 all year  SITES:30  AMEN:RS approx 5.5 mi NE of Pocomoke City 38.128 -75.491</desc>
+</wpt>
+<wpt lat="39.717" lon="-79.386">
+  <name>MILR</name>
+  <desc>MILR/Mill Run - Youghiogheny River Lake  COE PH:814.395.3166  COMM:swim beach  EL:1565 AMEN:NH DP FT DW NS NR approx 3.8 mi N of Friendsville 39.717 -79.386</desc>
+</wpt>
+<wpt lat="39.631" lon="-79.129">
+  <name>NEWG</name>
+  <desc>NEWG/New Germany State Park  SP PH:301.895.5453 all year  SITES:48 EL:2567 AMEN:NH DP DW SH RS PA approx 4.6 mi S  of Grantsville 39.631 -79.129</desc>
+</wpt>
+<wpt lat="38.198" lon="-75.156">
+  <name>OCEA</name>
+  <desc>OCEA/Oceanside - Assateague National Seashore  NP PH:410.641.3030 all year  SITES:100  AMEN:NH RS PA approx 9.2 mi S  of Berlin 38.198 -75.156</desc>
+</wpt>
+<wpt lat="39.653" lon="-77.488">
+  <name>OWEN</name>
+  <desc>OWEN/Owens Creek - Catoctin Mountain National Park  NP PH:301.663.9388     AMEN:NH 22ft SH NR approx 3.7 mi SW of Sabillasville 39.653 -77.488</desc>
+</wpt>
+<wpt lat="38.063" lon="-76.331">
+  <name>POIN</name>
+  <desc>POIN/Point Lookout State Park  SP PH:301.872.5688 all year  SITES:143  AMEN:E DP DW SH RS approx 2.5 mi SE of Scotland 38.063 -76.331</desc>
+</wpt>
+<wpt lat="39.696" lon="-78.651">
+  <name>ROCK</name>
+  <desc>ROCK/Rocky Gap State Park  SP PH:301.722.1480 early may-mid dec  SITES:278  AMEN:E DP DW SH RS PA approx 4.3 mi W of Flintstone 39.696 -78.651</desc>
+</wpt>
+<wpt lat="39.619" lon="-79.148">
+  <name>SAVA</name>
+  <desc>SAVA/Savage River State Forest  SP PH:301.895.5759  COMM:dispersed - no facilities SITES:52 EL:2386 AMEN:NH ND NW NS NR approx 5.2 mi S  of Grantsville 39.619 -79.148</desc>
+</wpt>
+<wpt lat="38.134" lon="-75.439">
+  <name>SHAD</name>
+  <desc>SHAD/Shad  Landing - Pocomoke State Park  SP PH:410.632.2566 all year  SITES:190  AMEN:E DP SH RS approx 3.9 mi SW of Snow Hill 38.134 -75.439</desc>
+</wpt>
+<wpt lat="39.408" lon="-76.28">
+  <name>SKIP</name>
+  <desc>SKIP/Skippers Point Military  MIL PH:410.671.4732  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 5.8 mi E of Gunpowder 39.408 -76.28</desc>
+</wpt>
+<wpt lat="38.554" lon="-77.181">
+  <name>SMAL</name>
+  <desc>SMAL/Smallwood State Park  SP PH:301. 743.7613 early apr-late oct  SITES:15  AMEN:E DP DW SH RS PA approx 2.0 mi SW of Marbury 38.554 -77.181</desc>
+</wpt>
+<wpt lat="38.34" lon="-76.467">
+  <name>SOLO</name>
+  <desc>SOLO/Solomons Navy Military  MIL PH:410.286.5529  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:E DP FT DW SH RS approx 1.6 mi NW of Solomons Islan 38.34 -76.467</desc>
+</wpt>
+<wpt lat="39.564" lon="-78.718">
+  <name>SPRI</name>
+  <desc>SPRI/Spring Gap - C and O Canal National Park  NP PH:301.739.4200 early apr-late sep  SITES:19  AMEN:NH ND 20ft DW NS NR L$ approx 6.6 mi S  of Cumberland 39.564 -78.718</desc>
+</wpt>
+<wpt lat="39.612" lon="-76.165">
+  <name>SUSQ</name>
+  <desc>SUSQ/Susquehanna State Park  SP PH:410.734.9035 early apr-late oct  SITES:69  AMEN:E DW SH RS PA approx 5.8 mi NW of Havre de Grace 39.612 -76.165</desc>
+</wpt>
+<wpt lat="39.499" lon="-79.422">
+  <name>SWAL</name>
+  <desc>SWAL/Swallow Falls State Park  SP PH:301.387.6938 all year  SITES:65 EL:2407 AMEN:E ND DW SH RS PA approx 6.4 mi N  of Oakland 39.499 -79.422</desc>
+</wpt>
+<wpt lat="38.981" lon="-75.932">
+  <name>TUCK</name>
+  <desc>TUCK/Tuckahoe State Park  SP PH:410.820.1668 early apr-late nov  SITES:50  AMEN:E DP DW SH RS PA approx 4.3 mi N of Queen Anne 38.981 -75.932</desc>
+</wpt>
+<wpt lat="39.346" lon="-79.269">
+  <name>WALL</name>
+  <desc>WALL/Wallman/Laurel Run - Potomac State Forest  SF PH:301.334.2038  COMM:pretty area - dispersed - no toilets near sites SITES:16 EL:2195 AMEN:NH ND NW NS NR approx 8.5 mi SE of Oakland 39.346 -79.269</desc>
+</wpt>
+<wpt lat="45.874" lon="-68.962">
+  <name>ABOL</name>
+  <desc>ABOL/Abol - Baxter State Park  SP PH:207. 723.5140 mid may-mid oct COMM:for reservations go to www.baxterstateparkauthority.com/ SITES:9  AMEN:NH ND VT NS RS approx 19.3 mi NW of Millinocket 45.874 -68.962</desc>
+</wpt>
+<wpt lat="46.61" lon="-68.003">
+  <name>AROO</name>
+  <desc>AROO/Aroostook State Park  SP PH:207.768.8341 all year    AMEN:NH RS approx 5.0 mi S  of Presque Isle 46.61 -68.003</desc>
+</wpt>
+<wpt lat="44.268" lon="-71.022">
+  <name>BASI</name>
+  <desc>BASI/Basin  NF PH:603.528.8721/603.528.8721     AMEN:NR approx 9.0 mi S  of Gilead 44.268 -71.022</desc>
+</wpt>
+<wpt lat="44.313" lon="-68.214">
+  <name>BLAC</name>
+  <desc>BLAC/Blackwoods - Acadia National Park  NP PH:207.288.3338 all year  SITES:306  AMEN:NH DP 35ft DW NS RS PA approx 5.2 mi S  of Bar Harbor 44.313 -68.214</desc>
+</wpt>
+<wpt lat="43.9" lon="-70.179">
+  <name>BRAD</name>
+  <desc>BRAD/Bradbury Mountain State Park  SP PH:207.688.4712 all year  SITES:35  AMEN:NH VT DW SH RS approx 0.9 mi S  of Pownal 43.9 -70.179</desc>
+</wpt>
+<wpt lat="44.23" lon="-69.047">
+  <name>CAMD</name>
+  <desc>CAMD/Camden Hills State Park  SP PH:207.236.3109 mid may-mid oct  SITES:100  AMEN:E DP DW SH RS approx 1.7 mi NE of Camden 44.23 -69.047</desc>
+</wpt>
+<wpt lat="44.854" lon="-67.153">
+  <name>COBS</name>
+  <desc>COBS/Cobscook Bay State Park  SP PH:207.726.4412 mid may-mid oct  SITES:100  AMEN:NH DP DW SH RS approx 5.1 mi SE of Dennysville 44.854 -67.153</desc>
+</wpt>
+<wpt lat="44.265" lon="-71.013">
+  <name>COLD</name>
+  <desc>COLD/Cold River  NF PH:603.528.8721/603.528.8721     AMEN:NH NR approx 17.3 mi N  of Fryeburg 44.265 -71.013</desc>
+</wpt>
+<wpt lat="44.31" lon="-70.824">
+  <name>CROC</name>
+  <desc>CROC/Crocker Pond  NF PH:603.466.2713/603.528.8721 mid may-mid oct  SITES:7  AMEN:NH ND NS NR approx 6.7 mi S  of Bethel 44.31 -70.824</desc>
+</wpt>
+<wpt lat="44.953" lon="-68.282">
+  <name>GREA</name>
+  <desc>GREA/Great Pond Military  MIL PH:207.584.2000  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 0.9 mi N  of Great Pond 44.953 -68.282</desc>
+</wpt>
+<wpt lat="44.352" lon="-70.984">
+  <name>HAST</name>
+  <desc>HAST/Hastings  NF PH:603.466.2713/603.528.8721 early jun-late sep  SITES:24  AMEN:NH ND VT NS RS approx 3.0 mi S  of Gilead 44.352 -70.984</desc>
+</wpt>
+<wpt lat="45.887" lon="-69.997">
+  <name>KATA</name>
+  <desc>KATA/Katahdin Stream - Baxter State Park  SP  mid may-mid oct COMM:for reservations go to www.baxterstateparkauthority.com/ SITES:9  AMEN:VT RS approx 15.2 mi S  of Seboomook Lake 45.887 -69.997</desc>
+</wpt>
+<wpt lat="44.398" lon="-69.348">
+  <name>LAKE</name>
+  <desc>LAKE/Lake St. George State Park  SP PH:207.589.4255 mid may-early oct  SITES:40  AMEN:NH DP 35ft DW SH RS approx 2.3 mi W of Liberty 44.398 -69.348</desc>
+</wpt>
+<wpt lat="44.456" lon="-68.298">
+  <name>LAMO</name>
+  <desc>LAMO/Lamoine State Park  SP PH:207.667.4778 mid may-mid oct  SITES:60  AMEN:NH 40ft FT DW RS approx 3.8 mi E of Trenton 44.456 -68.298</desc>
+</wpt>
+<wpt lat="45.569" lon="-69.542">
+  <name>LILY</name>
+  <desc>LILY/Lily Bay State Park  SP PH:207.695.2700 early may-mid oct  SITES:90  AMEN:NH DP RS approx 7.9 mi N of Greenville 45.569 -69.542</desc>
+</wpt>
+<wpt lat="45.524" lon="-68.264">
+  <name>MATT</name>
+  <desc>MATT/Mattawamkeag Wilderness Park  CP PH:888.724.2465     AMEN:NH DP DW SH L$ approx 16.1 mi NE of Lincoln 45.524 -68.264</desc>
+</wpt>
+<wpt lat="44.485" lon="-67.859">
+  <name>MCCL</name>
+  <desc>MCCL/McClellan City Park  CP PH:207.546.2422     AMEN:NH FT DW SH approx  mi  of Columbia Falls 44.485 -67.859</desc>
+</wpt>
+<wpt lat="44.681" lon="-70.448">
+  <name>MOUN</name>
+  <desc>MOUN/Mount Blue State Park  SP PH:207.585.2347 all year  SITES:135  AMEN:RS approx 1.8 mi SW of Weld 44.681 -70.448</desc>
+</wpt>
+<wpt lat="45.976" lon="-69.078">
+  <name>NESO</name>
+  <desc>NESO/Nesowadnehunk Field - Baxter State Park  SP PH:207.723.5140 mid may-mid oct COMM:for reservations go to www.baxterstateparkauthority.com/ SITES:12  AMEN:NH ND VT NS RS approx 28.3 mi NW of Millinocket 45.976 -69.078</desc>
+</wpt>
+<wpt lat="45.26" lon="-69.289">
+  <name>PEAK</name>
+  <desc>PEAK/Peaks - Kenny State Park  SP PH:207.564.2003 mid may-late sep  SITES:60  AMEN:NH SH RS approx 6.1 mi NW of Dover-Foxcroft 45.26 -69.289</desc>
+</wpt>
+<wpt lat="44.939" lon="-70.72">
+  <name>RANG</name>
+  <desc>RANG/Rangeley Lake State Park  SP PH:207.864.3858 mid may-early oct  SITES:50 EL:1544 AMEN:NH DW SH RS approx 4.2 mi SW of Rangeley 44.939 -70.72</desc>
+</wpt>
+<wpt lat="44.882" lon="-67.132">
+  <name>REVE</name>
+  <desc>REVE/Reversing Falls Park  CP   COMM:tide reverses flow   AMEN:NH ND NS approx 5.2 mi S  of Pembroke 44.882 -67.132</desc>
+</wpt>
+<wpt lat="47.255" lon="-68.593">
+  <name>RIVE</name>
+  <desc>RIVE/Riverside Park  CP PH:207.834.3730   SITES:8  AMEN:E DP approx 0.3 mi SW of Fort Kent 47.255 -68.593</desc>
+</wpt>
+<wpt lat="45.92" lon="-68.859">
+  <name>ROAR</name>
+  <desc>ROAR/Roaring Brook - Baxter State Park  SP PH:207.723.5140 mid may-mid oct COMM:for reservations go to www.baxterstateparkauthority.com/ SITES:10 EL:1523 AMEN:NH ND VT NS RS approx 19.5 mi N  of Millinocket 45.92 -68.859</desc>
+</wpt>
+<wpt lat="44.05" lon="-70.68">
+  <name>SALM</name>
+  <desc>SALM/Salmon Point City Campground  CP PH:207.647.5229     AMEN:E DP DW SH approx 1.7 mi E of Bridgton 44.05 -70.68</desc>
+</wpt>
+<wpt lat="44.241" lon="-68.306">
+  <name>SEAW</name>
+  <desc>SEAW/Seawall - Acadia National Park  NP PH:207.244.3600 mid may-late sep  SITES:214  AMEN:NH DP 35ft DW NS RS PA approx 2.9 mi S  of Southwest Harb 44.241 -68.306</desc>
+</wpt>
+<wpt lat="43.942" lon="-70.546">
+  <name>SEBA</name>
+  <desc>SEBA/Sebago Lake State Park  SP PH:207.693.6613 early may-mid oct  SITES:250  AMEN:40ft RS approx 4.6 mi S  of Casco 43.942 -70.546</desc>
+</wpt>
+<wpt lat="46.109" lon="-68.9">
+  <name>SOUT</name>
+  <desc>SOUT/South Branch Pond - Baxter State Park  SP PH:207.723.5140 mid may-mid oct COMM:for reservations go to www.baxterstateparkauthority.com/ SITES:21  AMEN:NH ND VT NS RS approx 32.5 mi N  of Millinocket 46.109 -68.9</desc>
+</wpt>
+<wpt lat="44.036" lon="-70.982">
+  <name>SWAN</name>
+  <desc>SWAN/Swans Falls Campground  AMC PH:207.935.3395  COMM:tent only   AMEN:NH approx 1.4 mi N  of Fryeburg 44.036 -70.982</desc>
+</wpt>
+<wpt lat="46.167" lon="-68.854">
+  <name>TROU</name>
+  <desc>TROU/Trout Brook Farm - Baxter State Park  SP PH:207.723.5140 early jun-mid oct COMM:for reservations go to www.baxterstateparkauthority.com/ SITES:14  AMEN:VT RS approx 35.9 mi N  of Millinocket 46.167 -68.854</desc>
+</wpt>
+<wpt lat="44.306" lon="-71.063">
+  <name>WILD</name>
+  <desc>WILD/Wild River  NF    SITES:12  AMEN:NH VT NR approx 7.6 mi SW of Gilead 44.306 -71.063</desc>
+</wpt>
+<wpt lat="43.804" lon="-70.113">
+  <name>WINS</name>
+  <desc>WINS/Winslow City Park  CP PH:207.865.4198   SITES:100  AMEN:NH DP DW SH approx 3.7 mi S  of Freeport 43.804 -70.113</desc>
+</wpt>
+<wpt lat="44.269" lon="-71.021">
+  <name>BASI</name>
+  <desc>BASI/Basin  NF PH:603.536.1315/603.528.8721 mid may-mid oct  SITES:21  AMEN:NH ND NS NR approx 9.0 mi S  of Gilead 44.269 -71.021</desc>
+</wpt>
+<wpt lat="43.115" lon="-71.331">
+  <name>BEAR</name>
+  <desc>BEAR/Bear Brook State Park  SP PH:603.485.9869 early jun-late sep  SITES:96  AMEN:NH DP DW SH RS PA approx 4.8 mi SE of Allenstown 43.115 -71.331</desc>
+</wpt>
+<wpt lat="44.049" lon="-71.561">
+  <name>BIGR</name>
+  <desc>BIGR/Big Rock  NF PH:/603.528.8721 mid may-mid oct  SITES:28 EL:1542 AMEN:NH ND VT NS NR approx 5.6 mi E of Lincoln 44.049 -71.561</desc>
+</wpt>
+<wpt lat="44.007" lon="-71.245">
+  <name>BLAC</name>
+  <desc>BLAC/Blackberry Crossing  NF PH:603.536.1315/603.528.8721   SITES:26  AMEN:NH ND VT NS NR approx 6.5 mi W of Conway 44.007 -71.245</desc>
+</wpt>
+<wpt lat="43.871" lon="-71.63">
+  <name>CAMP</name>
+  <desc>CAMP/Campton  NF PH:/603.528.8721 early jun-late sep  SITES:58  AMEN:NH 50ft DW SH RS approx 0.5 mi NE of Campton 43.871 -71.63</desc>
+</wpt>
+<wpt lat="44.177" lon="-71.696">
+  <name>CANN</name>
+  <desc>CANN/Cannon Mountain RV Park  SP PH:603.823.8800 early jun-late sep  SITES:7 EL:1952 AMEN:E DP SH RS approx 4.3 mi SE of Franconia 44.177 -71.696</desc>
+</wpt>
+<wpt lat="43.651" lon="-71.884">
+  <name>CARD</name>
+  <desc>CARD/Cardigan Campsites  AMC PH:603.466.2727  COMM:Walk In - wheelbarrows SITES:17 EL:1623 AMEN:NH ND PT DW NS approx 5.3 mi NW of Alexandria 43.651 -71.884</desc>
+</wpt>
+<wpt lat="44.265" lon="-71.013">
+  <name>COLD</name>
+  <desc>COLD/Cold River  NF PH:603.536.1315/603.528.8721 early jun-late sep  SITES:14  AMEN:NH RS approx 6.9 mi N  of North Chatham 44.265 -71.013</desc>
+</wpt>
+<wpt lat="44.944" lon="-71.328">
+  <name>COLE</name>
+  <desc>COLE/Coleman State Park  SP PH:603.271.3628 early jun-late sep  SITES:24 EL:2247 AMEN:NH DP DW SH RS PA approx 9.8 mi SE of Stewartstown 44.944 -71.328</desc>
+</wpt>
+<wpt lat="44.003" lon="-71.232">
+  <name>COVE</name>
+  <desc>COVE/Covered Bridge  NF PH:603.536.1315/603.528.8721 early jun-late sep  SITES:49  AMEN:NH RS approx 5.8 mi W of Conway 44.003 -71.232</desc>
+</wpt>
+<wpt lat="45.191" lon="-71.191">
+  <name>DEER</name>
+  <desc>DEER/Deer Mountain  SF PH:603.538.6965 early jun-late sep  SITES:25 EL:1978 AMEN:NH RS PA approx 13.7 mi NE of Pittsburg 45.191 -71.191</desc>
+</wpt>
+<wpt lat="44.333" lon="-71.219">
+  <name>DOLL</name>
+  <desc>DOLL/Dolly Copp  NF PH:603.466.2713/603.528.8721 mid may-late sep  SITES:177  AMEN:NH RS approx 4.4 mi SW of Gorham 44.333 -71.219</desc>
+</wpt>
+<wpt lat="44.178" lon="-71.4">
+  <name>DRYR</name>
+  <desc>DRYR/Dry River - Crawford Notch State Park  SP PH:603.374.2272 early jun-late sep  SITES:35 EL:1558 AMEN:NH RS PA approx 7.2 mi N  of Harts Location 44.178 -71.4</desc>
+</wpt>
+<wpt lat="43.574" lon="-71.355">
+  <name>ELLA</name>
+  <desc>ELLA/Ellacoya State Beach and RV Park  SP PH:603.293.7821 early jun-late sep COMM:no tents SITES:37  AMEN:WES DP FT DW SH RS approx 3.2 mi NE of Gilford 43.574 -71.355</desc>
+</wpt>
+<wpt lat="42.958" lon="-71.887">
+  <name>GREE</name>
+  <desc>GREE/Greenfield State Park  SP PH:603.547.3497 early jun-late sep  SITES:250  AMEN:NH DP DW SH RS PA approx 0.9 mi NW of Greenfield 42.958 -71.887</desc>
+</wpt>
+<wpt lat="43.546" lon="-71.365">
+  <name>GUNS</name>
+  <desc>GUNS/Gunstock Area  CP PH:800.GUNSTOCK   SITES:300  AMEN:E DP DW SH approx 2.1 mi E of Gilford 43.546 -71.365</desc>
+</wpt>
+<wpt lat="42.899" lon="-70.816">
+  <name>HAMP</name>
+  <desc>HAMP/Hampton Beach State Park  SP PH:603.926.3784 all year    AMEN:WES DP RS approx 2.9 mi SE of Hampton 42.899 -70.816</desc>
+</wpt>
+<wpt lat="44.064" lon="-71.594">
+  <name>HANC</name>
+  <desc>HANC/Hancock  NF PH:/603.528.8721   SITES:56  AMEN:NH ND NS NR approx 4.3 mi NE of Lincoln 44.064 -71.594</desc>
+</wpt>
+<wpt lat="44.25" lon="-71.556">
+  <name>HAYS</name>
+  <desc>HAYS/Haystack Road  NF PH:/603.528.8721   SITES:11 EL:1762 AMEN:NR approx 1.6 mi SW of Twin Mountain 44.25 -71.556</desc>
+</wpt>
+<wpt lat="43.998" lon="-71.334">
+  <name>JIGG</name>
+  <desc>JIGG/Jigger Johnson  NF PH:603.536.1315/603.528.8721 mid may-mid oct  SITES:76  AMEN:NH ND DW SH NR approx 10.7 mi W of Conway 43.998 -71.334</desc>
+</wpt>
+<wpt lat="44.139" lon="-71.685">
+  <name>LAFA</name>
+  <desc>LAFA/Lafayette - Franconia Notch State Park  SP PH:603.823.9513 mid may-late dec  SITES:98 EL:1932 AMEN:NH DP 30ft SH RS approx 1.0 mi S  of Franconia Notch 44.139 -71.685</desc>
+</wpt>
+<wpt lat="45.06" lon="-71.302">
+  <name>LAKE</name>
+  <desc>LAKE/Lake Francis State Park  SP PH:603.538.6965 early jun-late sep  SITES:40  AMEN:E DP RS PA approx 4.4 mi E of Pittsburg 45.06 -71.302</desc>
+</wpt>
+<wpt lat="44.572" lon="-71.224">
+  <name>MILA</name>
+  <desc>MILA/Milan Hill State Park  SP PH:603.466.3860 early jun-late sep COMM:primitive SITES:10 EL:1722 AMEN:NH ND PT NW NS RS PA approx 1.9 mi W of Milan 44.572 -71.224</desc>
+</wpt>
+<wpt lat="44.738" lon="-71.144">
+  <name>MOLL</name>
+  <desc>MOLL/Mollidgewock State Park  SP PH:603.482.3373 early jun-late sep  SITES:45  AMEN:NH ND SH RS PA approx 3.0 mi S  of Errol 44.738 -71.144</desc>
+</wpt>
+<wpt lat="42.844" lon="-72.074">
+  <name>MONA</name>
+  <desc>MONA/Monadnock State Park  SP PH:603.532.8862 early jun-late sep  SITES:30  AMEN:NH RS approx 3.3 mi NW of Jaffrey 42.844 -72.074</desc>
+</wpt>
+<wpt lat="44.4" lon="-71.231">
+  <name>MOOS</name>
+  <desc>MOOS/Moose Brook State Park  SP PH:603.466.3860 early jun-late sep  SITES:60  AMEN:NH RS PA approx 3.0 mi W of Gorham 44.4 -71.231</desc>
+</wpt>
+<wpt lat="43.321" lon="-72.063">
+  <name>MOUS</name>
+  <desc>MOUS/Mount Sunapee  SP PH:603.763.5561 early jun-late sep COMM:primitive - on platforms  EL:1890 AMEN:NH ND VT DW NS RS PA approx 1.4 mi W of Newbury 43.321 -72.063</desc>
+</wpt>
+<wpt lat="42.948" lon="-71.622">
+  <name>NEW</name>
+  <desc>NEW/New Boston Military  MIL PH:603.471.2452  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 4.1 mi SE of New Boston 42.948 -71.622</desc>
+</wpt>
+<wpt lat="43.998" lon="-71.371">
+  <name>PASS</name>
+  <desc>PASS/Passaconaway  NF PH:603.536.1315/603.528.8721 mid may-mid oct  SITES:33  AMEN:NH ND VT NS NR approx 12.5 mi W of Conway 43.998 -71.371</desc>
+</wpt>
+<wpt lat="43.08" lon="-71.173">
+  <name>PAWT</name>
+  <desc>PAWT/Pawtuckaway State Park  SP PH:603.895.3031 early jun-late oct  SITES:190  AMEN:NH 35ft DW SH RS approx 4.4 mi SW of Nottingham 43.08 -71.173</desc>
+</wpt>
+<wpt lat="43.234" lon="-72.116">
+  <name>PILL</name>
+  <desc>PILL/Pillsbury State Park  SP PH:603.863.2860 early jun-late sep  SITES:40 EL:1755 AMEN:NH 35ft RS PA approx 4.1 mi N  of Washington 43.234 -72.116</desc>
+</wpt>
+<wpt lat="44.009" lon="-71.649">
+  <name>RUSS</name>
+  <desc>RUSS/Russell Pond  NF PH:/603.528.8721 mid may-mid oct  SITES:86 EL:1795 AMEN:NH ND DW SH NR approx 2.3 mi SE of Lincoln 44.009 -71.649</desc>
+</wpt>
+<wpt lat="43.72" lon="-72.261">
+  <name>STOR</name>
+  <desc>STOR/Storrs Pond Rec Area  CP PH:603.643.2134   SITES:30  AMEN:E DP 35ft DW SH approx 1.9 mi NE of Hanover 43.72 -72.261</desc>
+</wpt>
+<wpt lat="44.26" lon="-71.505">
+  <name>SUG1</name>
+  <desc>SUG1/Sugarloaf 1  NF PH:/603.528.8721 mid may-late sep  SITES:32 EL:1611 AMEN:NH ND VT NS RS PA approx 2.0 mi E of Twin Mountain 44.26 -71.505</desc>
+</wpt>
+<wpt lat="44.258" lon="-71.504">
+  <name>SUG2</name>
+  <desc>SUG2/Sugarloaf 2  NF PH:/603.528.8721 mid may-late sep  SITES:29 EL:1663 AMEN:NH ND NS RS PA approx 2.1 mi SE of Twin Mountain 44.258 -71.504</desc>
+</wpt>
+<wpt lat="43.995" lon="-71.636">
+  <name>TRIP</name>
+  <desc>TRIP/Tripoli Rd  NF PH:/603.528.8721  COMM:dispersed SITES:200  AMEN:NH ND NW NS NR approx 9.0 mi N of Campton 43.995 -71.636</desc>
+</wpt>
+<wpt lat="44.704" lon="-71.05">
+  <name>UMBA</name>
+  <desc>UMBA/Umbagog Lake  SP PH:603.482.7795   SITES:70  AMEN:E DP FT DW SH RS PA approx  mi  of Cambridge 44.704 -71.05</desc>
+</wpt>
+<wpt lat="43.942" lon="-71.509">
+  <name>WATE</name>
+  <desc>WATE/Waterville  NF PH:/603.528.8721 early jun-late sep  SITES:26  AMEN:NH ND VT NS RS approx 0.7 mi SW of Waterville Valley 43.942 -71.509</desc>
+</wpt>
+<wpt lat="42.94" lon="-72.305">
+  <name>WHEE</name>
+  <desc>WHEE/Wheelock Park Campground  CP PH:603.357.9832     AMEN:E DP DW SH approx 1.4 mi W of Keene 42.94 -72.305</desc>
+</wpt>
+<wpt lat="43.845" lon="-71.225">
+  <name>WHIK</name>
+  <desc>WHIK/White Lake State Park  SP PH:603.323.7350 early jun-late sep  SITES:200  AMEN:NH DP DW SH RS approx 2.1 mi SE of Tamworth 43.845 -71.225</desc>
+</wpt>
+<wpt lat="43.954" lon="-71.214">
+  <name>WHIL</name>
+  <desc>WHIL/White Ledge  NF PH:603.536.1315/603.528.8721 early jun-late sep  SITES:28  AMEN:NH ND VT NS RS approx 5.0 mi W of Conway 43.954 -71.214</desc>
+</wpt>
+<wpt lat="44.305" lon="-71.065">
+  <name>WILR</name>
+  <desc>WILR/Wild River  NF PH:603.466.2713/603.528.8721 mid may-mid oct  SITES:12  AMEN:NH ND VT NS NR approx 7.6 mi SW of Gilead 44.305 -71.065</desc>
+</wpt>
+<wpt lat="44.075" lon="-71.794">
+  <name>WILW</name>
+  <desc>WILW/Wildwood  NF PH:/603.528.8721 mid may-mid oct  SITES:26  AMEN:NH ND VT NS NR approx 6.2 mi NW of North Woodstock 44.075 -71.794</desc>
+</wpt>
+<wpt lat="44.265" lon="-71.501">
+  <name>ZEAL</name>
+  <desc>ZEAL/Zealand  NF PH:/603.528.8721 mid may-mid oct  SITES:11  AMEN:NH ND VT NS NR approx 2.1 mi E of Twin Mountain 44.265 -71.501</desc>
+</wpt>
+<wpt lat="40.162" lon="-74.131">
+  <name>ALLA</name>
+  <desc>ALLA/Allaire State Park  SP PH:732.938.2371 all year  SITES:45  AMEN:NH DP 40ft FT DW SH RS approx 3.1 mi SE of Farmingdale 40.162 -74.131</desc>
+</wpt>
+<wpt lat="39.743" lon="-74.734">
+  <name>ATSI</name>
+  <desc>ATSI/Atsion - Wharton State Forest  SF PH:609.268.0444   SITES:50  AMEN:RS approx 2.4 mi S  of Shamong 39.743 -74.734</desc>
+</wpt>
+<wpt lat="39.624" lon="-74.434">
+  <name>BASS</name>
+  <desc>BASS/Bass River State Forest  SF PH:609.296.1114   SITES:175  AMEN:NH DP DW SH RS approx 5.2 mi W of Tuckerton 39.624 -74.434</desc>
+</wpt>
+<wpt lat="39.243" lon="-74.849">
+  <name>BELL</name>
+  <desc>BELL/Belleplain State Forest  SF PH:609.861.2404   SITES:170  AMEN:NH DP DW SH RS approx 1.8 mi W of Woodbine 39.243 -74.849</desc>
+</wpt>
+<wpt lat="39.37" lon="-74.558">
+  <name>BIRC</name>
+  <desc>BIRC/Birch Grove  CP PH:609.641.3778   SITES:45  AMEN:E DP DW SH approx 0.4 mi W of Northfield 39.37 -74.558</desc>
+</wpt>
+<wpt lat="39.872" lon="-74.522">
+  <name>BREN</name>
+  <desc>BREN/Brendan Byrne State Forest  SF PH:609.726.1191   SITES:72  AMEN:NH 50ft FT DW SH RS approx 12.7 mi E of Vincentown 39.872 -74.522</desc>
+</wpt>
+<wpt lat="40.41" lon="-75.038">
+  <name>BULL</name>
+  <desc>BULL/Bulls Island State Park  SP PH:609.397.2949 early apr-late oct  SITES:70  AMEN:NH SH RS approx 3.1 mi W of Stockton 40.41 -75.038</desc>
+</wpt>
+<wpt lat="40.446" lon="-74.266">
+  <name>CHEE</name>
+  <desc>CHEE/Cheesequake State Park  SP PH:732.566.2161 early apr-late oct  SITES:50  AMEN:NH DP DW SH RS approx 2.6 mi SE of South Amboy 40.446 -74.266</desc>
+</wpt>
+<wpt lat="40.264" lon="-74.157">
+  <name>EARL</name>
+  <desc>EARL/Earle RV Military  MIL PH:732.866.2448  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 1.8 mi SE of Colts Neck 40.264 -74.157</desc>
+</wpt>
+<wpt lat="39.69" lon="-74.547">
+  <name>GODF</name>
+  <desc>GODF/Godfrey Bridge - Wharton State Forest  SF PH:609.561.0024   SITES:50  AMEN:RS approx 8.8 mi S  of Chatsworth 39.69 -74.547</desc>
+</wpt>
+<wpt lat="41.291" lon="-74.689">
+  <name>HIGH</name>
+  <desc>HIGH/High Point State Park - Sawmill Area  SP PH:973.875.4800 early apr-late oct COMM:highest point in NJ - some walk-to sites SITES:50  AMEN:NH ND FT DW NS RS approx 7.0 mi NW of Sussex 41.291 -74.689</desc>
+</wpt>
+<wpt lat="40.917" lon="-74.915">
+  <name>JENN</name>
+  <desc>JENN/Jenny Jump State Forest  SF PH:908.459.4366   SITES:20  AMEN:NH DW SH RS approx 5.1 mi SE of Blairstown 40.917 -74.915</desc>
+</wpt>
+<wpt lat="41.002" lon="-74.59">
+  <name>MAHL</name>
+  <desc>MAHL/Mahlon Dickerson Reservation  CP PH:973.697.3140   SITES:18  AMEN:WE DP DW SH approx 4.0 mi N of Lake Hopatcong 41.002 -74.59</desc>
+</wpt>
+<wpt lat="41.027" lon="-75.0">
+  <name>MOHI</name>
+  <desc>MOHI/Mohican Walk-In Campsites  AMC PH:603.466.2727  COMM:rustic-short walk in-better get reservations SITES:7  AMEN:NH SH RS approx 3.7 mi NW of Blairstown 41.027 -75</desc>
+</wpt>
+<wpt lat="41.227" lon="-74.762">
+  <name>OCQU</name>
+  <desc>OCQU/Ocquittunk - Stokes State Forest  SF PH:973.948.3820   SITES:25  AMEN:RS approx 5.6 mi N  of Branchville 41.227 -74.762</desc>
+</wpt>
+<wpt lat="39.509" lon="-75.139">
+  <name>PARV</name>
+  <desc>PARV/Parvin State Park  SP PH:856.358.8616 early apr-late oct  SITES:55  AMEN:NH DP DW SH RS approx 2.1 mi S  of Pittsgrove Twp. 39.509 -75.139</desc>
+</wpt>
+<wpt lat="40.001" lon="-74.552">
+  <name>RANG</name>
+  <desc>RANG/Range 14 Camp Military - Ft Dix  MIL PH:609.562.6667  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 2.5 mi NE of Browns Mills 40.001 -74.552</desc>
+</wpt>
+<wpt lat="40.45" lon="-73.991">
+  <name>SANH</name>
+  <desc>SANH/Sandy Hook - Gateway National Rec Area  NP PH:718.354.4655  COMM:ferry during peak season - tents only - no showers SITES:20  AMEN:NH ND FT DW NS RS approx 3.2 mi N of Highlands 40.45 -73.991</desc>
+</wpt>
+<wpt lat="41.198" lon="-74.795">
+  <name>SHOT</name>
+  <desc>SHOT/Shotwell - Stokes State Forest  SF PH:973.948.3820   SITES:25  AMEN:RS approx 1.2 mi SE of Sandyston 41.198 -74.795</desc>
+</wpt>
+<wpt lat="40.663" lon="-74.939">
+  <name>SPRU</name>
+  <desc>SPRU/Spruce Run Recreation Area  SP PH:908.638.8572 early apr-late oct  SITES:65  AMEN:NH 35ft RS approx 4.3 mi NW of Clinton 40.663 -74.939</desc>
+</wpt>
+<wpt lat="40.872" lon="-74.81">
+  <name>STEP</name>
+  <desc>STEP/Stephens State Park  SP PH:908.852.3790 early apr-late oct  SITES:40  AMEN:NH 40ft RS approx 1.6 mi NE of Hackettstown 40.872 -74.81</desc>
+</wpt>
+<wpt lat="41.076" lon="-74.82">
+  <name>SWAR</name>
+  <desc>SWAR/Swartswood State Park  SP PH:973.383.5230 early apr-late oct  SITES:65  AMEN:NH DP DW SH RS approx 3.7 mi W of Newton 41.076 -74.82</desc>
+</wpt>
+<wpt lat="40.197" lon="-74.298">
+  <name>TURK</name>
+  <desc>TURK/Turkey Swamp  CP PH:732.462.7286   SITES:60  AMEN:E DP 40ft DW SH approx 2.5 mi S  of Freehold 40.197 -74.298</desc>
+</wpt>
+<wpt lat="40.696" lon="-74.887">
+  <name>VOOR</name>
+  <desc>VOOR/Voorhees State Park  SP PH:908.638.6969 early apr-late oct  SITES:45  AMEN:NH DP DW SH RS approx 2.8 mi E of Glen Gardner 40.696 -74.887</desc>
+</wpt>
+<wpt lat="40.011" lon="-74.611">
+  <name>WILP</name>
+  <desc>WILP/Willow Pond Camp Military - Ft Dix  MIL PH:609.562.6667  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 1.4 mi S  of Fort Dix 40.011 -74.611</desc>
+</wpt>
+<wpt lat="41.005" lon="-75.104">
+  <name>WORT</name>
+  <desc>WORT/Worthington State Forest  SF PH:908.841.9575   SITES:70  AMEN:NH ND DW SH RS approx 5.5 mi N  of Columbia 41.005 -75.104</desc>
+</wpt>
+<wpt lat="44.568" lon="-73.423">
+  <name>AUSA</name>
+  <desc>AUSA/Ausable Point  - DEC  SPR PH:518.561.7080 mid may-late sep    AMEN:NH DP SH RS PA approx 5.1 mi E of Peru 44.568 -73.423</desc>
+</wpt>
+<wpt lat="42.485" lon="-76.807">
+  <name>BACK</name>
+  <desc>BACK/Backbone Horse Camp  NF PH:607.546.4470 all year COMM:horses or not SITES:11  AMEN:NH ND VT NW NS NR N$ approx 5.0 mi NE of Burdett 42.485 -76.807</desc>
+</wpt>
+<wpt lat="40.762" lon="-73.449">
+  <name>BATT</name>
+  <desc>BATT/Battle Row  CP PH:516.572.8690     AMEN:E DP DW SH approx 0.2 mi E of Old Bethpage 40.762 -73.449</desc>
+</wpt>
+<wpt lat="42.118" lon="-75.069">
+  <name>BEAR</name>
+  <desc>BEAR/Bear Spring Mountain - DEC  SPR PH:607.865.6989 mid may-late aug   EL:1912 AMEN:NH DP DW SH RS PA approx 4.7 mi SE of Walton 42.118 -75.069</desc>
+</wpt>
+<wpt lat="41.229" lon="-74.07">
+  <name>BEVP</name>
+  <desc>BEVP/Beaver Pond - Harriman State Park  SP PH:845.947.2792 early may-late sep    AMEN:NH DP 35ft DW SH RS approx 4.3 mi W of Stony Point 41.229 -74.07</desc>
+</wpt>
+<wpt lat="41.979" lon="-74.839">
+  <name>BEVK</name>
+  <desc>BEVK/Beaverkill - DEC  SPR PH:845.439.4281 mid may-late aug    AMEN:NH DP FT DW SH RS PA approx 4.9 mi NE of Roscoe 41.979 -74.839</desc>
+</wpt>
+<wpt lat="41.27" lon="-73.925">
+  <name>BLUE</name>
+  <desc>BLUE/Blue Mountain Reservation  CP PH:914.862.5275     AMEN:WE DW approx 1.4 mi S  of Peekskill 41.27 -73.925</desc>
+</wpt>
+<wpt lat="42.484" lon="-76.799">
+  <name>BLUB</name>
+  <desc>BLUB/Blueberry Patch  NF PH:607.546.4470 mid may-late nov COMM:pick berries SITES:9  AMEN:NH ND VT NW NS NR L$ approx 5.1 mi NE of Burdett 42.484 -76.799</desc>
+</wpt>
+<wpt lat="40.825" lon="-73.222">
+  <name>BLYD</name>
+  <desc>BLYD/Blydenburgh Park  CP PH:631.854.3712     AMEN:NH approx 2.4 mi SW of Smithtown 40.825 -73.222</desc>
+</wpt>
+<wpt lat="42.522" lon="-75.68">
+  <name>BOWM</name>
+  <desc>BOWM/Bowman Lake State Park  SP PH:607.334.2718 mid may-late sep   EL:1712 AMEN:NH DP DW SH RS PA approx 6.9 mi NW of Oxford 42.522 -75.68</desc>
+</wpt>
+<wpt lat="44.505" lon="-74.118">
+  <name>BUCK</name>
+  <desc>BUCK/Buck Pond - DEC  SPR PH:518.891.3449 mid may-late aug   EL:1681 AMEN:NH DP DW SH RS PA approx 5.9 mi NE of Gabriels 44.505 -74.118</desc>
+</wpt>
+<wpt lat="44.163" lon="-76.265">
+  <name>BURN</name>
+  <desc>BURN/Burnham Point State Park  SP PH:315.654.2324 early jun-late aug    AMEN:E DP DW SH RS PA approx 4.2 mi NE of Cape Vincent 44.163 -76.265</desc>
+</wpt>
+<wpt lat="42.416" lon="-76.521">
+  <name>BUTT</name>
+  <desc>BUTT/Buttermilk Falls State Park  SP PH:607.273.5761 all year    AMEN:NH DW SH RS PA approx 2.1 mi SW of Ithaca 42.416 -76.521</desc>
+</wpt>
+<wpt lat="42.037" lon="-78.846">
+  <name>CAIN</name>
+  <desc>CAIN/Cain Hollow (Quaker Area) - Allegany State Park  SP PH:716.354.2182 all year    AMEN:E DP SH RS approx 10.7 mi SW of Salamanca 42.037 -78.846</desc>
+</wpt>
+<wpt lat="43.125" lon="-74.468">
+  <name>CARO</name>
+  <desc>CARO/Caroga Lake - DEC  SPR PH:518.835.4241 mid may-late aug   EL:1506 AMEN:NH DP DW SH RS PA approx 9.6 mi NW of Johnstown 43.125 -74.468</desc>
+</wpt>
+<wpt lat="40.87" lon="-72.943">
+  <name>CATH</name>
+  <desc>CATH/Cathedral Pines County Park  CP PH:631.852.5502     AMEN:WE DW approx 0.9 mi S  of Middle Island 40.87 -72.943</desc>
+</wpt>
+<wpt lat="42.896" lon="-76.753">
+  <name>CAYU</name>
+  <desc>CAYU/Cayuga Lake State Park  SP PH:315.568.5163 early may-late sep    AMEN:E DP 40ft DW SH RS PA approx 2.4 mi SE of Seneca Falls 42.896 -76.753</desc>
+</wpt>
+<wpt lat="44.204" lon="-76.197">
+  <name>CEDP</name>
+  <desc>CEDP/Cedar Point State Park  SP PH:315.654.2522 early may-late sep    AMEN:WES DP DW SH RS PA approx 6.0 mi SW of Clayton 44.204 -76.197</desc>
+</wpt>
+<wpt lat="41.028" lon="-72.226">
+  <name>CEDS</name>
+  <desc>CEDS/Cedar Point Suffolk County Park  CP PH:631.852.7620   SITES:130  AMEN:WES DP approx 5.0 mi NW of East Hampton 41.028 -72.226</desc>
+</wpt>
+<wpt lat="42.215" lon="-75.818">
+  <name>CHEN</name>
+  <desc>CHEN/Chenango Valley State Park  SP PH:607.648.5251 mid may-late sep    AMEN:E DP 50ft DW SH RS PA approx 2.1 mi SE of Chenango Forks 42.215 -75.818</desc>
+</wpt>
+<wpt lat="42.622" lon="-73.41">
+  <name>CHER</name>
+  <desc>CHER/Cherry Plain State Park  SP PH:518.733.5400 mid jun-late sep  SITES:30  AMEN:NH RS PA approx 2.7 mi W of Cherry Plain 42.622 -73.41</desc>
+</wpt>
+<wpt lat="41.461" lon="-73.831">
+  <name>CLAR</name>
+  <desc>CLAR/Clarence Fahnestock State Park  SP PH:845.225.7207 mid may-mid oct    AMEN:NH DW SH RS PA approx 8.1 mi W of Carmel 41.461 -73.831</desc>
+</wpt>
+<wpt lat="42.384" lon="-76.86">
+  <name>CLUT</name>
+  <desc>CLUT/Clute Memorial Park  CP PH:607 535.4438     AMEN:E DP DW SH approx 0.7 mi E of Watkins Glen 42.384 -76.86</desc>
+</wpt>
+<wpt lat="44.892" lon="-75.14">
+  <name>COLE</name>
+  <desc>COLE/Coles Creek State Park  SP PH:315.388.5636 mid may-late aug    AMEN:E RS PA approx 3.6 mi NE of Waddington 44.892 -75.14</desc>
+</wpt>
+<wpt lat="42.3" lon="-75.743">
+  <name>COOK</name>
+  <desc>COOK/Cook County Park  CP PH:607.656.8752 early may-late oct  SITES:40  AMEN:E DP DW SH approx 2.5 mi SE of Greene 42.3 -75.743</desc>
+</wpt>
+<wpt lat="42.121" lon="-73.52">
+  <name>COPA</name>
+  <desc>COPA/Copake Falls - Taconic State Park  SP PH:518.329.3993 all year    AMEN:NH DP DW SH RS PA approx 0.3 mi E of Copake Falls 42.121 -73.52</desc>
+</wpt>
+<wpt lat="44.197" lon="-74.821">
+  <name>CRAN</name>
+  <desc>CRAN/Cranberry Lake  - DEC  SPR PH:315.848.2315 mid may-mid oct   EL:1605 AMEN:NH DP DW SH RS PA approx 1.9 mi SE of Cranberry Lake 44.197 -74.821</desc>
+</wpt>
+<wpt lat="41.178" lon="-73.896">
+  <name>CROT</name>
+  <desc>CROT/Croton Point Park  CP      AMEN:E approx 2.1 mi S  of Croton-on-Huds 41.178 -73.896</desc>
+</wpt>
+<wpt lat="44.025" lon="-73.425">
+  <name>CROW</name>
+  <desc>CROW/Crown Point - DEC  SPR PH:518.597.3603 mid may-late sep    AMEN:NH DP DW SH RS PA approx 5.2 mi N of Crown Point 44.025 -73.425</desc>
+</wpt>
+<wpt lat="44.725" lon="-73.426">
+  <name>CUMB</name>
+  <desc>CUMB/Cumberland Bay State Park  SP PH:518.563.5240 mid may-late sep    AMEN:E DP 50ft DW SH RS PA approx 2.2 mi NE of Plattsburg 44.725 -73.426</desc>
+</wpt>
+<wpt lat="40.771" lon="-72.738">
+  <name>CUPS</name>
+  <desc>CUPS/Cupsogue County Park  CP PH:631.852.8111  COMM:unknown facilities - beach roadside camping   AMEN:NH DW SH approx 5.3 mi SW of Westhampton 40.771 -72.738</desc>
+</wpt>
+<wpt lat="42.902" lon="-78.433">
+  <name>DARI</name>
+  <desc>DARI/Darien Lakes State Park  SP PH:716.547.9242 mid may-mid sep    AMEN:E DP 40ft DW SH RS PA approx 2.3 mi W of Darien Center 42.902 -78.433</desc>
+</wpt>
+<wpt lat="43.292" lon="-75.417">
+  <name>DELT</name>
+  <desc>DELT/Delta Lake State Park  SP PH:315.337.4670 mid may-late sep    AMEN:NH DP DW SH RS PA approx 5.8 mi N of Rome 43.292 -75.417</desc>
+</wpt>
+<wpt lat="42.151" lon="-74.208">
+  <name>DEVI</name>
+  <desc>DEVI/Devils Tombstone - DEC  SPR PH:845.688.7160 mid may-late sep   EL:1920 AMEN:NH RS PA approx 3.2 mi NE of Lanesville 42.151 -74.208</desc>
+</wpt>
+<wpt lat="44.33" lon="-75.997">
+  <name>DEWO</name>
+  <desc>DEWO/DeWolf Point State Park  SP PH:315.482.2012 early jul-late aug    AMEN:NH RS PA approx 3.1 mi N of Fineview 44.33 -75.997</desc>
+</wpt>
+<wpt lat="43.748" lon="-73.793">
+  <name>EAGL</name>
+  <desc>EAGL/Eagle Point - DEC  SPR PH:518.494.2220 mid may-late aug    AMEN:NH DP DW SH RS PA approx 1.7 mi NE of Pottersville 43.748 -73.793</desc>
+</wpt>
+<wpt lat="42.327" lon="-75.223">
+  <name>EAST</name>
+  <desc>EAST/East Sidney Dam Rec Area  CP PH:607.829.6433  COMM:unknown facilities   AMEN:NH approx 8.7 mi E of Sidney 42.327 -75.223</desc>
+</wpt>
+<wpt lat="44.63" lon="-75.477">
+  <name>EELW</name>
+  <desc>EELW/Eel Weir State Park  SP PH:315.393.1138 early jun-late aug    AMEN:NH DW SH RS PA approx 4.5 mi S  of Ogdensburg 44.63 -75.477</desc>
+</wpt>
+<wpt lat="43.763" lon="-74.712">
+  <name>EIGH</name>
+  <desc>EIGH/Eighth Lake - DEC  SPR PH:315.354.4120 mid may-late sep   EL:1791 AMEN:NH DP DW SH RS PA approx 4.1 mi E of Inlet 43.763 -74.712</desc>
+</wpt>
+<wpt lat="42.602" lon="-79.115">
+  <name>EVAN</name>
+  <desc>EVAN/Evangola State Park  SP PH:716.549.1802 mid apr-mid oct    AMEN:E DP DW SH RS PA approx 2.4 mi N  of Irving 42.602 -79.115</desc>
+</wpt>
+<wpt lat="43.343" lon="-76.689">
+  <name>FAIR</name>
+  <desc>FAIR/Fair Haven Beach State Park  SP PH:315.947.5205 all year    AMEN:E DP RS PA approx 1.9 mi N of Fair Haven 43.343 -76.689</desc>
+</wpt>
+<wpt lat="42.7" lon="-76.42">
+  <name>FILL</name>
+  <desc>FILL/Fillmore Glen State Park  SP PH:315.497.0130 early may-late sep    AMEN:E DP 50ft DW SH RS PA approx 0.9 mi S  of Moravia 42.7 -76.42</desc>
+</wpt>
+<wpt lat="44.308" lon="-74.365">
+  <name>FISH</name>
+  <desc>FISH/Fish Creek Pond - DEC  SPR PH:518.891.4560 mid may-mid oct   EL:1582 AMEN:NH DP DW SH RS PA approx 7.6 mi NE of Tupper Lake 44.308 -74.365</desc>
+</wpt>
+<wpt lat="40.582" lon="-73.889">
+  <name>FLOB</name>
+  <desc>FLOB/Floyd Bennett Field - Gateway National Rec Area  NP PH:718.354.4655  COMM:Brooklyn - has bus service - tents &amp; RVs - showers $10. SITES:38  AMEN:NH ND FT DW SH RS approx 5.7 mi SE of Brooklyn 40.582 -73.889</desc>
+</wpt>
+<wpt lat="43.905" lon="-74.525">
+  <name>FORK</name>
+  <desc>FORK/Forked Lake - DEC  SPR PH:518.624.6646 mid may-late aug   EL:1752 AMEN:NH RS PA approx 7.0 mi SW of Long Lake 43.905 -74.525</desc>
+</wpt>
+<wpt lat="40.605" lon="-74.059">
+  <name>FORW</name>
+  <desc>FORW/Fort Wadsworth - Gateway National Rec Area  NP PH:718.354.4655  COMM:Staten Island - has bus service - tents only - cold showers SITES:7  AMEN:NH ND FT DW SH RS approx 5.1 mi E of Staten Island 40.605 -74.059</desc>
+</wpt>
+<wpt lat="43.274" lon="-78.995">
+  <name>FOUR</name>
+  <desc>FOUR/Four Mile Creek State Park  SP PH:716.745.3802 early apr-mid oct    AMEN:E RS PA approx 3.3 mi NE of Youngstown 43.274 -78.995</desc>
+</wpt>
+<wpt lat="42.573" lon="-75.128">
+  <name>GILB</name>
+  <desc>GILB/Gilbert Lake State Park  SP PH:607.432.2114 mid may-late sep   EL:1553 AMEN:E DP 50ft DW SH RS PA approx 3.5 mi NW of Laurens 42.573 -75.128</desc>
+</wpt>
+<wpt lat="42.794" lon="-74.869">
+  <name>GLIM</name>
+  <desc>GLIM/Glimmerglass State Park  SP PH:607.547.8662 all year    AMEN:NH DP DW SH RS PA approx 7.0 mi NE of Cooperstown 42.794 -74.869</desc>
+</wpt>
+<wpt lat="43.817" lon="-74.592">
+  <name>GOLB</name>
+  <desc>GOLB/Golden Beach - DEC  SPR PH:315.354.4230 mid may-late aug   EL:1800 AMEN:NH DP DW SH RS PA approx 26.5 mi N  of Piseco 43.817 -74.592</desc>
+</wpt>
+<wpt lat="43.374" lon="-78.483">
+  <name>GOLH</name>
+  <desc>GOLH/Golden Hill State Park  SP PH:716.795.3885 all year    AMEN:E DP DW SH RS PA approx 4.7 mi NE of Barker 43.374 -78.483</desc>
+</wpt>
+<wpt lat="44.279" lon="-75.995">
+  <name>GRAS</name>
+  <desc>GRAS/Grass Point State Park  SP PH:315.686.4472 all year    AMEN:E DP 40ft DW SH RS PA approx 5.5 mi SW of Alexandria Bay 44.279 -75.995</desc>
+</wpt>
+<wpt lat="43.056" lon="-76.005">
+  <name>GREE</name>
+  <desc>GREE/Green Lakes State Park  SP PH:315.637.6111 all year    AMEN:E DP 50ft DW SH RS PA approx 1.8 mi N  of Fayetteville 43.056 -76.005</desc>
+</wpt>
+<wpt lat="42.288" lon="-76.086">
+  <name>GREW</name>
+  <desc>GREW/Greenwood County Park  CP    SITES:50  AMEN:E DP DW SH approx 15.7 mi NW of Binghamton 42.288 -76.086</desc>
+</wpt>
+<wpt lat="43.36" lon="-77.946">
+  <name>HAML</name>
+  <desc>HAML/Hamlin Beach State Park  SP PH:716.964.2462 mid may-late sep    AMEN:E DP DW SH RS PA approx 4.2 mi N  of Hamlin 43.36 -77.946</desc>
+</wpt>
+<wpt lat="42.337" lon="-76.831">
+  <name>HAVA</name>
+  <desc>HAVA/Havana Glen  CP PH:607.535.9476   SITES:25 approx 1.0 mi SE of Montour Falls 42.337 -76.831</desc>
+</wpt>
+<wpt lat="43.455" lon="-73.694">
+  <name>HEAR</name>
+  <desc>HEAR/Hearthstone Point - DEC  SPR PH:518.668.5193 mid may-late aug    AMEN:NH DP DW SH RS PA approx 8.6 mi N  of Lake George Vi 43.455 -73.694</desc>
+</wpt>
+<wpt lat="42.091" lon="-76.226">
+  <name>HICK</name>
+  <desc>HICK/Hickories Park  CP PH:631.854.4949     AMEN:E DP 40ft DW SH approx 2.0 mi SE of Owego 42.091 -76.226</desc>
+</wpt>
+<wpt lat="44.496" lon="-74.922">
+  <name>HIGL</name>
+  <desc>HIGL/Higley Flow State Park  SP PH:315.262.2880 mid may-late aug    AMEN:E DP DW SH RS PA approx 4.0 mi S  of Colton 44.496 -74.922</desc>
+</wpt>
+<wpt lat="41.008" lon="-72.016">
+  <name>HITH</name>
+  <desc>HITH/Hither Hills State Park  SP PH:631.668.2554 all year    AMEN:NH DP DW SH RS approx 3.7 mi SW of Montauk 41.008 -72.016</desc>
+</wpt>
+<wpt lat="42.595" lon="-75.373">
+  <name>HUNT</name>
+  <desc>HUNT/Hunts Pond  SP PH:607.674.4017     AMEN:NH ND NS NR approx 2.9 mi SW of New Berlin 42.595 -75.373</desc>
+</wpt>
+<wpt lat="40.927" lon="-72.629">
+  <name>INDI</name>
+  <desc>INDI/Indian Island Park  CP PH:631.852.3232     AMEN:NH DP approx 1.9 mi E of Riverhead 40.927 -72.629</desc>
+</wpt>
+<wpt lat="44.559" lon="-75.677">
+  <name>JACQ</name>
+  <desc>JACQ/Jacques Cartier State Park  SP PH:315.375.6371 mid may-mid sep    AMEN:E DP DW SH RS PA approx 2.3 mi SW of Morristown 44.559 -75.677</desc>
+</wpt>
+<wpt lat="42.342" lon="-77.722">
+  <name>KANA</name>
+  <desc>KANA/Kanakadea Park - Almond Lake  CP PH:607.664.2460     AMEN:E DP approx 3.3 mi W of Hornell 42.342 -77.722</desc>
+</wpt>
+<wpt lat="44.324" lon="-75.93">
+  <name>KEEW</name>
+  <desc>KEEW/Keewaydin State Park  SP PH:315.482.3331 early jun-late aug    AMEN:NH DW SH RS PA approx 1.0 mi SW of Alexandria Bay 44.324 -75.93</desc>
+</wpt>
+<wpt lat="42.027" lon="-74.221">
+  <name>KENN</name>
+  <desc>KENN/Kenneth L. Wilson - DEC  SPR PH:845.679.7020 mid may-late sep  SITES:76  AMEN:NH SH RS PA approx 3.1 mi SE of Mt.Tremper 42.027 -74.221</desc>
+</wpt>
+<wpt lat="42.583" lon="-77.13">
+  <name>KEUK</name>
+  <desc>KEUK/Keuka Lake State Park  SP PH:315.536.3666 early may-mid oct    AMEN:E DP DW SH RS PA approx 2.5 mi SW of Bluff Point 42.583 -77.13</desc>
+</wpt>
+<wpt lat="44.377" lon="-75.855">
+  <name>KRIN</name>
+  <desc>KRIN/Kring Point State Park  SP PH:315.482.2444 early may-late sep    AMEN:E DP DW SH RS PA approx 5.9 mi NW of Redwood 44.377 -75.855</desc>
+</wpt>
+<wpt lat="43.838" lon="-74.389">
+  <name>LAKD</name>
+  <desc>LAKD/Lake Durant - DEC  SPR PH:518.352.7797 mid may-late sep   EL:1779 AMEN:NH DP SH RS PA approx 7.3 mi NW of Indian Lake 43.838 -74.389</desc>
+</wpt>
+<wpt lat="43.988" lon="-74.463">
+  <name>LAKE</name>
+  <desc>LAKE/Lake Eaton - DEC  SPR PH:518.624.2641 mid may-late aug   EL:1731 AMEN:NH DP DW SH RS PA approx 2.4 mi NW of Long Lake 43.988 -74.463</desc>
+</wpt>
+<wpt lat="42.421" lon="-79.429">
+  <name>LAKR</name>
+  <desc>LAKR/Lake Erie State Park  SP PH:716.792.9214 all year    AMEN:E DP 50ft DW SH RS PA approx 2.3 mi N of Brocton 42.421 -79.429</desc>
+</wpt>
+<wpt lat="43.414" lon="-73.712">
+  <name>LAKG</name>
+  <desc>LAKG/Lake George Battleground - DEC  SPR PH:518.668.3348 mid may-late sep    AMEN:NH DP DW SH RS PA approx 6.1 mi N  of Lake George Vi 43.414 -73.712</desc>
+</wpt>
+<wpt lat="43.979" lon="-74.13">
+  <name>LAKH</name>
+  <desc>LAKH/Lake Harris - DEC  SPR PH:518.582.2503 mid may-late aug   EL:1592 AMEN:NH DP DW SH RS PA approx 1.8 mi E of Newcomb 43.979 -74.13</desc>
+</wpt>
+<wpt lat="42.094" lon="-73.708">
+  <name>LAKT</name>
+  <desc>LAKT/Lake Taghkanic State Park  SP PH:518.851.3631 all year    AMEN:NH DP RS PA approx 4.7 mi NW of Ancram 42.094 -73.708</desc>
+</wpt>
+<wpt lat="43.366" lon="-78.244">
+  <name>LAKB</name>
+  <desc>LAKB/Lakeside Beach State Park  SP PH:585.682.4888 mid may-late sep    AMEN:E DP DW SH RS PA approx 3.4 mi N of Waterport 43.366 -78.244</desc>
+</wpt>
+<wpt lat="42.584" lon="-78.045">
+  <name>LETC</name>
+  <desc>LETC/Letchworth State Park  SP PH:585.493.3600 all year    AMEN:E DP DW SH RS PA approx 3.1 mi S  of Castile 42.584 -78.045</desc>
+</wpt>
+<wpt lat="43.651" lon="-74.394">
+  <name>LEWE</name>
+  <desc>LEWE/Lewey Lake - DEC  SPR PH:518.648.5266 mid may-late sep   EL:1672 AMEN:NH DP DW SH RS PA approx 11.1 mi SW of Indian Lake 43.651 -74.394</desc>
+</wpt>
+<wpt lat="43.718" lon="-74.796">
+  <name>LIME</name>
+  <desc>LIME/Limekiln Lake - DEC  SPR PH:315.357.4401 mid may-late aug   EL:1953 AMEN:NH DP DW SH RS PA approx 2.5 mi S  of Inlet 43.718 -74.796</desc>
+</wpt>
+<wpt lat="44.139" lon="-73.579">
+  <name>LINC</name>
+  <desc>LINC/Lincoln Pond - DEC  SPR PH:518.942.5292 mid may-late aug    AMEN:NH DP DW SH RS PA approx 2.3 mi SE of New Russia 44.139 -73.579</desc>
+</wpt>
+<wpt lat="42.036" lon="-74.735">
+  <name>LITP</name>
+  <desc>LITP/Little Pond - DEC  SPR PH:845.439.5480 mid may-late sep   EL:1971 AMEN:NH DP DW SH RS PA approx 9.0 mi SW of Margaretville 42.036 -74.735</desc>
+</wpt>
+<wpt lat="43.417" lon="-74.551">
+  <name>LITS</name>
+  <desc>LITS/Little Sand Point - DEC  SPR PH:518.548.7585 mid may-late aug   EL:1683 AMEN:NH DP RS PA approx 2.3 mi SW of Piseco 43.417 -74.551</desc>
+</wpt>
+<wpt lat="44.026" lon="-76.221">
+  <name>LONG</name>
+  <desc>LONG/Long Point State Park  SP PH:315.649.5258 mid may-late aug    AMEN:E DP DW SH RS PA approx 4.0 mi S  of Three Mile Bay 44.026 -76.221</desc>
+</wpt>
+<wpt lat="43.361" lon="-73.826">
+  <name>LUZE</name>
+  <desc>LUZE/Luzerne - DEC  SPR PH:518.696.2031 mid may-late aug    AMEN:NH DP DW SH RS PA approx 3.4 mi N of Lake Luzerne 43.361 -73.826</desc>
+</wpt>
+<wpt lat="44.616" lon="-73.616">
+  <name>MACO</name>
+  <desc>MACO/Macomb Reservation State Park  SP PH:518.643.9952 early jun-late sep    AMEN:E DP DW SH RS PA approx 3.0 mi W of Schuyler Falls 44.616 -73.616</desc>
+</wpt>
+<wpt lat="41.84" lon="-73.932">
+  <name>MARG</name>
+  <desc>MARG/Margaret Norrie State Park  SP PH:845.889.4646 early may-mid oct    AMEN:NH 40ft RS PA approx 0.7 mi S  of Staatsburg 41.84 -73.932</desc>
+</wpt>
+<wpt lat="42.547" lon="-74.411">
+  <name>MAX</name>
+  <desc>MAX/Max V Shaul State Park  SP PH:518.827.4711 early jul-late aug    AMEN:NH DW SH RS PA approx 1.7 mi SW of Fultonham 42.547 -74.411</desc>
+</wpt>
+<wpt lat="41.104" lon="-72.373">
+  <name>MCCA</name>
+  <desc>MCCA/McCanns Campground  CP PH:631.477.0043     AMEN:E DP DW SH approx 0.7 mi W of Greenport 41.104 -72.373</desc>
+</wpt>
+<wpt lat="44.578" lon="-74.287">
+  <name>MEAC</name>
+  <desc>MEAC/Meacham Lake - DEC  SPR PH:518.483.5116 mid may-late sep   EL:1555 AMEN:NH DP DW SH RS PA approx 18.7 mi S  of Malone 44.578 -74.287</desc>
+</wpt>
+<wpt lat="44.299" lon="-74.077">
+  <name>MEAD</name>
+  <desc>MEAD/Meadowbrook - DEC  SPR PH:518.891.4351 mid may-late aug   EL:1588 AMEN:NH DP DW SH RS PA  44.299 -74.077</desc>
+</wpt>
+<wpt lat="43.493" lon="-74.399">
+  <name>MOFF</name>
+  <desc>MOFF/Moffitt Beach - DEC  SPR PH:518.548.7102 mid may-late sep   EL:1757 AMEN:NH DP DW SH RS PA approx 1.9 mi W of Speculator 43.493 -74.399</desc>
+</wpt>
+<wpt lat="41.957" lon="-74.691">
+  <name>MONG</name>
+  <desc>MONG/Mongaup Pond - DEC  SPR PH:845.439.4233 mid may-late sep   EL:2155 AMEN:NH DP DW SH RS PA approx 3.5 mi NE of DeBruce 41.957 -74.691</desc>
+</wpt>
+<wpt lat="42.354" lon="-76.852">
+  <name>MONT</name>
+  <desc>MONT/Montour Marina  CP PH:607/535.9397   SITES:85  AMEN:E DP DW SH approx 0.6 mi NW of Montour Falls 42.354 -76.852</desc>
+</wpt>
+<wpt lat="43.227" lon="-73.707">
+  <name>MORE</name>
+  <desc>MORE/Moreau Lake State Park  SP PH:518.793.0511 early jun-mid oct    AMEN:NH DP 40ft DW SH RS PA approx 3.5 mi NW of Gansevoort 43.227 -73.707</desc>
+</wpt>
+<wpt lat="41.748" lon="-74.652">
+  <name>MORN</name>
+  <desc>MORN/Morningside Park  CP PH:845.434.5877     AMEN:E DP DW SH approx 2.1 mi NW of South Fallsburg 41.748 -74.652</desc>
+</wpt>
+<wpt lat="41.309" lon="-73.569">
+  <name>MOUL</name>
+  <desc>MOUL/Mountain Lakes Park  CP PH:914.864.7312  COMM:lean tos and yurts only  approx 1.8 mi S  of North Salem 41.309 -73.569</desc>
+</wpt>
+<wpt lat="41.699" lon="-74.518">
+  <name>MOUN</name>
+  <desc>MOUN/Mountaindale Park  CP PH:845.434.7337     AMEN:E DP DW SH approx 0.9 mi NE of Mountain Dale 41.699 -74.518</desc>
+</wpt>
+<wpt lat="42.044" lon="-76.734">
+  <name>NEWT</name>
+  <desc>NEWT/Newtown Battlefield State Park  SP PH:607. 732.6067 all year    AMEN:E DP 40ft DW SH RS approx 4.9 mi SE of Elmira 42.044 -76.734</desc>
+</wpt>
+<wpt lat="43.688" lon="-74.982">
+  <name>NICK</name>
+  <desc>NICK/Nicks Lake - DEC  SPR PH:315.369.3314 mid may-late sep   EL:1753 AMEN:NH DP SH RS PA approx 9.4 mi S  of Webb 43.688 -74.982</desc>
+</wpt>
+<wpt lat="42.203" lon="-74.037">
+  <name>NORS</name>
+  <desc>NORS/North/South Lake  - DEC  SPR PH:518.589.5058 early may-mid oct   EL:2179 AMEN:NH DP SH RS PA approx 3.2 mi E of Haines Falls 42.203 -74.037</desc>
+</wpt>
+<wpt lat="43.187" lon="-74.18">
+  <name>NORT</name>
+  <desc>NORT/Northampton Beach - DEC  SPR PH:518.863.6000 early may-late sep    AMEN:NH DP DW SH RS PA approx 2.7 mi S  of Northville 43.187 -74.18</desc>
+</wpt>
+<wpt lat="43.218" lon="-76.109">
+  <name>ONEI</name>
+  <desc>ONEI/Oneida Shores County Park  CP PH:315.676.7366   SITES:50  AMEN:WE DP DW SH RS approx 2.1 mi SE of Brewereton 43.218 -76.109</desc>
+</wpt>
+<wpt lat="42.71" lon="-77.407">
+  <name>ONTA</name>
+  <desc>ONTA/Ontario County Park - Gannet Hill  CP PH:585.374.6250 mid may-mid oct COMM:unknown facilities  EL:2256 AMEN:E RS approx 6.5 mi N  of Naples 42.71 -77.407</desc>
+</wpt>
+<wpt lat="42.181" lon="-75.418">
+  <name>OQUA</name>
+  <desc>OQUA/Oquaga Creek State Park  SP PH:607.467.4160 all year   EL:1658 AMEN:NH DP DW SH RS PA approx 8.4 mi S  of Bainbridge 42.181 -75.418</desc>
+</wpt>
+<wpt lat="43.885" lon="-73.679">
+  <name>PARA</name>
+  <desc>PARA/Paradox Lake - DEC  SPR PH:518.532.7451 mid may-late sep    AMEN:NH DP DW SH RS PA approx 1.7 mi W of Paradox 43.885 -73.679</desc>
+</wpt>
+<wpt lat="42.232" lon="-76.667">
+  <name>PARK</name>
+  <desc>PARK/Park Station Rec Area  CP PH:607.737.2843     AMEN:E DP DW SH approx 3.2 mi N of Erin 42.232 -76.667</desc>
+</wpt>
+<wpt lat="43.403" lon="-75.344">
+  <name>PIXL</name>
+  <desc>PIXL/Pixley Falls State Park  SP PH:315.942.4713     AMEN:NH NR approx 5.6 mi S  of Boonville 43.403 -75.344</desc>
+</wpt>
+<wpt lat="43.399" lon="-74.582">
+  <name>POIN</name>
+  <desc>POIN/Point Comfort - DEC  SPR PH:518.548.7586 mid may-late aug   EL:1689 AMEN:NH RS PA approx 4.3 mi SW of Piseco 43.399 -74.582</desc>
+</wpt>
+<wpt lat="44.404" lon="-73.503">
+  <name>POKE</name>
+  <desc>POKE/Poke-O-Moonshine - DEC  SPR PH:518.834.9045     AMEN:NH DW SH NR approx 41.1 mi N of Schroon Lake 44.404 -73.503</desc>
+</wpt>
+<wpt lat="43.428" lon="-74.54">
+  <name>POPL</name>
+  <desc>POPL/Poplar Point - DEC  SPR PH:518.548.8031 mid may-late aug   EL:1682 AMEN:NH RS PA approx 1.4 mi SW of Piseco 43.428 -74.54</desc>
+</wpt>
+<wpt lat="43.838" lon="-73.571">
+  <name>PUTN</name>
+  <desc>PUTN/Putnam Pond - DEC  SPR PH:518.585.7280 mid may-late aug    AMEN:NH DP DW SH RS PA approx 7.4 mi W of Ticonderoga 43.838 -73.571</desc>
+</wpt>
+<wpt lat="42.097" lon="-78.747">
+  <name>REDH</name>
+  <desc>REDH/Red House - Allegany State Park  SP PH:716.354.9121 all year    AMEN:E DP SH RS approx 4.5 mi S  of Salamanca 42.097 -78.747</desc>
+</wpt>
+<wpt lat="44.035" lon="-75.75">
+  <name>REMI</name>
+  <desc>REMI/Remington Park RV  Military - Fort Drum  MIL PH:315.773.7777  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 0.6 mi SE of Fort Drum 44.035 -75.75</desc>
+</wpt>
+<wpt lat="42.398" lon="-76.546">
+  <name>ROBH</name>
+  <desc>ROBH/Robert H. Treman State Park  SP PH:607.273.3440 all year    AMEN:E DP 45ft SH RS PA approx 3.9 mi SW of Ithaca 42.398 -76.546</desc>
+</wpt>
+<wpt lat="44.986" lon="-74.87">
+  <name>ROBM</name>
+  <desc>ROBM/Robert Moses State Park  SP PH:315.769.8663 mid may-late sep    AMEN:E DP DW SH RS PA approx 4.1 mi N of Massena 44.986 -74.87</desc>
+</wpt>
+<wpt lat="43.789" lon="-73.488">
+  <name>ROGE</name>
+  <desc>ROGE/Rogers Rock - DEC  SPR PH:518.585.6746 mid may-late sep    AMEN:NH DP DW SH RS PA approx 5.3 mi SW of Ticonderoga 43.789 -73.488</desc>
+</wpt>
+<wpt lat="44.307" lon="-74.407">
+  <name>ROLL</name>
+  <desc>ROLL/Rollins Pond - DEC  SPR PH:518.891.3239 mid may-late aug   EL:1591 AMEN:NH DP DW SH RS PA approx 6.4 mi NE of Tupper Lake 44.307 -74.407</desc>
+</wpt>
+<wpt lat="41.378" lon="-74.027">
+  <name>ROUN</name>
+  <desc>ROUN/Round Pond Military  MIL PH:845.938.2503  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 3.9 mi S  of Cornwall 41.378 -74.027</desc>
+</wpt>
+<wpt lat="41.983" lon="-73.508">
+  <name>RUDD</name>
+  <desc>RUDD/Rudd Pond - Taconic State Park  SP PH:518.789.3059 early jun-late aug    AMEN:NH ND DW SH RS PA approx 2.1 mi N of Millerton 41.983 -73.508</desc>
+</wpt>
+<wpt lat="43.36" lon="-74.294">
+  <name>SACA</name>
+  <desc>SACA/Sacandaga - DEC  SPR PH:518.924.4121 mid may-late sep    AMEN:NH DP DW SH RS PA approx 2.5 mi S  of Wells 43.36 -74.294</desc>
+</wpt>
+<wpt lat="42.724" lon="-76.902">
+  <name>SAMP</name>
+  <desc>SAMP/Sampson State Park  SP PH:315.585.6392 mid may-late sep    AMEN:E DP DW SH RS PA approx 4.0 mi SW of Romulus 42.724 -76.902</desc>
+</wpt>
+<wpt lat="40.888" lon="-72.555">
+  <name>SEAR</name>
+  <desc>SEAR/Sears Bellows  CP PH:631.852.8290     AMEN:NH DP approx 2.3 mi NW of Hampton Bays 40.888 -72.555</desc>
+</wpt>
+<wpt lat="43.557" lon="-76.204">
+  <name>SELK</name>
+  <desc>SELK/Selkirk Shores State Park  SP PH:315.298.5737 mid may-mid oct    AMEN:E DP DW SH RS PA approx 3.9 mi W of Pulaski 43.557 -76.204</desc>
+</wpt>
+<wpt lat="44.043" lon="-73.678">
+  <name>SHAR</name>
+  <desc>SHAR/Sharp Bridge - DEC  SPR PH:518.532.7538 mid may-late aug    AMEN:NH DP DW SH RS PA approx 6.8 mi N of North Hudson 44.043 -73.678</desc>
+</wpt>
+<wpt lat="42.519" lon="-79.269">
+  <name>SHER</name>
+  <desc>SHER/Sheridan Bay Park  CP PH:716.366.5831     AMEN:E DP approx 2.7 mi NW of Sheridan 42.519 -79.269</desc>
+</wpt>
+<wpt lat="40.842" lon="-72.472">
+  <name>SHIN</name>
+  <desc>SHIN/Shinnecock East County Park  CP PH:631.852.8899  COMM:beach parking - no facilities - no tents SITES:100  AMEN:NH ND NS approx 5.2 mi SW of Southampton 40.842 -72.472</desc>
+</wpt>
+<wpt lat="42.492" lon="-76.886">
+  <name>SMIT</name>
+  <desc>SMIT/Smith Memorial Park  CP PH:607.546.9911  COMM:swim   AMEN:E DP FT DW SH approx 0.9 mi SW of Hector 42.492 -76.886</desc>
+</wpt>
+<wpt lat="40.803" lon="-72.89">
+  <name>SOUC</name>
+  <desc>SOUC/Southaven County Park  CP PH:631.854.1414     AMEN:NH DP  40.803 -72.89</desc>
+</wpt>
+<wpt lat="40.803" lon="-72.89">
+  <name>SOUH</name>
+  <desc>SOUH/Southhaven County Park  CP PH:631.854.1414   SITES:150  AMEN:NH DP  40.803 -72.89</desc>
+</wpt>
+<wpt lat="43.765" lon="-76.196">
+  <name>SOUT</name>
+  <desc>SOUT/Southwick Beach State Park  SP PH:315.846.5338 mid may-late sep    AMEN:E DP 50ft DW SH RS PA approx 5.7 mi S  of Henderson 43.765 -76.196</desc>
+</wpt>
+<wpt lat="42.592" lon="-78.636">
+  <name>SPRA</name>
+  <desc>SPRA/Sprague Brook Park  CP PH:716.858.8355     AMEN:E DP SH approx 2.2 mi SE of Glenwood 42.592 -78.636</desc>
+</wpt>
+<wpt lat="42.995" lon="-74.678">
+  <name>STJO</name>
+  <desc>STJO/St. Johnsville Campsite and Marina  CP PH:518/568.7406     AMEN:WES DP DW approx 0.3 mi S  of St Johnsville 42.995 -74.678</desc>
+</wpt>
+<wpt lat="42.526" lon="-77.697">
+  <name>STON</name>
+  <desc>STON/Stony Brook State Park  SP PH:585.335.8111 early may-late sep    AMEN:NH DP 30ft DW SH RS PA approx 2.4 mi S  of Dansville 42.526 -77.697</desc>
+</wpt>
+<wpt lat="42.54" lon="-76.607">
+  <name>TAUG</name>
+  <desc>TAUG/Taughannock Falls State Park  SP PH:607.387.6739 all year    AMEN:E DP SH RS PA approx 3.0 mi E of Trumansburg 42.54 -76.607</desc>
+</wpt>
+<wpt lat="44.494" lon="-73.824">
+  <name>TAYL</name>
+  <desc>TAYL/Taylor Pond - DEC  SPR PH:518.647.5250 mid may-late aug    AMEN:NH RS PA approx 8.2 mi NW of Au Sable Forks 44.494 -73.824</desc>
+</wpt>
+<wpt lat="41.056" lon="-71.901">
+  <name>THEO</name>
+  <desc>THEO/Theodore Roosevelt County Park  CP PH:631.852.7879  COMM:no facilities - self contained campers only   AMEN:NH ND NS approx 3.1 mi NE of Montauk 41.056 -71.901</desc>
+</wpt>
+<wpt lat="42.653" lon="-74.046">
+  <name>THOM</name>
+  <desc>THOM/Thompsons Lake State Park  SP PH:518.872.1674 all year    AMEN:NH DP 40ft DW SH RS PA approx 2.9 mi NE of East Berne 42.653 -74.046</desc>
+</wpt>
+<wpt lat="42.398" lon="-75.963">
+  <name>UPPL</name>
+  <desc>UPPL/Upper Lisle  CP PH:607.692.4612     AMEN:NH DP approx 4.8 mi N of Whitney Point 42.398 -75.963</desc>
+</wpt>
+<wpt lat="43.178" lon="-75.725">
+  <name>VERO</name>
+  <desc>VERO/Verona Beach State Park  SP PH:315.762.4463 mid may-late sep    AMEN:NH DP DW SH RS PA approx 0.9 mi S  of Verona Beach 43.178 -75.725</desc>
+</wpt>
+<wpt lat="41.255" lon="-73.584">
+  <name>WARD</name>
+  <desc>WARD/Ward Pound Ridge Reservation  CP PH:914.864.7317  COMM:tents only   AMEN:NH ND NS approx 5.3 mi E of Katonah 41.255 -73.584</desc>
+</wpt>
+<wpt lat="42.37" lon="-76.881">
+  <name>WATK</name>
+  <desc>WATK/Watkins Glen State Park  SP PH:607.535.4511 mid may-mid oct    AMEN:E DP DW SH RS PA approx 0.8 mi SW of Watkins Glen 42.37 -76.881</desc>
+</wpt>
+<wpt lat="43.258" lon="-77.46">
+  <name>WEBS</name>
+  <desc>WEBS/Webster Park  CP PH:585.269.4544  COMM:get res-fills up SITES:45  AMEN:WES DP DW SH RS approx 3.5 mi NW of Webster 43.258 -77.46</desc>
+</wpt>
+<wpt lat="44.316" lon="-76.019">
+  <name>WELL</name>
+  <desc>WELL/Wellesley Island State Park  SP PH:315.482.2722 all year    AMEN:WES DP 40ft DW SH RS PA approx 2.0 mi N  of Fineview 44.316 -76.019</desc>
+</wpt>
+<wpt lat="43.897" lon="-76.114">
+  <name>WEST</name>
+  <desc>WEST/Westcott Beach State Park  SP PH:315.646.2239 mid may-late aug    AMEN:E DP DW SH RS PA approx 4.8 mi NE of Henderson 43.897 -76.114</desc>
+</wpt>
+<wpt lat="43.702" lon="-75.462">
+  <name>WHET</name>
+  <desc>WHET/Whetstone Gulf State Park  SP PH:315.376.6630 early jun-late aug    AMEN:E DP DW SH RS PA approx 6.1 mi S  of Lowville 43.702 -75.462</desc>
+</wpt>
+<wpt lat="41.953" lon="-73.724">
+  <name>WILC</name>
+  <desc>WILC/Wilcox Memorial Park  CP PH:845.758.6100 mid jun-late aug COMM:swim   AMEN:E approx 3.5 mi E of Milan 41.953 -73.724</desc>
+</wpt>
+<wpt lat="40.963" lon="-72.805">
+  <name>WILD</name>
+  <desc>WILD/Wildwood State Park  SP PH:631.929.4314 early jun-late sep    AMEN:WES DP DW SH RS approx 2.1 mi NE of Wading River 40.963 -72.805</desc>
+</wpt>
+<wpt lat="44.35" lon="-73.861">
+  <name>WILM</name>
+  <desc>WILM/Wilmington Notch - DEC  SPR PH:518.946.7172 mid may-late sep    AMEN:NH DP DW SH RS PA approx 3.5 mi SW of Wilmington 44.35 -73.861</desc>
+</wpt>
+<wpt lat="41.537" lon="-74.273">
+  <name>WIND</name>
+  <desc>WIND/Winding Hills Park  CP PH:845.457.4900     AMEN:E DP approx 2.0 mi W of Montgomery 41.537 -74.273</desc>
+</wpt>
+<wpt lat="42.033" lon="-74.37">
+  <name>WOOD</name>
+  <desc>WOOD/Woodland Valley - DEC  SPR PH:845.688.7647 mid may-late sep    AMEN:NH DW SH RS PA approx 4.6 mi SW of Phoenicia 42.033 -74.37</desc>
+</wpt>
+<wpt lat="40.342" lon="-78.78">
+  <name>ADAM</name>
+  <desc>ADAM/Adams Croyle  UTIL PH:814.495.7281    EL:1685approx 2.7 mi S  of Summerhill 40.342 -78.78</desc>
+</wpt>
+<wpt lat="41.036" lon="-77.652">
+  <name>BALD</name>
+  <desc>BALD/Bald Eagle State Park (Letterman Campground)  SP PH:654.655.2725 mid apr-mid dec    AMEN:E DP 40ft SH RS PA approx 1.5 mi N of Howard 41.036 -77.652</desc>
+</wpt>
+<wpt lat="41.525" lon="-79.112">
+  <name>BEAV</name>
+  <desc>BEAV/Beaver Meadows Rec Area  NF PH:814.927.6628/814.723.5150 early jun-mid dec  SITES:51 EL:1751 AMEN:NH ND NS RS L$ approx 3.9 mi N of Marienville 41.525 -79.112</desc>
+</wpt>
+<wpt lat="40.915" lon="-78.059">
+  <name>BLAC</name>
+  <desc>BLAC/Black Moshannon State Park  SP PH:654.242.5665 mid apr-late dec   EL:1901 AMEN:E DP 40ft DW SH RS PA approx 8.6 mi E of Philipsburg 40.915 -78.059</desc>
+</wpt>
+<wpt lat="40.295" lon="-78.579">
+  <name>BLUE</name>
+  <desc>BLUE/Blue Knob State Park  SP PH:854.279.3578 early apr-mid oct   EL:2568 AMEN:E DP 40ft DW SH RS PA approx 6.8 mi NW of Imler 40.295 -78.579</desc>
+</wpt>
+<wpt lat="41.839" lon="-79.257">
+  <name>BUCK</name>
+  <desc>BUCK/Buckaloons Rec Area  NF PH:814.362.4613/814.723.5150 mid may-mid oct  SITES:132  AMEN:E DP DW SH RS approx 5.8 mi W of Warren 41.839 -79.257</desc>
+</wpt>
+<wpt lat="40.441" lon="-79.434">
+  <name>BUSH</name>
+  <desc>BUSH/Bush  COE PH:724. 668.8999     AMEN:E DP SH NR approx 3.3 mi S  of Saltsburg 40.441 -79.434</desc>
+</wpt>
+<wpt lat="41.432" lon="-75.23">
+  <name>CAFF</name>
+  <desc>CAFF/Caffrey Rec Area - PPL  UTIL PH:570.226.4608   SITES:29  AMEN:FT DW SH approx 2.4 mi E of Lakeville 41.432 -75.23</desc>
+</wpt>
+<wpt lat="39.908" lon="-77.477">
+  <name>CALE</name>
+  <desc>CALE/Caledonia State Park  SP PH:717.352.2161 mid apr-mid dec    AMEN:E DP 40ft SH RS PA approx 3.9 mi E of Fayetteville 39.908 -77.477</desc>
+</wpt>
+<wpt lat="40.481" lon="-78.287">
+  <name>CANO</name>
+  <desc>CANO/Canoe Creek State Park  SP PH:814.695.6807     AMEN:NR NP approx 6.5 mi NE of Hollidaysburg 40.481 -78.287</desc>
+</wpt>
+<wpt lat="41.746" lon="-79.178">
+  <name>CHAP</name>
+  <desc>CHAP/Chapman State Park  SP PH:654.722.500 mid apr-mid dec    AMEN:E DP FT DW SH RS PA approx 5.0 mi SW of Clarendon 41.746 -79.178</desc>
+</wpt>
+<wpt lat="41.663" lon="-77.821">
+  <name>CHER</name>
+  <desc>CHER/Cherry Springs State Park  SP PH:654.425.5050 mid apr-mid dec  SITES:30 EL:2297 AMEN:NH DP NR NP approx 12.9 mi SE of Coudersport 41.663 -77.821</desc>
+</wpt>
+<wpt lat="41.322" lon="-79.077">
+  <name>CLEA</name>
+  <desc>CLEA/Clear Creek State Park  SP PH:654.752.2265 early apr-mid dec    AMEN:E DP 40ft DW SH RS NP approx 3.8 mi NE of Sigel 41.322 -79.077</desc>
+</wpt>
+<wpt lat="39.783" lon="-76.908">
+  <name>CODO</name>
+  <desc>CODO/Codorus State Park  SP PH:717.657.2656 mid apr-mid oct    AMEN:E DP DW SH RS PA approx 4.2 mi E of Hanover 39.783 -76.908</desc>
+</wpt>
+<wpt lat="41.679" lon="-80.084">
+  <name>COLC</name>
+  <desc>COLC/Colonel Crawford County Park  CP PH:814.763.4477   SITES:111  AMEN:E DP DW SH approx 4.3 mi NE of Meadville 41.679 -80.084</desc>
+</wpt>
+<wpt lat="40.283" lon="-77.413">
+  <name>COLO</name>
+  <desc>COLO/Colonel Denning State Park  SP PH:717.776.5272 mid apr-mid dec    AMEN:E DP NS RS PA approx 7.7 mi N  of Newville 40.283 -77.413</desc>
+</wpt>
+<wpt lat="41.701" lon="-77.466">
+  <name>COLT</name>
+  <desc>COLT/Colton Point State Park  SP PH:570.724.2561 mid apr-mid oct   EL:1649 AMEN:NH DP NR NP approx 9.2 mi W of Wellsboro 41.701 -77.466</desc>
+</wpt>
+<wpt lat="41.365" lon="-79.22">
+  <name>COOK</name>
+  <desc>COOK/Cook Forest State Park  SP PH:614.744.6407    EL:1583 AMEN:E DP DW SH RS PA approx 2.3 mi N  of Cooksburg 41.365 -79.22</desc>
+</wpt>
+<wpt lat="39.999" lon="-77.921">
+  <name>COWA</name>
+  <desc>COWA/Cowans Gap State Park  SP PH:717.485.3948 early apr-mid dec    AMEN:E DP 40ft SH RS PA approx 5.9 mi N  of Fort Loudon 39.999 -77.921</desc>
+</wpt>
+<wpt lat="40.711" lon="-79.511">
+  <name>CROO</name>
+  <desc>CROO/Crooked Creek Recreation Area  COE      AMEN:NH DP NR approx 4.3 mi S  of Ford City 40.711 -79.511</desc>
+</wpt>
+<wpt lat="40.94" lon="-78.533">
+  <name>CURW</name>
+  <desc>CURW/Curwensville Lake  CP PH:800.326.9051  COMM:unknown facilities SITES:50  AMEN:E RS approx 2.5 mi S  of Curwensville 40.94 -78.533</desc>
+</wpt>
+<wpt lat="41.832" lon="-78.959">
+  <name>DEWD</name>
+  <desc>DEWD/Dewdrop Rec Area  NF PH:814.362.4613/814.723.5150 mid may-late aug  SITES:102  AMEN:NH DP DW SH RS approx 9.6 mi E of Warren 41.832 -78.959</desc>
+</wpt>
+<wpt lat="41.211" lon="-74.873">
+  <name>DING</name>
+  <desc>DING/Dingmans - Delaware Water Gap National Rec Area  NP PH:570.828.1551     AMEN:E NR approx 0.6 mi S  of Dingman's Ferr 41.211 -74.873</desc>
+</wpt>
+<wpt lat="40.569" lon="-78.843">
+  <name>DUNM</name>
+  <desc>DUNM/Duman Lake County Park  CP PH:814.472.8514   SITES:6 EL:1748 AMEN:E DP DW SH approx 3.7 mi SW of Nicktown 40.569 -78.843</desc>
+</wpt>
+<wpt lat="41.564" lon="-78.595">
+  <name>EAST</name>
+  <desc>EAST/East Branch Lake  COE     EL:1736 AMEN:E DP DW SH NR approx 4.9 mi E of Wilcox 41.564 -78.595</desc>
+</wpt>
+<wpt lat="40.273" lon="-77.58">
+  <name>FOWL</name>
+  <desc>FOWL/Fowlers Hollow State Park  SP PH:717.776.5272     AMEN:NH DP NS RS PA approx 11.8 mi NW of Newville 40.273 -77.58</desc>
+</wpt>
+<wpt lat="41.347" lon="-75.895">
+  <name>FRAN</name>
+  <desc>FRAN/Frances Slocum State Park  SP PH:570.858.2525 early apr-mid oct    AMEN:E DP DW SH RS PA approx 3.8 mi NW of Wyoming 41.347 -75.895</desc>
+</wpt>
+<wpt lat="40.196" lon="-75.797">
+  <name>FREN</name>
+  <desc>FREN/French Creek State Park  SP PH:650.562.5650 all year    AMEN:E DP 40ft DW SH RS PA approx 3.3 mi NE of Elverson 40.196 -75.797</desc>
+</wpt>
+<wpt lat="40.054" lon="-76.91">
+  <name>GIFL</name>
+  <desc>GIFL/Gifford Pinchot State Park  SP PH:717.432.5011 early apr-late oct    AMEN:E DP 45ft DW SH RS PA approx 6.2 mi SW of Lewisberry 40.054 -76.91</desc>
+</wpt>
+<wpt lat="40.646" lon="-77.762">
+  <name>GREE</name>
+  <desc>GREE/Greenwood Furnace State Park  SP PH:814.667.1800 early apr-late oct    AMEN:E DP DW SH RS PA approx 17.2 mi NE of Huntingdon 40.646 -77.762</desc>
+</wpt>
+<wpt lat="41.69" lon="-79.259">
+  <name>HEAR</name>
+  <desc>HEAR/Hearts Content Rec Area  NF PH:814.362.4613/814.723.5150   SITES:36 EL:1909 AMEN:NH DP RS approx 12.2 mi SW of Warren 41.69 -79.259</desc>
+</wpt>
+<wpt lat="40.03" lon="-75.84">
+  <name>HIBE</name>
+  <desc>HIBE/Hibernia County Park  CP PH:610.383.3812  COMM:Open only weekends   AMEN:NH L$ approx 3.3 mi N  of Coatesville 40.03 -75.84</desc>
+</wpt>
+<wpt lat="41.026" lon="-75.696">
+  <name>HICK</name>
+  <desc>HICK/Hickory Run State Park  SP PH:570.444.405 early apr-mid dec    AMEN:E DP 40ft DW SH RS PA approx 4.7 mi SE of White Haven 41.026 -75.696</desc>
+</wpt>
+<wpt lat="41.806" lon="-77.186">
+  <name>HILL</name>
+  <desc>HILL/Hills Creek State Park  SP PH:570.724.4246 mid apr-late oct   EL:1531 AMEN:E DP DW SH RS PA approx 7.1 mi NE of Wellsboro 41.806 -77.186</desc>
+</wpt>
+<wpt lat="41.358" lon="-77.629">
+  <name>HYNE</name>
+  <desc>HYNE/Hyner Run State Park  SP PH:570.923.6000 early apr-mid dec    AMEN:NH DP DW SH RS NP approx 3.8 mi E of North Bend 41.358 -77.629</desc>
+</wpt>
+<wpt lat="41.368" lon="-75.279">
+  <name>IRON</name>
+  <desc>IRON/Ironwood Point Rec Area - PPL  UTIL PH:570.857.0880   SITES:49  AMEN:E DP SH approx 3.5 mi NE of Greentown 41.368 -75.279</desc>
+</wpt>
+<wpt lat="41.889" lon="-77.179">
+  <name>IVES</name>
+  <desc>IVES/Ives Run  COE PH:570.835.0110 mid apr-late oct    AMEN:WES DP DW SH RS PA approx 2.8 mi SW of Tioga 41.889 -77.179</desc>
+</wpt>
+<wpt lat="41.518" lon="-80.507">
+  <name>JAME</name>
+  <desc>JAME/Jamestown - Pymatuning State Park  SP PH:724.932.3142 mid apr-mid oct  SITES:331  AMEN:E DP 30ft DW SH RS PA approx 4.2 mi NW of Jamestown 41.518 -80.507</desc>
+</wpt>
+<wpt lat="41.541" lon="-79.258">
+  <name>KELL</name>
+  <desc>KELL/Kellettville Rec Area  Tionesta Lake  COE PH:814.755.3512     AMEN:NH DP NR L$ approx 0.5 mi E of Kelletville 41.541 -79.258</desc>
+</wpt>
+<wpt lat="39.885" lon="-79.494">
+  <name>KENT</name>
+  <desc>KENT/Kentuck - Ohiopyle State Park  SP PH:724.325.9555 early mar-mid dec  SITES:200 EL:1565 AMEN:E DP DW SH RS NP approx 0.9 mi N  of Ohiopyle 39.885 -79.494</desc>
+</wpt>
+<wpt lat="41.377" lon="-77.931">
+  <name>KETT</name>
+  <desc>KETT/Kettle Creek State Park  SP PH:570.522.6054 early apr-early dec    AMEN:E DP RS PA approx 10.0 mi W of Renovo 41.377 -77.931</desc>
+</wpt>
+<wpt lat="40.372" lon="-79.383">
+  <name>KEYS</name>
+  <desc>KEYS/Keystone State Park  SP PH:724.965.2505 all year    AMEN:E DP DW SH RS PA approx 5.1 mi NW of Derry 40.372 -79.383</desc>
+</wpt>
+<wpt lat="41.785" lon="-78.904">
+  <name>KIAS</name>
+  <desc>KIAS/Kiasutha Rec Area  NF PH:814.362.4613/814.723.5150 mid may-late aug  SITES:428  AMEN:WES DP DW SH RS approx 9.7 mi NW of Kane 41.785 -78.904</desc>
+</wpt>
+<wpt lat="40.06" lon="-79.23">
+  <name>KOOS</name>
+  <desc>KOOS/Kooser State Park  SP PH:814.445.8673 early apr-mid oct   EL:2311 AMEN:E DP RS PA approx 8.8 mi NW of Somerset 40.06 -79.23</desc>
+</wpt>
+<wpt lat="41.565" lon="-75.708">
+  <name>LACK</name>
+  <desc>LACK/Lackawanna State Park  SP PH:570.645.2225 early apr-mid oct    AMEN:E DP 40ft DW SH RS PA approx 2.6 mi NE of Dalton 41.565 -75.708</desc>
+</wpt>
+<wpt lat="40.476" lon="-75.267">
+  <name>LAKT</name>
+  <desc>LAKT/Lake Towhee County Park  CP PH:215.757.0571  COMM:unknown facilities   AMEN:NH DP NS approx 0.6 mi SE of Applebachsvill 40.476 -75.267</desc>
+</wpt>
+<wpt lat="41.81" lon="-76.485">
+  <name>LARN</name>
+  <desc>LARN/Larnard Hornbrook County Park  CP      AMEN:WE DP FT DW SH approx 3.7 mi NW of Towanda 41.81 -76.485</desc>
+</wpt>
+<wpt lat="40.009" lon="-79.218">
+  <name>LAUR</name>
+  <desc>LAUR/Laurel Hill State Park  SP PH:954.445.7725 early apr-mid oct   EL:2222 AMEN:E DP 40ft DW SH RS PA approx 7.4 mi W of Somerset 40.009 -79.218</desc>
+</wpt>
+<wpt lat="41.366" lon="-75.319">
+  <name>LEDG</name>
+  <desc>LEDG/Ledgedale Rec Area  UTIL PH:570.689.2181     AMEN:E DP SH approx 6.9 mi SE of Lake Ariel 41.366 -75.319</desc>
+</wpt>
+<wpt lat="41.698" lon="-77.45">
+  <name>LEON</name>
+  <desc>LEON/Leonard Harrison State Park  SP PH:570.724.2005 early apr-mid oct   EL:1809 AMEN:E DP RS NP approx 8.5 mi SW of Wellsboro 41.698 -77.45</desc>
+</wpt>
+<wpt lat="41.657" lon="-80.462">
+  <name>LINV</name>
+  <desc>LINV/Linesville - Pymatuning State Park  SP PH:724.932.3142 mid apr-mid dec  SITES:110  AMEN:E DP 30ft DW SH RS NP approx 12.0 mi N  of Jamestown 41.657 -80.462</desc>
+</wpt>
+<wpt lat="40.454" lon="-77.19">
+  <name>LITB</name>
+  <desc>LITB/Little Buffalo State Park  SP PH:717.567.9255   SITES:40  AMEN:WE DP FT DW SH RS PA approx 3.5 mi SW of Newport 40.454 -77.19</desc>
+</wpt>
+<wpt lat="41.353" lon="-77.354">
+  <name>LITT</name>
+  <desc>LITT/Little Pine State Park  SP PH:570.752.6050 mid apr-mid dec    AMEN:E DP DW SH RS PA approx 3.0 mi N of Waterville 41.353 -77.354</desc>
+</wpt>
+<wpt lat="40.785" lon="-76.12">
+  <name>LOCU</name>
+  <desc>LOCU/Locust Lake State Park  SP PH:570.487.2404 mid apr-mid oct    AMEN:E DP 40ft DW SH RS PA approx 5.1 mi SW of Barnesville 40.785 -76.12</desc>
+</wpt>
+<wpt lat="41.4" lon="-79.082">
+  <name>LOLE</name>
+  <desc>LOLE/Loleta Rec Area  NF PH:814.927.6628/814.723.5150 early apr-mid dec  SITES:89  AMEN:E DW SH RS approx 5.2 mi SE of Marienville 41.4 -79.082</desc>
+</wpt>
+<wpt lat="40.294" lon="-78.899">
+  <name>LORA</name>
+  <desc>LORA/Lorain Borough Park  CP PH:814.266.5600  COMM:unknown facilites   AMEN:SH approx  mi  of Lorain 40.294 -78.899</desc>
+</wpt>
+<wpt lat="41.723" lon="-77.778">
+  <name>LYMA</name>
+  <desc>LYMA/Lyman Run State Park  SP PH:814.435.5010 early apr-mid dec COMM:2 campgrounds SITES:35 EL:1732 AMEN:E DP FT DW SH RS PA approx 7.1 mi W of Galeton 41.723 -77.778</desc>
+</wpt>
+<wpt lat="39.726" lon="-80.116">
+  <name>MASO</name>
+  <desc>MASO/Mason - Dixon Historical Park  CP PH:304.291.7257     AMEN:E ND FT DW NS L$ approx 2.6 mi W of Mount Morris 39.726 -80.116</desc>
+</wpt>
+<wpt lat="40.846" lon="-75.801">
+  <name>MAUC</name>
+  <desc>MAUC/Mauch Chunk Lake County Park  CP PH:570.325.3669    approx 4.1 mi SW of Jim Thorpe 40.846 -75.801</desc>
+</wpt>
+<wpt lat="40.028" lon="-76.297">
+  <name>MILL</name>
+  <desc>MILL/Mill Creek Campground - Central Park  CP PH:717.299.8215  COMM:Tent only SITES:5  AMEN:NH ND NS approx 0.8 mi SE of Lancaster 40.028 -76.297</desc>
+</wpt>
+<wpt lat="40.903" lon="-79.225">
+  <name>MILT</name>
+  <desc>MILT/Milton Loop  CP PH:814.257.0131     AMEN:E DP approx 1.8 mi NE of Dayton 40.903 -79.225</desc>
+</wpt>
+<wpt lat="41.621" lon="-79.154">
+  <name>MINI</name>
+  <desc>MINI/Minister Creek  and Trailhead  NF PH:814.362.4613/814.723.5150   SITES:26  AMEN:NH ND NS NR approx 8.4 mi SW of Sheffield 41.621 -79.154</desc>
+</wpt>
+<wpt lat="41.255" lon="-76.048">
+  <name>MOON</name>
+  <desc>MOON/Moon Lake County Park  CP PH:570.477.5467     AMEN:E DP DW SH approx 3.5 mi N of Hunlock Creek 41.255 -76.048</desc>
+</wpt>
+<wpt lat="39.85" lon="-76.279">
+  <name>MUDD</name>
+  <desc>MUDD/Muddy Run Rec Park - PPL  UTIL PH:717.284.4325   SITES:167  AMEN:E DP approx 2.9 mi NE of Holtwood 39.85 -76.279</desc>
+</wpt>
+<wpt lat="40.466" lon="-78.83">
+  <name>NANT</name>
+  <desc>NANT/Nanty Glo Municipal Park  CP PH:814.659.2396    EL:1712approx 0.4 mi SE of Nanty Glo 40.466 -78.83</desc>
+</wpt>
+<wpt lat="41.536" lon="-77.715">
+  <name>OLEB</name>
+  <desc>OLEB/Ole Bull State Park  SP PH:654.425.5050 all year    AMEN:E DP DW SH RS NP approx 6.3 mi NE of Cross Fork 41.536 -77.715</desc>
+</wpt>
+<wpt lat="39.877" lon="-76.383">
+  <name>OTTE</name>
+  <desc>OTTE/Otter Creek - PPL  UTIL PH:717.862.3628   SITES:85  AMEN:RS approx 3.3 mi N of Airville 39.877 -76.383</desc>
+</wpt>
+<wpt lat="39.804" lon="-79.367">
+  <name>OUTF</name>
+  <desc>OUTF/Outflow - Youghiogheny River Lake  COE PH:814.395.3242 mid may-mid sep  SITES:63  AMEN:WES DP SH RS PA approx 0.8 mi SW of Confluence 39.804 -79.367</desc>
+</wpt>
+<wpt lat="41.202" lon="-78.509">
+  <name>PARK</name>
+  <desc>PARK/Parker Dam State Park  SP PH:814.765.0630 mid apr-late dec   EL:1630 AMEN:E DP FT DW SH RS PA approx 3.5 mi E of Penfield 41.202 -78.509</desc>
+</wpt>
+<wpt lat="41.697" lon="-77.891">
+  <name>PATT</name>
+  <desc>PATT/Patterson State Park  SP PH:654.425.2450    EL:2465 AMEN:NH ND NS NR NP approx 13.1 mi W of Galeton 41.697 -77.891</desc>
+</wpt>
+<wpt lat="40.728" lon="-77.701">
+  <name>PENN</name>
+  <desc>PENN/Penn Roosevelt State Park  SP PH:814.667.1800  COMM:rustic SITES:18 EL:1633 AMEN:NH ND VT DW NS NR PA approx 23.4 mi NE of Huntingdon 40.728 -77.701</desc>
+</wpt>
+<wpt lat="39.898" lon="-76.345">
+  <name>PEQU</name>
+  <desc>PEQU/Pequea Creek - PPL  UTIL PH:717.284.4587   SITES:85  AMEN:E DP SH RS approx 1.4 mi NE of Pequea 39.898 -76.345</desc>
+</wpt>
+<wpt lat="40.036" lon="-77.276">
+  <name>PINE</name>
+  <desc>PINE/Pine Grove Furnace State Park  SP PH:717. 486.7174 all year    AMEN:E DP RS PA approx 4.2 mi NW of Gardners 40.036 -77.276</desc>
+</wpt>
+<wpt lat="40.833" lon="-77.419">
+  <name>POEP</name>
+  <desc>POEP/Poe Paddy State Park  SP PH:717.667.3622 mid apr-mid dec    AMEN:NH ND NS RS PA approx 12.1 mi NE of Milroy 40.833 -77.419</desc>
+</wpt>
+<wpt lat="40.822" lon="-77.468">
+  <name>POEV</name>
+  <desc>POEV/Poe Valley State Park  SP PH:854.349.2400 mid apr-mid dec    AMEN:E DP DW SH RS PA approx 9.9 mi NE of Milroy 40.822 -77.468</desc>
+</wpt>
+<wpt lat="40.674" lon="-78.559">
+  <name>PRIN</name>
+  <desc>PRIN/Prince Gallitzin State Park  SP PH:814.674.1007 mid apr-mid dec    AMEN:E DP DW SH RS PA approx 5.5 mi NE of Patton 40.674 -78.559</desc>
+</wpt>
+<wpt lat="41.32" lon="-75.21">
+  <name>PROM</name>
+  <desc>PROM/Promised Land State Park  SP PH:570.676.2426 all year   EL:1753 AMEN:45ft RS PA approx 5.0 mi E of Greentown 41.32 -75.21</desc>
+</wpt>
+<wpt lat="40.17" lon="-78.965">
+  <name>QUEM</name>
+  <desc>QUEM/Quemahoning Family Rec Area  UTIL PH:814.233.9510   SITES:63 EL:1667 AMEN:E DP DW SH approx 5.4 mi E of Jennerstown 40.17 -78.965</desc>
+</wpt>
+<wpt lat="40.507" lon="-80.428">
+  <name>RACC</name>
+  <desc>RACC/Raccoon Creek State Park  SP PH:724.896.5003 all year    AMEN:E DP DW SH RS PA approx 6.8 mi S  of Hookstown 40.507 -80.428</desc>
+</wpt>
+<wpt lat="41.11" lon="-77.243">
+  <name>RAVE</name>
+  <desc>RAVE/Ravensburg State Park  SP PH:570.966.1455 mid apr-late oct  SITES:21  AMEN:NH ND DW SH NR PA approx 16.7 mi NW of Mifflinburg 41.11 -77.243</desc>
+</wpt>
+<wpt lat="40.992" lon="-77.192">
+  <name>RBWI</name>
+  <desc>RBWI/RB Winter State Park  SP PH:970.590.5495 mid apr-mid dec   EL:1524 AMEN:RS PA approx 9.1 mi NW of Mifflinburg 40.992 -77.192</desc>
+</wpt>
+<wpt lat="41.778" lon="-78.888">
+  <name>REDB</name>
+  <desc>REDB/Red Bridge Rec Area  NF PH:814.362.4613/814.723.5150 mid may-mid dec  SITES:65  AMEN:WES DP DW SH RS approx 8.9 mi NW of Kane 41.778 -78.888</desc>
+</wpt>
+<wpt lat="41.49" lon="-78.793">
+  <name>REDM</name>
+  <desc>REDM/Red Mill  NF PH:814.927.6628/814.723.5150   SITES:10 EL:1523 AMEN:NH ND NS NR approx 5.9 mi NW of Ridgway 41.49 -78.793</desc>
+</wpt>
+<wpt lat="41.015" lon="-79.292">
+  <name>REDB</name>
+  <desc>REDB/Redbank Valley Municipal Park  CP PH:814.365.5924 mid apr-mid oct    AMEN:WES DP FT DW SH approx 3.9 mi S  of Redbank 41.015 -79.292</desc>
+</wpt>
+<wpt lat="40.723" lon="-77.476">
+  <name>REED</name>
+  <desc>REED/Reeds Gap State Park  SP PH:717.667.3622     AMEN:NH ND DW SH RS PA approx 6.0 mi E of Milroy 40.723 -77.476</desc>
+</wpt>
+<wpt lat="41.336" lon="-76.296">
+  <name>RICK</name>
+  <desc>RICK/Ricketts Glen State Park  SP PH:570.477.5675 all year   EL:2243 AMEN:NH DP DW SH RS PA approx 10.7 mi NE of Benton 41.336 -76.296</desc>
+</wpt>
+<wpt lat="39.889" lon="-80.44">
+  <name>RYER</name>
+  <desc>RYER/Ryerson Station State Park  SP PH:724.429.4254 all year    AMEN:E DP NS RS PA approx 1.7 mi S  of Wind Ridge 39.889 -80.44</desc>
+</wpt>
+<wpt lat="41.108" lon="-78.531">
+  <name>SBEL</name>
+  <desc>SBEL/S.B. Elliott State Park  SP PH:654.765.520 mid apr-early oct   EL:2118 AMEN:NH DP NS NR NP approx 7.3 mi S  of Penfield 41.108 -78.531</desc>
+</wpt>
+<wpt lat="41.91" lon="-75.871">
+  <name>SALT</name>
+  <desc>SALT/Salt Springs State Park  SP PH:570.945.3239  COMM:rustic - all sites walk to    AMEN:NH ND VT DW NS NR NP approx 26.9 mi N  of Dalton 41.91 -75.871</desc>
+</wpt>
+<wpt lat="40.374" lon="-78.076">
+  <name>SEVE</name>
+  <desc>SEVE/Seven Points  COE PH:814.658.3405 early apr-late oct COMM:6 camp loops SITES:261  AMEN:E DP FT DW SH RS PA approx 3.7 mi SE of Hesston 40.374 -78.076</desc>
+</wpt>
+<wpt lat="40.051" lon="-78.624">
+  <name>SHAW</name>
+  <desc>SHAW/Shawnee State Park  SP PH:854.733.4258 mid apr-mid dec    AMEN:E DP 40ft DW SH RS PA approx 1.1 mi E of Schellsburg 40.051 -78.624</desc>
+</wpt>
+<wpt lat="41.298" lon="-80.43">
+  <name>SHEN</name>
+  <desc>SHEN/Shenango  COE PH:724.646.1124 mid may-late aug    AMEN:E DP 45ft DW SH RS PA approx 3.4 mi NE of Sharpville 41.298 -80.43</desc>
+</wpt>
+<wpt lat="41.42" lon="-78.031">
+  <name>SINN</name>
+  <desc>SINN/Sinnemahoning State Park  SP PH:614.647.6401 all year    AMEN:E DP DW SH RS PA approx 14.9 mi S  of Austin 41.42 -78.031</desc>
+</wpt>
+<wpt lat="41.596" lon="-78.181">
+  <name>SIZE</name>
+  <desc>SIZE/Sizerville State Park  SP PH:814.486.5605 mid apr-mid dec    AMEN:E DP DW SH RS NP approx 6.5 mi NE of Emporium 41.596 -78.181</desc>
+</wpt>
+<wpt lat="40.357" lon="-76.409">
+  <name>STOE</name>
+  <desc>STOE/Stoevers Dam Park  CP PH:717.228.4470  COMM:unknown facilities - primitive  approx 1.1 mi N of Lebanon 40.357 -76.409</desc>
+</wpt>
+<wpt lat="41.646" lon="-76.698">
+  <name>SUNF</name>
+  <desc>SUNF/Sunfish Pond County Park  CP PH:570.364.5900   SITES:50 EL:2082 AMEN:E DP FT DW SH RS approx 2.1 mi S  of Leroy 41.646 -76.698</desc>
+</wpt>
+<wpt lat="40.388" lon="-78.05">
+  <name>SUSQ</name>
+  <desc>SUSQ/Susquehannock - Raystown Lake  COE PH:814.658.6806 early jun-late aug  SITES:60  AMEN:NH ND VT DW NS RS PA L$ approx 3.9 mi SE of Hesston 40.388 -78.05</desc>
+</wpt>
+<wpt lat="40.506" lon="-75.068">
+  <name>TINI</name>
+  <desc>TINI/Tinicum County Park  CP PH:215.757.0571  COMM:unknown facilities   AMEN:NH ND NS approx 0.4 mi NE of Erwinna 40.506 -75.068</desc>
+</wpt>
+<wpt lat="41.479" lon="-79.442">
+  <name>TIOR</name>
+  <desc>TIOR/Tionesta Rec Area - Tionesta Lake  COE PH:814.755.3512 mid may-late aug    AMEN:WES DP DW SH RS PA approx 1.3 mi SE of Tionesta 41.479 -79.442</desc>
+</wpt>
+<wpt lat="41.207" lon="-75.397">
+  <name>TOBY</name>
+  <desc>TOBY/Tobyhanna State Park  SP PH:570.894.8336 mid apr-mid dec   EL:1985 AMEN:NH DP 45ft DW SH RS PA approx 2.3 mi NE of Tobyhanna 41.207 -75.397</desc>
+</wpt>
+<wpt lat="40.441" lon="-75.079">
+  <name>TOHI</name>
+  <desc>TOHI/Tohickon Valley County Park  CP PH:215.297.0754  COMM:unknown facilities SITES:22  AMEN:NH DP DW SH approx 1.4 mi NW of Point Pleasant 40.441 -75.079</desc>
+</wpt>
+<wpt lat="41.979" lon="-77.191">
+  <name>TOMP</name>
+  <desc>TOMP/Tompkins River  COE PH:570.827.2109 mid may-late sep    AMEN:WES DP DW SH RS PA approx 5.7 mi NW of Tioga 41.979 -77.191</desc>
+</wpt>
+<wpt lat="41.943" lon="-78.876">
+  <name>TRAC</name>
+  <desc>TRAC/Tracy Ridge Rec Area  NF PH:814.362.4613/814.723.5150 mid may-mid dec  SITES:119 EL:2236 AMEN:NH DP NS RS L$ approx 11.7 mi W of Bradford 41.943 -78.876</desc>
+</wpt>
+<wpt lat="40.311" lon="-78.129">
+  <name>TROU</name>
+  <desc>TROU/Trough Creek State Park  SP PH:814.858.3947 mid apr-mid dec    AMEN:E DP NS RS PA approx 3.8 mi SE of James Creek 40.311 -78.129</desc>
+</wpt>
+<wpt lat="39.782" lon="-79.415">
+  <name>TUBR</name>
+  <desc>TUBR/Tub Run Rec Area - Youghiogheny River Lake  COE PH:814.395.3242 mid may-late aug  SITES:101 EL:1582 AMEN:E DP DW SH RS PA approx 3.8 mi SW of Confluence 39.782 -79.415</desc>
+</wpt>
+<wpt lat="41.641" lon="-80.491">
+  <name>TUTT</name>
+  <desc>TUTT/Tuttle - Pymatuning State Park  SP PH:724.932.3142 mid apr-mid oct COMM:Tuttle closed for 2011 season SITES:660  AMEN:E DP 30ft DW SH RS NP approx 11.2 mi N  of Jamestown 41.641 -80.491</desc>
+</wpt>
+<wpt lat="41.614" lon="-78.756">
+  <name>TWIN</name>
+  <desc>TWIN/Twin Lakes Rec Area  NF PH:814.927.6628/814.723.5150 mid may-mid dec  SITES:211 EL:1770 AMEN:E DP DW SH RS approx 4.4 mi NW of Wilcox 41.614 -78.756</desc>
+</wpt>
+<wpt lat="41.476" lon="-79.768">
+  <name>TWOM</name>
+  <desc>TWOM/Two Mile Run County Park  CP PH:814.676.6116    approx 4.3 mi NW of Oil City 41.476 -79.768</desc>
+</wpt>
+<wpt lat="40.166" lon="-75.723">
+  <name>WARW</name>
+  <desc>WARW/Warwick County Park  CP PH:610.469.1916     AMEN:NH approx 6.7 mi SW of Pottstown 40.166 -75.723</desc>
+</wpt>
+<wpt lat="41.989" lon="-78.918">
+  <name>WILL</name>
+  <desc>WILL/Willow Bay Rec Area  NF PH:814.362.4613/814.723.5150 mid may-late oct  SITES:261  AMEN:E DP DW SH RS approx 14.0 mi W of Bradford 41.989 -78.918</desc>
+</wpt>
+<wpt lat="41.449" lon="-75.182">
+  <name>WILS</name>
+  <desc>WILS/Wilsonville Rec Area - PPL  UTIL PH:570.226.4382     AMEN:E DP SH approx 1.9 mi S  of Hawley 41.449 -75.182</desc>
+</wpt>
+<wpt lat="41.47" lon="-76.57">
+  <name>WORL</name>
+  <desc>WORL/Worlds End State Park  SP PH:570.244.2257 all year    AMEN:E DP DW SH RS PA approx 2.0 mi SE of Forksville 41.47 -76.57</desc>
+</wpt>
+<wpt lat="41.37" lon="-71.7">
+  <name>BURL</name>
+  <desc>BURL/Burlingame State Park  SP PH:401.322.7994   SITES:700  AMEN:NH DP SH RS PA approx 3.1 mi W of Charlestown 41.37 -71.7</desc>
+</wpt>
+<wpt lat="41.568" lon="-71.295">
+  <name>CARR</name>
+  <desc>CARR/Carr Point Military - Newport NS  MIL PH:401.841.3116  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS  41.568 -71.295</desc>
+</wpt>
+<wpt lat="41.358" lon="-71.637">
+  <name>CHAR</name>
+  <desc>CHAR/Charlestown Breachway State Park  SP PH:401.322.8910 early jun-late oct    AMEN:NH RS approx 1.7 mi S  of Charlestown 41.358 -71.637</desc>
+</wpt>
+<wpt lat="41.343" lon="-71.692">
+  <name>EASB</name>
+  <desc>EASB/East Beach - Ninigret State Conservation Area  SP PH:401. 322.0450 early jun-late aug COMM:RV only - beach campng - unknown facilities SITES:20  AMEN:NH VT RS approx 3.8 mi SW of Charlestown 41.343 -71.692</desc>
+</wpt>
+<wpt lat="41.38" lon="-71.488">
+  <name>FISH</name>
+  <desc>FISH/Fishermens Memorial State Park  SP PH:401.789.8374 early jun-late oct  SITES:180  AMEN:WES DW SH RS PA approx 5.3 mi S  of Narragansett 41.38 -71.488</desc>
+</wpt>
+<wpt lat="41.489" lon="-71.399">
+  <name>FORT</name>
+  <desc>FORT/Fort Getty Camping and Recreation Area  CP   COMM:RV sites plus walk-in only tent sites   AMEN:E DP DW SH NR approx 4.5 mi W of Newport 41.489 -71.399</desc>
+</wpt>
+<wpt lat="41.92" lon="-71.755">
+  <name>GEOR</name>
+  <desc>GEOR/George Washington State Area  SP PH:401.568.2013 early jun-late oct  SITES:45  AMEN:NH RS PA approx 4.3 mi W of Chepachet 41.92 -71.755</desc>
+</wpt>
+<wpt lat="41.589" lon="-71.275">
+  <name>MELV</name>
+  <desc>MELV/Melville Ponds  CP PH:401.682.2424     AMEN:E DP DW SH approx 1.6 mi SW of Portsmouth 41.589 -71.275</desc>
+</wpt>
+<wpt lat="41.487" lon="-71.252">
+  <name>MIDD</name>
+  <desc>MIDD/Middletown City Campground  CP PH:401.846.6273   SITES:44  AMEN:E DP DW SH approx 2.9 mi SE of Middeltown 41.487 -71.252</desc>
+</wpt>
+<wpt lat="36.868" lon="-82.528">
+  <name>BARK</name>
+  <desc>BARK/Bark Camp  NF PH:276.328.2931/540.265.5100   SITES:71 EL:2829 AMEN:E DP SH NR approx 6.3 mi SW of Coeburn 36.868 -82.528</desc>
+</wpt>
+<wpt lat="37.533" lon="-78.274">
+  <name>BEAR</name>
+  <desc>BEAR/Bear Creek Lake State Park  SP PH:804.492.3606 all year    AMEN:E DP DW SH RS PA approx 3.0 mi NW of Cumberland 37.533 -78.274</desc>
+</wpt>
+<wpt lat="36.667" lon="-81.682">
+  <name>BEAT</name>
+  <desc>BEAT/Beartree  NF PH:276.783.5196/540.265.5100 early may-late oct  SITES:90 EL:3097 AMEN:NH DP DW SH RS PA approx 6.1 mi E of Damascus 36.667 -81.682</desc>
+</wpt>
+<wpt lat="37.776" lon="-76.581">
+  <name>BELL</name>
+  <desc>BELL/Belle Isle State Park  SP PH:804.462.5030 all year    AMEN:E DP FT DW SH RS PA approx 6.3 mi W of Lancaster 37.776 -76.581</desc>
+</wpt>
+<wpt lat="37.092" lon="-76.431">
+  <name>BETH</name>
+  <desc>BETH/Bethel Military  MIL PH:757.766.7627  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 6.4 mi NW of Hampton 37.092 -76.431</desc>
+</wpt>
+<wpt lat="38.527" lon="-78.439">
+  <name>BIGM</name>
+  <desc>BIGM/Big Meadows - Shenandoah National Park  NP PH:540.999.3231 early may-late nov   EL:3576 AMEN:NH DP DW SH RS PA approx 4.8 mi SE of Stanley 38.527 -78.439</desc>
+</wpt>
+<wpt lat="38.069" lon="-79.884">
+  <name>BLOW</name>
+  <desc>BLOW/Blowing Springs  NF PH:540.839.2521/540.265.5100 all year  SITES:40 EL:1713 AMEN:NH DP DW NR L$ approx 20.0 mi N of Covington 38.069 -79.884</desc>
+</wpt>
+<wpt lat="37.985" lon="-79.974">
+  <name>BOLA</name>
+  <desc>BOLA/Bolar Mountain  NF PH:540.839.2521/540.265.5100 early apr-late nov COMM:3 campgrounds SITES:90 EL:1585 AMEN:E DP DW SH RS approx 13.3 mi N of Covington 37.985 -79.974</desc>
+</wpt>
+<wpt lat="37.29" lon="-82.295">
+  <name>BREA</name>
+  <desc>BREA/Breaks InterState Park  SP PH:540.865.4413    EL:1798 AMEN:E RS approx 5.9 mi N  of Haysi 37.29 -82.295</desc>
+</wpt>
+<wpt lat="36.662" lon="-78.631">
+  <name>BUFF</name>
+  <desc>BUFF/Buffalo Landing - Kerr Reservoir  COE      AMEN:NH DP DW SH NR approx 4.9 mi NW of Clarksville 36.662 -78.631</desc>
+</wpt>
+<wpt lat="38.801" lon="-77.476">
+  <name>BULL</name>
+  <desc>BULL/Bull Run Regional Park  CP PH:703.631.0550     AMEN:E DP 40ft FT DW SH RS approx 3.7 mi SW of Centreville 38.801 -77.476</desc>
+</wpt>
+<wpt lat="38.76" lon="-77.302">
+  <name>BURK</name>
+  <desc>BURK/Burke Lake Park  CP PH:703.323.6600     AMEN:NH DP DW SH NR approx 3.1 mi SE of Fairfax Station 38.76 -77.302</desc>
+</wpt>
+<wpt lat="38.731" lon="-78.518">
+  <name>CAMP</name>
+  <desc>CAMP/Camp Roosevelt  NF PH:540.839.2521/540.265.5100   SITES:10  AMEN:NH DP NR L$ approx 5.5 mi NW of Luray 38.731 -78.518</desc>
+</wpt>
+<wpt lat="37.102" lon="-82.679">
+  <name>CANE</name>
+  <desc>CANE/Cane Patch  NF PH:276.328.2931/540.265.5100   SITES:34 EL:1657 AMEN:E DP DW SH NR approx 4.5 mi W of Pound 37.102 -82.679</desc>
+</wpt>
+<wpt lat="36.927" lon="-76.007">
+  <name>CAPE</name>
+  <desc>CAPE/Cape Henry RV Military  MIL PH:757.422.8818  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 5.4 mi N  of Virginia Beach 36.927 -76.007</desc>
+</wpt>
+<wpt lat="37.574" lon="-79.534">
+  <name>CAVE</name>
+  <desc>CAVE/Cave Mountain Lake  NF PH:540.291.2188/540.265.5100 early apr-late oct  SITES:51  AMEN:NH DP DW SH RS PA approx 3.6 mi SW of Natural Bridge Station 37.574 -79.534</desc>
+</wpt>
+<wpt lat="36.802" lon="-82.922">
+  <name>CAVS</name>
+  <desc>CAVS/Cave Springs  NF PH:276.328.2931/540.265.5100   SITES:64 EL:1598 AMEN:E DP SH NR approx 2.0 mi NE of Dryden 36.802 -82.922</desc>
+</wpt>
+<wpt lat="38.091" lon="-77.334">
+  <name>CHAM</name>
+  <desc>CHAM/Champs RV Military - A P Hill  MIL PH:804.633.8244  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 4.3 mi E of Woodford 38.091 -77.334</desc>
+</wpt>
+<wpt lat="37.265" lon="-76.873">
+  <name>CHIC</name>
+  <desc>CHIC/Chickahominy Riverfront Park  CP PH:757-258-5020  COMM:rent boats on river - swim in pool SITES:161  AMEN:WES FT DW RS approx 9.1 mi W of Williamsburg 37.265 -76.873</desc>
+</wpt>
+<wpt lat="37.14" lon="-76.748">
+  <name>CHIP</name>
+  <desc>CHIP/Chippokes Plantation State Park  SP PH:757.294.3182 all year    AMEN:E DP DW SH RS PA approx 4.8 mi E of Surry 37.14 -76.748</desc>
+</wpt>
+<wpt lat="37.062" lon="-80.624">
+  <name>CLAY</name>
+  <desc>CLAY/Claytor Lake State Park  SP PH:540.643.2500 all year   EL:1927 AMEN:E DP 35ft DW SH RS PA approx 4.6 mi SE of Dublin 37.062 -80.624</desc>
+</wpt>
+<wpt lat="36.763" lon="-81.225">
+  <name>COME</name>
+  <desc>COME/Comers Rock  NF PH:276.783.5196/540.265.5100   SITES:6 EL:3784 AMEN:NH NR L$ approx 4.6 mi SW of Speedwell 36.763 -81.225</desc>
+</wpt>
+<wpt lat="37.157" lon="-82.407">
+  <name>CRAN</name>
+  <desc>CRAN/Cranesnest  - John W. Flannagan Reservoir  COE PH:540.835.9544     AMEN:E DP DW SH NR approx 2.7 mi E of Clintwood 37.157 -82.407</desc>
+</wpt>
+<wpt lat="37.897" lon="-79.802">
+  <name>DOUT</name>
+  <desc>DOUT/Douthat State Park  SP PH:540.862.8100 all year    AMEN:E DP DW SH RS PA approx 12.1 mi SW of Millboro 37.897 -79.802</desc>
+</wpt>
+<wpt lat="38.925" lon="-78.331">
+  <name>ELIZ</name>
+  <desc>ELIZ/Elizabeth Furnace  NF PH:540.984.4101/540.265.5100  COMM:swim holes nearby SITES:36  AMEN:NH DP FT DW SH NR approx 7.4 mi W of Front Royal 38.925 -78.331</desc>
+</wpt>
+<wpt lat="36.798" lon="-80.108">
+  <name>FAIR</name>
+  <desc>FAIR/Fairy Stone State Park  SP PH:540.930.2424 all year    AMEN:E DP DW SH RS PA approx 13.9 mi NE of Stuart 36.798 -80.108</desc>
+</wpt>
+<wpt lat="36.918" lon="-76.052">
+  <name>FIRS</name>
+  <desc>FIRS/First Landing State Park  SP PH:757.412.2300 all year    AMEN:E DP 45ft DW SH RS PA approx 6.1 mi NW of Virginia Beach 36.918 -76.052</desc>
+</wpt>
+<wpt lat="38.697" lon="-77.145">
+  <name>FORB</name>
+  <desc>FORB/Fort Belvoir Travel and RV Camp  MIL PH:703.805.1488  COMM:new - opening 9/2013 - wifi - military only - contact them for directions and info SITES:52  AMEN:WES DP FT DW SH RS approx 1.6 mi S  of Fort Belvoir 38.697 -77.145</desc>
+</wpt>
+<wpt lat="37.161" lon="-76.595">
+  <name>FORE</name>
+  <desc>FORE/Fort Eustis Military  MIL PH:757.878.2610  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 8.4 mi NW of Newport News 37.161 -76.595</desc>
+</wpt>
+<wpt lat="37.044" lon="-80.873">
+  <name>GATE</name>
+  <desc>GATE/Gatewood Park  CP PH:540.994.8696   SITES:42 EL:2195 AMEN:WE DP DW SH approx 5.1 mi W of Pulaski 37.044 -80.873</desc>
+</wpt>
+<wpt lat="37.374" lon="-80.821">
+  <name>GENT</name>
+  <desc>GENT/Gentrys Landing  CP PH:540.726.7509   SITES:80 EL:1527 AMEN:WE DP DW SH approx 3.0 mi N  of Narrows 37.374 -80.821</desc>
+</wpt>
+<wpt lat="37.731" lon="-79.368">
+  <name>GLEN</name>
+  <desc>GLEN/Glen Maury Park  CP PH:540.261.7321   SITES:52  AMEN:WES DP FT DW SH RS approx 0.8 mi W of Buena Vista 37.731 -79.368</desc>
+</wpt>
+<wpt lat="36.897" lon="-79.883">
+  <name>GOOD</name>
+  <desc>GOOD/Goose Dam  CP PH:540.483.2100     AMEN:WES DP SH approx 1.0 mi W of Sydnorsville 36.897 -79.883</desc>
+</wpt>
+<wpt lat="36.804" lon="-80.059">
+  <name>GOOS</name>
+  <desc>GOOS/Goose Point - Philpott Lake  COE PH:276.629.2703 early apr-late oct    AMEN:E DP DW SH RS PA approx 12.9 mi NW of Martinsville 36.804 -80.059</desc>
+</wpt>
+<wpt lat="37.073" lon="-76.334">
+  <name>GOSN</name>
+  <desc>GOSN/Gosnolds Hope Park  CP PH:757.850.5116     AMEN:E DP DW SH approx 3.0 mi N of Hampton 37.073 -76.334</desc>
+</wpt>
+<wpt lat="37.432" lon="-82.357">
+  <name>GRAP</name>
+  <desc>GRAP/Grapevine - Fishtrap Lake  COE PH:606.835.4564   SITES:28  AMEN:WE NR approx 1.3 mi SW of Phyllis 37.432 -82.357</desc>
+</wpt>
+<wpt lat="36.639" lon="-81.485">
+  <name>GRAY</name>
+  <desc>GRAY/Grayson Highlands State Park  SP PH:540.579.7092 all year   EL:4324 AMEN:E DP DW SH RS PA approx 8.9 mi NW of Mouth Of Wilson 36.639 -81.485</desc>
+</wpt>
+<wpt lat="36.688" lon="-81.542">
+  <name>GRIN</name>
+  <desc>GRIN/Grindstone  NF PH:276.783.5196/540.265.5100 early may-late nov  SITES:108 EL:3711 AMEN:E DP SH RS PA approx 5.4 mi W of Troutdale 36.688 -81.542</desc>
+</wpt>
+<wpt lat="38.099" lon="-79.822">
+  <name>HIDD</name>
+  <desc>HIDD/Hidden Valley  NF PH:540.839.2521/540.265.5100   SITES:30 EL:1801 AMEN:NH DP NR L$ approx 4.0 mi NW of Warm Springs 38.099 -79.822</desc>
+</wpt>
+<wpt lat="36.89" lon="-82.622">
+  <name>HIGH</name>
+  <desc>HIGH/High Knob  NF PH:276.328.2931/540.265.5100   SITES:77 EL:3612 AMEN:NH DP DW SH NR L$ approx 3.0 mi S  of Norton 36.89 -82.622</desc>
+</wpt>
+<wpt lat="37.396" lon="-78.639">
+  <name>HOLL</name>
+  <desc>HOLL/Holliday Lake State Park  SP PH:434.248.6308 all year    AMEN:E DP DW SH RS PA approx 10.6 mi E of Appomattox 37.396 -78.639</desc>
+</wpt>
+<wpt lat="38.46" lon="-79.135">
+  <name>HONE</name>
+  <desc>HONE/Hone Quarry  NF PH:/540.265.5100 all year  SITES:51 EL:1850 AMEN:NH DP NS NR L$ approx 14.4 mi W of Harrisonburg 38.46 -79.135</desc>
+</wpt>
+<wpt lat="36.834" lon="-80.076">
+  <name>HORS</name>
+  <desc>HORS/Horseshoe Point - Philpott Lake  COE PH:540.365.7385 early may-late sep    AMEN:E DP DW SH RS PA approx 15.0 mi NW of Martinsville 36.834 -80.076</desc>
+</wpt>
+<wpt lat="36.871" lon="-81.525">
+  <name>HUNG</name>
+  <desc>HUNG/Hungry Mother State Park  SP PH:540.781.7400 all year   EL:2217 AMEN:WES DP 35ft DW SH RS PA approx 2.5 mi N  of Marion 36.871 -81.525</desc>
+</wpt>
+<wpt lat="36.723" lon="-81.491">
+  <name>HURR</name>
+  <desc>HURR/Hurricane  NF PH:276.783.5196/540.265.5100   SITES:30 EL:2838 AMEN:NH DW SH NR approx 5.7 mi SW of Sugar Grove 36.723 -81.491</desc>
+</wpt>
+<wpt lat="36.574" lon="-78.434">
+  <name>IVYH</name>
+  <desc>IVYH/Ivy Hill Rec Area - Kerr Reservoir  COE PH:804.738.6143  COMM:may be closed to camping - check   AMEN:NH DP NS NR L$ approx  mi  of Townsville NC 36.574 -78.434</desc>
+</wpt>
+<wpt lat="37.624" lon="-78.798">
+  <name>JAME</name>
+  <desc>JAME/James River State Park  SP PH:434.933.4355 all year COMM:3 campgrounds   AMEN:WE DP FT DW SH RS PA approx 4.2 mi W of Wingina 37.624 -78.798</desc>
+</wpt>
+<wpt lat="36.851" lon="-80.065">
+  <name>JAMI</name>
+  <desc>JAMI/Jamison Mill Park - Philpott Lake  COE PH:540.629.1847     AMEN:E DP DW SH NR approx 4.3 mi W of Henry 36.851 -80.065</desc>
+</wpt>
+<wpt lat="37.282" lon="-76.594">
+  <name>KING</name>
+  <desc>KING/Kings Creek - Cheatham Annex Military  MIL PH:757.887.7418  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 6.3 mi E of Williamsburg 37.282 -76.594</desc>
+</wpt>
+<wpt lat="37.174" lon="-75.975">
+  <name>KIPT</name>
+  <desc>KIPT/Kiptopeke State Park  SP PH:757.331.2267 all year    AMEN:WES DP DW SH RS PA approx 6.9 mi S  of Cape Charles 37.174 -75.975</desc>
+</wpt>
+<wpt lat="38.115" lon="-77.824">
+  <name>LAKA</name>
+  <desc>LAKA/Lake Anna State Park  SP PH:540.854.5503 all year    AMEN:WE DP DW SH RS PA approx 14.0 mi SW of Spotsylvania 38.115 -77.824</desc>
+</wpt>
+<wpt lat="38.963" lon="-77.321">
+  <name>LAKF</name>
+  <desc>LAKF/Lake Fairfax  CP PH:703.471.5415     AMEN:E DP DW SH RS approx 2 mi E of Reston 38.963 -77.321</desc>
+</wpt>
+<wpt lat="37.798" lon="-79.61">
+  <name>LAKR</name>
+  <desc>LAKR/Lake Robertson  CP PH:540.463.4164     AMEN:WE DP 40ft DW SH RS approx 1.4 mi NW of Collierstown- Rockbridge County 37.798 -79.61</desc>
+</wpt>
+<wpt lat="38.436" lon="-78.477">
+  <name>LEWI</name>
+  <desc>LEWI/Lewis Mountain - Shenandoah National Park  NP PH:540.999.3273   SITES:31 EL:3396 AMEN:NH DW SH NR approx 9.8 mi N  of Stanardsville 38.436 -78.477</desc>
+</wpt>
+<wpt lat="36.909" lon="-76.161">
+  <name>LITT</name>
+  <desc>LITT/Little Creek RV Military  MIL PH:757.462.7282  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 10.9 mi W of Virginia Beach 36.909 -76.161</desc>
+</wpt>
+<wpt lat="38.867" lon="-78.444">
+  <name>LITT</name>
+  <desc>LITT/Little Fort OHV  NF PH:540.984.4101/540.265.5100 all year COMM:extensive OHV trails SITES:11  AMEN:NH ND VT NS NR N$ approx 1.9 mi NW of Fort Valley 38.867 -78.444</desc>
+</wpt>
+<wpt lat="38.246" lon="-78.669">
+  <name>LOFT</name>
+  <desc>LOFT/Loft Mountain - Shenandoah National Park  NP PH:434.823.4675 mid may-late oct   EL:3346 AMEN:NH DP DW SH RS PA approx 12.3 mi N of Crozet 38.246 -78.669</desc>
+</wpt>
+<wpt lat="36.577" lon="-78.551">
+  <name>LONG</name>
+  <desc>LONG/Longwood Rec Area - Kerr Reservoir  COE PH:434.374.2711 early apr-late oct    AMEN:E DP DW SH RS PA approx 3.2 mi S  of Clarksville 36.577 -78.551</desc>
+</wpt>
+<wpt lat="37.233" lon="-82.375">
+  <name>LOWT</name>
+  <desc>LOWT/Lower Twin Branch - John W. Flannagan Reservoir  COE PH:540.835.9544     AMEN:E DP DW SH NR L$ approx 4.9 mi NW of Haysi 37.233 -82.375</desc>
+</wpt>
+<wpt lat="38.525" lon="-77.459">
+  <name>LUNG</name>
+  <desc>LUNG/Lunga Park Military - Quantico MCB  MIL PH:703.784.5270  COMM:CLOSED indefinitely in 2012   AMEN:RS approx 7.7 mi N  of Stafford 38.525 -77.459</desc>
+</wpt>
+<wpt lat="38.751" lon="-78.294">
+  <name>MATH</name>
+  <desc>MATH/Mathews Arm - Shenandoah National Park  NP PH:540.999.3132 mid jun-late oct  SITES:165 EL:3041 AMEN:NH RS PA approx 5.2 mi E of Rileyville 38.751 -78.294</desc>
+</wpt>
+<wpt lat="38.013" lon="-79.922">
+  <name>MCCL</name>
+  <desc>MCCL/Mcclintic Point  NF PH:540.839.2521/540.265.5100 all year  SITES:57 EL:1601 AMEN:NH ND NS RS L$ approx 7.5 mi W of Warm Springs 38.013 -79.922</desc>
+</wpt>
+<wpt lat="37.934" lon="-79.97">
+  <name>MORR</name>
+  <desc>MORR/Morris Hill  NF PH:540.962.2214/540.265.5100 early may-late oct  SITES:55 EL:2080 AMEN:NH DP DW SH RS PA approx 8.8 mi SW of Hot Springs 37.934 -79.97</desc>
+</wpt>
+<wpt lat="38.352" lon="-79.088">
+  <name>NATU</name>
+  <desc>NATU/Natural Chimneys Regional Park  CP PH:888.430.2267     AMEN:E DP 40ft DW SH approx 0.5 mi N  of Mt.Solon 38.352 -79.088</desc>
+</wpt>
+<wpt lat="36.702" lon="-82.735">
+  <name>NATT</name>
+  <desc>NATT/Natural Tunnel State Park  SP PH:540.940.2674 all year   EL:1684 AMEN:E DP DW SH RS PA approx 3.5 mi E of Duffield 36.702 -82.735</desc>
+</wpt>
+<wpt lat="37.187" lon="-76.551">
+  <name>NEWP</name>
+  <desc>NEWP/Newport News City Park  CP PH:757.888.3333     AMEN:WE DP DW SH approx 8.1 mi NW of Newport News 37.187 -76.551</desc>
+</wpt>
+<wpt lat="36.595" lon="-78.311">
+  <name>NORT</name>
+  <desc>NORT/North Bend Park - Kerr Reservoir  COE PH:434.738.0059 early apr-late oct  SITES:40  AMEN:E DP 45ft DW SH RS PA approx 6.6 mi SE of Boydton 36.595 -78.311</desc>
+</wpt>
+<wpt lat="37.542" lon="-79.586">
+  <name>NORC</name>
+  <desc>NORC/North Creek  NF PH:540.291.2188/540.265.5100 all year COMM:swim behind sites 7 - 11 SITES:16  AMEN:NH ND VT DW NS NR L$  37.542 -79.586</desc>
+</wpt>
+<wpt lat="38.339" lon="-79.207">
+  <name>NORR</name>
+  <desc>NORR/North River  NF PH:/540.265.5100 all year  SITES:20 EL:1818 AMEN:NH ND NS NR L$ approx 15.0 mi NW of Staunton 38.339 -79.207</desc>
+</wpt>
+<wpt lat="36.582" lon="-76.153">
+  <name>NORW</name>
+  <desc>NORW/Northwest River Park  CP PH:757.421.3145     AMEN:E DP DW SH approx 14.9 mi SE of Chesapeake 36.582 -76.153</desc>
+</wpt>
+<wpt lat="38.6" lon="-77.417">
+  <name>OAKR</name>
+  <desc>OAKR/Oak Ridge - Prince William Forest Park  NP PH:703.221.7181     AMEN:NH 32ft NR approx 10.9 mi S  of Manassas 38.6 -77.417</desc>
+</wpt>
+<wpt lat="36.628" lon="-78.53">
+  <name>OCCO</name>
+  <desc>OCCO/Occoneechee State Park  SP PH:804.374.2210 all year    AMEN:E DP DW SH RS PA approx 1.5 mi E of Clarksville 36.628 -78.53</desc>
+</wpt>
+<wpt lat="36.796" lon="-76.026">
+  <name>OCEA</name>
+  <desc>OCEA/Ocean Pines RV Military - Oceana NAS  MIL PH:757.417.7140  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 4.7 mi SW of Virginia Beach 36.796 -76.026</desc>
+</wpt>
+<wpt lat="37.748" lon="-79.265">
+  <name>ORON</name>
+  <desc>ORON/Oronoco  NF PH:540.291.2188/540.265.5100  COMM:dispersed - few facilities - maybe walk in only  EL:1654 AMEN:NH ND VT NW NS NR N$ approx 0.9 mi NW of Oronoco 37.748 -79.265</desc>
+</wpt>
+<wpt lat="37.574" lon="-79.339">
+  <name>OTTE</name>
+  <desc>OTTE/Otter Creek - Blue Ridge Parkway  NP PH:828.298.0398     AMEN:NH DP 30ft NR approx 12.6 mi NW of Monroe 37.574 -79.339</desc>
+</wpt>
+<wpt lat="37.442" lon="-79.602">
+  <name>PEAK</name>
+  <desc>PEAK/Peaks of Otter - Blue Ridge Parkway  NP PH:540.586.7321 mid may-late oct   EL:2577 AMEN:NH DP RS PA approx 8.6 mi NW of Bedford 37.442 -79.602</desc>
+</wpt>
+<wpt lat="37.366" lon="-77.572">
+  <name>POCA</name>
+  <desc>POCA/Pocahontas State Park  SP PH:804.796.4255 all year    AMEN:E DP 45ft DW SH RS PA approx 3.8 mi W of Chesterfield 37.366 -77.572</desc>
+</wpt>
+<wpt lat="38.671" lon="-77.175">
+  <name>POHI</name>
+  <desc>POHI/Pohick Bay Regional Park  CP PH:703.339.6104  COMM:703.339.6104 for res SITES:150  AMEN:E DP 40ft FT DW SH RS approx 3.7 mi SE of Lorton 38.671 -77.175</desc>
+</wpt>
+<wpt lat="37.195" lon="-82.453">
+  <name>POUN</name>
+  <desc>POUN/Pound River - John W. Flannagan Reservoir  COE PH:540.835.9544    EL:1554 AMEN:E DP DW SH NR L$ approx 3.1 mi N of Clintwood 37.195 -82.453</desc>
+</wpt>
+<wpt lat="38.603" lon="-77.352">
+  <name>PRIN</name>
+  <desc>PRIN/Prince William Forest RV Campground  NP PH:703.221.2474 all year COMM:Concession. For res. call 888.737.5730 SITES:24  AMEN:WES DP FT DW SH RS approx 2.8 mi NW of Dumfries 38.603 -77.352</desc>
+</wpt>
+<wpt lat="36.746" lon="-81.426">
+  <name>RACC</name>
+  <desc>RACC/Raccoon Branch  NF PH:276.783.5196/540.265.5100 mid apr-late dec COMM:free wifi SITES:20 EL:2834 AMEN:E DP RS PA approx 2.2 mi S  of Sugar Grove 36.746 -81.426</desc>
+</wpt>
+<wpt lat="36.836" lon="-81.07">
+  <name>RAVE</name>
+  <desc>RAVE/Raven Cliff  NF PH:276.783.5196/540.265.5100   SITES:20 EL:2165 AMEN:NH ND NS NR L$ approx 1.9 mi NE of Cripple Creek 36.836 -81.07</desc>
+</wpt>
+<wpt lat="37.413" lon="-77.446">
+  <name>RICH</name>
+  <desc>RICH/Richmond  RV Camp Military  MIL PH:804.279.1094 all year COMM:military only - do not use our lat/lon - contact them for directions and info SITES:6  AMEN:WES DP FT DW SH RS  37.413 -77.446</desc>
+</wpt>
+<wpt lat="37.226" lon="-79.952">
+  <name>ROAN</name>
+  <desc>ROAN/Roanoke Mountain - Blue Ridge Parkway  NP PH:828.298.0398     AMEN:NH NR approx 3.1 mi S  of Roanoke 37.226 -79.952</desc>
+</wpt>
+<wpt lat="36.833" lon="-80.345">
+  <name>ROCK</name>
+  <desc>ROCK/Rocky Knob - Blue Ridge Parkway  NP PH:828.298.0398    EL:3052 AMEN:NH 30ft NR approx 5.6 mi S  of Floyd 36.833 -80.345</desc>
+</wpt>
+<wpt lat="36.655" lon="-78.442">
+  <name>RUDD</name>
+  <desc>RUDD/Rudds Creek - Kerr Reservoir  COE PH:434.738.6827 early apr-late oct    AMEN:E DP DW SH RS PA approx 3.1 mi W of Boydton 36.655 -78.442</desc>
+</wpt>
+<wpt lat="36.865" lon="-81.285">
+  <name>RURA</name>
+  <desc>RURA/Rural Retreat Lake  CP PH:276.686.4331   SITES:72 EL:2547 AMEN:E DP DW SH approx 12.5 mi SW of Wytheville 36.865 -81.285</desc>
+</wpt>
+<wpt lat="36.851" lon="-80.1">
+  <name>RYAN</name>
+  <desc>RYAN/Ryans Branch - Philpott Lake  COE PH:540.629.1847     AMEN:NH NR approx 6.9 mi SW of Ferrum 36.851 -80.1</desc>
+</wpt>
+<wpt lat="36.811" lon="-80.036">
+  <name>SALT</name>
+  <desc>SALT/Salthouse Branch - Philpott Lake  COE PH:276.629.2703 early apr-late oct    AMEN:E DP DW SH RS PA approx 2.8 mi SW of Henry 36.811 -80.036</desc>
+</wpt>
+<wpt lat="36.772" lon="-75.956">
+  <name>SEAM</name>
+  <desc>SEAM/Sea Mist RV Military - Dam Neck Annex  MIL PH:757.492.7545  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 5.7 mi S  of Virginia Beach 36.772 -75.956</desc>
+</wpt>
+<wpt lat="38.855" lon="-78.307">
+  <name>SHEG</name>
+  <desc>SHEG/Shenandoah River - Guest State Park  SP PH:540.622.6840 all year COMM:10 walk-in + 32 RV SITES:42  AMEN:WE 60ft FT DW SH RS PA approx 7.5 mi SW of Front Royal 38.855 -78.307</desc>
+</wpt>
+<wpt lat="37.92" lon="-79.01">
+  <name>SHER</name>
+  <desc>SHER/Sherando Lake - Family Campground  NF PH:540.839.2521/540.265.5100 early apr-late oct  SITES:67 EL:1906 AMEN:E DP DW SH RS PA approx 8.4 mi SW of Lyndhurst 37.92 -79.01</desc>
+</wpt>
+<wpt lat="37.09" lon="-79.595">
+  <name>SMIT</name>
+  <desc>SMIT/Smith Mountain Lake  SP PH:540.291.2188 all year    AMEN:E DP DW SH RS PA approx 8.1 mi SW of Huddleston 37.09 -79.595</desc>
+</wpt>
+<wpt lat="36.699" lon="-78.668">
+  <name>STAU</name>
+  <desc>STAU/Staunton River State Park  SP PH:804.572.4623 all year    AMEN:E DP DW SH RS PA approx 7.8 mi SE of Scottsburg 36.699 -78.668</desc>
+</wpt>
+<wpt lat="37.601" lon="-80.219">
+  <name>STEE</name>
+  <desc>STEE/Steel Bridge  NF PH:540.864.5195/540.265.5100   SITES:20 EL:1719 AMEN:NH NR  37.601 -80.219</desc>
+</wpt>
+<wpt lat="37.01" lon="-81.181">
+  <name>STON</name>
+  <desc>STON/Stony Fork  NF PH:276.783.5196/540.265.5100 early apr-late nov  SITES:74 EL:2386 AMEN:E DP 45ft DW SH NR PA approx 6.8 mi NW of Wytheville 37.01 -81.181</desc>
+</wpt>
+<wpt lat="36.646" lon="-82.111">
+  <name>SUGA</name>
+  <desc>SUGA/Sugar Hollow City Park  CP PH:276.645.7379    EL:1833 AMEN:E DP 35ft DW SH approx 5.6 mi NE of Bristol 36.646 -82.111</desc>
+</wpt>
+<wpt lat="37.015" lon="-76.301">
+  <name>THEC</name>
+  <desc>THEC/The Colonies Military  MIL PH:757.788.4305  COMM:military only - do not use our lat/lon - contact them for directions and info   AMEN:RS approx 2.6 mi SE of Hampton 37.015 -76.301</desc>
+</wpt>
+<wpt lat="37.605" lon="-80.077">
+  <name>PINE</name>
+  <desc>PINE/The Pines  NF PH:540.864.5195/540.265.5100   SITES:18 EL:1860 AMEN:NH ND NS NR N$ approx 7.5 mi N of New Castle 37.605 -80.077</desc>
+</wpt>
+<wpt lat="38.366" lon="-79.211">
+  <name>TODD</name>
+  <desc>TODD/Todd Lake  NF PH:/540.265.5100   SITES:116 EL:2005 AMEN:NH DP DW SH NR approx 8.4 mi NE of West Augusta 38.366 -79.211</desc>
+</wpt>
+<wpt lat="37.206" lon="-78.272">
+  <name>TWIN</name>
+  <desc>TWIN/Twin Lakes State Park  SP PH:804.392.3435 all year    AMEN:E DP DW SH RS PA approx 4.1 mi W of Burkeville 37.206 -78.272</desc>
+</wpt>
+<wpt lat="37.198" lon="-80.886">
+  <name>WALN</name>
+  <desc>WALN/Walnut Flats  NF PH:540.552.4641/540.265.5100   SITES:10 EL:2441 AMEN:NH ND NS NR N$ approx 3.6 mi E of Holly Brook 37.198 -80.886</desc>
+</wpt>
+<wpt lat="38.165" lon="-76.868">
+  <name>WEST</name>
+  <desc>WEST/Westmoreland State Park  SP PH:804.493.8821 all year    AMEN:E DP DW SH RS PA approx 5.3 mi NW of Montross 38.165 -76.868</desc>
+</wpt>
+<wpt lat="37.43" lon="-80.492">
+  <name>WHIT</name>
+  <desc>WHIT/White Rocks  NF PH:540.552.4641/540.265.5100   SITES:69 EL:2986 AMEN:NH DP NS NR L$ approx 7.8 mi NW of Simmonsville 37.43 -80.492</desc>
+</wpt>
+<wpt lat="36.602" lon="-83.631">
+  <name>WILD</name>
+  <desc>WILD/Wilderness Road - Cumberland Gap National Park  NP PH:606.248.2817   SITES:160  AMEN:E DP FT DW SH NR L$ approx 11.3 mi W of Ewing 36.602 -83.631</desc>
+</wpt>
+<wpt lat="44.052" lon="-72.632">
+  <name>ALLI</name>
+  <desc>ALLI/Allis State Park  SP PH:802.276.3175   SITES:26 EL:1965 AMEN:NH DP DW NS NR approx 8.9 mi N of Randolph 44.052 -72.632</desc>
+</wpt>
+<wpt lat="44.288" lon="-72.269">
+  <name>BIGD</name>
+  <desc>BIGD/Big Deer State Park  SP PH:802.584.3822   SITES:23  AMEN:NH DP SH RS approx 3.6 mi NW of Groton 44.288 -72.269</desc>
+</wpt>
+<wpt lat="43.659" lon="-73.231">
+  <name>BOMO</name>
+  <desc>BOMO/Bomoseen State Park  SP PH:802.265.4242 early jun-late aug  SITES:66  AMEN:NH DP SH RS approx 4.7 mi N of Fair Haven 43.659 -73.231</desc>
+</wpt>
+<wpt lat="43.906" lon="-73.072">
+  <name>BRAN</name>
+  <desc>BRAN/Branbury State Park  SP PH:802.247.5925 early jun-mid oct  SITES:45  AMEN:NH DP SH RS approx 1.5 mi NE of Salisbury 43.906 -73.072</desc>
+</wpt>
+<wpt lat="44.796" lon="-71.857">
+  <name>BRIG</name>
+  <desc>BRIG/Brighton State Park  SP PH:802.723.4360 early jun-late sep    AMEN:NH DP SH RS approx 1.7 mi SE of Island Pond 44.796 -71.857</desc>
+</wpt>
+<wpt lat="44.772" lon="-73.205">
+  <name>BURT</name>
+  <desc>BURT/Burton Island  SP PH:802.524.6353 mid may-late aug COMM:passenger ferry only - no vehicles   AMEN:NH DP DW SH RS approx 4.0 mi SW of St Albans Bay 44.772 -73.205</desc>
+</wpt>
+<wpt lat="44.181" lon="-73.358">
+  <name>BUTT</name>
+  <desc>BUTT/Button Bay State Park  SP PH:802.475.2377 early jun-late aug  SITES:70  AMEN:NH DP FT DW SH RS approx 5.2 mi W of Vergennes 44.181 -73.358</desc>
+</wpt>
+<wpt lat="43.551" lon="-72.699">
+  <name>CALV</name>
+  <desc>CALV/Calvin Coolidge State Park  SP PH:802.672.3612 mid may-mid oct  SITES:60 EL:1683 AMEN:NH DP SH RS approx 1.6 mi NE of Plymouth 43.551 -72.699</desc>
+</wpt>
+<wpt lat="44.958" lon="-72.873">
+  <name>CARM</name>
+  <desc>CARM/Carmi State Park  SP PH:802.933.8383 mid may-late aug    AMEN:NH DP SH RS approx 4.8 mi NW of Enosburg Falls 44.958 -72.873</desc>
+</wpt>
+<wpt lat="43.825" lon="-72.911">
+  <name>CHIT</name>
+  <desc>CHIT/Chittenden Brook  NF PH:802.767.4261/802.747.6700  COMM:Not recommended for RVs SITES:17 EL:1854 AMEN:NH NR approx 6.1 mi SW of Rochester 43.825 -72.911</desc>
+</wpt>
+<wpt lat="44.055" lon="-73.411">
+  <name>DARS</name>
+  <desc>DARS/DAR State Park  SP PH:802.759.2354 mid may-late aug  SITES:70  AMEN:NH DP FT DW SH RS approx 5.9 mi SW of Addison 44.055 -73.411</desc>
+</wpt>
+<wpt lat="44.72" lon="-72.511">
+  <name>EDEN</name>
+  <desc>EDEN/Eden Rec Area  CP PH:802.635.2255     AMEN:E SH approx 6.0 mi SW of Lowell 44.72 -72.511</desc>
+</wpt>
+<wpt lat="44.536" lon="-72.54">
+  <name>ELMO</name>
+  <desc>ELMO/Elmore State Park  SP PH:802.888.2982 early jun-mid oct   EL:1663 AMEN:NH DP SH RS approx 0.8 mi W of Lake Elmore 44.536 -72.54</desc>
+</wpt>
+<wpt lat="43.278" lon="-73.009">
+  <name>EMER</name>
+  <desc>EMER/Emerald Lake State Park  SP PH:802.362.1655 early jun-late sep  SITES:100  AMEN:NH DP SH RS approx 2.6 mi N of East Dorset 43.278 -73.009</desc>
+</wpt>
+<wpt lat="42.824" lon="-72.567">
+  <name>FORT</name>
+  <desc>FORT/Fort Dummer State Park  SP PH:802.254.2610 early jun-late aug    AMEN:NH DP 40ft SH RS approx 1.9 mi S  of Brattleboro 42.824 -72.567</desc>
+</wpt>
+<wpt lat="43.674" lon="-72.81">
+  <name>GIFF</name>
+  <desc>GIFF/Gifford Woods State Park  SP PH:802.775.5354 mid may-mid oct  SITES:48 EL:1614 AMEN:NH DP SH RS approx 1.5 mi W of Killington 43.674 -72.81</desc>
+</wpt>
+<wpt lat="44.688" lon="-73.295">
+  <name>GRAN</name>
+  <desc>GRAN/Grand Isle State Park  SP PH:802.372.4300 mid may-late sep    AMEN:NH DP 40ft SH RS approx 2.4 mi S  of Grand Isle 44.688 -73.295</desc>
+</wpt>
+<wpt lat="43.351" lon="-72.821">
+  <name>GREE</name>
+  <desc>GREE/Greendale  NF PH:802.362.2307/802.747.6700   SITES:11 EL:1736 AMEN:NH NR approx 4.0 mi NW of Weston 43.351 -72.821</desc>
+</wpt>
+<wpt lat="43.046" lon="-72.952">
+  <name>GROU</name>
+  <desc>GROU/Grout Pond  NF PH:802.362.2307/802.747.6700 all year   EL:2281 AMEN:NH ND VT DW NS NR L$ approx 2.1 mi W of Stratton 43.046 -72.952</desc>
+</wpt>
+<wpt lat="43.692" lon="-73.217">
+  <name>HALF</name>
+  <desc>HALF/Half Moon Pond State Park  SP PH:802.273.2848 early jun-late sep    AMEN:NH DP SH RS approx 1.9 mi SW of Hubbardton 43.692 -73.217</desc>
+</wpt>
+<wpt lat="43.253" lon="-72.892">
+  <name>HAPG</name>
+  <desc>HAPG/Hapgood Pond  NF PH:802.362.2307/802.747.6700 mid may-late aug  SITES:28 EL:1572 AMEN:NH DW SH RS approx 11.0 mi NE of Manchester 43.253 -72.892</desc>
+</wpt>
+<wpt lat="43.112" lon="-72.765">
+  <name>JAMA</name>
+  <desc>JAMA/Jamaica State Park  SP PH:802.874.4600 early may-mid oct    AMEN:NH DP SH RS approx 1.1 mi NE of Jamaica 43.112 -72.765</desc>
+</wpt>
+<wpt lat="44.39" lon="-72.768">
+  <name>LITT</name>
+  <desc>LITT/Little River State Park  SP PH:802.244.7103 early jun-late sep  SITES:100  AMEN:NH DP 40ft SH RS approx 3.6 mi N  of Waterbury 44.39 -72.768</desc>
+</wpt>
+<wpt lat="44.636" lon="-71.646">
+  <name>MAID</name>
+  <desc>MAID/Maidstone State Park  SP PH:802.676.3930 early jun-late aug    AMEN:NH DP SH RS approx 6.5 mi N  of Guildhall 44.636 -71.646</desc>
+</wpt>
+<wpt lat="42.851" lon="-72.813">
+  <name>MOLL</name>
+  <desc>MOLL/Molly Stark State Park  SP PH:802.464.5460 mid may-mid oct  SITES:35 EL:1959 AMEN:NH DP SH RS approx 3.2 mi E of Wilmington 42.851 -72.813</desc>
+</wpt>
+<wpt lat="43.919" lon="-73.027">
+  <name>MOOS</name>
+  <desc>MOOS/Moosalamoo  NF PH:802.388.4362/802.747.6700   SITES:19 EL:1572 AMEN:NH ND NS NR L$ approx 3.8 mi S  of Ripton 43.919 -73.027</desc>
+</wpt>
+<wpt lat="43.438" lon="-72.406">
+  <name>MTAS</name>
+  <desc>MTAS/Mt. Ascutney State Park  SP PH:802.674.2060 mid may-mid oct   EL:1614 AMEN:NH DP 30ft SH RS approx 3.1 mi S  of Windsor 43.438 -72.406</desc>
+</wpt>
+<wpt lat="44.277" lon="-73.221">
+  <name>MTPH</name>
+  <desc>MTPH/Mt. Philo State Park  SP PH:802.425.2390 early jun-mid oct COMM:Narrow steep road SITES:10  AMEN:NH FT SH RS approx 3.0 mi SE of Charlotte 44.277 -73.221</desc>
+</wpt>
+<wpt lat="44.32" lon="-72.289">
+  <name>NEW</name>
+  <desc>NEW/New Discovery State Park  SP PH:802.426.3042 early jun-late aug  SITES:47 EL:1755 AMEN:NH SH RS approx 3.9 mi SE of Marshfield 44.32 -72.289</desc>
+</wpt>
+<wpt lat="44.492" lon="-73.234">
+  <name>NORB</name>
+  <desc>NORB/North Beach  CP PH:800.571.1198 early may-mid oct  SITES:137  AMEN:WE DP FT DW SH RS approx 1.5 mi NW of Burlington 44.492 -73.234</desc>
+</wpt>
+<wpt lat="44.947" lon="-72.21">
+  <name>PROU</name>
+  <desc>PROU/Prouty Beach Campground  CP PH:802.334.7951   SITES:56  AMEN:E DP DW SH approx 0.8 mi N  of Newport 44.947 -72.21</desc>
+</wpt>
+<wpt lat="43.637" lon="-72.401">
+  <name>QUEC</name>
+  <desc>QUEC/Quechee State Park  SP PH:802.295.2990 early jun-mid oct  SITES:55  AMEN:NH DP 40ft SH RS approx 4.2 mi W of White River Jct 43.637 -72.401</desc>
+</wpt>
+<wpt lat="42.899" lon="-73.019">
+  <name>REDM</name>
+  <desc>REDM/Red Mill Brook  NF PH:802.362.2307/802.747.6700   SITES:31 EL:2188 AMEN:NH NR approx 9.1 mi E of Bennington 42.899 -73.019</desc>
+</wpt>
+<wpt lat="44.246" lon="-72.254">
+  <name>RICK</name>
+  <desc>RICK/Ricker Pond State Park  SP PH:802.584.3821 mid may-late aug  SITES:27  AMEN:NH DP 40ft SH RS approx 0.8 mi NW of Groton 44.246 -72.254</desc>
+</wpt>
+<wpt lat="43.733" lon="-72.614">
+  <name>SILK</name>
+  <desc>SILK/Silver Lake State Park  SP PH:802.234.9451 early jun-late aug  SITES:40  AMEN:NH DP SH RS approx 7.0 mi S  of Bethel 43.733 -72.614</desc>
+</wpt>
+<wpt lat="44.559" lon="-72.788">
+  <name>SMUG</name>
+  <desc>SMUG/Smugglers Notch State Park  SP PH:802.253.4014 mid may-mid oct  SITES:34 EL:1972 AMEN:NH DP DW SH RS approx 7.2 mi NW of Stowe 44.559 -72.788</desc>
+</wpt>
+<wpt lat="43.48" lon="-73.205">
+  <name>STCA</name>
+  <desc>STCA/St. Catherine State Park  SP PH:802.287.9158 early jun-mid oct  SITES:60  AMEN:NH DP SH RS approx 3.0 mi SE of Poultney 43.48 -73.205</desc>
+</wpt>
+<wpt lat="44.28" lon="-72.273">
+  <name>STIL</name>
+  <desc>STIL/Stillwater State Park  SP PH:802.584.3822 mid may-mid oct  SITES:62  AMEN:NH DP SH RS approx 3.2 mi NW of Groton 44.28 -72.273</desc>
+</wpt>
+<wpt lat="43.041" lon="-72.691">
+  <name>TOWN</name>
+  <desc>TOWN/Townshend State Park  SP PH:802.365.7500 early jun-late aug  SITES:35  AMEN:NH DW SH RS approx 1.3 mi W of Townsend 43.041 -72.691</desc>
+</wpt>
+<wpt lat="44.53" lon="-72.839">
+  <name>UNDE</name>
+  <desc>UNDE/Underhill State Park  SP PH:802.899.3022 early jun-mid oct COMM:Steep road - Walk in - Tent only  EL:1937 AMEN:NH ND FT NS RS approx 3.4 mi NE of Underhill Center 44.53 -72.839</desc>
+</wpt>
+<wpt lat="43.391" lon="-72.408">
+  <name>WILG</name>
+  <desc>WILG/Wilgus State Park  SP PH:802.674.5422 early jun-early oct  SITES:17  AMEN:NH DP SH RS approx 0.7 mi S  of Ascutney 43.391 -72.408</desc>
+</wpt>
+<wpt lat="43.163" lon="-72.81">
+  <name>WINH</name>
+  <desc>WINH/Winhall Brook  COE PH:802.824.4570 mid may-late sep  SITES:110  AMEN:E DP DW SH RS PA approx 4.6 mi N  of Jamaica 43.163 -72.81</desc>
+</wpt>
+<wpt lat="42.89" lon="-73.039">
+  <name>WOOD</name>
+  <desc>WOOD/Woodford State Park  SP PH:802.447.7169 ealry jun-late sep  SITES:100 EL:2375 AMEN:NH DP SH RS approx 8.0 mi E of Bennington 42.89 -73.039</desc>
+</wpt>
+<wpt lat="37.855" lon="-81.071">
+  <name>ARMY</name>
+  <desc>ARMY/Army Camp - New River National Scenic River  NP PH:304.465.0508  COMM:go to lat/lon-take dirt road-follow signs SITES:11  AMEN:NH ND VT NW NS NR approx 6.0 mi SW of Layland 37.855 -81.071</desc>
+</wpt>
+<wpt lat="39.04" lon="-80.065">
+  <name>AUDR</name>
+  <desc>AUDR/Audra State Park  SP PH:304.457.1162 mid apr-mid oct   EL:1718 AMEN:NH DP SH NR approx 7.0 mi W of Belington 39.04 -80.065</desc>
+</wpt>
+<wpt lat="38.005" lon="-80.949">
+  <name>BABC</name>
+  <desc>BABC/Babcock State Park  SP PH:304.438.3004 mid apr-mid oct   EL:2361 AMEN:E DP DW SH RS approx 5.7 mi NW of Danese 38.005 -80.949</desc>
+</wpt>
+<wpt lat="38.635" lon="-80.575">
+  <name>BAKE</name>
+  <desc>BAKE/Bakers Run  COE PH:304.765.5631     AMEN:E DP DW SH NR approx 7.6 mi E of Sutton 38.635 -80.575</desc>
+</wpt>
+<wpt lat="38.218" lon="-80.908">
+  <name>BATT</name>
+  <desc>BATT/Battle Run  COE PH:304.872.3412 early jun-late sep   EL:1706 AMEN:E DP DW SH RS approx 5.3 mi SW of Summerville 38.218 -80.908</desc>
+</wpt>
+<wpt lat="38.93" lon="-79.679">
+  <name>BEAR</name>
+  <desc>BEAR/Bear Heaven  NF PH:304.478.3251/304.636.1800   SITES:8 EL:3602 AMEN:NH ND NS NR L$ approx 9.0 mi E of Elkins 38.93 -79.679</desc>
+</wpt>
+<wpt lat="38.101" lon="-80.094">
+  <name>BEAV</name>
+  <desc>BEAV/Beaver Creek - Watoga State Park  SP PH:304.799.4087 early apr-late dec   EL:2545 AMEN:E DW SH RS approx 23.8 mi NE of White Sulphur Springs 38.101 -80.094</desc>
+</wpt>
+<wpt lat="37.785" lon="-81.197">
+  <name>BECK</name>
+  <desc>BECK/Beckley Exhibition Coal Mine Campground  CP PH:304.256.1747    EL:2328 AMEN:E DW SH approx 0.7 mi NW of Beckley 37.785 -81.197</desc>
+</wpt>
+<wpt lat="38.667" lon="-80.678">
+  <name>BEER</name>
+  <desc>BEER/Bee Run  COE PH:304.765.2816     AMEN:NH ND NS NR approx 1.7 mi E of Sutton 38.667 -80.678</desc>
+</wpt>
+<wpt lat="38.308" lon="-82.345">
+  <name>BEEC</name>
+  <desc>BEEC/Beech Fork State Park  SP PH:304.522.0303 mid apr-mid oct    AMEN:E DP 40ft DW SH RS approx 7.5 mi S  of Barboursville 38.308 -82.345</desc>
+</wpt>
+<wpt lat="37.573" lon="-80.876">
+  <name>BERT</name>
+  <desc>BERT/Bertha - Bluestone WMA  SFW PH:304.466.3398 mid apr-mid oct COMM:Fish/Wildlife sites may have few facilitiies SITES:55  AMEN:NH NR L$ approx 7.0 mi S  of Hinton 37.573 -80.876</desc>
+</wpt>
+<wpt lat="38.89" lon="-79.238">
+  <name>BIGB</name>
+  <desc>BIGB/Big Bend  NF PH:304.478.3251/304.636.1800 early apr-mid oct  SITES:46  AMEN:NH DP SH RS approx 7.8 mi S  of Cabins 38.89 -79.238</desc>
+</wpt>
+<wpt lat="38.296" lon="-80.524">
+  <name>BIGR</name>
+  <desc>BIGR/Big Rock  NF PH:304.846.2695/304.636.1800   SITES:5 EL:2157 AMEN:NH ND NS NR L$ approx 4.9 mi N of Richwood 38.296 -80.524</desc>
+</wpt>
+<wpt lat="38.27" lon="-79.853">
+  <name>BIRD</name>
+  <desc>BIRD/Bird Run  NF PH:304.799.4334/304.636.1800   SITES:10 EL:2702 AMEN:NR approx 6.4 mi S  of Dunmore 38.27 -79.853</desc>
+</wpt>
+<wpt lat="38.338" lon="-80.49">
+  <name>BISH</name>
+  <desc>BISH/Bishop Knob  NF PH:304.846.2695/304.636.1800   SITES:61 EL:3091 AMEN:NH ND NS NR L$ approx 6.2 mi SE of Cowen 38.338 -80.49</desc>
+</wpt>
+<wpt lat="39.112" lon="-79.495">
+  <name>BLAC</name>
+  <desc>BLAC/Blackwater Falls State Park  SP PH:304.259.5216 early may-late oct   EL:3106 AMEN:E DP DW SH RS approx 2.0 mi SW of Davis 39.112 -79.495</desc>
+</wpt>
+<wpt lat="37.92" lon="-80.269">
+  <name>BLUB</name>
+  <desc>BLUB/Blue Bend  NF PH:304.799.4334/304.636.1800 all year  SITES:21 EL:1917 AMEN:NH DW SH NR L$ approx 8.7 mi N of White Sulphur Springs 37.92 -80.269</desc>
+</wpt>
+<wpt lat="37.516" lon="-81.129">
+  <name>BLUJ</name>
+  <desc>BLUJ/Blue Jay - Camp Creek State Park  SP PH:304.425.9481 mid apr-mid oct COMM:tent only SITES:13 EL:2126 AMEN:NH PT DW RS approx 1.1 mi W of Camp Creek 37.516 -81.129</desc>
+</wpt>
+<wpt lat="37.925" lon="-80.25">
+  <name>BLUM</name>
+  <desc>BLUM/Blue Meadow  NF   COMM:group campground - if not reserved by group individuals may use sites SITES:17 EL:1975 AMEN:NH FT DW NR NP approx 9.2 mi N of White Sulphur Springs 37.925 -80.25</desc>
+</wpt>
+<wpt lat="37.618" lon="-80.936">
+  <name>BLUS</name>
+  <desc>BLUS/Bluestone State Park  SP PH:304.466.2805 mid apr-mid oct   EL:1733 AMEN:E DP DW SH RS approx 9.1 mi SE of White Oak 37.618 -80.936</desc>
+</wpt>
+<wpt lat="38.595" lon="-79.2">
+  <name>BRAN</name>
+  <desc>BRAN/Brandywine  NF PH:/540.265.5100   SITES:30 EL:1906 AMEN:NH DP DW SH NR approx 3.2 mi SE of Brandywine 38.595 -79.2</desc>
+</wpt>
+<wpt lat="37.539" lon="-80.908">
+  <name>BULF</name>
+  <desc>BULF/Bull Falls - Bluestone WMA  SFW PH:304.466.3398 mid apr-mid oct COMM:Fish/Wildlife sites may have few facilitiies SITES:20  AMEN:NH NR L$ approx 2.9 mi E of Pipestem 37.539 -80.908</desc>
+</wpt>
+<wpt lat="38.784" lon="-80.562">
+  <name>BULL</name>
+  <desc>BULL/Bulltown  COE PH:304.452.8006 mid may-late aug    AMEN:WES DP DW SH RS PA approx 7.0 mi SE of Burnsville 38.784 -80.562</desc>
+</wpt>
+<wpt lat="37.981" lon="-82.387">
+  <name>CABW</name>
+  <desc>CABW/Cabwaylingo State Forest  SF PH:304.385.4255     AMEN:E DW SH NR approx 3.7 mi NW of Wilsondale 37.981 -82.387</desc>
+</wpt>
+<wpt lat="38.747" lon="-79.108">
+  <name>CAMR</name>
+  <desc>CAMR/Camp Run  NF PH:/540.265.5100 all year COMM:high clearance vehicle SITES:10 EL:1650 AMEN:NH ND NS NR N$ approx 4.7 mi S  of Milam 38.747 -79.108</desc>
+</wpt>
+<wpt lat="39.027" lon="-79.462">
+  <name>CANA</name>
+  <desc>CANA/Canaan Valley Resort State Park  SP PH:304.866.4121 all year COMM:for res. call park  EL:3230 AMEN:E DP DW SH RS approx 7.0 mi S  of Davis 39.027 -79.462</desc>
+</wpt>
+<wpt lat="37.495" lon="-80.846">
+  <name>CEDB</name>
+  <desc>CEDB/Cedar Branch - Bluestone WMA  SFW PH:304.466.3398 mid apr-mid oct COMM:Fish/Wildlife sites may have few facilitiies SITES:45 EL:1614 AMEN:NH NR L$ approx 12.8 mi NE of Oakvale 37.495 -80.846</desc>
+</wpt>
+<wpt lat="38.882" lon="-80.862">
+  <name>CEDA</name>
+  <desc>CEDA/Cedar Creek State Park  SP PH:304.462.7158 mid apr-mid oct    AMEN:E DP DW SH RS approx 3.6 mi NW of Cedarville 38.882 -80.862</desc>
+</wpt>
+<wpt lat="39.678" lon="-79.77">
+  <name>CHES</name>
+  <desc>CHES/Chestnut Ridge Regional Park  CP PH:304.594.1773    EL:2263approx 7.0 mi W of Bruceton Mills 39.678 -79.77</desc>
+</wpt>
+<wpt lat="38.742" lon="-82.04">
+  <name>CHIE</name>
+  <desc>CHIE/Chief Cornstalk WMA  SFW PH:304.675.4380  COMM:Fish/Wildlife sites may have few facilitiies SITES:15  AMEN:NH ND VT NS NR approx 4.2 mi NW of Southside 38.742 -82.04</desc>
+</wpt>
+<wpt lat="37.894" lon="-82.008">
+  <name>CHIL</name>
+  <desc>CHIL/Chief Logan State Park  SP PH:304.792.7125 mid apr-mid oct    AMEN:E DP DW SH RS approx 3.2 mi N  of Logan 37.894 -82.008</desc>
+</wpt>
+<wpt lat="39.424" lon="-80.851">
+  <name>CONA</name>
+  <desc>CONA/Conaway Run State Lake  SFW PH:304.420.4550  COMM:Fish/Wildlife sites may have few facilitiies SITES:10  AMEN:NH ND VT NS NR approx 5.5 mi SE of Middlebourne 39.424 -80.851</desc>
+</wpt>
+<wpt lat="39.642" lon="-79.794">
+  <name>COOP</name>
+  <desc>COOP/Coopers Rock State Forest  SF PH:304.594.1561    EL:2151 AMEN:E 40ft DW SH RS approx 8.2 mi W of Bruceton Mills 39.642 -79.794</desc>
+</wpt>
+<wpt lat="38.325" lon="-80.442">
+  <name>CRAN</name>
+  <desc>CRAN/Cranberry  NF PH:304.846.2695/304.636.1800   SITES:30 EL:2513 AMEN:NH ND NS NR L$ approx 4.3 mi SE of Dyer 38.325 -80.442</desc>
+</wpt>
+<wpt lat="38.288" lon="-80.215">
+  <name>DAYR</name>
+  <desc>DAYR/Day Run  NF PH:304.799.4334/304.636.1800   SITES:12 EL:3103 AMEN:NH ND NS NR L$ approx 7.9 mi NW of Marlinton 38.288 -80.215</desc>
+</wpt>
+<wpt lat="38.07" lon="-82.299">
+  <name>EAST</name>
+  <desc>EAST/East Fork  COE PH:304.849.5000 mid may-mid oct    AMEN:E DP DW SH RS approx 8.0 mi SE of East Lynn 38.07 -82.299</desc>
+</wpt>
+<wpt lat="38.678" lon="-80.547">
+  <name>GERA</name>
+  <desc>GERA/Gerald R. Freeman  COE PH:304.765.7756 early may-late nov    AMEN:WES DP 45ft DW SH RS PA approx 8.8 mi E of Sutton 38.678 -80.547</desc>
+</wpt>
+<wpt lat="39.318" lon="-80.028">
+  <name>GRAF</name>
+  <desc>GRAF/Grafton City Park  CP PH:304.265.1412     AMEN:E DW SH approx 1.7 mi S  of Grafton 39.318 -80.028</desc>
+</wpt>
+<wpt lat="37.853" lon="-81.072">
+  <name>GRAN</name>
+  <desc>GRAN/Grandview/Glade - New River National Scenic River  NP PH:304.465.0508  COMM:2 campgrounds-go to lat/lon-cross railroad-take dirt road-follow signs SITES:20  AMEN:NH ND VT NW NS NR approx 8.2 mi NE of Beaver 37.853 -81.072</desc>
+</wpt>
+<wpt lat="37.753" lon="-80.354">
+  <name>GREE</name>
+  <desc>GREE/Greenbrier State Forest  SF PH:304.536.1944    EL:1808 AMEN:E DW SH RS approx 2.9 mi SE of Caldwell 37.753 -80.354</desc>
+</wpt>
+<wpt lat="37.614" lon="-81.744">
+  <name>GUYA</name>
+  <desc>GUYA/Guyandotte  COE PH:304.664.3229     AMEN:E DP DW SH NR L$ approx 6.7 mi E of Gilbert 37.614 -81.744</desc>
+</wpt>
+<wpt lat="38.312" lon="-80.194">
+  <name>HAND</name>
+  <desc>HAND/Handley WMA  SFW   COMM:has tables SITES:13 EL:3085 AMEN:NH VT NR approx 8.2 mi NW of Marlinton 38.312 -80.194</desc>
+</wpt>
+<wpt lat="39.116" lon="-78.499">
+  <name>HAWK</name>
+  <desc>HAWK/Hawk  NF PH:540.984.4101/540.265.5100  COMM:Not RV recommended SITES:15  AMEN:NH ND NS NR N$ approx 3.3 mi SE of Intermont 39.116 -78.499</desc>
+</wpt>
+<wpt lat="38.667" lon="-80.366">
+  <name>HOLL</name>
+  <desc>HOLL/Holly River State Park  SP PH:304.493.6353 mid apr-mid oct   EL:1716 AMEN:E DP DW SH RS approx 1.4 mi NE of Hacker Valley 38.667 -80.366</desc>
+</wpt>
+<wpt lat="39.18" lon="-79.602">
+  <name>HORS</name>
+  <desc>HORS/Horseshoe  NF PH:304.478.3251/304.636.1800 early jun-late aug  SITES:27 EL:1699 AMEN:E ND NS RS approx 7.2 mi NE of Parsons 39.18 -79.602</desc>
+</wpt>
+<wpt lat="37.53" lon="-80.82">
+  <name>INDI</name>
+  <desc>INDI/Indian Mills - Bluestone WMA  SFW PH:304.466.3398 mid apr-mid oct COMM:Fish/Wildlife sites may have few facilitiies SITES:15  AMEN:NH NR L$ approx 3.1 mi SW of Forest Hill 37.53 -80.82</desc>
+</wpt>
+<wpt lat="38.579" lon="-79.705">
+  <name>ISLA</name>
+  <desc>ISLA/Island  NF PH:304.456.3335/304.636.1800   SITES:6 EL:2984 AMEN:NH ND NS NR N$ approx 5.0 mi NE of Bartow 38.579 -79.705</desc>
+</wpt>
+<wpt lat="38.247" lon="-81.659">
+  <name>KANA</name>
+  <desc>KANA/Kanawha State Forest  SF PH:304.558.3500     AMEN:E DP DW SH RS approx 7.3 mi S  of Charleston 38.247 -81.659</desc>
+</wpt>
+<wpt lat="37.513" lon="-80.808">
+  <name>KEAT</name>
+  <desc>KEAT/Keatley - Bluestone WMA  SFW PH:304.466.3398 mid apr-mid oct COMM:Fish/Wildlife sites may have few facilitiies SITES:15 EL:1551 AMEN:NH NR L$ approx 4.0 mi S  of Forest Hill 37.513 -80.808</desc>
+</wpt>
+<wpt lat="38.869" lon="-81.098">
+  <name>KITT</name>
+  <desc>KITT/Kittie Wilson  CP PH:304.354.0032 early jun-late aug  SITES:7  AMEN:WE FT DW SH L$ approx 3.7 mi S  of Grantsville 38.869 -81.098</desc>
+</wpt>
+<wpt lat="38.655" lon="-80.072">
+  <name>KUMB</name>
+  <desc>KUMB/Kumbrabow State Forest  SF PH:304.335.2219    EL:3002 AMEN:NH DW SH RS L$ approx 7.8 mi N  of Valley Head 38.655 -80.072</desc>
+</wpt>
+<wpt lat="37.788" lon="-81.272">
+  <name>LAKS</name>
+  <desc>LAKS/Lake Stephens Campground  CP PH:304.934.5323    EL:2100 AMEN:E DP DW SH approx 4.6 mi W of Beckley 37.788 -81.272</desc>
+</wpt>
+<wpt lat="38.74" lon="-79.692">
+  <name>LAUR</name>
+  <desc>LAUR/Laurel Fork  NF PH:304.456.3335/304.636.1800   SITES:14 EL:3110 AMEN:NH ND NS NR L$ approx 4.3 mi S  of Glady 38.74 -79.692</desc>
+</wpt>
+<wpt lat="39.493" lon="-80.636">
+  <name>LEWI</name>
+  <desc>LEWI/Lewis Wetzel WMA  SFW   COMM:Fish/Wildlife sites may have few facilitiies SITES:20  AMEN:VT NR approx 2.8 mi S  of Jacksonburg 39.493 -80.636</desc>
+</wpt>
+<wpt lat="37.505" lon="-81.134">
+  <name>MASH</name>
+  <desc>MASH/Mash Fork - Camp Creek State Park  SP PH:304.425.9481 mid apr-mid oct  SITES:26 EL:2032 AMEN:WE 40ft DW SH RS approx 1.4 mi W of Camp Creek 37.505 -81.134</desc>
+</wpt>
+<wpt lat="38.012" lon="-80.005">
+  <name>MEAD</name>
+  <desc>MEAD/Meadow Creek  - Lake Sherwood  NF PH:304.799.4334/304.636.1800   SITES:38 EL:2687 AMEN:NH DP DW SH NR approx 13.1 mi E of Eastern 38.012 -80.005</desc>
+</wpt>
+<wpt lat="37.618" lon="-80.355">
+  <name>MONC</name>
+  <desc>MONC/Moncove Lake State Park  SP PH:304.772.3450 mid apr-late dec   EL:2529 AMEN:E DP DW SH NR approx 4.8 mi NE of Gap Mills 37.618 -80.355</desc>
+</wpt>
+<wpt lat="39.248" lon="-81.307">
+  <name>MOUN</name>
+  <desc>MOUN/Mountwood County Park  CP PH:304.679.3611     AMEN:E DP DW SH approx 6.3 mi NE of Walker 39.248 -81.307</desc>
+</wpt>
+<wpt lat="37.531" lon="-80.858">
+  <name>INDI</name>
+  <desc>INDI/Mouth of Indian Creek - Bluestone WMA  SFW PH:304.466.3398 mid apr-mid oct COMM:Fish/Wildlife sites may have few facilitiies SITES:100  AMEN:NH NR L$ approx 4.6 mi SW of Forest Hill 37.531 -80.858</desc>
+</wpt>
+<wpt lat="39.223" lon="-81.11">
+  <name>NORT</name>
+  <desc>NORT/North Bend State Park  SP PH:304.643.2391 mid apr-late oct COMM:2 campgrounds   AMEN:WE SH RS  39.223 -81.11</desc>
+</wpt>
+<wpt lat="37.424" lon="-81.876">
+  <name>PANT</name>
+  <desc>PANT/Panther State Forest  SF PH:304.938.2252    EL:1735 AMEN:E NR approx 4.3 mi S  of Panther 37.424 -81.876</desc>
+</wpt>
+<wpt lat="37.457" lon="-81.882">
+  <name>PANT</name>
+  <desc>PANT/Panther WMA  SFW PH:364.938.2252 mid apr-mid oct COMM:Fish/Wildlife sites may have few facilitiies SITES:6  AMEN:E FT DW NR approx 2.0 mi SE of Panther 37.457 -81.882</desc>
+</wpt>
+<wpt lat="38.009" lon="-80.007">
+  <name>PINE</name>
+  <desc>PINE/Pine Run  - Lake Sherwood  NF PH:304.799.4334/304.636.1800   SITES:36 EL:2686 AMEN:NH ND DW SH NR approx 12.8 mi E of Eastern 38.009 -80.007</desc>
+</wpt>
+<wpt lat="37.533" lon="-80.995">
+  <name>PIPE</name>
+  <desc>PIPE/Pipestem Resort State Park  SP PH:304.466.1800 all year   EL:2733 AMEN:E DP DW SH RS approx 2.4 mi N  of Lerona 37.533 -80.995</desc>
+</wpt>
+<wpt lat="39.262" lon="-80.017">
+  <name>PLEA</name>
+  <desc>PLEA/Pleasant Creek WMA  SFW   COMM:Fish/Wildlife sites may have few facilitiies SITES:40  AMEN:NH ND VT DW NS NR approx 7.7 mi N of Philippi 39.262 -80.017</desc>
+</wpt>
+<wpt lat="37.947" lon="-81.208">
+  <name>PLUM</name>
+  <desc>PLUM/Plum Orchard Lake WMA  SFW PH:304.469.9905 all year COMM:has tables SITES:38 EL:1791 AMEN:NH VT DW NR L$ approx 2.3 mi W of Scarbro 37.947 -81.208</desc>
+</wpt>
+<wpt lat="38.102" lon="-79.968">
+  <name>POCA</name>
+  <desc>POCA/Pocahontas  NF PH:304.799.4334/304.636.1800   SITES:9 EL:2488 AMEN:NH ND NS NR L$ approx 10.9 mi SE of Marlinton 38.102 -79.968</desc>
+</wpt>
+<wpt lat="39.032" lon="-79.316">
+  <name>REDC</name>
+  <desc>REDC/Red Creek  NF PH:304.478.3251/304.636.1800   SITES:12 EL:3884 AMEN:NH ND NS NR L$ approx 10.4 mi SE of Davis 39.032 -79.316</desc>
+</wpt>
+<wpt lat="38.845" lon="-80.623">
+  <name>RIFF</name>
+  <desc>RIFF/Riffle Run  COE PH:304.853.2371     AMEN:WES DP DW SH NR L$ approx 1.9 mi SE of Burnsville 38.845 -80.623</desc>
+</wpt>
+<wpt lat="38.113" lon="-80.182">
+  <name>RIVE</name>
+  <desc>RIVE/Riverside - Watoga State Park  SP PH:304.799.4087 early apr-late dec   EL:2038 AMEN:E DW SH RS approx 9.0 mi SW of Marlinton 38.113 -80.182</desc>
+</wpt>
+<wpt lat="39.446" lon="-79.128">
+  <name>ROBE</name>
+  <desc>ROBE/Robert W. Craig - Jennings Randolph Lake  COE PH:304.355.2346 early may-late sep  SITES:82 EL:1909 AMEN:E DP FT DW SH RS approx 4.5 mi N of Elk Garden 39.446 -79.128</desc>
+</wpt>
+<wpt lat="38.827" lon="-79.386">
+  <name>SENE</name>
+  <desc>SENE/Seneca Shadows  NF PH:304.478.3251/304.636.1800 early apr-late oct  SITES:90 EL:1804 AMEN:E DP DW SH RS PA approx 0.8 mi SW of Seneca Rocks 38.827 -79.386</desc>
+</wpt>
+<wpt lat="38.307" lon="-79.922">
+  <name>SENS</name>
+  <desc>SENS/Seneca State Forest  SF PH:304.799.6213    EL:2676 AMEN:NH DW SH NR L$ approx 4.3 mi SW of Dunmore 38.307 -79.922</desc>
+</wpt>
+<wpt lat="37.474" lon="-80.868">
+  <name>SHAN</name>
+  <desc>SHAN/Shanklins Ferry - Bluestone WMA  SFW PH:304.466.3398 mid apr-mid oct COMM:Fish/Wildlife sites may have few facilitiies SITES:80 EL:1523 AMEN:NH NR L$ approx 11.0 mi NE of Oakvale 37.474 -80.868</desc>
+</wpt>
+<wpt lat="39.205" lon="-78.664">
+  <name>SHOR</name>
+  <desc>SHOR/Short Mountain WMA  SFW   COMM:6 primitive campgrounds SITES:74 EL:2144 AMEN:NH ND PT NW NS NR approx 6.4 mi S  of Augusta 39.205 -78.664</desc>
+</wpt>
+<wpt lat="39.508" lon="-78.155">
+  <name>SLEE</name>
+  <desc>SLEE/Sleepy Creek WMA  SFW   COMM:no tables - rough steep road SITES:75  AMEN:NH ND PT NW NS NR N$ approx 9.1 mi W of Hedgesville 39.508 -78.155</desc>
+</wpt>
+<wpt lat="38.707" lon="-79.588">
+  <name>SPRU</name>
+  <desc>SPRU/Spruce Knob Lake  NF PH:304.478.3251/304.636.1800 mid apr-late sep  SITES:41 EL:4024 AMEN:NH ND NS RS approx 7.6 mi S  of Whitmer 38.707 -79.588</desc>
+</wpt>
+<wpt lat="38.389" lon="-81.826">
+  <name>STAL</name>
+  <desc>STAL/St. Albans Roadside Park  CP PH:304.722.4625  COMM:unknown facilities   AMEN:DP DW NS NR approx 0.7 mi NW of St. Albans 38.389 -81.826</desc>
+</wpt>
+<wpt lat="37.937" lon="-81.065">
+  <name>STON</name>
+  <desc>STON/Stone Cliff - New River National Scenic River  NP PH:304.465.0508  COMM:walk to sites only SITES:7  AMEN:NH ND VT NW NS NR approx 5.2 mi SE of Oak Hill 37.937 -81.065</desc>
+</wpt>
+<wpt lat="38.942" lon="-80.498">
+  <name>STON</name>
+  <desc>STON/Stonewall Jackson State Park  SP PH:304.269.0523 early apr-mid dec    AMEN:E DP 40ft DW SH RS approx 5.5 mi NW of Walkersville 38.942 -80.498</desc>
+</wpt>
+<wpt lat="38.917" lon="-79.774">
+  <name>STUA</name>
+  <desc>STUA/Stuart  NF PH:304.478.3251/304.636.1800 mid apr-late sep  SITES:27 EL:2262 AMEN:E DW SH RS approx 4.0 mi E of Elkins 38.917 -79.774</desc>
+</wpt>
+<wpt lat="38.249" lon="-80.445">
+  <name>SUMM</name>
+  <desc>SUMM/Summit Lake  NF PH:304.846.2695/304.636.1800   SITES:33 EL:3474 AMEN:NH ND NS NR L$ approx 5.1 mi E of Richwood 38.249 -80.445</desc>
+</wpt>
+<wpt lat="38.342" lon="-80.231">
+  <name>TEAC</name>
+  <desc>TEAC/Tea Creek  NF PH:304.799.4334/304.636.1800   SITES:28 EL:2988 AMEN:NH ND NS NR L$ approx 11.1 mi NW of Marlinton 38.342 -80.231</desc>
+</wpt>
+<wpt lat="39.104" lon="-79.872">
+  <name>TETE</name>
+  <desc>TETE/Teter Creek WMA  SFW   COMM:has tables SITES:20 EL:1846 AMEN:NH ND VT DW NS NR approx 2.2 mi SE of Meadowville 39.104 -79.872</desc>
+</wpt>
+<wpt lat="40.542" lon="-80.578">
+  <name>TOML</name>
+  <desc>TOML/Tomlinson Run State Park  SP PH:304.564.3651 mid apr-late oct    AMEN:E DW SH RS approx 3.5 mi NE of New Cumberland 40.542 -80.578</desc>
+</wpt>
+<wpt lat="38.953" lon="-78.734">
+  <name>TROU</name>
+  <desc>TROU/Trout Pond  NF PH:540.984.4101/540.265.5100 early may-late nov  SITES:70 EL:1992 AMEN:E DP DW SH RS approx 5.6 mi E of Lost City 38.953 -78.734</desc>
+</wpt>
+<wpt lat="37.622" lon="-81.428">
+  <name>TWIN</name>
+  <desc>TWIN/Twin Falls Resort State Park  SP PH:304.294.4000 mid apr-mid oct   EL:2260 AMEN:E DP DW SH RS approx 3.7 mi NW of Mullens 37.622 -81.428</desc>
+</wpt>
+<wpt lat="39.308" lon="-79.994">
+  <name>TYGA</name>
+  <desc>TYGA/Tygart Lake State Park  SP PH:304.265.6148 mid apr-mid nov   EL:1513 AMEN:E DP 40ft DW SH RS approx 2.7 mi SE of Grafton 39.308 -79.994</desc>
+</wpt>
+<wpt lat="37.846" lon="-80.975">
+  <name>WARR</name>
+  <desc>WARR/War Ridge - New River National Scenic River  NP PH:304.465.0508   SITES:8 EL:2620 AMEN:NH ND VT NW NS NR approx 6.7 mi W of Meadow Bridge 37.846 -80.975</desc>
+</wpt>
+<wpt lat="38.007" lon="-80.012">
+  <name>WEST</name>
+  <desc>WEST/West Shore - Lake Sherwood  NF PH:304.799.4334/304.636.1800  COMM:3 campgrounds SITES:155 EL:2685 AMEN:NH DW SH RS approx 12.6 mi E of Eastern 38.007 -80.012</desc>
+</wpt>
+<wpt lat="38.925" lon="-78.689">
+  <name>WOLF</name>
+  <desc>WOLF/Wolf Gap  NF PH:540.984.4101/540.265.5100 all year  SITES:10 EL:2242 AMEN:NH DP NR N$ approx 11.5 mi SW of Wardensville 38.925 -78.689</desc>
+</wpt>
+</gpx>
