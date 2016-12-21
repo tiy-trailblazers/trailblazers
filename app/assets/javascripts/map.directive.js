@@ -2,51 +2,46 @@
     'use strict';
 
     angular.module('trailblazer')
-        .directive('map', ['MapService', mapDirective]);
+    .directive('map', mapDirective);
+
+    mapDirective.$inject = [ 'MapService' ];
 
     function mapDirective(MapService) {
         return {
             templateUrl: 'templates/map.template.html',
             restrict: 'E',
             scope: {
-                title: '='
+                dataTitle: '='
             },
+            link: setupMap
+        };
 
-            link: function () {
-                var element = 'map';
 
+        function setupMap() {
+            var element = 'map';
+
+            function buildBaseLayer() {
                 var baseLayer = new ol.layer.Tile({
                     source: new ol.source.XYZ({
-                        url: 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmdhbGFudG93aWN6IiwiYSI6ImNpd3dsNmhyZjAxNWUydHFyNnhjbzZwc3QifQ._xkfHwZJ1FsueAu0K6oQeg' })
-                });
-
-                var source = new ol.source.Vector({wrapX: false});
-
-
-                var vector = new ol.layer.Vector({
-                    source: source,
-                    style: new ol.style.Style({
-                        fill: new ol.style.Fill({
-                            color: 'rgba(0, 255, 0, 0.5)'
-                        }),
-                        stroke: new ol.style.Stroke({
-                            color: '#ffcc33',
-                            width: 2
-                        }),
-                        image: new ol.style.Circle({
-                            radius: 7,
-                            fill: new ol.style.Fill({
-                            color: '#ffcc33'
-                            })
-                        })
+                        url: 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmdhbGFudG93aWN6IiwiYSI6ImNpd3dsNmhyZjAxNWUydHFyNnhjbzZwc3QifQ._xkfHwZJ1FsueAu0K6oQeg'
                     })
                 });
+                return baseLayer;
+            }
 
+            function buildRectangle() {
+                var source = new ol.source.Vector({wrapX: false});
+
+                var vector = new ol.layer.Vector({
+                    source: source
+                });
+                return vector;
+            }
+
+            function buildMap(baseLayer, vector) {
                 var map = new ol.Map({
                     target: element,
-                    controls: ol.control.defaults().extend([
-                        new ol.control.ZoomSlider()
-                    ]),
+                    controls: ol.control.defaults(),
                     renderer: 'canvas',
                     layers: [baseLayer, vector],
                     view: new ol.View({
@@ -56,34 +51,48 @@
                         minZoom: 2
                     })
                 });
+                return map;
+            }
 
-                map.on('singleclick', function(evt) {
-                      console.log(evt);
-                    MapService.findTrails(evt.coordinate);
-                    map.removeInteraction(draw);
-                  });
+            var map = buildMap(buildBaseLayer(), buildRectangle());
 
-                  var draw; // global so we can remove it later
-                  function addInteraction() {
+            var draw = new ol.interaction.Draw({
+                source: new ol.source.Vector({wrapX: false}),
+                type: 'Circle',
+                geometryFunction: ol.interaction.Draw.createBox(),
+                style: new ol.style.Style({
+                    stroke: new ol.style.Stroke({
+                        color: '#ffdd55',
+                        width: 2
+                    }),
+                    fill: new ol.style.Fill({
+                        color: 'rgba(0, 290, 0, 0.4)'
+                    }),
+                    image: new ol.style.Icon({
+                        scale: 0.15,
+                        src: 'images/204712-200.png'
+                    })
+                })
+            });
 
-                      draw = new ol.interaction.Draw({
-                          source: source,
-                          type: 'Circle',
-                          geometryFunction: ol.interaction.Draw.createBox()
-                      });
+            map.getView().on('change:resolution', function setRaduisBox(e) {
+                e.preventDefault();
+                console.log(map.getView().getZoom());
+                if (map.getView().getZoom() > 7) {
+                        map.addInteraction(draw);
+                    }
+            });
 
-                      map.addInteraction(draw);
-                      }
+            draw.on('drawend',function(e){
+                console.log('drawned', e.feature.getGeometry().getExtent());
+                console.log(e);
+                MapService.findTrails(e.feature.getGeometry().getExtent());
+                map.removeInteraction(draw);
+                map.removeLayer(buildBaseLayer());
 
-                  addInteraction();
+            });
 
-                  draw.on('drawend',function(e){
-                      console.log('drawned', e.feature.getGeometry().getExtent());
-                      map.removeInteraction(draw);
-                  });
-
-             }
-         };
-     }
+        }
+    }
 
 }());

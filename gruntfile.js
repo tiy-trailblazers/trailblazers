@@ -63,6 +63,16 @@
                         }
                     ]
                 },
+                images: {
+                    files: [
+                        {
+                            expand: true,
+                            cwd: 'app/assets/',
+                            src: [ 'images/**' ],
+                            dest: 'public/'
+                        }
+                    ]
+                },
                 vendorjs: {
                     files: [
                         {
@@ -149,5 +159,5 @@
         grunt.loadNpmTasks('grunt-contrib-sass');
 
         grunt.registerTask('test', ['jshint'] );
-        grunt.registerTask('default', [ 'test', 'clean', 'copy:css', 'copy:html', 'concat:js' ] );
+        grunt.registerTask('default', [ 'test', 'clean', 'copy:css', 'copy:html', 'copy:images', 'concat:js' ] );
     };

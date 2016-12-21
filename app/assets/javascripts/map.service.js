@@ -14,16 +14,18 @@
 
         function findTrails(coordinates){
             console.log(coordinates);
-            var latitude = coordinates[0];
-            var longitude = coordinates[1];
+            var north = coordinates[0];
+            var west = coordinates[1];
+            var south = coordinates[2];
+            var east = coordinates[3];
 
             return $http({
                 url: '/trails',
                 params: {
-                    north: latitude + 1,
-                    south: latitude ,
-                    west: longitude,
-                    east: longitude + 1
+                    north: north,
+                    south: south,
+                    west: west,
+                    east: east
                 }
             })
             .then( function resovledResonse(response) {
