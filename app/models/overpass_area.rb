@@ -1,4 +1,5 @@
 require 'overpass_api_ruby'
+
 class OverpassArea
   attr_reader :north, :east, :south, :west
 
@@ -12,7 +13,7 @@ class OverpassArea
   end
 
   def query_string
-    "(way[highway=footway](#{south}, #{west}, #{north}, #{east}); way[highway=path](#{south}, #{west}, #{north}, #{east}); way[name~'trail', i](#{south}, #{west}, #{north}, #{east}););(._;>;);out;"
+    "(way[highway=footway](#{south}, #{west}, #{north}, #{east}); way[highway=path](#{south}, #{west}, #{north}, #{east}); way[name~'trail', i][highway!=residential](#{south}, #{west}, #{north}, #{east}););(._;>;);out;"
   end
 
   def options
@@ -65,6 +66,12 @@ class OverpassArea
       trail[:name] = trail[:tags]["name"]
       trail[:line] = line
       trail.delete(:members)
+    end
+  end
+
+  def filtered_trails
+    trails_nested.select do |trail|
+      length_of_trail(trail) > 0.1
     end
   end
 end
