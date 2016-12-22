@@ -15,8 +15,6 @@
            name: 'home',
            url: '/',
            templateUrl: 'templates/home.template.html',
-           controller: 'MapController',
-           controllerAs: 'MapData'
        })
        .state({
            name: 'trails-and-campgrounds',

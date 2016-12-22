@@ -15,34 +15,22 @@
            name: 'home',
            url: '/',
            templateUrl: 'templates/home.template.html',
-           controller: 'MapController',
-           controllerAs: 'MapData'
        })
        .state({
            name: 'trails-and-campgrounds',
            url: '/trails-and-campgrounds',
-           templateUrl: 'templates/trails-and-campgrounds.template.html'
+           templateUrl: 'templates/trails-and-campgrounds.template.html',
+           controller: 'TrailandCampgroundController',
+           controllerAs: 'TandC',
+           params: {
+               obj: null
+           }
        });
 
     }
 
 
 
-}());
-
-(function() {
-    'use strict';
-
-    angular.module('trailblazer')
-        .controller('MapController', MapController);
-
-    function MapController() {
-        var vm = this;
-
-        vm.mapData= function getMapData(data){
-            return data;
-        };
-    }
 }());
 
 (function() {
@@ -58,12 +46,12 @@
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function MapDirective($state, TrailandCampgroundService) {
+    function MapDirective($state) {
         return {
             restrict: 'EA',
             scope: {
                 dataTitle: '=',
-                passRadiusCoords: '@'
+                radiusCoords: '@'
             },
             link: setupMap
         };
@@ -163,14 +151,37 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                TrailandCampgroundService.findTrails(coordinates);
-                $state.go('trails-and-campgrounds');
+                $state.go('trails-and-campgrounds', {obj: coordinates});
                 map.removeLayer(vector);
                 map.removeInteraction(draw);
                 centerMap(coordArray[0]-((coordArray[0]-coordArray[2])/2), coordArray[1]-((coordArray[1]-coordArray[3])/2));
             });
 
         }
+    }
+
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .controller('TrailandCampgroundController', TrailandCampgroundController);
+
+    TrailandCampgroundController.$inject = [ '$stateParams', 'TrailandCampgroundService' ];
+
+    function TrailandCampgroundController($stateParams, TrailandCampgroundService) {
+        var vm = this;
+        vm.coordinates = $stateParams.obj;
+        vm.trails = null;
+        vm.campground = null;
+        vm.getTrails = TrailandCampgroundService.findTrails(vm.coordinates)
+            .then(function transformData(data) {
+                console.log(data);
+                vm.trails = data.trails;
+                vm.campgrounds = data.campgrounds;
+            });
+
     }
 
 }());
@@ -227,17 +238,3 @@
     }
 
 }());
-
-// (function() {
-//     'use strict';
-//
-//     angular.module('trailblazer')
-//         .controller('TrailController', TrailController);
-//
-//     TrailController.$inject = [ 'TrailandCampgroundService' ];
-//
-//     function TrailController(TrailandCampgroundService) {
-//         var vm = TrailandCampgroundService;
-//         vm.trails = {};
-//     }
-// }());

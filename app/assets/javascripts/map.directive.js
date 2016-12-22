@@ -11,12 +11,12 @@
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function MapDirective($state, TrailandCampgroundService) {
+    function MapDirective($state) {
         return {
             restrict: 'EA',
             scope: {
                 dataTitle: '=',
-                passRadiusCoords: '&'
+                radiusCoords: '@'
             },
             link: setupMap
         };

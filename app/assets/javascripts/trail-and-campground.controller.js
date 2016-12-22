@@ -7,8 +7,17 @@
     TrailandCampgroundController.$inject = [ '$stateParams', 'TrailandCampgroundService' ];
 
     function TrailandCampgroundController($stateParams, TrailandCampgroundService) {
-        var vm = TrailandCampgroundService;
-        vm.trails = {};
-        console.log($stateParams);
+        var vm = this;
+        vm.coordinates = $stateParams.obj;
+        vm.trails = null;
+        vm.campground = null;
+        vm.getTrails = TrailandCampgroundService.findTrails(vm.coordinates)
+            .then(function transformData(data) {
+                console.log(data);
+                vm.trails = data.trails;
+                vm.campgrounds = data.campgrounds;
+            });
+
     }
+
 }());
