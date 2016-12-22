@@ -11,11 +11,23 @@
        $urlRouterProvider.when('', '/');
 
        $stateProvider
-        .state({
-            name: 'trails-and-campgrounds',
-            url: '/trails-and-campgrounds',
-            templateUrl: 'templates/trails-and-campgrounds.template.html'
-        });
+       .state({
+           name: 'home',
+           url: '/',
+           templateUrl: 'templates/home.template.html',
+           controller: 'MapController',
+           controllerAs: 'MapData'
+       })
+       .state({
+           name: 'trails-and-campgrounds',
+           url: '/trails-and-campgrounds',
+           templateUrl: 'templates/trails-and-campgrounds.template.html',
+           controller: 'TrailandCampgroundController',
+           controllerAs: 'TandC',
+           params: {
+               obj: null
+           }
+       });
 
     }
 

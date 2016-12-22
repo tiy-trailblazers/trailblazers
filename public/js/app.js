@@ -11,11 +11,18 @@
        $urlRouterProvider.when('', '/');
 
        $stateProvider
-        .state({
-            name: 'trails-and-campgrounds',
-            url: '/trails-and-campgrounds',
-            templateUrl: 'templates/trails-and-campgrounds.template.html'
-        });
+       .state({
+           name: 'home',
+           url: '/',
+           templateUrl: 'templates/home.template.html',
+           controller: 'MapController',
+           controllerAs: 'MapData'
+       })
+       .state({
+           name: 'trails-and-campgrounds',
+           url: '/trails-and-campgrounds',
+           templateUrl: 'templates/trails-and-campgrounds.template.html'
+       });
 
     }
 
@@ -27,21 +34,36 @@
     'use strict';
 
     angular.module('trailblazer')
+        .controller('MapController', MapController);
+
+    function MapController() {
+        var vm = this;
+
+        vm.mapData= function getMapData(data){
+            return data;
+        };
+    }
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
     .directive('map', MapDirective);
 
-    MapDirective.$inject = [ 'TrailandCampgroundService' ];
+    MapDirective.$inject = [ '$state', 'TrailandCampgroundService' ];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function MapDirective(TrailandCampgroundService) {
+    function MapDirective($state, TrailandCampgroundService) {
         return {
-            //templateUrl: 'templates/map.template.html',
-            restrict: 'E',
+            restrict: 'EA',
             scope: {
-                dataTitle: '='
+                dataTitle: '=',
+                passRadiusCoords: '@'
             },
             link: setupMap
         };
@@ -105,8 +127,7 @@
 
             function centerMap(lat, long) {
                 console.log("Long: " + long + " Lat: " + lat);
-                map.getView().animate({zoom: 11}, {center: [lat, long]}, {duration: 2000});
-                //map.getView().setZoom(12);
+                map.getView().animate({zoom: 13}, {center: [lat, long]}, {duration: 2000});
             }
 
             var map = buildMap(buildBaseLayer(), buildRectangle());
@@ -133,7 +154,6 @@
             map.getView().on('change:resolution', function setRaduisBox() {
                 if (map.getView().getZoom() > 7.5 && interactionCount <= 0) {
                         interactionCount ++;
-                        console.log(interactionCount);
                         map.addInteraction(draw);
                     }
             });
@@ -143,8 +163,8 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                console.log('coord', coordArray);
                 TrailandCampgroundService.findTrails(coordinates);
+                $state.go('trails-and-campgrounds');
                 map.removeLayer(vector);
                 map.removeInteraction(draw);
                 centerMap(coordArray[0]-((coordArray[0]-coordArray[2])/2), coordArray[1]-((coordArray[1]-coordArray[3])/2));
@@ -207,3 +227,17 @@
     }
 
 }());
+
+// (function() {
+//     'use strict';
+//
+//     angular.module('trailblazer')
+//         .controller('TrailController', TrailController);
+//
+//     TrailController.$inject = [ 'TrailandCampgroundService' ];
+//
+//     function TrailController(TrailandCampgroundService) {
+//         var vm = TrailandCampgroundService;
+//         vm.trails = {};
+//     }
+// }());

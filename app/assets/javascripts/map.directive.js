@@ -4,19 +4,19 @@
     angular.module('trailblazer')
     .directive('map', MapDirective);
 
-    MapDirective.$inject = [ 'TrailandCampgroundService' ];
+    MapDirective.$inject = [ '$state', 'TrailandCampgroundService' ];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function MapDirective(TrailandCampgroundService) {
+    function MapDirective($state, TrailandCampgroundService) {
         return {
-            //templateUrl: 'templates/map.template.html',
-            restrict: 'E',
+            restrict: 'EA',
             scope: {
-                dataTitle: '='
+                dataTitle: '=',
+                passRadiusCoords: '&'
             },
             link: setupMap
         };
@@ -116,7 +116,7 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                TrailandCampgroundService.findTrails(coordinates);
+                $state.go('trails-and-campgrounds', {obj: coordinates});
                 map.removeLayer(vector);
                 map.removeInteraction(draw);
                 centerMap(coordArray[0]-((coordArray[0]-coordArray[2])/2), coordArray[1]-((coordArray[1]-coordArray[3])/2));
