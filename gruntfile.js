@@ -135,6 +135,39 @@
                 }
             },
 
+            karma: {
+                options: {
+                    frameworks: ['mocha', 'chai'],
+                    client: {
+                        mocha: {
+                            ui: 'bdd'
+                        }
+                    },
+                    browsers: [ 'PhantomJS'],
+                    singleRun: true,
+
+                    preprocessors: {
+                        'app/assets/javascripts/**/*.js': [ 'coverage' ]
+                    },
+                    reporters: [ 'dots', 'coverage' ],
+                    coverageReporter: {
+                        type: 'text-summary'
+                    }
+                },
+                login: {
+                    options: {
+                        files: [
+                            'node_modules/angular/angular.js',
+                            'node_modules/angular-ui-router/release/angular-ui-router.js',
+                            'node_modules/angular-mocks/angular-mocks.js',
+                            'app/assets/javascripts/trailblazer.module.js',
+                            'app/assets/javascripts/map.service.js',
+                            'app/assets/tests/specs/map.service.spec.js'
+                        ]
+                    }
+                }
+            },
+
             watch: {
                 html: {
                     files: ['app/assets/templates/*.html', 'app/assets/index.html'],
@@ -147,10 +180,14 @@
                 js: {
                     files: ['app/assets/javascripts/*.js'],
                     tasks: ['test', 'concat:js']
+                },
+                test: {
+                    files: ['app/assets/tests/**/*.js']
                 }
             }
         });
 
+        grunt.loadNpmTasks('grunt-karma');
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-contrib-copy');
         grunt.loadNpmTasks('grunt-contrib-jshint');
