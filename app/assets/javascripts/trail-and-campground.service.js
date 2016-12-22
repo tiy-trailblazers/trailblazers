@@ -2,17 +2,17 @@
     'use strict';
 
     angular.module('trailblazer')
-        .factory('MapService', MapService);
+        .factory('TrailandCampgroundService', TrailandCampgroundService);
 
 
 
-    MapService.$inject = [ '$http', 'TrailController', 'CampgroundController' ];
+    TrailandCampgroundService.$inject = [ '$http', 'TrailController', 'CampgroundController' ];
 
     /**
      * Constructs angular service for trail and campground http requests
      * @param {Service} $http core angular service for http requests
      */
-    function MapService($http, TrailController, CampgroundController){
+    function TrailandCampgroundService($http, TrailController, CampgroundController){
 
         return {
             findTrails: findTrails

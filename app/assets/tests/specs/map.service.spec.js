@@ -3,15 +3,15 @@
 
     var expect = window.chai.expect;
 
-    describe('map service', function() {
+    describe('trailandcampground service', function() {
         var $httpBackend;
-        var MapService;
+        var TrailandCampgroundService;
 
         beforeEach(module('trailblazer'));
 
-        beforeEach(inject(function(_$httpBackend_, _MapService_) {
+        beforeEach(inject(function(_$httpBackend_, _TrailandCampgroundService_) {
             $httpBackend = _$httpBackend_;
-            MapService = _MapService_;
+            TrailandCampgroundService = _TrailandCampgroundService_;
 
             $httpBackend.expectGET('http://localhost:9876/trails?west=12.345&south=67.891&east=98.765&north=43.219')
                 .respond([{
@@ -40,7 +40,7 @@
         }));
 
         it('should resolve ajax call with trail and campground data', function(dc) {
-            var result = MapService.findTrails([12.345, 67.891, 98.765, 43.219]);
+            var result = TrailandCampgroundService.findTrails([12.345, 67.891, 98.765, 43.219]);
             expect(result).to.be.an('object');
             expect(result.then).to.be.a('function');
             expect(result.catch).to.be.a('function');
