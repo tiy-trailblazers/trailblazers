@@ -11,10 +11,10 @@
        $urlRouterProvider.when('', '/');
 
        $stateProvider
-       .state({
-         name: 'map',
-         url: '/',
-         templateUrl:'templates/home.template.html',
+        .state({
+            name: 'trails-and-campgrounds',
+            url: '/trails-and-campgrounds',
+            templateUrl: 'templates/trails-and-campgrounds.template.html'
         });
 
     }
@@ -27,30 +27,18 @@
     'use strict';
 
     angular.module('trailblazer')
-        .controller('MapController', MapController);
-
-    function MapController(){
-
-
-      }
-}());
-
-(function() {
-    'use strict';
-
-    angular.module('trailblazer')
     .directive('map', MapDirective);
 
-    MapDirective.$inject = [ 'MapService' ];
+    MapDirective.$inject = [ 'TrailandCampgroundService' ];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function MapDirective(MapService) {
+    function MapDirective(TrailandCampgroundService) {
         return {
-            templateUrl: 'templates/map.template.html',
+            //templateUrl: 'templates/map.template.html',
             restrict: 'E',
             scope: {
                 dataTitle: '='
@@ -63,7 +51,9 @@
          * @return {void}
          */
         function setupMap() {
+            var interactionCount = 0;
             var element = 'map';
+            var vector;
 
             /**
              * Configs base Map layer with tiles sourced from MapBox
@@ -85,7 +75,7 @@
             function buildRectangle() {
                 var source = new ol.source.Vector({wrapX: false});
 
-                var vector = new ol.layer.Vector({
+                vector = new ol.layer.Vector({
                     source: source
                 });
                 return vector;
@@ -113,6 +103,12 @@
                 return map;
             }
 
+            function centerMap(lat, long) {
+                console.log("Long: " + long + " Lat: " + lat);
+                map.getView().animate({zoom: 11}, {center: [lat, long]}, {duration: 2000});
+                //map.getView().setZoom(12);
+            }
+
             var map = buildMap(buildBaseLayer(), buildRectangle());
 
             var draw = new ol.interaction.Draw({
@@ -135,9 +131,9 @@
             });
 
             map.getView().on('change:resolution', function setRaduisBox() {
-                //e.preventDefault();
-                //console.log(map.getView().getZoom());
-                if (map.getView().getZoom() > 7) {
+                if (map.getView().getZoom() > 7.5 && interactionCount <= 0) {
+                        interactionCount ++;
+                        console.log(interactionCount);
                         map.addInteraction(draw);
                     }
             });
@@ -147,11 +143,11 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                console.log('coord', coordinates);
-                MapService.findTrails(coordinates);
+                console.log('coord', coordArray);
+                TrailandCampgroundService.findTrails(coordinates);
+                map.removeLayer(vector);
                 map.removeInteraction(draw);
-                map.removeLayer(buildBaseLayer());
-
+                centerMap(coordArray[0]-((coordArray[0]-coordArray[2])/2), coordArray[1]-((coordArray[1]-coordArray[3])/2));
             });
 
         }
@@ -163,15 +159,17 @@
     'use strict';
 
     angular.module('trailblazer')
-        .factory('MapService', MapService);
+        .factory('TrailandCampgroundService', TrailandCampgroundService);
 
-    MapService.$inject = [ '$http' ];
+
+
+    TrailandCampgroundService.$inject = [ '$http' ];
 
     /**
      * Constructs angular service for trail and campground http requests
      * @param {Service} $http core angular service for http requests
      */
-    function MapService($http){
+    function TrailandCampgroundService($http){
 
         return {
             findTrails: findTrails
@@ -183,7 +181,7 @@
          * @return {Promise} angular promise functions            [description]
          */
         function findTrails(coordinates){
-            console.log(coordinates);
+            console.log('in service', coordinates);
             var west = coordinates[0];
             var south = coordinates[1];
             var east = coordinates[2];
@@ -198,11 +196,11 @@
                     east: east
                 }
             })
-            .then( function resovledResonse(response) {
+            .then( function transformResponse(response) {
                 console.log(response);
-            })
-            .catch( function rejectedResponse(xhr) {
-                console.log(xhr);
+                var trails = response.data.trails;
+                var campgrounds = response.data.campgrounds;
+                return { trails: trails, campgrounds: campgrounds};
             });
         }
 

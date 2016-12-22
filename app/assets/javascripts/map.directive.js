@@ -4,16 +4,16 @@
     angular.module('trailblazer')
     .directive('map', MapDirective);
 
-    MapDirective.$inject = [ 'MapService' ];
+    MapDirective.$inject = [ 'TrailandCampgroundService' ];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function MapDirective(MapService) {
+    function MapDirective(TrailandCampgroundService) {
         return {
-            templateUrl: 'templates/map.template.html',
+            //templateUrl: 'templates/map.template.html',
             restrict: 'E',
             scope: {
                 dataTitle: '='
@@ -26,7 +26,9 @@
          * @return {void}
          */
         function setupMap() {
+            var interactionCount = 0;
             var element = 'map';
+            var vector;
 
             /**
              * Configs base Map layer with tiles sourced from MapBox
@@ -48,7 +50,7 @@
             function buildRectangle() {
                 var source = new ol.source.Vector({wrapX: false});
 
-                var vector = new ol.layer.Vector({
+                vector = new ol.layer.Vector({
                     source: source
                 });
                 return vector;
@@ -76,6 +78,11 @@
                 return map;
             }
 
+            function centerMap(lat, long) {
+                console.log("Long: " + long + " Lat: " + lat);
+                map.getView().animate({zoom: 13}, {center: [lat, long]}, {duration: 2000});
+            }
+
             var map = buildMap(buildBaseLayer(), buildRectangle());
 
             var draw = new ol.interaction.Draw({
@@ -98,9 +105,8 @@
             });
 
             map.getView().on('change:resolution', function setRaduisBox() {
-                //e.preventDefault();
-                //console.log(map.getView().getZoom());
-                if (map.getView().getZoom() > 7) {
+                if (map.getView().getZoom() > 7.5 && interactionCount <= 0) {
+                        interactionCount ++;
                         map.addInteraction(draw);
                     }
             });
@@ -110,11 +116,10 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                console.log('coord', coordinates);
-                MapService.findTrails(coordinates);
+                TrailandCampgroundService.findTrails(coordinates);
+                map.removeLayer(vector);
                 map.removeInteraction(draw);
-                map.removeLayer(buildBaseLayer());
-
+                centerMap(coordArray[0]-((coordArray[0]-coordArray[2])/2), coordArray[1]-((coordArray[1]-coordArray[3])/2));
             });
 
         }
