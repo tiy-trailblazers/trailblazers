@@ -2,11 +2,16 @@
     'use strict';
 
     angular.module('trailblazer')
-    .directive('map', mapDirective);
+    .directive('map', MapDirective);
 
-    mapDirective.$inject = [ 'MapService' ];
+    MapDirective.$inject = [ 'MapService' ];
 
-    function mapDirective(MapService) {
+    /**
+     * Creates Directive for OpenLayers Map Element
+     * @param {Service} MapService Angular Service used for http request from map data
+     * @return {Object} Directive config and map setup and event functionality
+     */
+    function MapDirective(MapService) {
         return {
             templateUrl: 'templates/map.template.html',
             restrict: 'E',
@@ -16,10 +21,17 @@
             link: setupMap
         };
 
-
+        /**
+         * Creates and runs event handling for OpenLayers map
+         * @return {void}
+         */
         function setupMap() {
             var element = 'map';
 
+            /**
+             * Configs base Map layer with tiles sourced from MapBox
+             * @return {Object} Vector layer used for map tileing
+             */
             function buildBaseLayer() {
                 var baseLayer = new ol.layer.Tile({
                     source: new ol.source.XYZ({
@@ -29,6 +41,10 @@
                 return baseLayer;
             }
 
+            /**
+             * Builds rectangle layer for user select-radius functionality
+             * @return {Object} rectangle vector layer compatible with map
+             */
             function buildRectangle() {
                 var source = new ol.source.Vector({wrapX: false});
 
@@ -38,6 +54,12 @@
                 return vector;
             }
 
+            /**
+             * Constructs openLayers Map
+             * @param  {Object} baseLayer MapBox tiles
+             * @param  {Object} vector    Rectangle radius vector object
+             * @return {Object}           OpenLayers Map and configuration
+             */
             function buildMap(baseLayer, vector) {
                 var map = new ol.Map({
                     target: element,
