@@ -13,8 +13,11 @@
             $httpBackend = _$httpBackend_;
             TrailandCampgroundService = _TrailandCampgroundService_;
 
-            $httpBackend.expectGET('http://localhost:9876/trails?west=12.345&south=67.891&east=98.765&north=43.219')
-                .respond([{
+            $httpBackend.whenGET('templates/home.template.html')
+                .respond('recieved home template');
+
+            $httpBackend.whenGET('/trails?west=12.345&south=67.891&east=98.765&north=43.219')
+                .respond({
                     data: [
                         {
                             campgrounds: [
@@ -36,7 +39,7 @@
 
                         }
                     ]
-                }]);
+                });
         }));
 
         it('should resolve ajax call with trail and campground data', function(dc) {
@@ -44,6 +47,7 @@
             expect(result).to.be.an('object');
             expect(result.then).to.be.a('function');
             expect(result.catch).to.be.a('function');
+
 
             result
                 .then(function(data) {
@@ -53,7 +57,8 @@
                     expect(data.campgrounds[0] && data.trails[0]).to.include.keys('name', 'lat', 'long', 'description');
                     dc();
                 })
-                .catch(function() {
+                .catch(function(err) {
+                    console.log('errMessage', err.message);
                     dc('failed findTrails test');
                 });
 

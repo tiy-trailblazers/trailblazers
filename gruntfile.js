@@ -163,8 +163,8 @@
                             'node_modules/angular-sanitize/angular-sanitize.js',
                             'node_modules/angular-mocks/angular-mocks.js',
                             'app/assets/javascripts/trailblazer.module.js',
-                            'app/assets/javascripts/map.service.js',
-                            'app/assets/tests/specs/map.service.spec.js'
+                            'app/assets/javascripts/trail-and-campground.service.js',
+                            'app/assets/tests/specs/trail-and-campground.service.spec.js'
                         ]
                     }
                 }

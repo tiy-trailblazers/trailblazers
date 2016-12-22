@@ -6,13 +6,13 @@
 
 
 
-    TrailandCampgroundService.$inject = [ '$http', 'TrailController', 'CampgroundController' ];
+    TrailandCampgroundService.$inject = [ '$http' ];
 
     /**
      * Constructs angular service for trail and campground http requests
      * @param {Service} $http core angular service for http requests
      */
-    function TrailandCampgroundService($http, TrailController, CampgroundController){
+    function TrailandCampgroundService($http){
 
         return {
             findTrails: findTrails
@@ -40,14 +40,10 @@
                 }
             })
             .then( function transformResponse(response) {
-                console.log(response);
-                var trails = response.data.trails;
-                TrailController.trails(trails);
-                var campgrounds = response.data.campgrounds;
-                CampgroundController.campgrounds(campgrounds);
-            })
-            .catch( function rejectedResponse(xhr) {
-                console.log(xhr);
+                var trails = response.data.data[0].trails;
+                console.log(trails);
+                var campgrounds = response.data.data[0].campgrounds;
+                return { trails: trails, campgrounds: campgrounds};
             });
         }
 
