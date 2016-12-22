@@ -13,8 +13,8 @@
             $httpBackend = _$httpBackend_;
             MapService = _MapService_;
 
-            $httpBackend.whenGET('/trails')
-                .respond({
+            $httpBackend.expectGET('http://localhost:9876/trails?west=12.345&south=67.891&east=98.765&north=43.219')
+                .respond([{
                     data: [
                         {
                             campgrounds: [
@@ -36,7 +36,7 @@
 
                         }
                     ]
-                });
+                }]);
         }));
 
         it('should resolve ajax call with trail and campground data', function(dc) {
