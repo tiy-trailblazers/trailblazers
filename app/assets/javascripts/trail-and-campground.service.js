@@ -4,13 +4,15 @@
     angular.module('trailblazer')
         .factory('MapService', MapService);
 
-    MapService.$inject = [ '$http' ];
+
+
+    MapService.$inject = [ '$http', 'TrailController', 'CampgroundController' ];
 
     /**
      * Constructs angular service for trail and campground http requests
      * @param {Service} $http core angular service for http requests
      */
-    function MapService($http){
+    function MapService($http, TrailController, CampgroundController){
 
         return {
             findTrails: findTrails
@@ -37,8 +39,12 @@
                     east: east
                 }
             })
-            .then( function resovledResonse(response) {
+            .then( function transformResponse(response) {
                 console.log(response);
+                var trails = response.data.trails;
+                TrailController.trails(trails);
+                var campgrounds = response.data.campgrounds;
+                CampgroundController.campgrounds(campgrounds);
             })
             .catch( function rejectedResponse(xhr) {
                 console.log(xhr);
