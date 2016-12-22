@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221203952) do
+ActiveRecord::Schema.define(version: 20161222183845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,10 +42,16 @@ ActiveRecord::Schema.define(version: 20161221203952) do
   create_table "parks", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "states"
+    t.string   "nps_id"
+    t.text     "directions"
+    t.string   "url"
+    t.text     "weather_info"
+    t.string   "park_code"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "trails", force: :cascade do |t|
@@ -54,18 +60,11 @@ ActiveRecord::Schema.define(version: 20161221203952) do
     t.decimal  "start_lon"
     t.string   "park"
     t.string   "state"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "name"
     t.string   "url"
     t.text     "description"
-    t.json     "source"
-    t.integer  "park_id"
-    t.integer  "elevation_gain_in_feet"
-    t.string   "difficulty"
-    t.boolean  "camping"
-    t.boolean  "loop"
-    t.string   "map_pdf"
   end
 
   create_table "trails_trips", id: false, force: :cascade do |t|
