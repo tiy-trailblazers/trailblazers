@@ -30,7 +30,7 @@ namespace :parks do
   desc "TODO"
   task add_multipoly: :environment do
     Park.where("multi_line_boundary is not null").each do |park|
-      
+
     end
   end
 
