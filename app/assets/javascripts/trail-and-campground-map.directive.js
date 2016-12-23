@@ -12,7 +12,6 @@
      * @return {Object} Directive config and map setup and event functionality
      */
     function TrailandCampgroundMapDirective($stateParams) {
-        console.log($stateParams);
         return {
             restrict: 'EA',
             scope: {
@@ -29,8 +28,9 @@
             var element = 'map';
             var map;
             var vector;
-            var source;
+            //var source;
             var baseLayer;
+            var iconFeature;
 
             /**
              * Configs base Map layer with tiles sourced from MapBox
@@ -49,14 +49,43 @@
              * Builds rectangle layer for user select-radius functionality
              * @return {Object} rectangle vector layer compatible with map
              */
-            function buildRectangle() {
-                source = new ol.source.Vector({wrapX: false});
+            function buildMarker(icon) {
+                var vectorSource = new ol.source.Vector({
+                    features: [icon]
+                });
 
                 vector = new ol.layer.Vector({
-                    source: source
+                    source: vectorSource
                 });
+                // source = new ol.source.Vector({wrapX: false});
+                //
+                // vector = new ol.layer.Vector({
+                //     source: source
+                // });
                 return vector;
             }
+
+            function addCampgroundMarkers() {
+               iconFeature = new ol.Feature({
+                    geometry: new ol.geom.Point(centerMap($stateParams.centerCoords)),
+                    name: 'Camping',
+                });
+
+                var iconStyle = new ol.style.Style({
+                    image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+                        anchor: [0.5, 46],
+                        anchorXUnits: 'fraction',
+                        anchorYUnits: 'pixels',
+                        src: 'images/tent-icon.png',
+                        scale: 0.05
+                    }))
+                });
+
+                iconFeature.setStyle(iconStyle);
+
+            }
+
+            addCampgroundMarkers();
 
             /**
              * Constructs openLayers Map
@@ -80,17 +109,19 @@
                 return map;
             }
 
-            buildMap(buildBaseLayer(), buildRectangle());
+            buildMap(buildBaseLayer(), buildMarker(iconFeature));
 
             function centerMap(coordinates) {
-                console.log(coordinates);
+                if (!coordinates) {
+                    return [ -10853463.910959221, 4789639.227729736 ];
+                }
                 var coordArray = coordinates;
                 var eastWest = (coordArray[0]-((coordArray[0]-coordArray[2])/2));
                 var northSouth = (coordArray[1]-((coordArray[1]-coordArray[3])/2));
                 var center = [ eastWest, northSouth ];
                 return center;
             }
+
         }
     }
-
 }());

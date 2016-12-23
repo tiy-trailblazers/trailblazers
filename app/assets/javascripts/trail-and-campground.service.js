@@ -24,7 +24,6 @@
          * @return {Promise} angular promise functions            [description]
          */
         function findTrails(coordinates){
-            console.log('in service', coordinates);
             var west = coordinates[0];
             var south = coordinates[1];
             var east = coordinates[2];
