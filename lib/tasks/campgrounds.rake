@@ -10,6 +10,14 @@ namespace :campgrounds do
   end
 
   desc "TODO"
+  task add_lonlat: :environment do
+    Campground.all.each do |campground|
+      campground.lonlat = RGeo::Geographic.spherical_factory(srid: 4326).point(campground.longitude, campground.latitude)
+      campground.save!
+    end
+  end
+
+  desc "TODO"
   task delete: :environment do
     Campground.delete_all
   end

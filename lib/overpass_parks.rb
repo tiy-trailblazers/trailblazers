@@ -39,6 +39,7 @@ class OverpassParks
 
   def get_nodes_for_way(way)
     way_nodes = []
+
     way[:members].each do |nd|
       node_obj = all_nodes.select { |node| node[:id] == nd[:ref] }.first
       node_obj.delete(:type)
@@ -47,18 +48,30 @@ class OverpassParks
     way_nodes
   end
 
-  def get_way_for_rel_member(member)
-    all_ways.each do |way|
-      return way if way[:id] == member[:ref]
+  def line_string_for(way)
+    array_of_coords = []
+    way.each do |node|
+      point =  RGeo::Geographic.spherical_factory(srid: 4326).point(node[:lon].to_f, node[:lat].to_f)
+      array_of_coords << point
     end
+    RGeo::Geographic.spherical_factory(srid: 4326).line_string(array_of_coords)
   end
 
-  def get_nodes_for_relation(relation)
-    nodes_array = []
-    relation[:members].each do |way|
-      nodes_array << get_nodes_for_way(get_way_for_rel_member(way))
+  def get_way_for_rel_member(member)
+    matched = {}
+    all_ways.each do |way|
+      matched = way if way[:id] == member[:ref]
     end
-    nodes_array
+    matched
+  end
+
+  def multi_line_string_boundary(relation)
+    ways_array = []
+    relation[:members].each do |way|
+      next if get_way_for_rel_member(way) == {}
+      ways_array << line_string_for(get_nodes_for_way(get_way_for_rel_member(way)))
+    end
+    RGeo::Geographic.spherical_factory(srid: 4326).multi_line_string(ways_array)
   end
 
 end

@@ -10,25 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161222183845) do
+ActiveRecord::Schema.define(version: 20161223185638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "campgrounds", force: :cascade do |t|
-    t.string   "name"
-    t.string   "campground_type"
-    t.string   "drinking_water"
-    t.string   "waste"
-    t.string   "toilets"
-    t.integer  "num_sites"
-    t.string   "directions"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.text     "source"
-    t.string   "state"
+    t.string    "name"
+    t.string    "campground_type"
+    t.string    "drinking_water"
+    t.string    "waste"
+    t.string    "toilets"
+    t.integer   "num_sites"
+    t.string    "directions"
+    t.float     "latitude"
+    t.float     "longitude"
+    t.datetime  "created_at",                                                               null: false
+    t.datetime  "updated_at",                                                               null: false
+    t.text      "source"
+    t.string    "state"
+    t.geography "lonlat",          limit: {:srid=>4326, :type=>"point", :geographic=>true}
   end
 
   create_table "nodes", force: :cascade do |t|
@@ -40,18 +42,21 @@ ActiveRecord::Schema.define(version: 20161222183845) do
   end
 
   create_table "parks", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "states"
-    t.string   "nps_id"
-    t.text     "directions"
-    t.string   "url"
-    t.text     "weather_info"
-    t.string   "park_code"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string    "name"
+    t.text      "description"
+    t.float     "latitude"
+    t.float     "longitude"
+    t.string    "states"
+    t.string    "nps_id"
+    t.text      "directions"
+    t.string    "url"
+    t.text      "weather_info"
+    t.string    "park_code"
+    t.datetime  "created_at",                                                                               null: false
+    t.datetime  "updated_at",                                                                               null: false
+    t.geography "lonlat",              limit: {:srid=>4326, :type=>"point", :geographic=>true}
+    t.geometry  "boundary",            limit: {:srid=>0, :type=>"multi_polygon"}
+    t.geography "multi_line_boundary", limit: {:srid=>4326, :type=>"multi_line_string", :geographic=>true}
   end
 
   create_table "trails", force: :cascade do |t|
@@ -60,11 +65,12 @@ ActiveRecord::Schema.define(version: 20161222183845) do
     t.decimal  "start_lon"
     t.string   "park"
     t.string   "state"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
     t.string   "name"
     t.string   "url"
     t.text     "description"
+    t.geometry "path",        limit: {:srid=>3785, :type=>"line_string"}
   end
 
   create_table "trails_trips", id: false, force: :cascade do |t|
