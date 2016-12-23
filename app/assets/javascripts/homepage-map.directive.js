@@ -4,7 +4,7 @@
     angular.module('trailblazer')
     .directive('map', MapDirective);
 
-    MapDirective.$inject = [ '$state', 'TrailandCampgroundService' ];
+    MapDirective.$inject = [ '$state' ];
 
     /**
      * Creates Directive for OpenLayers Map Element
@@ -16,7 +16,6 @@
             restrict: 'EA',
             scope: {
                 dataTitle: '=',
-                radiusCoords: '@'
             },
             link: setupMap
         };
@@ -78,11 +77,6 @@
                 return map;
             }
 
-            function centerMap(lat, long) {
-                console.log("Long: " + long + " Lat: " + lat);
-                map.getView().animate({zoom: 13}, {center: [lat, long]}, {duration: 2000});
-            }
-
             var map = buildMap(buildBaseLayer(), buildRectangle());
 
             var draw = new ol.interaction.Draw({
@@ -116,10 +110,9 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                $state.go('trails-and-campgrounds', {obj: coordinates});
+                $state.go('trails-and-campgrounds', {transCoords: coordinates, centerCoords: coordArray});
                 map.removeLayer(vector);
                 map.removeInteraction(draw);
-                centerMap(coordArray[0]-((coordArray[0]-coordArray[2])/2), coordArray[1]-((coordArray[1]-coordArray[3])/2));
             });
 
         }

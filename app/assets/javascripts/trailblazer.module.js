@@ -23,7 +23,8 @@
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
-               obj: null
+               transCoords: null,
+               centerCoords: null
            }
        });
 
