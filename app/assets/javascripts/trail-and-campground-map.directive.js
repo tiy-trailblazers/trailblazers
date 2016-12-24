@@ -27,10 +27,10 @@
         function setupMap() {
             var element = 'map';
             var map;
-            var vector;
+            var vectorArray = [];
             //var source;
             var baseLayer;
-            var iconFeature;
+            var campgroundMarkers = [];
 
             /**
              * Configs base Map layer with tiles sourced from MapBox
@@ -49,43 +49,20 @@
              * Builds rectangle layer for user select-radius functionality
              * @return {Object} rectangle vector layer compatible with map
              */
-            function buildMarker(icon) {
-                var vectorSource = new ol.source.Vector({
-                    features: [icon]
-                });
+            function buildMarker(icons) {
+                icons.forEach(function buildVector(icon) {
+                    var vectorSource = new ol.source.Vector({
+                        features: [icon]
+                    });
 
-                vector = new ol.layer.Vector({
-                    source: vectorSource
+                    var vector = new ol.layer.Vector({
+                        source: vectorSource
+                    });
+                    vectorArray.push(vector);
                 });
-                // source = new ol.source.Vector({wrapX: false});
-                //
-                // vector = new ol.layer.Vector({
-                //     source: source
-                // });
-                return vector;
+                return vectorArray;
             }
 
-            function addCampgroundMarkers() {
-               iconFeature = new ol.Feature({
-                    geometry: new ol.geom.Point(centerMap($stateParams.centerCoords)),
-                    name: 'Camping',
-                });
-
-                var iconStyle = new ol.style.Style({
-                    image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-                        anchor: [0.5, 46],
-                        anchorXUnits: 'fraction',
-                        anchorYUnits: 'pixels',
-                        src: 'images/tent-icon.png',
-                        scale: 0.05
-                    }))
-                });
-
-                iconFeature.setStyle(iconStyle);
-
-            }
-
-            addCampgroundMarkers();
 
             /**
              * Constructs openLayers Map
@@ -93,12 +70,14 @@
              * @param  {Object} vector    Rectangle radius vector object
              * @return {Object}           OpenLayers Map and configuration
              */
-            function buildMap(baseLayer, vector) {
+            function buildMap(baseLayer, vectors) {
+                var mapLayers = baseLayer.concat(vectors);
+                console.log(mapLayers);
                 map = new ol.Map({
                     target: element,
                     controls: ol.control.defaults(),
                     renderer: 'canvas',
-                    layers: [baseLayer, vector],
+                    layers: mapLayers,
                     view: new ol.View({
                         center: centerMap($stateParams.centerCoords),
                         zoom: 12,
@@ -109,11 +88,29 @@
                 return map;
             }
 
-            buildMap(buildBaseLayer(), buildMarker(iconFeature));
+            function addCampgroundMarkers(coordinates) {
+               var iconFeature = new ol.Feature({
+                    geometry: new ol.geom.Point(coordinates),
+                    name: 'Camping',
+                });
+
+                var iconStyle = new ol.style.Style({
+                    image: new ol.style.Icon(({
+                        anchor: [0.5, 46],
+                        anchorXUnits: 'fraction',
+                        anchorYUnits: 'pixels',
+                        src: 'images/tent-icon.png',
+                        scale: 0.05
+                    }))
+                });
+
+                iconFeature.setStyle(iconStyle);
+                campgroundMarkers.push(iconFeature);
+            }
 
             function centerMap(coordinates) {
                 if (!coordinates) {
-                    return [ -10853463.910959221, 4789639.227729736 ];
+                    return;
                 }
                 var coordArray = coordinates;
                 var eastWest = (coordArray[0]-((coordArray[0]-coordArray[2])/2));
@@ -122,6 +119,23 @@
                 return center;
             }
 
+            function findCampgrounds() {
+                console.log('running', $stateParams);
+                if (!$stateParams.campgrounds) {
+                    return;
+                }
+                else {
+                    var campgrounds = $stateParams.camprounds;
+                    console.log(campgrounds);
+                    campgrounds.forEach(function markAndPlotCampgrounds(campground) {
+                        addCampgroundMarkers(centerMap(campground));
+                    });
+                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers));
+                    window.clearInterval(waitForMarkerData);
+                }
+            }
+
+            var waitForMarkerData = window.setInterval(findCampgrounds,5000);
         }
     }
 }());
