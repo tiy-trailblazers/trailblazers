@@ -34,7 +34,7 @@ class OverpassParks
   end
 
   def relation
-    data.select { |obj| obj[:type] == "relation" }.first
+    data.select { |obj| obj[:type] == "relation" }
   end
 
   def get_nodes_for_way(way)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223185638) do
+ActiveRecord::Schema.define(version: 20161226181041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20161223185638) do
     t.datetime  "created_at",                                                                               null: false
     t.datetime  "updated_at",                                                                               null: false
     t.geography "lonlat",              limit: {:srid=>4326, :type=>"point", :geographic=>true}
-    t.geometry  "boundary",            limit: {:srid=>0, :type=>"multi_polygon"}
     t.geography "multi_line_boundary", limit: {:srid=>4326, :type=>"multi_line_string", :geographic=>true}
+    t.geometry  "boundary",            limit: {:srid=>0, :type=>"geometry_collection"}
   end
 
   create_table "trails", force: :cascade do |t|

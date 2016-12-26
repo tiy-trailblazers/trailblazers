@@ -16,7 +16,7 @@ namespace :parks do
     Park.where("multi_line_boundary is null").each do |park|
       data = OverpassParks.new("\'#{park.clean_name}\'")
       p data.query_string
-      matched_park = data.relation
+      matched_park = data.relation[0]
       if matched_park
         p park.name + " FOUND A MATCH"
         park.update(multi_line_boundary: data.multi_line_string_boundary(matched_park))
@@ -28,9 +28,25 @@ namespace :parks do
   end
 
   desc "TODO"
+  task add_boundaries_with_multiple: :environment do
+    Park.where(name: ['Appalachian National Scenic Trail', 'Glacier National Park', 'Great Smoky Mountains National Park', 'Kings Canyon National Park', 'Olympic National Park']).each do |park|
+      data = OverpassParks.new("\'#{park.clean_name}\'")
+      p data.query_string
+      matched_park = data.relation[1]
+      if matched_park
+        p park.name + " FOUND A MATCH"
+        park.update(multi_line_boundary: park.multi_line_boundary + data.multi_line_string_boundary(matched_park))
+      else
+        p park.clean_name + " had no match from overpass"
+      end
+
+    end
+  end
+
+  desc "TODO"
   task add_multipoly: :environment do
     Park.where("multi_line_boundary is not null").each do |park|
-
+      park.update!(boundary: park.poly_boundary)
     end
   end
 
