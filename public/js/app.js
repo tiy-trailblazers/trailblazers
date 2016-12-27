@@ -20,6 +20,16 @@
            name: 'trails-and-campgrounds',
            url: '/trails-and-campgrounds',
            templateUrl: 'templates/trails-and-campgrounds.template.html',
+           params: {
+               centerCoords: null,
+               trails: null,
+               campgrounds: null,
+           }
+       })
+       .state({
+           name: 'buffer',
+           url: '/buffering',
+           templateUrl: 'templates/buffering.template.html',
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
@@ -146,7 +156,7 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                $state.go('trails-and-campgrounds', {transCoords: coordinates, centerCoords: coordArray});
+                $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
                 map.removeLayer(vector);
                 map.removeInteraction(draw);
             });
@@ -229,8 +239,8 @@
              * @return {Object}           OpenLayers Map and configuration
              */
             function buildMap(baseLayer, vectors) {
-                var mapLayers = baseLayer.concat(vectors);
-                console.log(mapLayers);
+                vectors.unshift(baseLayer);
+                var mapLayers = vectors;
                 map = new ol.Map({
                     target: element,
                     controls: ol.control.defaults(),
@@ -238,7 +248,7 @@
                     layers: mapLayers,
                     view: new ol.View({
                         center: centerMap($stateParams.centerCoords),
-                        zoom: 12,
+                        zoom: 10,
                         maxZoom: 18,
                         minZoom: 2
                     })
@@ -249,16 +259,13 @@
             function addCampgroundMarkers(coordinates) {
                var iconFeature = new ol.Feature({
                     geometry: new ol.geom.Point(coordinates),
-                    name: 'Camping',
+                    name: 'Camping'
                 });
 
                 var iconStyle = new ol.style.Style({
                     image: new ol.style.Icon(({
-                        anchor: [0.5, 46],
-                        anchorXUnits: 'fraction',
-                        anchorYUnits: 'pixels',
                         src: 'images/tent-icon.png',
-                        scale: 0.05
+                        scale: 0.025
                     }))
                 });
 
@@ -269,11 +276,19 @@
             function centerMap(coordinates) {
                 if (!coordinates) {
                     return;
+                } else if (coordinates.length === 2) {
+                    console.log('from campg', coordinates);
+                    var transformCoordOne = ol.proj.fromLonLat([ coordinates[0], coordinates[1]]);
+                    console.log('tranOne', transformCoordOne);
+                    var transformCoordTwo = ol.proj.fromLonLat([( coordinates[0] + 0.005), ( coordinates[1] + 0.005 )]);
+                    var markCoordinates = transformCoordOne.concat(transformCoordTwo);
+                    return markCoordinates;
                 }
                 var coordArray = coordinates;
                 var eastWest = (coordArray[0]-((coordArray[0]-coordArray[2])/2));
                 var northSouth = (coordArray[1]-((coordArray[1]-coordArray[3])/2));
                 var center = [ eastWest, northSouth ];
+
                 return center;
             }
 
@@ -283,17 +298,17 @@
                     return;
                 }
                 else {
-                    var campgrounds = $stateParams.camprounds;
-                    console.log(campgrounds);
+                    var campgrounds = $stateParams.campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
-                        addCampgroundMarkers(centerMap(campground));
+                        var campgroundCoord = [campground.longitude, campground.latitude];
+                        addCampgroundMarkers(centerMap(campgroundCoord));
                     });
-                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers));
                     window.clearInterval(waitForMarkerData);
+                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers));
                 }
             }
 
-            var waitForMarkerData = window.setInterval(findCampgrounds,5000);
+            var waitForMarkerData = window.setInterval(findCampgrounds,1000);
         }
     }
 }());
@@ -304,9 +319,9 @@
     angular.module('trailblazer')
         .controller('TrailandCampgroundController', TrailandCampgroundController);
 
-    TrailandCampgroundController.$inject = [ '$stateParams', 'TrailandCampgroundService' ];
+    TrailandCampgroundController.$inject = [ '$state', '$stateParams', 'TrailandCampgroundService' ];
 
-    function TrailandCampgroundController($stateParams, TrailandCampgroundService) {
+    function TrailandCampgroundController($state, $stateParams, TrailandCampgroundService) {
         var vm = this;
         vm.coordinates = $stateParams.transCoords;
         vm.trails = null;
@@ -316,8 +331,12 @@
                 console.log(data);
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
+                $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
                 $stateParams.trails = vm.trails;
                 $stateParams.campgrounds = vm.campgrounds;
+            })
+            .catch(function errHandler(err) {
+                console.log(err);
             });
 
     }

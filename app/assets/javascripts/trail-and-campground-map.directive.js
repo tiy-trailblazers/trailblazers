@@ -71,8 +71,8 @@
              * @return {Object}           OpenLayers Map and configuration
              */
             function buildMap(baseLayer, vectors) {
-                var mapLayers = baseLayer.concat(vectors);
-                console.log(mapLayers);
+                vectors.unshift(baseLayer);
+                var mapLayers = vectors;
                 map = new ol.Map({
                     target: element,
                     controls: ol.control.defaults(),
@@ -80,7 +80,7 @@
                     layers: mapLayers,
                     view: new ol.View({
                         center: centerMap($stateParams.centerCoords),
-                        zoom: 12,
+                        zoom: 10,
                         maxZoom: 18,
                         minZoom: 2
                     })
@@ -91,16 +91,13 @@
             function addCampgroundMarkers(coordinates) {
                var iconFeature = new ol.Feature({
                     geometry: new ol.geom.Point(coordinates),
-                    name: 'Camping',
+                    name: 'Camping'
                 });
 
                 var iconStyle = new ol.style.Style({
                     image: new ol.style.Icon(({
-                        anchor: [0.5, 46],
-                        anchorXUnits: 'fraction',
-                        anchorYUnits: 'pixels',
                         src: 'images/tent-icon.png',
-                        scale: 0.05
+                        scale: 0.025
                     }))
                 });
 
@@ -111,11 +108,19 @@
             function centerMap(coordinates) {
                 if (!coordinates) {
                     return;
+                } else if (coordinates.length === 2) {
+                    console.log('from campg', coordinates);
+                    var transformCoordOne = ol.proj.fromLonLat([ coordinates[0], coordinates[1]]);
+                    console.log('tranOne', transformCoordOne);
+                    var transformCoordTwo = ol.proj.fromLonLat([( coordinates[0] + 0.005), ( coordinates[1] + 0.005 )]);
+                    var markCoordinates = transformCoordOne.concat(transformCoordTwo);
+                    return markCoordinates;
                 }
                 var coordArray = coordinates;
                 var eastWest = (coordArray[0]-((coordArray[0]-coordArray[2])/2));
                 var northSouth = (coordArray[1]-((coordArray[1]-coordArray[3])/2));
                 var center = [ eastWest, northSouth ];
+
                 return center;
             }
 
@@ -125,17 +130,17 @@
                     return;
                 }
                 else {
-                    var campgrounds = $stateParams.camprounds;
-                    console.log(campgrounds);
+                    var campgrounds = $stateParams.campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
-                        addCampgroundMarkers(centerMap(campground));
+                        var campgroundCoord = [campground.longitude, campground.latitude];
+                        addCampgroundMarkers(centerMap(campgroundCoord));
                     });
-                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers));
                     window.clearInterval(waitForMarkerData);
+                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers));
                 }
             }
 
-            var waitForMarkerData = window.setInterval(findCampgrounds,5000);
+            var waitForMarkerData = window.setInterval(findCampgrounds,1000);
         }
     }
 }());

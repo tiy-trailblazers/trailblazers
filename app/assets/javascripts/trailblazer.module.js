@@ -20,6 +20,16 @@
            name: 'trails-and-campgrounds',
            url: '/trails-and-campgrounds',
            templateUrl: 'templates/trails-and-campgrounds.template.html',
+           params: {
+               centerCoords: null,
+               trails: null,
+               campgrounds: null,
+           }
+       })
+       .state({
+           name: 'buffer',
+           url: '/buffering',
+           templateUrl: 'templates/buffering.template.html',
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
