@@ -172,6 +172,7 @@
                     });
                     var trailCoordinates = [];
                     var trails = $stateParams.trails;
+                    console.log('trails', trails);
                     trails.forEach( function markAndPlottrails(trail){
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
                         addTrailheadMarkers(centerLayers(trailheadCoord));
