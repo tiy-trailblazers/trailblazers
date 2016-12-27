@@ -200,6 +200,7 @@
             var baseLayer;
             var campgroundMarkers = [];
             var trailheadMarkers = [];
+            var trailLineLayers = [];
 
             /**
              * Configs base Map layer with tiles sourced from MapBox
@@ -239,9 +240,9 @@
              * @param  {Object} vector    Rectangle radius vector object
              * @return {Object}           OpenLayers Map and configuration
              */
-            function buildMap(baseLayer, campgroundVectors, trailheadVectors) {
+            function buildMap(baseLayer, campgroundVectors, trailheadVectors, trailLineVectors) {
                 campgroundVectors.unshift(baseLayer);
-                var vectorLayers = campgroundVectors.concat(trailheadVectors);
+                var vectorLayers = campgroundVectors.concat(trailLineVectors, trailheadVectors);
                 var mapLayers = vectorLayers;
                 map = new ol.Map({
                     target: element,
@@ -250,8 +251,8 @@
                     layers: mapLayers,
                     view: new ol.View({
                         center: centerLayers($stateParams.centerCoords),
-                        zoom: 10,
-                        maxZoom: 18,
+                        zoom: 11,
+                        maxZoom: 19,
                         minZoom: 2
                     })
                 });
@@ -292,6 +293,23 @@
                 trailheadMarkers.push(iconFeature);
             }
 
+            function createTrailLayers(trails) {
+                var iconFeature = new ol.Feature({
+                    geometry: new ol.geom.LineString(trails),
+                    name: 'Trail'
+                });
+
+                var iconStyle = new ol.style.Style({
+                  stroke: new ol.style.Stroke({
+                      color: [255, 255, 0, 0.5],
+                      width: 8
+                  })
+                });
+
+                iconFeature.setStyle(iconStyle);
+                trailLineLayers.push(iconFeature);
+            }
+
             function centerLayers(coordinates) {
                 if (!coordinates) {
                     return;
@@ -330,9 +348,9 @@
                             trailCoordinates.push(transformTrailNode);
                         });
                     });
-                    console.log('trailCoordinates', trailCoordinates);
                     window.clearInterval(waitForMarkerData);
-                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers));
+                    createTrailLayers(trailCoordinates);
+                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
                 }
             }
 
