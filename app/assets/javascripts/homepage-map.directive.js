@@ -93,7 +93,7 @@
                     }),
                     image: new ol.style.Icon({
                         scale: 0.15,
-                        src: 'images/204712-200.png'
+                        src: 'images/trailhead.png'
                     })
                 })
             });

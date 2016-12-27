@@ -139,7 +139,7 @@
                     }),
                     image: new ol.style.Icon({
                         scale: 0.15,
-                        src: 'images/204712-200.png'
+                        src: 'images/trailhead.png'
                     })
                 })
             });
@@ -199,6 +199,7 @@
             //var source;
             var baseLayer;
             var campgroundMarkers = [];
+            var trailheadMarkers = [];
 
             /**
              * Configs base Map layer with tiles sourced from MapBox
@@ -238,16 +239,17 @@
              * @param  {Object} vector    Rectangle radius vector object
              * @return {Object}           OpenLayers Map and configuration
              */
-            function buildMap(baseLayer, vectors) {
-                vectors.unshift(baseLayer);
-                var mapLayers = vectors;
+            function buildMap(baseLayer, campgroundVectors, trailheadVectors) {
+                campgroundVectors.unshift(baseLayer);
+                var vectorLayers = campgroundVectors.concat(trailheadVectors);
+                var mapLayers = vectorLayers;
                 map = new ol.Map({
                     target: element,
                     controls: ol.control.defaults(),
                     renderer: 'canvas',
                     layers: mapLayers,
                     view: new ol.View({
-                        center: centerMap($stateParams.centerCoords),
+                        center: centerLayers($stateParams.centerCoords),
                         zoom: 10,
                         maxZoom: 18,
                         minZoom: 2
@@ -265,7 +267,7 @@
                 var iconStyle = new ol.style.Style({
                     image: new ol.style.Icon(({
                         src: 'images/tent-icon.png',
-                        scale: 0.025
+                        scale: 0.03
                     }))
                 });
 
@@ -273,13 +275,28 @@
                 campgroundMarkers.push(iconFeature);
             }
 
-            function centerMap(coordinates) {
+            function addTrailheadMarkers(coordinates) {
+               var iconFeature = new ol.Feature({
+                    geometry: new ol.geom.Point(coordinates),
+                    name: 'Trailhead'
+                });
+
+                var iconStyle = new ol.style.Style({
+                    image: new ol.style.Icon(({
+                        src: 'images/trailhead.png',
+                        scale: 0.15
+                    }))
+                });
+
+                iconFeature.setStyle(iconStyle);
+                trailheadMarkers.push(iconFeature);
+            }
+
+            function centerLayers(coordinates) {
                 if (!coordinates) {
                     return;
                 } else if (coordinates.length === 2) {
-                    console.log('from campg', coordinates);
                     var transformCoordOne = ol.proj.fromLonLat([ coordinates[0], coordinates[1]]);
-                    console.log('tranOne', transformCoordOne);
                     var transformCoordTwo = ol.proj.fromLonLat([( coordinates[0] + 0.005), ( coordinates[1] + 0.005 )]);
                     var markCoordinates = transformCoordOne.concat(transformCoordTwo);
                     return markCoordinates;
@@ -292,7 +309,7 @@
                 return center;
             }
 
-            function findCampgrounds() {
+            function findCampgroundsAndTrails() {
                 console.log('running', $stateParams);
                 if (!$stateParams.campgrounds) {
                     return;
@@ -301,14 +318,25 @@
                     var campgrounds = $stateParams.campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
-                        addCampgroundMarkers(centerMap(campgroundCoord));
+                        addCampgroundMarkers(centerLayers(campgroundCoord));
                     });
+                    var trailCoordinates = [];
+                    var trails = $stateParams.trails;
+                    trails.forEach( function markAndPlottrails(trail){
+                        var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
+                        addTrailheadMarkers(centerLayers(trailheadCoord));
+                        trail.line.forEach(function plotTrail(trailNode){
+                            var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
+                            trailCoordinates.push(transformTrailNode);
+                        });
+                    });
+                    console.log('trailCoordinates', trailCoordinates);
                     window.clearInterval(waitForMarkerData);
-                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers));
+                    buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers));
                 }
             }
 
-            var waitForMarkerData = window.setInterval(findCampgrounds,1000);
+            var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,1000);
         }
     }
 }());
