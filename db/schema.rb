@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226181041) do
+ActiveRecord::Schema.define(version: 20161227164024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,14 +31,6 @@ ActiveRecord::Schema.define(version: 20161226181041) do
     t.text      "source"
     t.string    "state"
     t.geography "lonlat",          limit: {:srid=>4326, :type=>"point", :geographic=>true}
-  end
-
-  create_table "nodes", force: :cascade do |t|
-    t.integer  "trail_id"
-    t.decimal  "lat"
-    t.decimal  "lon"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "parks", force: :cascade do |t|
