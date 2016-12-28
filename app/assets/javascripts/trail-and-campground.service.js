@@ -24,7 +24,6 @@
          * @return {Promise} angular promise functions            [description]
          */
         function findTrails(coordinates){
-            console.log('service', coordinates);
             var west = coordinates[0];
             var south = coordinates[1];
             var east = coordinates[2];
@@ -40,7 +39,6 @@
                 }
             })
             .then( function transformResponse(response) {
-                console.log('callBack', response);
                 var trails = response.data.trails;
                 var campgrounds = response.data.campgrounds;
                 return { trails: trails, campgrounds: campgrounds};

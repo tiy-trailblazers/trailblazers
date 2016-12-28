@@ -30,8 +30,8 @@
            name: 'buffer',
            url: '/buffering',
            templateUrl: 'templates/buffering.template.html',
-           controller: 'TrailandCampgroundController',
-           controllerAs: 'TandC',
+           controller: 'RadiusSearchController',
+           controllerAs: 'radius',
            params: {
                transCoords: null,
                centerCoords: null
