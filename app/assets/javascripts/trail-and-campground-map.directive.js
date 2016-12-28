@@ -205,6 +205,7 @@
                     return;
                 }
                 else {
+                    console.log($stateParams);
                     var campgrounds = $stateParams.campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];

@@ -20,6 +20,8 @@
            name: 'trails-and-campgrounds',
            url: '/trails-and-campgrounds',
            templateUrl: 'templates/trails-and-campgrounds.template.html',
+           controller: 'TrailandCampgroundController',
+           controllerAs: 'TandC',
            params: {
                centerCoords: null,
                trails: null,

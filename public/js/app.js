@@ -20,6 +20,8 @@
            name: 'trails-and-campgrounds',
            url: '/trails-and-campgrounds',
            templateUrl: 'templates/trails-and-campgrounds.template.html',
+           controller: 'TrailandCampgroundController',
+           controllerAs: 'TandC',
            params: {
                centerCoords: null,
                trails: null,
@@ -184,8 +186,6 @@
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
                 $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
-                $stateParams.trails = vm.trails;
-                $stateParams.campgrounds = vm.campgrounds;
             })
             .catch(function errHandler(err) {
                 console.log(err);
@@ -402,6 +402,7 @@
                     return;
                 }
                 else {
+                    console.log($stateParams);
                     var campgrounds = $stateParams.campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
@@ -428,6 +429,23 @@
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,500);
         }
     }
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .controller('TrailandCampgroundController', TrailandCampgroundController);
+
+    TrailandCampgroundController.$inject = ['$stateParams'];
+
+    function TrailandCampgroundController($stateParams) {
+        var vm = this;
+
+        vm.trails = $stateParams.trails;
+        vm.campgrounds = $stateParams.campgrounds;
+    }
+
 }());
 
 (function() {
@@ -479,4 +497,25 @@
 
     }
 
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .filter('length', LengthFilter);
+
+    function LengthFilter() {
+
+        return function length(trails) {
+            var trailSort = trails.sort(function sortLength(a, b) {
+                if (a.length > b.length) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            });
+            return trailSort;
+        };
+    }
 }());

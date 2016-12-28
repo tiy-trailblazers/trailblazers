@@ -1,7 +1,14 @@
 
 <tandcmap id='map' data-title='map'></tandcmap>
 <section class='trails'>
+    <ul>
+        <h3>Trails</h3>
+        <li ng-repeat='trail in TandC.trails | length'>{{trail.name}}</li>
+    </ul>
 </section>
 <section class='campgrounds'>
-<h3>To be some trail info..</h3>
+    <ul>
+        <h3>Campgrounds</h3>
+        <li ng-repeat='camp in TandC.campgrounds'>{{camp.name}}</li>
+    </ul>
 </section>

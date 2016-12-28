@@ -16,8 +16,6 @@
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
                 $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
-                $stateParams.trails = vm.trails;
-                $stateParams.campgrounds = vm.campgrounds;
             })
             .catch(function errHandler(err) {
                 console.log(err);
