@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('trailblazer')
-        .directive('trailpanel', TrailPanelDirective);
+        .directive('trail', TrailPanelDirective);
 
     function TrailPanelDirective() {
         return {

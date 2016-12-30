@@ -180,7 +180,7 @@
                     tasks: ['sass']
                 },
                 js: {
-                    files: ['app/assets/javascripts/*.js'],
+                    files: ['app/assets/javascripts/**/*.js'],
                     tasks: ['test', 'concat:js']
                 },
                 test: {
