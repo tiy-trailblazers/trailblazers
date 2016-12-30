@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('trailblazer')
-    .directive('tandcmap', TrailandCampgroundMapDirective);
+        .directive('tandcmap', TrailandCampgroundMapDirective);
 
     TrailandCampgroundMapDirective.$inject = ['$stateParams'];
 

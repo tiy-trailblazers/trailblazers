@@ -118,11 +118,11 @@
 
             concat: {
                 js: {
-                    src: [ 'app/assets/javascripts/trailblazer.module.js', 'app/assets/javascripts/**.*js' ],
+                    src: [ 'app/assets/javascripts/trailblazer.module.js', 'app/assets/javascripts/**/*.js' ],
                     dest: 'public/js/app.js'
                 },
                 vendorjs: {
-                    src: [ 'app/assets/javascripts/all-angular-files/angular.js', 'app/assets/javascripts/all-angular-files/*.js'],
+                    src: [ 'app/assets/all-angular-files/angular.js', 'app/assets/javascripts/all-angular-files/*.js'],
                     dest: 'public/js/all-angular-files.js'
                 }
             },

@@ -1,9 +1,20 @@
 
 <tandcmap id='map' data-title='map'></tandcmap>
+<aside campground-panel>
+
+</aside>
 <section class='trails'>
     <ul>
         <h3>Trails</h3>
-        <li ng-repeat='trail in TandC.trails | length'>{{trail.name}}</li>
+        <li ng-repeat='trail in TandC.trails | length' class='{{trail | class}}' ng-click='TandC.trailPopup($event)'>
+            {{trail.name}}
+            <aside ng-if='TandC.trailClick' trailpanel>
+                <p>This trai is super awesome</p>
+                <p>Don't forget to pack tp!</p>
+                <p>Be Bear Aware;)</p>
+                <p>Trail length: {{trail.length | number:2}} miles</p>
+            </aside>
+        </li>
     </ul>
 </section>
 <section class='campgrounds'>

@@ -50,6 +50,61 @@
     'use strict';
 
     angular.module('trailblazer')
+        .controller('RadiusSearchController', RadiusSearchController);
+
+    RadiusSearchController.$inject = [ '$state', '$stateParams', 'TrailandCampgroundService' ];
+
+    function RadiusSearchController($state, $stateParams, TrailandCampgroundService) {
+        var vm = this;
+        vm.coordinates = $stateParams.transCoords;
+        vm.trails = null;
+        vm.campground = null;
+        vm.getTrails = TrailandCampgroundService.findTrails(vm.coordinates)
+            .then(function transformData(data) {
+                vm.trails = data.trails;
+                vm.campgrounds = data.campgrounds;
+                $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
+            })
+            .catch(function errHandler(err) {
+                console.log(err);
+            });
+
+    }
+
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .controller('TrailandCampgroundController', TrailandCampgroundController);
+
+    TrailandCampgroundController.$inject = ['$stateParams'];
+
+    function TrailandCampgroundController($stateParams) {
+        var vm = this;
+
+        vm.trails = $stateParams.trails;
+        vm.campgrounds = $stateParams.campgrounds;
+        vm.trailClick = false;
+
+        vm.trailPopup = function trailPopup(event){
+            if( vm.trailClick === true ){
+                vm.trailClick = false;
+                console.log('false');
+                return;
+            }
+            console.log(event);
+            vm.trailClick = true;
+        };
+    }
+
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
     .directive('map', MapDirective);
 
     MapDirective.$inject = [ '$state' ];
@@ -172,34 +227,7 @@
     'use strict';
 
     angular.module('trailblazer')
-        .controller('RadiusSearchController', RadiusSearchController);
-
-    RadiusSearchController.$inject = [ '$state', '$stateParams', 'TrailandCampgroundService' ];
-
-    function RadiusSearchController($state, $stateParams, TrailandCampgroundService) {
-        var vm = this;
-        vm.coordinates = $stateParams.transCoords;
-        vm.trails = null;
-        vm.campground = null;
-        vm.getTrails = TrailandCampgroundService.findTrails(vm.coordinates)
-            .then(function transformData(data) {
-                vm.trails = data.trails;
-                vm.campgrounds = data.campgrounds;
-                $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
-            })
-            .catch(function errHandler(err) {
-                console.log(err);
-            });
-
-    }
-
-}());
-
-(function() {
-    'use strict';
-
-    angular.module('trailblazer')
-    .directive('tandcmap', TrailandCampgroundMapDirective);
+        .directive('tandcmap', TrailandCampgroundMapDirective);
 
     TrailandCampgroundMapDirective.$inject = ['$stateParams'];
 
@@ -435,17 +463,54 @@
     'use strict';
 
     angular.module('trailblazer')
-        .controller('TrailandCampgroundController', TrailandCampgroundController);
+        .directive('trailpanel', TrailPanelDirective);
 
-    TrailandCampgroundController.$inject = ['$stateParams'];
-
-    function TrailandCampgroundController($stateParams) {
-        var vm = this;
-
-        vm.trails = $stateParams.trails;
-        vm.campgrounds = $stateParams.campgrounds;
+    function TrailPanelDirective() {
+        return {
+            restrict: 'A',
+            scope: {
+                dataTitle: '='
+            },
+            transclude: true
+        };
     }
+}());
 
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .filter('class', ClassFilter);
+
+    function ClassFilter() {
+
+        return function classFilter(trail) {
+            var className = trail.name.split(' ');
+            className = className.join('-');
+            return className;
+        };
+    }
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .filter('length', LengthFilter);
+
+    function LengthFilter() {
+
+        return function length(trails) {
+            var trailSort = trails.sort(function sortLength(a, b) {
+                if (a.length > b.length) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            });
+            return trailSort;
+        };
+    }
 }());
 
 (function() {
@@ -497,25 +562,4 @@
 
     }
 
-}());
-
-(function() {
-    'use strict';
-
-    angular.module('trailblazer')
-        .filter('length', LengthFilter);
-
-    function LengthFilter() {
-
-        return function length(trails) {
-            var trailSort = trails.sort(function sortLength(a, b) {
-                if (a.length > b.length) {
-                    return -1;
-                } else {
-                    return 1;
-                }
-            });
-            return trailSort;
-        };
-    }
 }());
