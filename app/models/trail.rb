@@ -7,7 +7,18 @@ class Trail < ApplicationRecord
 
   def path_as_array
     path.points.map do |point|
-      [point.x, point.y]
+      { lon: point.x,
+        lat: point.y }
     end
+  end
+
+  def self.formatted_trails
+    trails = []
+    Trail.all.each do |trail|
+      trails << trail.attributes.merge({
+        line: trail.path_as_array
+      })
+    end
+    trails
   end
 end
