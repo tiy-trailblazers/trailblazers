@@ -7,16 +7,42 @@ class Trail < ApplicationRecord
 
   def path_as_array
     path.points.map do |point|
-      { lon: point.x,
-        lat: point.y }
+      {
+        lon: point.x,
+        lat: point.y
+      }
     end
   end
 
-  def self.formatted_trails
+  def southmost
+    path.points.min_by { |point| point.y }
+  end
+
+  def westmost
+    path.points.min_by { |point| point.x }
+  end
+
+  def northmost
+    path.points.max_by { |point| point.y }
+  end
+
+  def eastmost
+    path.points.max_by { |point| point.x }
+  end
+
+  def intersections
+    Trail.within_bounding_box([southmost.y, westmost.x, northmost.y, eastmost.x]).select do |trail|
+      trail.path.intersects?(self.path)
+    end
+  end
+
+  def formatted_trails(trails_array)
     trails = []
-    Trail.all.each do |trail|
+    trails_array.each do |trail|
       trails << trail.attributes.merge({
-        line: trail.path_as_array
+        line: trail.path_as_array,
+        head_lat: trail.startlonlat.y,
+        head_lon: trail.startlonlat.x
       })
     end
     trails
