@@ -26,7 +26,7 @@ class OverpassArea
 
   def list_of_trails
     overpass = ::OverpassAPI.new(options)
-    overpass.raw_query(query_string)
+    @list_of_trails ||= overpass.raw_query(query_string)
   end
 
   def all_nodes
@@ -49,7 +49,9 @@ class OverpassArea
   end
 
   def start_lonlat(trail)
-    RGeo::Geographic.spherical_factory(srid: 4326).point(members_as_nodes(trail).first[:lon].to_f, members_as_nodes(trail).first[:lat].to_f)
+    if trail[:members]
+      RGeo::Geographic.spherical_factory(srid: 4326).point(members_as_nodes(trail).first[:lon].to_f, members_as_nodes(trail).first[:lat].to_f)
+    end
   end
 
   def linestring(trail)

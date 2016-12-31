@@ -1,23 +1,27 @@
 namespace :trails do
   desc "TODO"
   task create: :environment do
-    usa = {south: 24.763833517291758, west: -125.538477, north: 49.416259497340604, east: -66.41909480287364}
+    usa = {south: 39.65595370968461, west:
+-80.92333972682997, north:
+45.24056948593636, east: -69.83544072361961}
 
     height = usa[:north] - usa[:south]
 
     width = usa[:east] - usa[:west]
 
-    box_height = height / 30
-    box_width = width / 30
+    box_height = height / 10
+    box_width = width / 10
 
     (0..10).to_a.each do |x|
-      (6..30).to_a.each do |y|
+      (0..10).to_a.each do |y|
         p "(#{x}, #{y})"
         area = OverpassArea.new(usa[:south] + y * box_height, usa[:west] + x * box_width, usa[:south] + (y + 1) * box_height, usa[:west] + (x + 1) * box_width)
 
         p area.query_string
 
-        trails_list = area.all_trails
+        trails_list = area.all_trails.select do |trail|
+          area.length_of_trail(trail) > 0.2
+        end
 
         p trails_list.size
 
@@ -35,6 +39,7 @@ namespace :trails do
           })
           trail.delete(:members)
           my_trail.update!(source: trail)
+          print "."
         end
       end
     end

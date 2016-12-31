@@ -4,4 +4,10 @@ class Trail < ApplicationRecord
   belongs_to :park
 
   reverse_geocoded_by :latitude, :longitude
+
+  def path_as_array
+    path.points.map do |point|
+      [point.x, point.y]
+    end
+  end
 end
