@@ -12,7 +12,7 @@ namespace :trails do
     box_height = height / 10
     box_width = width / 10
 
-    (1..10).to_a.each do |x|
+    (2..10).to_a.each do |x|
       (0..10).to_a.each do |y|
         p "(#{x}, #{y})"
         area = OverpassArea.new(usa[:south] + y * box_height, usa[:west] + x * box_width, usa[:south] + (y + 1) * box_height, usa[:west] + (x + 1) * box_width)
@@ -44,6 +44,13 @@ namespace :trails do
       end
     end
 
+  end
+
+  desc "TODO"
+  task add_parks: :environment do
+    Trail.where("park_id is null").each do |trail|
+      trail.update(park: trail.find_park)
+    end
   end
 
   desc "TODO"

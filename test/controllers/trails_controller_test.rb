@@ -32,5 +32,6 @@ class TrailsControllerTest < ActionDispatch::IntegrationTest
     assert_response :ok
     assert response.parsed_body["intersections"]
     assert response.parsed_body["trail"]
+    assert response.parsed_body["park"]
   end
 end

@@ -36,6 +36,18 @@ class Trail < ApplicationRecord
     end
   end
 
+  def endlonlat
+    path.points.last
+  end
+
+  def find_park
+    Park.all.each do |park|
+      if park.boundary
+        return park if (park.boundary.contains?(startlonlat) || park.boundary.contains?(endlonlat))
+      end
+    end
+  end
+
   def formatted_trails(trails_array)
     trails = []
     trails_array.each do |trail|

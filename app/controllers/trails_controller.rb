@@ -17,7 +17,8 @@ class TrailsController < ApplicationController
     intersections = Trail.new().formatted_trails(@trail.intersections)
     response = {
       trail: @trail.attributes,
-      intersections: intersections
+      intersections: intersections,
+      park: @trail.park
     }
     render json: response
   end
