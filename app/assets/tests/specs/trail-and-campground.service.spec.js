@@ -18,28 +18,24 @@
 
             $httpBackend.whenGET('/trails?west=12.345&south=67.891&east=98.765&north=43.219')
                 .respond({
-                    data: [
-                        {
-                            campgrounds: [
-                                {
-                                    name: 'Miguels',
-                                    lat: '12.3456789',
-                                    long: '98.7654321',
-                                    description: 'Best Pizza in WV. Best campground for Red River Gorge!'
-                                }
-                            ],
-                            trails: [
-                                {
-                                    name: 'Slab City Trail',
-                                    lat: '13.5792468',
-                                    long: '97.5318642',
-                                    description: 'Entrance to slab city'
-                                }
-                            ]
+                        campgrounds: [
+                            {
+                                name: 'Miguels',
+                                lat: '12.3456789',
+                                long: '98.7654321',
+                                description: 'Best Pizza in WV. Best campground for Red River Gorge!'
+                            }
+                        ],
+                        trails: [
+                            {
+                                name: 'Slab City Trail',
+                                lat: '13.5792468',
+                                long: '97.5318642',
+                                description: 'Entrance to slab city'
+                            }
+                        ]
 
-                        }
-                    ]
-                });
+                    });
         }));
 
         it('should resolve ajax call with trail and campground data', function(dc) {

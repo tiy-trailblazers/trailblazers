@@ -4,19 +4,18 @@
     angular.module('trailblazer')
     .directive('map', MapDirective);
 
-    MapDirective.$inject = [ 'MapService' ];
+    MapDirective.$inject = [ '$state' ];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function MapDirective(MapService) {
+    function MapDirective($state) {
         return {
-            templateUrl: 'templates/map.template.html',
-            restrict: 'E',
+            restrict: 'EA',
             scope: {
-                dataTitle: '='
+                dataTitle: '=',
             },
             link: setupMap
         };
@@ -26,7 +25,9 @@
          * @return {void}
          */
         function setupMap() {
+            var interactionCount = 0;
             var element = 'map';
+            var vector;
 
             /**
              * Configs base Map layer with tiles sourced from MapBox
@@ -48,7 +49,7 @@
             function buildRectangle() {
                 var source = new ol.source.Vector({wrapX: false});
 
-                var vector = new ol.layer.Vector({
+                vector = new ol.layer.Vector({
                     source: source
                 });
                 return vector;
@@ -92,15 +93,14 @@
                     }),
                     image: new ol.style.Icon({
                         scale: 0.15,
-                        src: 'images/204712-200.png'
+                        src: 'images/trailhead.png'
                     })
                 })
             });
 
             map.getView().on('change:resolution', function setRaduisBox() {
-                //e.preventDefault();
-                //console.log(map.getView().getZoom());
-                if (map.getView().getZoom() > 7) {
+                if (map.getView().getZoom() > 7.5 && interactionCount <= 0) {
+                        interactionCount ++;
                         map.addInteraction(draw);
                     }
             });
@@ -110,11 +110,9 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                console.log('coord', coordinates);
-                MapService.findTrails(coordinates);
+                $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
+                map.removeLayer(vector);
                 map.removeInteraction(draw);
-                map.removeLayer(buildBaseLayer());
-
             });
 
         }
