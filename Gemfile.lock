@@ -53,7 +53,6 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.6)
-    cancancan (1.15.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.3)
     crack (0.4.3)
@@ -67,7 +66,7 @@ GEM
     geocoder (1.4.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    hashdiff (0.3.0)
+    hashdiff (0.3.1)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     httpi (2.4.2)
@@ -169,7 +168,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    webmock (2.1.0)
+    webmock (2.3.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -186,7 +185,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   byebug
-  cancancan
   ffaker
   geocoder
   httparty

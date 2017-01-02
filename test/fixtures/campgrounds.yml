@@ -11,7 +11,7 @@ one:
   latitude: 9.99
   longitude: 9.99
 
-two:
+camp:
   name: Mathews Arm - Shenandoah National Park
   campground_type: National Park (Monument, Rec Area)
   drinking_water: nil,

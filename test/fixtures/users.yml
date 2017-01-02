@@ -11,3 +11,9 @@ kvothe:
   last_name: Kingkiller
   email: killingkings@gmail.com
   password_digest: <%= BCrypt::Password.create("password") %>
+
+test:
+  first_name: Hello
+  last_name: Goodbye
+  email: allie@gmail.com
+  password_digest: <%= BCrypt::Password.create("password") %>
