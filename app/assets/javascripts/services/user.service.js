@@ -14,8 +14,7 @@
         };
 
         function createUser(user) {
-            console.log('service', user);
-            $http({
+            return $http({
                 url: '/users',
                 method: 'POST',
                 data: {
@@ -29,16 +28,14 @@
                 }
             })
             .then(function success(response) {
-                console.log(response);
-            })
-            .catch(function error(err) {
-                console.log(err);
+                window.sessionStorage.setItem('userToken', angular.toJson(response.data.token));
+                return response.data;
             });
         }
 
         function signinUser(user) {
             console.log('service', user);
-            $http({
+            return $http({
                 url: '/session',
                 method: 'POST',
                 data: {
@@ -47,10 +44,8 @@
                 }
             })
             .then(function success(response) {
-                console.log(response);
-            })
-            .catch(function error(err) {
-                console.log(err);
+                window.sessionStorage.setItem('userToken', angular.toJson(response.data.token));
+                return response.data;
             });
         }
     }

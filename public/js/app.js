@@ -13,12 +13,12 @@
        $stateProvider
        .state({
            name: 'home',
-           url: '/',
+           url: '',
            templateUrl: 'templates/home.template.html',
        })
        .state({
            name: 'trails-and-campgrounds',
-           url: '/trails-and-campgrounds',
+           url: 'trails-and-campgrounds',
            templateUrl: 'templates/trails-and-campgrounds.template.html',
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
@@ -30,7 +30,7 @@
        })
        .state({
            name: 'buffer',
-           url: '/buffering',
+           url: 'buffering',
            templateUrl: 'templates/buffering.template.html',
            controller: 'RadiusSearchController',
            controllerAs: 'radius',
@@ -41,10 +41,15 @@
        })
        .state({
            name: 'signin',
-           url: '/signin',
+           url: 'signin',
            templateUrl: 'templates/signin.template.html',
            controller: 'SigninController',
            controllerAs: 'signin'
+       })
+       .state({
+           name: 'profile',
+           url: 'profile/:id',
+           templateUrl: 'templates/profile.template.html'
        });
 
     }
@@ -86,22 +91,41 @@
     angular.module('trailblazer')
         .controller('SigninController', SigninController);
 
-    SigninController.$inject = [ 'UserService' ];
+    SigninController.$inject = [ 'UserService', '$state' ];
 
-    function SigninController(UserService){
+    function SigninController(UserService, $state){
         var vm = this;
         vm.user = {};
         vm.userCreate = false;
 
-        vm.createUser = function createUser(user) {
-            UserService.createUser(user);
+        vm.userAccount = function userAccount(user) {
+            if (Object.keys(user).length === 2) {
+            UserService.signinUser(user)
+                .then( function success(data) {
+                    $state.go('profile', {
+                        id: data.id,
+                        user_name: '' + data.first_name + ' ' + data.last_name
+                    });
+                })
+                .catch( function error(err) {
+                    console.log(err);
+                });
+                vm.user = {};
+                vm.userCreate = false;
+            } else {
+                UserService.createUser(user)
+                    .then( function success(data) {
+                        $state.go('profile', {
+                            id: data.id,
+                            user_name: '' + data.first_name + ' ' + data.last_name
+                        });
+                    })
+                    .catch( function error(err) {
+                        console.log(err);
+                    });
+            }
             vm.user = {};
             vm.userCreate = false;
-        };
-
-        vm.signin = function signin(user) {
-            UserService.signinUser(user);
-            vm.user = {};
         };
 
         vm.userCreateSwitch = function userCreateSwitch() {
@@ -592,6 +616,7 @@
                 }
             })
             .then( function transformResponse(response) {
+                console.log(response);
                 var trails = response.data.trails;
                 var campgrounds = response.data.campgrounds;
                 return { trails: trails, campgrounds: campgrounds};
@@ -618,8 +643,7 @@
         };
 
         function createUser(user) {
-            console.log('service', user);
-            $http({
+            return $http({
                 url: '/users',
                 method: 'POST',
                 data: {
@@ -633,16 +657,14 @@
                 }
             })
             .then(function success(response) {
-                console.log(response);
-            })
-            .catch(function error(err) {
-                console.log(err);
+                window.sessionStorage.setItem('userToken', angular.toJson(response.data.token));
+                return response.data;
             });
         }
 
         function signinUser(user) {
             console.log('service', user);
-            $http({
+            return $http({
                 url: '/session',
                 method: 'POST',
                 data: {
@@ -651,10 +673,8 @@
                 }
             })
             .then(function success(response) {
-                console.log(response);
-            })
-            .catch(function error(err) {
-                console.log(err);
+                window.sessionStorage.setItem('userToken', angular.toJson(response.data.token));
+                return response.data;
             });
         }
     }

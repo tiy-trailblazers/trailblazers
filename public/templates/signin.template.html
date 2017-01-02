@@ -1,13 +1,14 @@
 <section id='signin'>
     <h2>There is no place like outside!</h2>
-    <form ng-show='!signin.userCreate' ng-submit='signin.signin(signin.user)'>
+    <form ng-show='!signin.userCreate' ng-submit='signin.userAccount(signin.user)'>
         <input type='text' placeholder='email' ng-model='signin.user.username'>
         <input type='password' placeholder='password' ng-model='signin.user.password'>
         <input type='submit' value='Sign In'>
     </form>
-    <a ng-click='signin.userCreateSwitch()'>Create Username</a>
+    <a ng-show='!signin.userCreate' ng-click='signin.userCreateSwitch()'>Create Account</a>
+    <a ng-show='signin.userCreate' ng-click='signin.userCreateSwitch()'>Already Have An Account</a>
     <article class='create-user' ng-if='signin.userCreate'>
-        <form ng-submit='signin.createUser(signin.user)'>
+        <form ng-submit='signin.userAccount(signin.user)'>
             <input type='text' placeholder='First Name' ng-model='signin.user.firstname'>
             <input type='text' placeholder='Last Name' ng-model='signin.user.lastname'>
             <input type='text' placeholder='Email' ng-model='signin.user.email'>

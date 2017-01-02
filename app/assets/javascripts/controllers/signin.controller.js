@@ -4,22 +4,41 @@
     angular.module('trailblazer')
         .controller('SigninController', SigninController);
 
-    SigninController.$inject = [ 'UserService' ];
+    SigninController.$inject = [ 'UserService', '$state' ];
 
-    function SigninController(UserService){
+    function SigninController(UserService, $state){
         var vm = this;
         vm.user = {};
         vm.userCreate = false;
 
-        vm.createUser = function createUser(user) {
-            UserService.createUser(user);
+        vm.userAccount = function userAccount(user) {
+            if (Object.keys(user).length === 2) {
+            UserService.signinUser(user)
+                .then( function success(data) {
+                    $state.go('profile', {
+                        id: data.id,
+                        user_name: '' + data.first_name + ' ' + data.last_name
+                    });
+                })
+                .catch( function error(err) {
+                    console.log(err);
+                });
+                vm.user = {};
+                vm.userCreate = false;
+            } else {
+                UserService.createUser(user)
+                    .then( function success(data) {
+                        $state.go('profile', {
+                            id: data.id,
+                            user_name: '' + data.first_name + ' ' + data.last_name
+                        });
+                    })
+                    .catch( function error(err) {
+                        console.log(err);
+                    });
+            }
             vm.user = {};
             vm.userCreate = false;
-        };
-
-        vm.signin = function signin(user) {
-            UserService.signinUser(user);
-            vm.user = {};
         };
 
         vm.userCreateSwitch = function userCreateSwitch() {
