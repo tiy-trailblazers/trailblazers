@@ -1,9 +1,13 @@
 nav {
+    min-width: 250px;
     @include contentBlock;
     z-index: 1;
     ul {
         list-style: none;
         padding-left: 0;
+        a {
+            text-decoration: none;
+        }
         li {
             display: block;
             font-family: 'Patrick Hand SC', cursive;
@@ -24,7 +28,7 @@ h1 {
     padding-left: 3%;
 }
 
-@media screen and (min-width: 400px){
+@media screen and (min-width: 600px){
     nav {
         position: absolute;
         top: 0;

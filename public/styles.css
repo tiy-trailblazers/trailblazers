@@ -403,6 +403,7 @@ template {
   display: none; }
 
 nav {
+  min-width: 250px;
   border: 2px solid #000000;
   box-sizing: border-box;
   background-color: #fff700;
@@ -410,6 +411,8 @@ nav {
   nav ul {
     list-style: none;
     padding-left: 0; }
+    nav ul a {
+      text-decoration: none; }
     nav ul li {
       display: block;
       font-family: 'Patrick Hand SC', cursive;
@@ -426,13 +429,41 @@ h1 {
   font-family: 'Patrick Hand SC', cursive;
   padding-left: 3%; }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 600px) {
   nav {
     position: absolute;
     top: 0;
     left: 0;
     width: 20%;
     height: 100%; } }
+#signin {
+  min-width: 200px;
+  max-width: 350px;
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid #000000;
+  box-shadow: 0 0 1em #000000; }
+  #signin h2 {
+    font-family: 'Patrick Hand SC', cursive;
+    text-align: center; }
+  #signin input {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box; }
+    #signin input:last-child {
+      background-color: #fff700;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 1em;
+      width: 65px;
+      text-align: center; }
+
+@media screen and (min-width: 600px) {
+  #signin {
+    margin-left: 35%;
+    position: absolute;
+    top: 20em;
+    left: 6em; } }
 #map {
   display: block;
   margin: 0 auto;

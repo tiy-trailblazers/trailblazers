@@ -38,6 +38,13 @@
                transCoords: null,
                centerCoords: null
            }
+       })
+       .state({
+           name: 'signin',
+           url: '/signin',
+           templateUrl: 'templates/signin.template.html',
+           controller: 'SigninController',
+           controllerAs: 'signin'
        });
 
     }

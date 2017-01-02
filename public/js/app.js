@@ -38,6 +38,13 @@
                transCoords: null,
                centerCoords: null
            }
+       })
+       .state({
+           name: 'signin',
+           url: '/signin',
+           templateUrl: 'templates/signin.template.html',
+           controller: 'SigninController',
+           controllerAs: 'signin'
        });
 
     }
@@ -71,6 +78,28 @@
 
     }
 
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .controller('SigninController', SigninController);
+
+    SigninController.$inject = [ 'UserService' ];
+
+    function SigninController(){
+        var vm = this;
+        vm.user = {};
+
+        vm.createUser = function createUser(user) {
+            console.log(user);
+        };
+
+        vm.signin = function signin(user) {
+            console.log(user);
+        };
+    }
 }());
 
 (function() {
@@ -563,4 +592,29 @@
 
     }
 
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .factory('UserService', UserService);
+
+    UserService.$inject = [  ];
+
+    function UserService() {
+
+        return {
+            createUser: createUser,
+            signinUser: signinUser
+        };
+
+        function createUser(user) {
+            console.log('service', user);
+        }
+
+        function signinUser(user) {
+            console.log('service', user);
+        }
+    }
 }());
