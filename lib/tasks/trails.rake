@@ -12,24 +12,22 @@ namespace :trails do
     box_height = height / 10
     box_width = width / 10
 
-    (2..10).to_a.each do |x|
+    (8..10).to_a.each do |x|
       (0..10).to_a.each do |y|
         p "(#{x}, #{y})"
         area = OverpassArea.new(usa[:south] + y * box_height, usa[:west] + x * box_width, usa[:south] + (y + 1) * box_height, usa[:west] + (x + 1) * box_width)
 
         p area.query_string
 
-        trails_list = area.all_trails.select do |trail|
-          area.length_of_trail(trail) > 0.2
-        end
+        p area.all_trails.size
 
-        p trails_list.size
-
-        trails_list.each do |trail|
+        area.all_trails.each do |trail|
+          length = area.length_of_trail(trail)
+          next if length > 0.2
           my_trail = Trail.create!({
             osm_id: trail[:id],
             startlonlat: area.start_lonlat(trail),
-            length: area.length_of_trail(trail),
+            length: length,
             name: trail[:tags]["name"],
             bicycle: trail[:tags]["bicyle"]=="yes",
             foot: trail[:tags]["foot"]=="yes",
