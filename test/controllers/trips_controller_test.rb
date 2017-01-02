@@ -34,4 +34,40 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
     assert response.parsed_body.include?("trails")
     assert_equal "Mathews Arm - Shenandoah National Park", trip.campgrounds.first.name
   end
+
+  test "can delete trip" do
+    post session_path, params: { email: "test@gmail.com", password: "password" }
+    trip = Trip.find(trips(:day).id)
+    delete trip_path(trip.id)
+    assert_response :ok
+    refute Trip.find_by(id: trip.id)
+  end
+
+  test "can't delete trip if not logged in" do
+    trip = Trip.find(trips(:day).id)
+    delete trip_path(trip.id)
+    assert_equal "User must be the owner of a trip to delete it", response.parsed_body["errors"]
+  end
+
+  test "can't delete another user's trip" do
+    post session_path, params: { email: "allie@gmail.com", password: "password" }
+    trip = Trip.find(trips(:day).id)
+    delete trip_path(trip.id)
+    assert_equal "User must be the owner of a trip to delete it", response.parsed_body["errors"]
+  end
+
+  test "can show one trip" do
+    post session_path, params: { email: "test@gmail.com", password: "password" }
+    trip = Trip.find(trips(:day).id)
+    get trip_path(trip.id)
+    assert_response :ok
+    assert_equal "Mathews Arm - Shenandoah National Park", response.parsed_body["trip"]["campgrounds"].first["name"]
+  end
+
+  test "can't see a trip if it doesn't belong to you" do
+    post session_path, params: { email: "allie@gmail.com", password: "password" }
+    trip = Trip.find(trips(:day).id)
+    get trip_path(trip.id)
+    assert_equal({"errors"=>"User must be the owner of a trip to see it"}, response.parsed_body)
+  end
 end

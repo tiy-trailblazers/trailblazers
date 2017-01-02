@@ -11,7 +11,7 @@ class TripsController < ApplicationController
         user.trips << trip
         if user.save
           trails = trip.trails
-          render json: {trip: trip.as_json(include: [:campgrounds, :parks]), trails: Trail.new.formatted_trails(trails)}
+          render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.new.formatted_trails(trails)}
         else
           render json: user.errors
         end
@@ -31,12 +31,32 @@ class TripsController < ApplicationController
       trip.parks << trip_parks
       if trip.save && trip.update(trip_params)
         trails = trip.trails
-        render json: {trip: trip.as_json(include: [:campgrounds, :parks]), trails: Trail.new.formatted_trails(trails)}
+        render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.new.formatted_trails(trails)}
       else
         render json: trip.errors
       end
     else
-      render json: { errors: "User must be logged in to update a trip" }
+      render json: { errors: "User must be the owner of a trip to update it" }
+    end
+  end
+
+  def destroy
+    trip = Trip.find(params[:id])
+    if current_user && trip.belongs_to?(current_user)
+      trip.destroy
+      render json: trip
+    else
+      render json: { errors: "User must be the owner of a trip to delete it"}
+    end
+  end
+
+  def show
+    trip = Trip.find(params[:id])
+    if current_user && trip.belongs_to?(current_user)
+      trails = trip.trails
+      render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.new.formatted_trails(trails)}
+    else
+      render json: { errors: "User must be the owner of a trip to see it" }
     end
   end
 

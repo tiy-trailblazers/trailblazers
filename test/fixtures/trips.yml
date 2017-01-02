@@ -5,6 +5,7 @@ day:
   end_date: 2016-12-19
   trip_type: day-hike
   camping_type: none
+  campgrounds: [camp]
   users: [allie, kvothe]
 
 night:
