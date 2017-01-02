@@ -13,7 +13,7 @@ namespace :trails do
     box_width = width / 10
 
     (8..10).to_a.each do |x|
-      (4..10).to_a.each do |y|
+      (5..10).to_a.each do |y|
         p "(#{x}, #{y})"
         area = OverpassArea.new(usa[:south] + y * box_height, usa[:west] + x * box_width, usa[:south] + (y + 1) * box_height, usa[:west] + (x + 1) * box_width)
 
@@ -21,7 +21,7 @@ namespace :trails do
 
         p area.all_trails.size
 
-        area.all_trails[13000,16000].each do |trail|
+        area.all_trails.each do |trail|
           length = area.length_of_trail(trail)
           next if length > 0.2
           my_trail = Trail.create!({
@@ -60,10 +60,10 @@ namespace :trails do
 
   desc "TODO"
   task dedupe: :environment do
-    sql = "select id, osm_id, count(*) from trails group by osm_id having count(*) > 1"
+    sql = "select osm_id, count(*) from trails group by osm_id having count(*) > 1"
     dupes = ActiveRecord::Base.connection.execute(sql).to_a
     dupes.each do |dupe|
-      dupe.find_by(osm_id: dupe["osm_id"]).destroy
+      Trail.find_by(osm_id: dupe["osm_id"]).destroy
     end
   end
 

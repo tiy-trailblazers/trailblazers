@@ -6,7 +6,7 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
     current_user = User.find(users(:allie).id)
     trail = Trail.find(trails(:loop).id)
     park = Park.find(parks(:park).id)
-    post trips_path, params: { trip: { start_date: Date.today, end_date: Date.today, trip_type: "day-hike", camping_type: "none", trails: [trail.id], campgrounds: [], parks: [park.id] } }
+    post trips_path, params: { trip: { start_date: Date.today, end_date: Date.today, trip_type: "day-hike", camping_type: "none", trails: [trail.id], campgrounds: [], parks: [park.id] } }, headers: { "Authorization" => users(:allie).token }
     assert_response :ok
     assert_equal "Sam's River Loop Trail", User.find(current_user.id).trips.last.trails.first.name
   end
@@ -21,7 +21,7 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
   test "get error back if can't save" do
     post session_path, params: { email: "test@gmail.com", password: "password" }
     trail = Trail.find(trails(:loop).id)
-    post trips_path, params: { trip: { end_date: Date.today, trip_type: "day-hike", camping_type: "none", trails: [trail.id], campgrounds: [], parks: [1] } }
+    post trips_path, params: { trip: { end_date: Date.today, trip_type: "day-hike", camping_type: "none", trails: [trail.id], campgrounds: [], parks: [1] } }, headers: { "Authorization" => users(:allie).token }
     assert_equal "can't be blank", response.parsed_body["start_date"].first
   end
 
@@ -29,7 +29,7 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
     post session_path, params: { email: "test@gmail.com", password: "password" }
     trip = Trip.find(trips(:day).id)
     campground = Campground.find(campgrounds(:camp).id)
-    patch trip_path(trip.id), params: { trip: { trip_type: "overnight", campgrounds: [campground.id] } }
+    patch trip_path(trip.id), params: { trip: { trip_type: "overnight", campgrounds: [campground.id] } }, headers: { "Authorization" => users(:allie).token }
     assert_response :ok
     assert response.parsed_body.include?("trails")
     assert_equal "Mathews Arm - Shenandoah National Park", trip.campgrounds.first.name
@@ -38,7 +38,7 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
   test "can delete trip" do
     post session_path, params: { email: "test@gmail.com", password: "password" }
     trip = Trip.find(trips(:day).id)
-    delete trip_path(trip.id)
+    delete trip_path(trip.id), headers: { "Authorization" => users(:allie).token }
     assert_response :ok
     refute Trip.find_by(id: trip.id)
   end
@@ -50,16 +50,16 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can't delete another user's trip" do
-    post session_path, params: { email: "allie@gmail.com", password: "password" }
+    post session_path, params: { email: "allie@gmail.com", password: "password" }, headers: { "Authorization" => users(:test).token }
     trip = Trip.find(trips(:day).id)
-    delete trip_path(trip.id)
+    delete trip_path(trip.id), headers: { "Authorization" => users(:test).token }
     assert_equal "User must be the owner of a trip to delete it", response.parsed_body["errors"]
   end
 
   test "can show one trip" do
     post session_path, params: { email: "test@gmail.com", password: "password" }
     trip = Trip.find(trips(:day).id)
-    get trip_path(trip.id)
+    get trip_path(trip.id), headers: { "Authorization" => users(:allie).token }
     assert_response :ok
     assert_equal "Mathews Arm - Shenandoah National Park", response.parsed_body["trip"]["campgrounds"].first["name"]
   end
@@ -67,7 +67,7 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
   test "can't see a trip if it doesn't belong to you" do
     post session_path, params: { email: "allie@gmail.com", password: "password" }
     trip = Trip.find(trips(:day).id)
-    get trip_path(trip.id)
+    get trip_path(trip.id), headers: { "Authorization" => users(:test).token }
     assert_equal({"errors"=>"User must be the owner of a trip to see it"}, response.parsed_body)
   end
 end
