@@ -50,12 +50,14 @@ class Trail < ApplicationRecord
 
   def formatted_trails(trails_array)
     trails = []
-    trails_array.each do |trail|
-      trails << trail.attributes.merge({
-        line: trail.path_as_array,
-        head_lat: trail.startlonlat.y,
-        head_lon: trail.startlonlat.x
-      })
+    if trails_array.size > 0
+      trails_array.each do |trail|
+        trails << trail.attributes.merge({
+          line: trail.path_as_array,
+          head_lat: trail.startlonlat.y,
+          head_lon: trail.startlonlat.x
+        })
+      end
     end
     trails
   end
