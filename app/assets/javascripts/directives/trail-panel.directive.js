@@ -2,15 +2,13 @@
     'use strict';
 
     angular.module('trailblazer')
-        .directive('trail', TrailPanelDirective);
+        .directive('tandcDetail', TrailPanelDirective);
 
     function TrailPanelDirective() {
         return {
             restrict: 'A',
-            scope: {
-                dataTitle: '='
-            },
-            transclude: true
+            transclude: true,
+            template: '<article><header>Detail</header><section ng-transclude></section></article>'
         };
     }
 }());

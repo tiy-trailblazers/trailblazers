@@ -6,9 +6,9 @@
 <section class='trails'>
     <ul>
         <h3>Trails</h3>
-        <li ng-repeat='trail in TandC.trails | length' class='{{trail | class}}' ng-click='TandC.trailPopup($event)'>
+        <li ng-repeat='trail in TandC.trails | length' ng-click='TandC.trailPopup(trail)'>
             {{trail.name}}
-            <aside ng-show='TandC.element == {{trail | class}}' trail>
+            <aside ng-if='TandC.element === trail' tandc-Detail>
                 <p>This trai is super awesome</p>
                 <p>Don't forget to pack tp!</p>
                 <p>Be Bear Aware;)</p>
