@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:current_user_id] = @user.id
       render json: @user
     else
-      render json: @user.errors
+      render json: {error: "Incorrect email/password combination"}
     end
   end
 
