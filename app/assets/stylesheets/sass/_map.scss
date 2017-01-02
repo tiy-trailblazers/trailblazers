@@ -1,4 +1,12 @@
+
 #map {
     display: block;
     margin: 0 auto;
+    margin-left: 20%;
+    border: 2px solid #000000;
+    border-left: 0px;
+    box-sizing: border-box;
+    canvas {
+        display: block;
+    }
 }
