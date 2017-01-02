@@ -2,7 +2,7 @@ class TripsController < ApplicationController
 
   def create
     if current_user
-      user = User.find(session["current_user_id"])
+      user = User.find(current_user.id)
       trip = Trip.new(trip_params)
       trip.trails << trip_trails
       trip.campgrounds << trip_campgrounds
