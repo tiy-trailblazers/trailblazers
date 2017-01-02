@@ -1,4 +1,35 @@
+nav {
+    @include contentBlock;
+    z-index: 1;
+    ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+            display: block;
+            font-family: 'Patrick Hand SC', cursive;
+            font-size: 1rem;
+            border-top: 2px solid #000000;
+            padding: 5%;
+            text-align: center;
+            transition: 0.3s linear;
+            &:hover {
+                background-color: #000000;
+                color: #fff700;
+            }
+        }
+    }
+}
 h1 {
     font-family: 'Patrick Hand SC', cursive;
-    padding-left: 5%;
+    padding-left: 3%;
+}
+
+@media screen and (min-width: 400px){
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20%;
+        height: 100%;
+    }
 }
