@@ -20,6 +20,14 @@
 <section class='campgrounds'>
     <ul>
         <h3>Campgrounds</h3>
-        <li ng-repeat='camp in TandC.campgrounds'>{{camp.name}}</li>
+        <li ng-repeat='camp in TandC.campgrounds'>
+            {{camp.name}}
+            <aside ng-if='TandC.element === camp' tandc-Detail>
+                <p>This camp is super awesome</p>
+                <p>Don't forget to pack tp!</p>
+                <p>Be Bear Aware;)</p>
+                <p>Trail length: {{trail.length | number:2}} miles</p>
+            </aside>
+        </li>
     </ul>
 </section>
