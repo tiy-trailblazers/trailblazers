@@ -2,11 +2,18 @@
 #map {
     display: block;
     margin: 0 auto;
-    margin-left: 20%;
     border: 2px solid #000000;
+    max-height: 400px;
     border-left: 0px;
     box-sizing: border-box;
     canvas {
         display: block;
+    }
+}
+
+@media screen and (min-width: 600px){
+    #map {
+        margin-left: 20%;
+        height: 100%;
     }
 }
