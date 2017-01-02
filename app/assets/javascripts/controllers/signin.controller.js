@@ -19,6 +19,7 @@
 
         vm.signin = function signin(user) {
             UserService.signinUser(user);
+            vm.user = {};
         };
 
         vm.userCreateSwitch = function userCreateSwitch() {

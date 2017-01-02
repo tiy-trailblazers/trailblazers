@@ -101,6 +101,7 @@
 
         vm.signin = function signin(user) {
             UserService.signinUser(user);
+            vm.user = {};
         };
 
         vm.userCreateSwitch = function userCreateSwitch() {
@@ -620,11 +621,8 @@
             console.log('service', user);
             $http({
                 url: '/users',
-                method: 'post',
-                headers: {
-                    ContentType: 'application/json'
-                },
-                params: {
+                method: 'POST',
+                data: {
                     user: {
                         first_name: user.firstname,
                         last_name: user.lastname,
@@ -645,10 +643,10 @@
         function signinUser(user) {
             console.log('service', user);
             $http({
-                url: '/users',
-                method: 'post',
-                params: {
-                    email: user.email,
+                url: '/session',
+                method: 'POST',
+                data: {
+                    email: user.username,
                     password: user.password,
                 }
             })

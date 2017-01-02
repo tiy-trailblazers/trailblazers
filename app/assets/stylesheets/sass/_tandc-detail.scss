@@ -1,5 +1,4 @@
 .trails, .campgrounds{
-    margin-left: 20%;
     margin-bottom: 0;
     border: 2px solid #000000;
     box-sizing: border-box;
@@ -14,9 +13,18 @@
     ul {
         margin-top: 0;
         padding-left: 0;
+        display: inline-block;
         li {
+            display: block;
             list-style: none;
-
+            float: left;
+            border: 1px solid black;
         }
+    }
+}
+
+@media screen and (min-width: 600px){
+    .trails, .campgrounds {
+        margin-left: 20%;
     }
 }
