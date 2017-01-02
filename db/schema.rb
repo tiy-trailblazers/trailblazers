@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226181041) do
+ActiveRecord::Schema.define(version: 20161228010553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,12 +33,9 @@ ActiveRecord::Schema.define(version: 20161226181041) do
     t.geography "lonlat",          limit: {:srid=>4326, :type=>"point", :geographic=>true}
   end
 
-  create_table "nodes", force: :cascade do |t|
-    t.integer  "trail_id"
-    t.decimal  "lat"
-    t.decimal  "lon"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "intersections", id: false, force: :cascade do |t|
+    t.integer "trail_id"
+    t.integer "intersection_id"
   end
 
   create_table "parks", force: :cascade do |t|
@@ -60,17 +57,23 @@ ActiveRecord::Schema.define(version: 20161226181041) do
   end
 
   create_table "trails", force: :cascade do |t|
-    t.float    "length"
-    t.decimal  "start_lat"
-    t.decimal  "start_lon"
-    t.string   "park"
-    t.string   "state"
-    t.datetime "created_at",                                              null: false
-    t.datetime "updated_at",                                              null: false
-    t.string   "name"
-    t.string   "url"
-    t.text     "description"
-    t.geometry "path",        limit: {:srid=>3785, :type=>"line_string"}
+    t.float     "length"
+    t.string    "park"
+    t.string    "state"
+    t.datetime  "created_at",                                                           null: false
+    t.datetime  "updated_at",                                                           null: false
+    t.string    "name"
+    t.string    "url"
+    t.text      "description"
+    t.geometry  "path",        limit: {:srid=>3785, :type=>"line_string"}
+    t.integer   "park_id"
+    t.integer   "osm_id"
+    t.boolean   "bicycle"
+    t.boolean   "foot"
+    t.text      "source"
+    t.geography "startlonlat", limit: {:srid=>4326, :type=>"point", :geographic=>true}
+    t.float     "latitude"
+    t.float     "longitude"
   end
 
   create_table "trails_trips", id: false, force: :cascade do |t|

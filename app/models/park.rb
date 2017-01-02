@@ -1,4 +1,5 @@
 class Park < ApplicationRecord
+  has_many :trails
 
   def clean_name
     name.gsub("'", "")

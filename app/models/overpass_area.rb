@@ -18,7 +18,7 @@ class OverpassArea
 
   def options
     {
-      timeout: 900,
+      timeout: 9000,
       element_limit: 1073741824,
       dont_use_cache: true
     }
@@ -26,7 +26,7 @@ class OverpassArea
 
   def list_of_trails
     overpass = ::OverpassAPI.new(options)
-    overpass.raw_query(query_string)
+    @list_of_trails ||= overpass.raw_query(query_string)
   end
 
   def all_nodes
@@ -46,6 +46,20 @@ class OverpassArea
       end
     end
     return line
+  end
+
+  def start_lonlat(trail)
+    if trail[:members]
+      RGeo::Geographic.spherical_factory(srid: 4326).point(members_as_nodes(trail).first[:lon].to_f, members_as_nodes(trail).first[:lat].to_f)
+    end
+  end
+
+  def linestring(trail)
+    array_of_points = []
+    members_as_nodes(trail).each do |node|
+      array_of_points << RGeo::Geographic.spherical_factory(srid: 4326).point(node[:lon].to_f, node[:lat].to_f)
+    end
+    RGeo::Geographic.spherical_factory(srid: 3785).line_string(array_of_points)
   end
 
   def length_of_trail(trail)
