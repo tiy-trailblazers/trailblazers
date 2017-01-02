@@ -5,9 +5,18 @@ allie:
   last_name: Rowan
   email: test@gmail.com
   password_digest: <%= BCrypt::Password.create("password") %>
+  token: 41d96afc759a584a69829bd322770e58
 
 kvothe:
   first_name: Kvothe
   last_name: Kingkiller
   email: killingkings@gmail.com
   password_digest: <%= BCrypt::Password.create("password") %>
+  token: bad12fd803adfafc2bfe357bfaa74cbe
+
+test:
+  first_name: Hello
+  last_name: Goodbye
+  email: allie@gmail.com
+  password_digest: <%= BCrypt::Password.create("password") %>
+  token: ec6ddbf1418911caed562d905400b5a1

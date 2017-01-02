@@ -21,15 +21,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can update a user" do
+    post session_path, headers: { token: users(:allie).token }, params: { email: "test@gmail.com", password: "password" }
     my_user = User.find(users(:allie).id)
-    patch user_path(my_user.id), params: { user: { last_name: "Another" } }
+    patch user_path(my_user.id), headers: { "Authorization"=> users(:allie).token }, params: { user: { last_name: "Another" } }
     assert_response :ok
     assert_equal "Another", User.find(my_user.id).last_name
   end
 
   test "sends back error on update if any" do
     my_user = User.find(users(:allie).id)
-    patch user_path(my_user.id), params: { user: { password: "password", password_confirmation: "asdlkfj" } }
+    post session_path, params: { email: "test@gmail.com", password: "password" }
+    patch user_path(my_user.id), headers: { "Authorization" => users(:allie).token }, params: { user: { password: "password", password_confirmation: "asdlkfj" } }
     assert_equal ["doesn't match Password"], response.parsed_body["password_confirmation"]
   end
 

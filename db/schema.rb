@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228010553) do
+ActiveRecord::Schema.define(version: 20170102185846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 20161228010553) do
     t.text      "source"
     t.string    "state"
     t.geography "lonlat",          limit: {:srid=>4326, :type=>"point", :geographic=>true}
+  end
+
+  create_table "campgrounds_trips", id: false, force: :cascade do |t|
+    t.integer "trip_id"
+    t.integer "campground_id"
   end
 
   create_table "intersections", id: false, force: :cascade do |t|
@@ -54,6 +59,11 @@ ActiveRecord::Schema.define(version: 20161228010553) do
     t.geography "lonlat",              limit: {:srid=>4326, :type=>"point", :geographic=>true}
     t.geography "multi_line_boundary", limit: {:srid=>4326, :type=>"multi_line_string", :geographic=>true}
     t.geometry  "boundary",            limit: {:srid=>0, :type=>"geometry_collection"}
+  end
+
+  create_table "parks_trips", id: false, force: :cascade do |t|
+    t.integer "trip_id"
+    t.integer "park_id"
   end
 
   create_table "trails", force: :cascade do |t|
@@ -102,6 +112,7 @@ ActiveRecord::Schema.define(version: 20161228010553) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "token"
   end
 
 end

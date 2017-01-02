@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   def current_user
-    User.find_by(id: session[:current_user_id]) if session[:current_user_id]
+    User.find_by(token: request.headers["HTTP_AUTHORIZATION"]) if request.headers["HTTP_AUTHORIZATION"]
   end
 end

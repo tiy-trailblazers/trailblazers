@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+day:
   start_date: 2016-12-19
   end_date: 2016-12-19
-  trip_type: MyString
-  camping_type: MyString
+  trip_type: day-hike
+  camping_type: none
+  campgrounds: [camp]
+  users: [allie, kvothe]
 
-two:
+night:
   start_date: 2016-12-19
   end_date: 2016-12-19
-  trip_type: MyString
-  camping_type: MyString
+  trip_type: overnight
+  camping_type: campground
