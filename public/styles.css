@@ -446,8 +446,7 @@ h1 {
 @media screen and (min-width: 600px) {
   #map {
     margin-left: 20%;
-    height: 826px;
-    max-height: 1000px; } }
+    height: 100%; } }
 .trails, .campgrounds {
   margin-left: 20%;
   margin-bottom: 0;
