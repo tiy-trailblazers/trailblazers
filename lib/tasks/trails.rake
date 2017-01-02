@@ -13,7 +13,7 @@ namespace :trails do
     box_width = width / 10
 
     (8..10).to_a.each do |x|
-      (0..10).to_a.each do |y|
+      (4..10).to_a.each do |y|
         p "(#{x}, #{y})"
         area = OverpassArea.new(usa[:south] + y * box_height, usa[:west] + x * box_width, usa[:south] + (y + 1) * box_height, usa[:west] + (x + 1) * box_width)
 
