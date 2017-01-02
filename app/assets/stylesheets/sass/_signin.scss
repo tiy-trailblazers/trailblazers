@@ -18,10 +18,16 @@
             background-color: #fff700;
             display: block;
             margin: 0 auto;
-            margin-bottom: 1em;
+            margin-bottom: 0.5em;
             width: 65px;
             text-align: center;
         }
+    }
+    a {
+        display: block;
+        font-family: 'Patrick Hand SC', cursive;
+        text-align: center;
+        margin-bottom: 0.5em;
     }
 }
 
@@ -29,7 +35,7 @@
     #signin {
         margin-left: 35%;
         position: absolute;
-        top: 20em;
+        top: 15em;
         left: 6em;
     }
 }

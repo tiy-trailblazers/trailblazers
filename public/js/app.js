@@ -88,16 +88,23 @@
 
     SigninController.$inject = [ 'UserService' ];
 
-    function SigninController(){
+    function SigninController(UserService){
         var vm = this;
         vm.user = {};
+        vm.userCreate = false;
 
         vm.createUser = function createUser(user) {
-            console.log(user);
+            UserService.createUser(user);
+            vm.user = {};
+            vm.userCreate = false;
         };
 
         vm.signin = function signin(user) {
-            console.log(user);
+            UserService.signinUser(user);
+        };
+
+        vm.userCreateSwitch = function userCreateSwitch() {
+            vm.userCreate = !vm.userCreate;
         };
     }
 }());
@@ -600,9 +607,9 @@
     angular.module('trailblazer')
         .factory('UserService', UserService);
 
-    UserService.$inject = [  ];
+    UserService.$inject = [ '$http', '$state' ];
 
-    function UserService() {
+    function UserService($http) {
 
         return {
             createUser: createUser,
@@ -611,10 +618,46 @@
 
         function createUser(user) {
             console.log('service', user);
+            $http({
+                url: '/users',
+                method: 'post',
+                headers: {
+                    ContentType: 'application/json'
+                },
+                params: {
+                    user: {
+                        first_name: user.firstname,
+                        last_name: user.lastname,
+                        email: user.email,
+                        password: user.password,
+                        password_confirmation: user.passwordConf
+                    }
+                }
+            })
+            .then(function success(response) {
+                console.log(response);
+            })
+            .catch(function error(err) {
+                console.log(err);
+            });
         }
 
         function signinUser(user) {
             console.log('service', user);
+            $http({
+                url: '/users',
+                method: 'post',
+                params: {
+                    email: user.email,
+                    password: user.password,
+                }
+            })
+            .then(function success(response) {
+                console.log(response);
+            })
+            .catch(function error(err) {
+                console.log(err);
+            });
         }
     }
 }());

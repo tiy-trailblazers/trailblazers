@@ -6,16 +6,23 @@
 
     SigninController.$inject = [ 'UserService' ];
 
-    function SigninController(){
+    function SigninController(UserService){
         var vm = this;
         vm.user = {};
+        vm.userCreate = false;
 
         vm.createUser = function createUser(user) {
-            console.log(user);
+            UserService.createUser(user);
+            vm.user = {};
+            vm.userCreate = false;
         };
 
         vm.signin = function signin(user) {
-            console.log(user);
+            UserService.signinUser(user);
+        };
+
+        vm.userCreateSwitch = function userCreateSwitch() {
+            vm.userCreate = !vm.userCreate;
         };
     }
 }());
