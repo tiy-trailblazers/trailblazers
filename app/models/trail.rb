@@ -63,4 +63,36 @@ class Trail < ApplicationRecord
     end
     trails
   end
+
+
+  def self.join_multi_line_string(mls)
+     all_points = mls \
+      .map { |ls| [ls.start_point, ls.end_point ]}
+
+      line_points_to_be_made = closest_two_points all_points.first, all_points
+      line = RGeo::Geographic.spherical_factory(srid: 4326).line_string(line_points_to_be_made)
+
+      binding.pry
+      # .map { |e| RGeo::Geographic.spherical_factory(srid: 4326).line_string(e)}
+
+  end
+
+  def self.closest_two_points(points, all_points)
+    all_other_points = all_points.dup
+    all_other_points.delete(points)
+
+    candidate_points = all_other_points.map do |tuple|
+      points.map do |point|
+        [point, tuple.min_by {|other_point| point.distance(other_point)}]
+      end
+    end
+
+    candidate_points\
+      .map { |line_points| line_points.min_by {|tuple| distance_of_point_tuple(tuple)  }}
+      .min_by {|tuple| distance_of_point_tuple(tuple)  }
+  end
+
+  def self.distance_of_point_tuple(tuple)
+    tuple.first.distance(tuple.last)
+  end
 end
