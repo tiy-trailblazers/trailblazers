@@ -6,11 +6,13 @@ class Trail < ApplicationRecord
   reverse_geocoded_by :latitude, :longitude
 
   def path_as_array
-    path.points.map do |point|
-      {
-        lon: point.x,
-        lat: point.y
-      }
+    if path
+      path.points.map do |point|
+        {
+          lon: point.x,
+          lat: point.y
+        }
+      end
     end
   end
 
@@ -54,8 +56,8 @@ class Trail < ApplicationRecord
       trails_array.each do |trail|
         trails << trail.attributes.merge({
           line: trail.path_as_array,
-          head_lat: trail.startlonlat.y,
-          head_lon: trail.startlonlat.x
+          head_lat: (trail.startlonlat.y if trail.startlonlat),
+          head_lon: (trail.startlonlat.x if trail.startlonlat)
         })
       end
     end

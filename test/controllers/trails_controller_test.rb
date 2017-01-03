@@ -15,4 +15,18 @@ class TrailsControllerTest < ActionDispatch::IntegrationTest
     assert response.parsed_body["trail"]
     assert response.parsed_body["park"]
   end
+
+  test "can request trails with limit and offset" do
+    get trails_path, params: { south: 36.70632, west: -80.3789, north: 40.796607, east: -76.206251, limit: 1, offset: 1 }
+    assert_response :ok
+    assert_equal 1, response.parsed_body["trails"].size
+    assert_equal "Sam's River Loop Trail", response.parsed_body["trails"].first["name"]
+  end
+
+  test "can request trails with min and max length" do
+    get trails_path, params: { south: 36.70632, west: -80.3789, north: 40.796607, east: -76.206251, min_length: 1.2, max_length: 2.6 }
+    assert_response :ok
+    assert_equal 2, response.parsed_body["trails"].size
+    assert_equal "Sam's River Loop Trail", response.parsed_body["trails"].first["name"]
+  end
 end

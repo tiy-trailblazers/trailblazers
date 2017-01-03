@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     end
     user.token = token
     if user.save
-      render json: user
+      render json: user.as_json(include: [:trips])
     else
       render json: user.errors
     end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params["id"])
     if current_user == user && user.update(user_params)
-      render json: user
+      render json: user.as_json(include: [:trips])
     else
       render json: user.errors
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(params["id"])
-    render json: user
+    render json: user.as_json(include: [:trips])
   end
 
   private
