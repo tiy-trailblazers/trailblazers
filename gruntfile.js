@@ -143,7 +143,7 @@
                             ui: 'bdd'
                         }
                     },
-                    browsers: [ 'PhantomJS'],
+                    browsers: [ 'PhantomJS', 'Chrome', 'Safari', 'Firefox' ],
                     singleRun: true,
 
                     preprocessors: {
@@ -154,7 +154,7 @@
                         type: 'text-summary'
                     }
                 },
-                trailsandcampaigns: {
+                trailsandcampgrounds: {
                     options: {
                         files: [
                             'node_modules/angular/angular.js',
@@ -163,7 +163,9 @@
                             'node_modules/angular-sanitize/angular-sanitize.js',
                             'node_modules/angular-mocks/angular-mocks.js',
                             'app/assets/javascripts/trailblazer.module.js',
-                            'app/assets/javascripts/trail-and-campground.service.js',
+                            'app/assets/javascripts/services/trail-and-campground.service.js',
+                            'app/assets/javascripts/controllers/trail-and-campground.controller.js',
+                            'app/assets/tests/specs/trail-and-campground.controller.spec.js',
                             'app/assets/tests/specs/trail-and-campground.service.spec.js'
                         ]
                     }
@@ -184,7 +186,8 @@
                     tasks: ['test', 'concat:js']
                 },
                 test: {
-                    files: ['app/assets/tests/**/*.js']
+                    files: ['app/assets/tests/**/*.js'],
+                    tasks: ['test']
                 }
             }
         });
@@ -197,6 +200,6 @@
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.loadNpmTasks('grunt-contrib-sass');
 
-        grunt.registerTask('test', ['jshint'] );
+        grunt.registerTask('test', ['jshint', 'karma'] );
         grunt.registerTask('default', [ 'test', 'clean', 'copy:css', 'copy:html', 'copy:images', 'concat:js' ] );
     };
