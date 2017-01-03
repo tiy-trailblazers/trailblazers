@@ -6,6 +6,12 @@
 #
 park:
   name: The Park
+  description: blah blah blah
+  latitude: 73.939393
+  longitude: -132.933939
+  states: "ME"
+  park_code: "fr-ca/sacr"
+  lonlat: POINT (-132.933939 73.939393)
 
 # column: value
 #
