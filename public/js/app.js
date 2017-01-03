@@ -77,7 +77,7 @@
         vm.coordinates = $stateParams.transCoords;
         vm.trails = null;
         vm.campground = null;
-        vm.getTrails = TrailandCampgroundService.findTrails(vm.coordinates)
+        vm.getTandC = TrailandCampgroundService.findTsandCs(vm.coordinates)
             .then(function transformData(data) {
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
@@ -603,8 +603,6 @@
     angular.module('trailblazer')
         .factory('TrailandCampgroundService', TrailandCampgroundService);
 
-
-
     TrailandCampgroundService.$inject = [ '$http' ];
 
     /**
@@ -614,15 +612,14 @@
     function TrailandCampgroundService($http){
 
         return {
-            findTrails: findTrails
+            findTsandCs: findTsandCs
         };
-
         /**
          * executes http request to app backend for trail and campground data
          * @param  {Array} coordinates location data based off radius rectangle
          * @return {Promise} angular promise functions            [description]
          */
-        function findTrails(coordinates){
+        function findTsandCs(coordinates){
             var west = coordinates[0];
             var south = coordinates[1];
             var east = coordinates[2];
@@ -638,7 +635,6 @@
                 }
             })
             .then( function transformResponse(response) {
-                console.log(response);
                 var trails = response.data.trails;
                 var campgrounds = response.data.campgrounds;
                 return { trails: trails, campgrounds: campgrounds};

@@ -8,7 +8,7 @@
 
         beforeEach(module('trailblazer'));
 
-        beforeEach(inject(function ($controller, _$httpBackend_) {
+        beforeEach(inject(function($controller, _$httpBackend_) {
             $httpBackend = _$httpBackend_;
             stateParams =  {
                 trails: [
@@ -61,8 +61,8 @@
 
             $httpBackend.whenGET('templates/trails-and-campgrounds.template.html')
                 .respond(
-                    TandCController = $controller('TrailandCampgroundController', {$stateParams:stateParams}
-                ));
+                    TandCController = $controller('TrailandCampgroundController', {$stateParams:stateParams})
+                );
         }));
 
         it('should contain scope variables', function(){

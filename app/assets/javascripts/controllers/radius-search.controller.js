@@ -11,7 +11,7 @@
         vm.coordinates = $stateParams.transCoords;
         vm.trails = null;
         vm.campground = null;
-        vm.getTrails = TrailandCampgroundService.findTrails(vm.coordinates)
+        vm.getTandC = TrailandCampgroundService.findTsandCs(vm.coordinates)
             .then(function transformData(data) {
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;

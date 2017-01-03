@@ -39,7 +39,7 @@
         }));
 
         it('should resolve ajax call with trail and campground data', function(dc) {
-            var result = TrailandCampgroundService.findTrails([12.345, 67.891, 98.765, 43.219]);
+            var result = TrailandCampgroundService.findTsandCs([12.345, 67.891, 98.765, 43.219]);
             expect(result).to.be.an('object');
             expect(result.then).to.be.a('function');
             expect(result.catch).to.be.a('function');

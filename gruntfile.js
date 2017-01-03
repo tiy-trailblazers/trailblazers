@@ -143,7 +143,7 @@
                             ui: 'bdd'
                         }
                     },
-                    browsers: [ 'PhantomJS', 'Chrome', 'Safari', 'Firefox' ],
+                    browsers: [ 'PhantomJS' ],
                     singleRun: true,
 
                     preprocessors: {
@@ -163,6 +163,8 @@
                             'node_modules/angular-sanitize/angular-sanitize.js',
                             'node_modules/angular-mocks/angular-mocks.js',
                             'app/assets/javascripts/trailblazer.module.js',
+                            'app/assets/javascripts/controllers/radius-search.controller.js',
+                            'app/assets/tests/specs/radius-search.controller.spec.js',
                             'app/assets/javascripts/services/trail-and-campground.service.js',
                             'app/assets/javascripts/controllers/trail-and-campground.controller.js',
                             'app/assets/tests/specs/trail-and-campground.controller.spec.js',
