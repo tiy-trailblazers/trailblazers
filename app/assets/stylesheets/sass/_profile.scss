@@ -1,0 +1,15 @@
+#profile {
+    font-family: 'Patrick Hand SC', cursive;
+    h1 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #profile {
+        margin-left: 20%;
+    }
+}

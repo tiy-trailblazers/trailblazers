@@ -13,12 +13,12 @@
        $stateProvider
        .state({
            name: 'home',
-           url: '',
+           url: '/',
            templateUrl: 'templates/home.template.html',
        })
        .state({
            name: 'trails-and-campgrounds',
-           url: 'trails-and-campgrounds',
+           url: '/trails-and-campgrounds',
            templateUrl: 'templates/trails-and-campgrounds.template.html',
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
@@ -30,7 +30,7 @@
        })
        .state({
            name: 'buffer',
-           url: 'buffering',
+           url: '/buffering',
            templateUrl: 'templates/buffering.template.html',
            controller: 'RadiusSearchController',
            controllerAs: 'radius',
@@ -41,15 +41,21 @@
        })
        .state({
            name: 'signin',
-           url: 'signin',
+           url: '/signin',
            templateUrl: 'templates/signin.template.html',
            controller: 'SigninController',
            controllerAs: 'signin'
        })
        .state({
            name: 'profile',
-           url: 'profile/:id',
-           templateUrl: 'templates/profile.template.html'
+           url: '/profile/:id',
+           templateUrl: 'templates/profile.template.html',
+           controller: 'UserProfileController',
+           controllerAs: 'user',
+           params: {
+               id: null,
+               user_name: null
+           }
        });
 
     }

@@ -230,6 +230,7 @@
             }
 
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,500);
+            $('nav').addClass('tandc');
         }
     }
 }());

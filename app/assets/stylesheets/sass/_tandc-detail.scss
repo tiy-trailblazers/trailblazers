@@ -3,7 +3,6 @@
     border: 2px solid #000000;
     box-sizing: border-box;
     background-color: #fff700;
-    border-left: 0px;
     border-top: 0px;
     font-family: 'Patrick Hand SC', cursive;
     h3 {
@@ -13,7 +12,6 @@
     ul {
         margin-top: 0;
         padding-left: 0;
-        display: inline-block;
         li {
             display: block;
             list-style: none;
@@ -24,7 +22,7 @@
 }
 
 @media screen and (min-width: 600px){
-    .trails, .campgrounds {
-        margin-left: 20%;
+    nav.tandc {
+        height: 75vh;
     }
 }
