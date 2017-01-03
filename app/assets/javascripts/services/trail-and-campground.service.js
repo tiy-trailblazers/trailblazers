@@ -39,6 +39,7 @@
                 }
             })
             .then( function transformResponse(response) {
+                console.log(response);
                 var trails = response.data.trails;
                 var campgrounds = response.data.campgrounds;
                 return { trails: trails, campgrounds: campgrounds};

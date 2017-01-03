@@ -3,7 +3,7 @@
     display: block;
     margin: 0 auto;
     border: 2px solid #000000;
-    max-height: 400px;
+    height: 100vh;
     border-left: 0px;
     box-sizing: border-box;
     canvas {
@@ -14,6 +14,8 @@
 @media screen and (min-width: 600px){
     #map {
         margin-left: 20%;
-        height: 100%;
+    }
+    #map.tandc {
+        height: 75vh;
     }
 }

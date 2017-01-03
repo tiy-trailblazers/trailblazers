@@ -21,3 +21,5 @@ node_modules/
 
 # Ignore sas-cache
 .sass-cache/
+
+.dump_Command

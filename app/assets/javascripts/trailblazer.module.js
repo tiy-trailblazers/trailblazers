@@ -38,6 +38,24 @@
                transCoords: null,
                centerCoords: null
            }
+       })
+       .state({
+           name: 'signin',
+           url: '/signin',
+           templateUrl: 'templates/signin.template.html',
+           controller: 'SigninController',
+           controllerAs: 'signin'
+       })
+       .state({
+           name: 'profile',
+           url: '/profile/:id',
+           templateUrl: 'templates/profile.template.html',
+           controller: 'UserProfileController',
+           controllerAs: 'user',
+           params: {
+               id: null,
+               user_name: null
+           }
        });
 
     }
