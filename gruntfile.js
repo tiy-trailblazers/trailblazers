@@ -207,10 +207,24 @@
                             'node_modules/angular-openlayers-directive/dist/angular-openlayers-directive.js',
                             'node_modules/angular-sanitize/angular-sanitize.js',
                             'node_modules/angular-mocks/angular-mocks.js',
-                            'node_modules/openlayers/dist/ol.js',
                             'app/assets/javascripts/trailblazer.module.js',
                             'app/assets/javascripts/services/user.service.js',
                             'app/assets/tests/specs/user.service.spec.js'
+                        ]
+                    }
+                },
+                signin: {
+                    options: {
+                        files: [
+                            'node_modules/angular/angular.js',
+                            'node_modules/angular-ui-router/release/angular-ui-router.js',
+                            'node_modules/angular-openlayers-directive/dist/angular-openlayers-directive.js',
+                            'node_modules/angular-sanitize/angular-sanitize.js',
+                            'node_modules/angular-mocks/angular-mocks.js',
+                            'app/assets/javascripts/trailblazer.module.js',
+                            'app/assets/javascripts/services/user.service.js',
+                            'app/assets/javascripts/controllers/signin.controller.js',
+                            'app/assets/tests/specs/signin.controller.spec.js'
                         ]
                     }
                 }
