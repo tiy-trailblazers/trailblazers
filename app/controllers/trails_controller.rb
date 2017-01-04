@@ -3,7 +3,7 @@ class TrailsController < ApplicationController
   def index
     campgrounds = Campground.within_bounding_box([params[:south].to_f, params[:west].to_f, params[:north].to_f, params[:east].to_f])
 
-    trails = Trail.new().formatted_trails(Trail.within_bounding_box([params[:south].to_f, params[:west].to_f, params[:north].to_f, params[:east].to_f]))
+    trails = Trail.new().formatted_trails(query)
 
     response = {
       "trails"=>trails,
@@ -21,5 +21,21 @@ class TrailsController < ApplicationController
       park: @trail.park
     }
     render json: response
+  end
+
+  private
+
+  def query
+    base_query = Trail.within_bounding_box([params[:south].to_f, params[:west].to_f, params[:north].to_f, params[:east].to_f])
+
+    if params[:max_length] && params[:min_length]
+      base_query.where("length <= #{params[:max_length]} and length >= #{params[:min_length]}").order(length: :desc).limit(params[:limit]).offset(params[:offset])
+    elsif params[:max_length]
+      base_query.where("length <= #{params[:max_length]}").order(length: :desc).limit(params[:limit]).offset(params[:offset])
+    elsif params[:min_length]
+      base_query.where("length >= #{params[:min_length]}").order(length: :desc).limit(params[:limit]).offset(params[:offset])
+    else
+      base_query.order(length: :desc).limit(params[:limit]).offset(params[:offset])
+    end
   end
 end
