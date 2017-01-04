@@ -18,6 +18,9 @@ class MapItemsController < ApplicationController
         campgrounds: campgrounds
       }
       render json: response
+    elsif params[:park_name]
+      parks = Park.where("name like ?", "%#{params[:park_name].titleize}%")
+      render json: parks.to_json(include: [:trails])
     end
   end
 
