@@ -71,30 +71,32 @@ namespace :trails do
 
       clean_name = group.name.gsub("'", "''")
 
-      line_merge_array = Trail.select("name, ST_Linemerge(ST_Union(path)) as path").where("name = '#{clean_name}'").group("name").to_a
+      line_merge_array = Trail.select("name, ST_Linemerge(ST_Union(path)) as path, count(*)").where("name = '#{clean_name}' and state = 'VA'").group("name").to_a
 
       line_merge = line_merge_array.first
 
-      if line_merge.path.class == RGeo::Geos::CAPILineStringImpl
-        trail_head = line_merge.path.start_point
-
-        clean_name = line_merge.name.gsub("'", "''")
-        same_name_trails = Trail.where("name = '#{clean_name}'")
-
-        first_trail = same_name_trails.to_a.shift
-        first_trail.update!(
-          {
-            length: line_merge.path.length,
-            path: line_merge.path,
-            startlonlat: RGeo::Geographic.spherical_factory(srid: 4326).point(trail_head.y, trail_head.x),
-            latitude: trail_head.x,
-            longitude: trail_head.y
-          }
-        )
-        same_name_trails.delete_all
-      elsif line_merge.path.class == RGeo::Geos::CAPIMultiLineStringImpl
-
+      begin
+        trail_path = Trail.join_multi_line_string(line_merge.path)
+      rescue
+        next
       end
+
+      trail_head = trail_path.start_point
+      clean_name = line_merge.name.gsub("'", "''")
+      same_name_trails = Trail.where("name = '#{clean_name}'")
+
+      first_trail = same_name_trails.to_a.shift
+      first_trail.update!(
+        {
+          length: trail_path.length,
+          path: trail_path,
+          startlonlat: RGeo::Geographic.spherical_factory(srid: 4326).point(trail_head.y, trail_head.x),
+          latitude: trail_head.x,
+          longitude: trail_head.y
+        }
+      )
+      same_name_trails.delete_all
+
     end
   end
 
