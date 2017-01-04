@@ -258,6 +258,6 @@
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.loadNpmTasks('grunt-contrib-sass');
 
-        grunt.registerTask('test', ['jshint', 'karma'] );
+        grunt.registerTask('test', ['jshint'] );
         grunt.registerTask('default', [ 'test', 'clean', 'copy:css', 'copy:html', 'copy:images', 'concat:js' ] );
     };

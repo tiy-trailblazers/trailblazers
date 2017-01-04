@@ -523,7 +523,6 @@ nav {
     .trails ul li, .campgrounds ul li {
       display: block;
       list-style: none;
-      float: left;
       border: 1px solid black; }
 
 @media screen and (min-width: 600px) {

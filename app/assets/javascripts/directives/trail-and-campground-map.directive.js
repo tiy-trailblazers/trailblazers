@@ -15,7 +15,7 @@
         return {
             restrict: 'EA',
             scope: {
-                dataTitle: '=',
+                trail: '@',
             },
             link: setupMap
         };
@@ -24,7 +24,7 @@
          * Creates and runs event handling for OpenLayers map
          * @return {void}
          */
-        function setupMap() {
+        function setupMap($scope) {
             var element = 'map';
             var map;
             var vectorArray = [];
@@ -34,6 +34,14 @@
             var trailheadMarkers = [];
             var trailLineLayers = [];
 
+            console.log('root', $scope);
+            $scope.$watch('trail', function(){
+                if ($scope.trail === '') {
+                    return;
+                } else {
+                  console.log(JSON.parse($scope.trail));
+                }
+            });
             /**
              * Configs base Map layer with tiles sourced from MapBox
              * @return {Object} Vector layer used for map tileing
