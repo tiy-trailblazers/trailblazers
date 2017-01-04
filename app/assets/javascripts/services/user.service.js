@@ -34,7 +34,6 @@
         }
 
         function signinUser(user) {
-            console.log('service', user);
             return $http({
                 url: '/session',
                 method: 'POST',
