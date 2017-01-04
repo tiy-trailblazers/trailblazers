@@ -163,12 +163,39 @@
                             'node_modules/angular-sanitize/angular-sanitize.js',
                             'node_modules/angular-mocks/angular-mocks.js',
                             'app/assets/javascripts/trailblazer.module.js',
-                            'app/assets/javascripts/controllers/radius-search.controller.js',
-                            'app/assets/tests/specs/radius-search.controller.spec.js',
                             'app/assets/javascripts/services/trail-and-campground.service.js',
                             'app/assets/javascripts/controllers/trail-and-campground.controller.js',
                             'app/assets/tests/specs/trail-and-campground.controller.spec.js',
                             'app/assets/tests/specs/trail-and-campground.service.spec.js'
+                        ]
+                    }
+                },
+                radiusSearch: {
+                    options: {
+                        files: [
+                            'node_modules/angular/angular.js',
+                            'node_modules/angular-ui-router/release/angular-ui-router.js',
+                            'node_modules/angular-openlayers-directive/dist/angular-openlayers-directive.js',
+                            'node_modules/angular-sanitize/angular-sanitize.js',
+                            'node_modules/angular-mocks/angular-mocks.js',
+                            'app/assets/javascripts/trailblazer.module.js',
+                            'app/assets/javascripts/controllers/radius-search.controller.js',
+                            'app/assets/tests/specs/radius-search.controller.spec.js',
+                        ]
+                    }
+                },
+                homeMap: {
+                    options: {
+                        files: [
+                            'node_modules/angular/angular.js',
+                            'node_modules/angular-ui-router/release/angular-ui-router.js',
+                            'node_modules/angular-openlayers-directive/dist/angular-openlayers-directive.js',
+                            'node_modules/angular-sanitize/angular-sanitize.js',
+                            'node_modules/angular-mocks/angular-mocks.js',
+                            'node_modules/openlayers/dist/ol.js',
+                            'app/assets/javascripts/trailblazer.module.js',
+                            'app/assets/javascripts/directives/homepage-map.directive.js',
+                            'app/assets/tests/specs/homepage-map.directive.spec.js'
                         ]
                     }
                 }
