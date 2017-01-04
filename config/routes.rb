@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :trips, only: [:create, :update, :destroy, :show]
   resources :campgrounds, only: [:show]
   resources :parks, only: [:show]
+  post "/map_items/search", controller: :map_items, action: :search, as: :search_map_items
 end

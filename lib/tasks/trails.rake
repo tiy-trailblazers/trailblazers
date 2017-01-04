@@ -46,6 +46,7 @@ namespace :trails do
   task add_parks: :environment do
     Trail.where("park_id is null").each do |trail|
       trail.update(park: trail.find_park)
+      print "."
     end
   end
 

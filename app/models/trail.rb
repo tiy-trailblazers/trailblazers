@@ -46,6 +46,8 @@ class Trail < ApplicationRecord
     Park.all.each do |park|
       if park.boundary
         return park if (park.boundary.contains?(startlonlat) || park.boundary.contains?(endlonlat))
+      else
+        return nil
       end
     end
   end
@@ -57,7 +59,8 @@ class Trail < ApplicationRecord
         trails << trail.attributes.merge({
           line: trail.path_as_array,
           head_lat: (trail.startlonlat.y if trail.startlonlat),
-          head_lon: (trail.startlonlat.x if trail.startlonlat)
+          head_lon: (trail.startlonlat.x if trail.startlonlat),
+          park: (trail.park.attributes if trail.park)
         })
       end
     end
