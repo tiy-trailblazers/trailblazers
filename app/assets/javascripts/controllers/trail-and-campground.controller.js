@@ -13,12 +13,12 @@
         vm.campgrounds = $stateParams.campgrounds;
         vm.element = null;
 
-        vm.trailPopup = function trailPopup(trail){
+        vm.trailPopup = function trailPopup(element){
             if( vm.element ){
                 vm.element = null;
                 return;
             } else {
-                vm.element = trail;
+                vm.element = element;
                 return (vm.element);
             }
         };

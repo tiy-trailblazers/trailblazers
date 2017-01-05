@@ -25,7 +25,6 @@
          * @return {void}
          */
         function setupMap() {
-            var interactionCount = 0;
             var element = 'map';
             var vector = buildRectangle();
 
@@ -51,8 +50,8 @@
             });
 
             map.getView().on('change:resolution', function setRaduisBox() {
-                if (map.getView().getZoom() > 7.5 && interactionCount <= 0) {
-                        interactionCount ++;
+                if (map.getView().getZoom() > 7.5) {
+                        $('map').css('cursor','none');
                         map.addInteraction(draw);
                     }
             });

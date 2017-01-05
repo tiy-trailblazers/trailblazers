@@ -528,5 +528,13 @@ nav {
 @media screen and (min-width: 600px) {
   nav.tandc {
     height: 75vh; } }
+#popup {
+  position: absolute;
+  bottom: 25px;
+  background-color: #ffffff;
+  height: 40px;
+  width: 90px;
+  color: yellow;
+  border: 2px solid yellow; }
 
 /*# sourceMappingURL=styles.css.map */

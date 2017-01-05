@@ -1,8 +1,9 @@
 
 <tandcmap id='map' class='tandc' trail='{{TandC.element}}'></tandcmap>
-<aside campground-panel>
 
-</aside>
+<div id='popup' class='ol-popup'>
+    <div class='popup-content'>Heres Trail</div>
+</div>
 <section class='trails'>
     <ul>
         <h3>Trails</h3>
@@ -20,7 +21,7 @@
 <section class='campgrounds'>
     <ul>
         <h3>Campgrounds</h3>
-        <li ng-repeat='camp in TandC.campgrounds'>
+        <li ng-repeat='camp in TandC.campgrounds' ng-click='TandC.trailPopup(camp)'>
             {{camp.name}}
             <aside ng-if='TandC.element === camp' tandc-Detail>
                 <p>This camp is super awesome</p>

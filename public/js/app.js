@@ -155,12 +155,12 @@
         vm.campgrounds = $stateParams.campgrounds;
         vm.element = null;
 
-        vm.trailPopup = function trailPopup(trail){
+        vm.trailPopup = function trailPopup(element){
             if( vm.element ){
                 vm.element = null;
                 return;
             } else {
-                vm.element = trail;
+                vm.element = element;
                 return (vm.element);
             }
         };
@@ -210,7 +210,6 @@
          * @return {void}
          */
         function setupMap() {
-            var interactionCount = 0;
             var element = 'map';
             var vector = buildRectangle();
 
@@ -236,8 +235,8 @@
             });
 
             map.getView().on('change:resolution', function setRaduisBox() {
-                if (map.getView().getZoom() > 7.5 && interactionCount <= 0) {
-                        interactionCount ++;
+                if (map.getView().getZoom() > 7.5) {
+                        $('map').css('cursor','none');
                         map.addInteraction(draw);
                     }
             });
@@ -341,15 +340,30 @@
             var campgroundMarkers = [];
             var trailheadMarkers = [];
             var trailLineLayers = [];
+            var i = 0;
+            var popupOverlay = new ol.Overlay({
+               element: document.getElementById('popup'),
+               autoPan: true,
+               autoPanAutomation: {
+                   duration: 1000
+               }
+            });
 
-            console.log('root', $scope);
             $scope.$watch('trail', function(){
                 if ($scope.trail === '') {
+                    if(i <= 1) {
+                        i++;
+                        return;
+                    }
                     return;
                 } else {
-                  console.log(JSON.parse($scope.trail));
+                    var trailObj = JSON.parse($scope.trail);
+                    var trailCoordinates = ol.proj.fromLonLat([trailObj.longitude, trailObj.latitude]);
+                    popupOverlay.setPosition(trailCoordinates);
                 }
             });
+
+
             /**
              * Configs base Map layer with tiles sourced from MapBox
              * @return {Object} Vector layer used for map tileing
@@ -413,6 +427,7 @@
                     controls: ol.control.defaults(),
                     renderer: 'canvas',
                     layers: vectorLayers,
+                    overlays: [popupOverlay],
                     view: new ol.View({
                         center: centerLayers($stateParams.centerCoords),
                         zoom: 10,
