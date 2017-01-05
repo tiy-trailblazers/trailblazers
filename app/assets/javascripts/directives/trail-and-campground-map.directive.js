@@ -15,6 +15,7 @@
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
+        console.log(JSON.parse(sessionStorage.getItem('TsandCs')));
 
         return {
             restrict: 'EA',
@@ -72,18 +73,18 @@
              * @return {void}
              */
             function findCampgroundsAndTrails() {
-                if (!$stateParams.campgrounds) {
+                if (!$stateParams.campgrounds || !JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds) {
                     return;
                 }
                 else {
                     console.log($stateParams);
-                    var campgrounds = $stateParams.campgrounds;
+                    var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
                         addCampgroundMarkers(centerLayers(campgroundCoord));
                     });
 
-                    var trails = $stateParams.trails;
+                    var trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
                     trails.forEach( function markAndPlottrails(trail){
                         var trailCoordinates = [];
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);

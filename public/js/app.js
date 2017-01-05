@@ -23,9 +23,9 @@
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
-               centerCoords: null,
-               trails: null,
-               campgrounds: null,
+               centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords || null,
+               trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails || null,
+               campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds || null,
            }
        })
        .state({
@@ -74,14 +74,14 @@
 
     function RadiusSearchController($state, $stateParams, TrailandCampgroundService) {
         var vm = this;
-        vm.coordinates = $stateParams.transCoords;
+        vm.coordinates = $stateParams.transCoords || JSON.parse(sessionStorage.getItem('TsandCs')).transCoords;
         vm.trails = null;
         vm.campground = null;
         vm.getTandC = TrailandCampgroundService.findTsandCs(vm.coordinates)
             .then(function transformData(data) {
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
-                window.sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds}));
+                window.sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: $stateParams.centerCoords || JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords, transCoords: $stateParams.transCoords || JSON.parse(sessionStorage.getItem('TsandCs')).transCoords}));
             })
             .catch(function errHandler(err) {
                 console.log(err);
@@ -326,6 +326,7 @@
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
+        console.log(JSON.parse(sessionStorage.getItem('TsandCs')));
 
         return {
             restrict: 'EA',
@@ -383,18 +384,18 @@
              * @return {void}
              */
             function findCampgroundsAndTrails() {
-                if (!$stateParams.campgrounds) {
+                if (!$stateParams.campgrounds || !JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds) {
                     return;
                 }
                 else {
                     console.log($stateParams);
-                    var campgrounds = $stateParams.campgrounds;
+                    var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
                         addCampgroundMarkers(centerLayers(campgroundCoord));
                     });
 
-                    var trails = $stateParams.trails;
+                    var trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
                     trails.forEach( function markAndPlottrails(trail){
                         var trailCoordinates = [];
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);

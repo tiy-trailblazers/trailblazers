@@ -23,9 +23,9 @@
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
-               centerCoords: null,
-               trails: null,
-               campgrounds: null,
+               centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords || null,
+               trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails || null,
+               campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds || null,
            }
        })
        .state({
