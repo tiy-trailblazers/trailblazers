@@ -19,7 +19,7 @@
         return {
             restrict: 'EA',
             scope: {
-                trail: '@',
+                popupelm: '@',
             },
             link: setupMap
         };
@@ -31,7 +31,6 @@
         function setupMap($scope) {
             var element = 'map';
             var map;
-            var i = 0;
             var popupOverlay = new ol.Overlay({
                element: document.getElementById('popup'),
                autoPan: true,
@@ -104,16 +103,16 @@
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,500);
             $('nav').addClass('tandc');
 
-            $scope.$watch('trail', function(){
-                if ($scope.trail === '') {
-                    if(i <= 1) {
-                        i++;
-                        return;
-                    }
+            $scope.$watch('popupelm', function(){
+                if ($scope.popupelm === '') {
                     return;
                 } else {
-                    var trailObj = JSON.parse($scope.trail);
-                    var trailCoordinates = ol.proj.fromLonLat([trailObj.longitude, trailObj.latitude]);
+                    var tORcObj = JSON.parse($scope.popupelm);
+                    var trailCoordinates = ol.proj.fromLonLat([tORcObj.longitude, tORcObj.latitude]);
+                    $('.popup-content').html(
+                        '<p>' + tORcObj.name + '<p>' +
+                        '<p>Length: ' + Math.round((Number(tORcObj.length)*100)/100) + '<p>'
+                    );
                     popupOverlay.setPosition(trailCoordinates);
                 }
             });

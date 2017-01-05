@@ -15,7 +15,10 @@
 
         vm.trailPopup = function trailPopup(element){
             vm.element = element;
-            return (vm.element);
+        };
+
+        vm.addToTrip = function addToTrip(tripItem) {
+            console.log(tripItem);
         };
     }
 

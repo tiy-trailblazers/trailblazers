@@ -1,20 +1,15 @@
 
-<tandcmap id='map' class='tandc' trail='{{TandC.element}}'></tandcmap>
+<tandcmap id='map' class='tandc' popupelm='{{TandC.element}}'></tandcmap>
 
 <div id='popup' class='ol-popup'>
-    <div class='popup-content'>Heres Trail</div>
+    <div class='popup-content'></div>
+    <p ng-click="TandC.addToTrip(TandC.element)">Add to Trip</p>
 </div>
 <section class='trails'>
     <ul>
         <h3>Trails</h3>
         <li ng-repeat='trail in TandC.trails | length' ng-click='TandC.trailPopup(trail)'>
             {{trail.name}}
-            <aside ng-if='TandC.element === trail' tandc-Detail>
-                <p>This trai is super awesome</p>
-                <p>Don't forget to pack tp!</p>
-                <p>Be Bear Aware;)</p>
-                <p>Trail length: {{trail.length | number:2}} miles</p>
-            </aside>
         </li>
     </ul>
 </section>

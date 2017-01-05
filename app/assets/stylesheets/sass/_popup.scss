@@ -2,8 +2,11 @@
     position: absolute;
     bottom: 25px;
     background-color: #ffffff;
-    height: 40px;
-    width: 90px;
+    height: 100px;
+    width: 250px;
     color: yellow;
     border: 2px solid yellow;
+    p:last-child {
+        margin-bottom: 0.5em;
+    }
 }

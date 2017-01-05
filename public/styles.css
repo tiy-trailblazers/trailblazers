@@ -501,19 +501,21 @@ nav {
   #map canvas {
     display: block; }
 
+#map.tandc {
+  height: 75vh; }
+
 @media screen and (min-width: 600px) {
   #map {
-    margin-left: 20%; }
-
-  #map.tandc {
-    height: 75vh; } }
+    margin-left: 20%; } }
 .trails, .campgrounds {
+  width: 50%;
   margin-bottom: 0;
   border: 2px solid #000000;
   box-sizing: border-box;
   background-color: #fff700;
   border-top: 0px;
-  font-family: 'Patrick Hand SC', cursive; }
+  font-family: 'Patrick Hand SC', cursive;
+  float: left; }
   .trails h3, .campgrounds h3 {
     margin-top: 0;
     text-align: center; }
@@ -521,9 +523,15 @@ nav {
     margin-top: 0;
     padding-left: 0; }
     .trails ul li, .campgrounds ul li {
+      padding-left: 0.2em;
       display: block;
       list-style: none;
-      border: 1px solid black; }
+      border: 1px solid black;
+      border-left: 0px;
+      border-right: 0px; }
+
+.campgrounds {
+  border-left: 0px; }
 
 @media screen and (min-width: 600px) {
   nav.tandc {
@@ -532,9 +540,11 @@ nav {
   position: absolute;
   bottom: 25px;
   background-color: #ffffff;
-  height: 40px;
-  width: 90px;
+  height: 100px;
+  width: 250px;
   color: yellow;
   border: 2px solid yellow; }
+  #popup p:last-child {
+    margin-bottom: 0.5em; }
 
 /*# sourceMappingURL=styles.css.map */
