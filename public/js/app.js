@@ -23,9 +23,10 @@
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
-               centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords || null,
-               trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails || null,
-               campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds || null,
+               user_token: null,
+               centerCoords: checkSessionStorage('center'),
+               trails: checkSessionStorage('trails'),
+               campgrounds: checkSessionStorage('campgrounds')
            }
        })
        .state({
@@ -57,6 +58,18 @@
                user_name: null
            }
        });
+
+       function checkSessionStorage(param) {
+           if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'center') {
+               return JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
+           } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'trails') {
+               return JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+           } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'campgrounds') {
+               return JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+           } else {
+               return null;
+           }
+       }
 
     }
 
@@ -111,14 +124,23 @@
         var vm = this;
         vm.user = {};
         vm.userCreate = false;
+        vm.message = null;
 
         vm.userAccount = function userAccount(user) {
             if (Object.keys(user).length === 2) {
             UserService.signinUser(user)
                 .then( function success(data) {
-                    $state.go('profile', {
-                        id: data.id,
-                        user_name: '' + data.first_name + ' ' + data.last_name
+                    console.log(data);
+                    if(data.error){
+                        vm.message = data.error;
+                        return;
+                    }
+                    sessionStorage.setItem('userToken', angular.toJson(data.token));
+                    $state.go('trails-and-campgrounds', {
+                        user_token: data.token,
+                        centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                        trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                        campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
                     });
                 })
                 .catch( function error(err) {
@@ -129,9 +151,12 @@
             } else {
                 UserService.createUser(user)
                     .then( function success(data) {
-                        $state.go('profile', {
-                            id: data.id,
-                            user_name: '' + data.first_name + ' ' + data.last_name
+                        sessionStorage.setItem('userToken', angular.toJson(data.token));
+                        $state.go('trails-and-campgrounds', {
+                            user_token: data.token,
+                            centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                            trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                            campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
                         });
                     })
                     .catch( function error(err) {
@@ -154,24 +179,47 @@
     angular.module('trailblazer')
         .controller('TrailandCampgroundController', TrailandCampgroundController);
 
-    TrailandCampgroundController.$inject = ['$stateParams'];
+    TrailandCampgroundController.$inject = ['$stateParams', 'TripService'];
 
-    function TrailandCampgroundController($stateParams) {
+    function TrailandCampgroundController($stateParams, TripService) {
         var vm = this;
 
-        vm.trails = $stateParams.trails;
-        vm.campgrounds = $stateParams.campgrounds;
+        vm.trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+        vm.campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
         vm.element = null;
 
         vm.trailPopup = function trailPopup(element){
             vm.element = element;
         };
 
-        vm.addToTrip = function addToTrip(tripItem) {
+        vm.addTrip = function addTrip(tripItem) {
             console.log(tripItem);
+            TripService.addTorCtoTrip(tripItem);
         };
     }
 
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .controller('TripController', TripController);
+
+    TripController.$inject = [ 'TripService' ];
+
+    function TripController(TripService) {
+        var vm = this;
+        vm.tripCreate = null;
+        vm.trip = {};
+        vm.tsORcs = TripService.tsORcs;
+        vm.signedIn = JSON.parse(sessionStorage.getItem('userToken')) || null;
+
+
+        vm.createTrip = function createTrip() {
+            vm.tripCreate = true;
+        };
+    }
 }());
 
 (function() {
@@ -254,6 +302,8 @@
                 var coordinates = transCoordOne.concat(transCoordTwo);
                 $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
             });
+
+            $('nav').removeClass('tandc');
         }
 
         /**
@@ -656,6 +706,38 @@
 
     }
 
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
+        .factory('TripService', TripService);
+
+    function TripService() {
+        var tsORcs = [];
+
+        return {
+            tsORcs: tsORcs,
+            addTorCtoTrip: addTorCtoTrip,
+            postTrip: postTrip,
+            patchTrip: patchTrip,
+        };
+
+        function addTorCtoTrip (tORc) {
+            console.log(tORc);
+            tsORcs.push(tORc);
+            console.log('array', tsORcs);
+        }
+
+        function postTrip() {
+
+        }
+
+        function patchTrip() {
+
+        }
+    }
 }());
 
 (function() {

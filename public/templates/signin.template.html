@@ -1,7 +1,7 @@
 <section id='signin'>
     <h2>There is no place like outside!</h2>
     <form ng-show='!signin.userCreate' ng-submit='signin.userAccount(signin.user)'>
-        <input type='text' placeholder='email' ng-model='signin.user.username'>
+        <input type='email' placeholder='email' ng-model='signin.user.username'>
         <input type='password' placeholder='password' ng-model='signin.user.password'>
         <input type='submit' value='Sign In'>
     </form>
@@ -11,10 +11,11 @@
         <form ng-submit='signin.userAccount(signin.user)'>
             <input type='text' placeholder='First Name' ng-model='signin.user.firstname'>
             <input type='text' placeholder='Last Name' ng-model='signin.user.lastname'>
-            <input type='text' placeholder='Email' ng-model='signin.user.email'>
+            <input type='email' placeholder='Email' ng-model='signin.user.email'>
             <input type='password' placeholder='Password' ng-model='signin.user.password'>
             <input type='password' placeholder='Retype password' ng-model='signin.user.passwordConf'>
             <input type='submit' value='Create'>
         </form>
     </article>
+    <p ng-if='signin.message'>{{signin.message}}</p>
 </section>

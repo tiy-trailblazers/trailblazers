@@ -10,14 +10,23 @@
         var vm = this;
         vm.user = {};
         vm.userCreate = false;
+        vm.message = null;
 
         vm.userAccount = function userAccount(user) {
             if (Object.keys(user).length === 2) {
             UserService.signinUser(user)
                 .then( function success(data) {
-                    $state.go('profile', {
-                        id: data.id,
-                        user_name: '' + data.first_name + ' ' + data.last_name
+                    console.log(data);
+                    if(data.error){
+                        vm.message = data.error;
+                        return;
+                    }
+                    sessionStorage.setItem('userToken', angular.toJson(data.token));
+                    $state.go('trails-and-campgrounds', {
+                        user_token: data.token,
+                        centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                        trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                        campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
                     });
                 })
                 .catch( function error(err) {
@@ -28,9 +37,12 @@
             } else {
                 UserService.createUser(user)
                     .then( function success(data) {
-                        $state.go('profile', {
-                            id: data.id,
-                            user_name: '' + data.first_name + ' ' + data.last_name
+                        sessionStorage.setItem('userToken', angular.toJson(data.token));
+                        $state.go('trails-and-campgrounds', {
+                            user_token: data.token,
+                            centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                            trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                            campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
                         });
                     })
                     .catch( function error(err) {

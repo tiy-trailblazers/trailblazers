@@ -63,6 +63,8 @@
                 var coordinates = transCoordOne.concat(transCoordTwo);
                 $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
             });
+
+            $('nav').removeClass('tandc');
         }
 
         /**

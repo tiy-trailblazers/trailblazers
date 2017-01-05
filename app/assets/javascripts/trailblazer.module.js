@@ -23,9 +23,10 @@
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
-               centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords || null,
-               trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails || null,
-               campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds || null,
+               user_token: null,
+               centerCoords: checkSessionStorage('center'),
+               trails: checkSessionStorage('trails'),
+               campgrounds: checkSessionStorage('campgrounds')
            }
        })
        .state({
@@ -57,6 +58,18 @@
                user_name: null
            }
        });
+
+       function checkSessionStorage(param) {
+           if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'center') {
+               return JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
+           } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'trails') {
+               return JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+           } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'campgrounds') {
+               return JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+           } else {
+               return null;
+           }
+       }
 
     }
 
