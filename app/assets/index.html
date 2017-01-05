@@ -12,14 +12,32 @@
 
     </head>
     <body>
-        <nav>
+        <nav style="display: none;">
             <header>
                 <h1>The Yellow Dirt Road</h1>
             </header>
-            <ul>
+            <ul style="display: none;">
                 <li>About</li>
                 <a ui-sref='signin'><li>Sign In</li></a>
             </ul>
+        </nav>
+        <nav class="profile-nav">
+          <header>
+              <h1>The Yellow Dirt Road</h1>
+          </header>
+          <ul>
+            <li>
+              <img src="/images/prof.jpg" alt="profile picture" height=200px/>
+            </li>
+            <li>
+              {{user.user}}
+            </li>
+            <li>
+                Street, City
+                <br />
+                state, zip
+            </li>
+          </ul>
         </nav>
 
         <main ui-view></main>

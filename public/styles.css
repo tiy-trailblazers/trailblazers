@@ -403,7 +403,7 @@ template {
   display: none; }
 
 nav {
-  min-width: 250px;
+  min-width: 25px;
   border: 2px solid #000000;
   box-sizing: border-box;
   background-color: #fff700; }
@@ -417,6 +417,9 @@ nav {
     margin: 0; }
     nav ul a {
       text-decoration: none; }
+      nav ul a:hover {
+        background-color: #000000;
+        color: #fff700; }
     nav ul li {
       display: block;
       color: #000000;
@@ -426,9 +429,25 @@ nav {
       padding: 2%;
       text-align: center;
       transition: 0.3s linear; }
-      nav ul li:hover {
-        background-color: #000000;
-        color: #fff700; }
+      nav ul li a {
+        text-decoration: none; }
+        nav ul li a:hover {
+          background-color: #000000;
+          color: #fff700; }
+
+nav.profile-nav {
+  width: 20%;
+  min-width: 135px;
+  height: 100vh;
+  float: left; }
+  nav.profile-nav header h1 {
+    font-size: 2.5rem;
+    text-align: left;
+    line-height: 3.5rem;
+    margin: 0;
+    max-width: 204px; }
+  nav.profile-nav li {
+    padding: 5%; }
 
 @media screen and (min-width: 600px) {
   nav {
@@ -443,6 +462,20 @@ nav {
       margin: 0;
       max-width: 204px; }
     nav li {
+      padding: 5%; }
+
+  nav.profile-nav {
+    width: 30%;
+    min-width: 135px;
+    height: 100vh;
+    float: left; }
+    nav.profile-nav header h1 {
+      font-size: 2.5rem;
+      text-align: left;
+      line-height: 3.5rem;
+      margin: 0;
+      max-width: 204px; }
+    nav.profile-nav li {
       padding: 5%; } }
 #signin {
   min-width: 200px;
@@ -506,7 +539,8 @@ nav {
 
 @media screen and (min-width: 600px) {
   #map {
-    margin-left: 20%; } }
+    width: 70%;
+    float: left; } }
 .trails, .campgrounds {
   width: 50%;
   margin-bottom: 0;
