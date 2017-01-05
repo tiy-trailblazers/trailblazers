@@ -15,11 +15,19 @@
             .then(function transformData(data) {
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
-                $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
+                window.sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds}));
             })
             .catch(function errHandler(err) {
                 console.log(err);
             });
+
+        vm.noSignin = function noSignin() {
+            $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
+        };
+
+        vm.signin = function signin() {
+            $state.go('signin');
+        };
 
     }
 

@@ -33,7 +33,7 @@
            url: '/buffering',
            templateUrl: 'templates/buffering.template.html',
            controller: 'RadiusSearchController',
-           controllerAs: 'radius',
+           controllerAs: 'buffer',
            params: {
                transCoords: null,
                centerCoords: null

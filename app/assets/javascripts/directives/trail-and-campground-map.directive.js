@@ -100,7 +100,7 @@
                 }
             }
 
-            var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,500);
+            var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
             $('nav').addClass('tandc');
 
             $scope.$watch('popupelm', function(){

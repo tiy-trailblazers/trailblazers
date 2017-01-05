@@ -33,7 +33,7 @@
            url: '/buffering',
            templateUrl: 'templates/buffering.template.html',
            controller: 'RadiusSearchController',
-           controllerAs: 'radius',
+           controllerAs: 'buffer',
            params: {
                transCoords: null,
                centerCoords: null
@@ -81,11 +81,19 @@
             .then(function transformData(data) {
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
-                $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
+                window.sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds}));
             })
             .catch(function errHandler(err) {
                 console.log(err);
             });
+
+        vm.noSignin = function noSignin() {
+            $state.go('trails-and-campgrounds', {centerCoords: $stateParams.centerCoords, trails: vm.trails, campgrounds: vm.campgrounds });
+        };
+
+        vm.signin = function signin() {
+            $state.go('signin');
+        };
 
     }
 
@@ -245,8 +253,6 @@
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
                 $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
-                map.removeLayer(vector);
-                map.removeInteraction(draw);
             });
         }
 
@@ -405,7 +411,7 @@
                 }
             }
 
-            var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,500);
+            var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
             $('nav').addClass('tandc');
 
             $scope.$watch('popupelm', function(){

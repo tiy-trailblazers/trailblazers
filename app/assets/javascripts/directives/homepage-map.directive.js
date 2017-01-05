@@ -62,8 +62,6 @@
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
                 $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
-                map.removeLayer(vector);
-                map.removeInteraction(draw);
             });
         }
 
