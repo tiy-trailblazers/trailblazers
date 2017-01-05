@@ -11,7 +11,7 @@ one:
 
 two:
   length: 1.5
-  park: MyString
+  park: park
   state: MyString
   name: Trail Two
   latitude: 37.39393

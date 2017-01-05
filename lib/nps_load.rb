@@ -1,6 +1,7 @@
 class NpsLoad
 
   BASE_URI = "http://developer.nps.gov/api/v0/parks"
+  ALERT_URI = "http://developer.nps.gov/api/v0/alerts"
 
   def get_all_parks
     headers = {
@@ -13,6 +14,20 @@ class NpsLoad
       "limit" => 600
     }
     @data ||= HTTParty.get(BASE_URI, headers: headers, query: query)
+  end
+
+  def get_one_park_alerts(park_code)
+    headers = {
+      "authorization" => ENV["NPS_KEY"],
+      "cache-control" => "no-cache",
+      "user-agent" => "Trailblazers",
+      "accept" => "*/*"
+    }
+    query = {
+      "limit" => 600,
+      "parkCode" => park_code
+    }
+    HTTParty.get(ALERT_URI, headers: headers, query: query)
   end
 
   def lat_long_formatted(latLong)
