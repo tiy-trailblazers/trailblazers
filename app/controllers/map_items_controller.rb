@@ -2,25 +2,25 @@ class MapItemsController < ApplicationController
 
   def search
     if params[:trip_type] == "day-hike"
-      trails = Trail.new().formatted_trails(trail_query)
+      trails = Trail.formatted_trails(trail_query)
       render json: trails.as_json(include: :parks)
     elsif params[:trip_type] == "overnight"
       campgrounds = Campground.within_bounding_box([params[:south].to_f, params[:west].to_f, params[:north].to_f, params[:east].to_f])
       response = {
-        trails: Trail.new().formatted_trails(trail_query),
+        trails: Trail.formatted_trails(trail_query),
         campgrounds: campgrounds
       }
       render json: response
     elsif params[:name]
       campgrounds = Campground.where("name like ?", "%#{params[:name].titleize}%")
       response = {
-        trails: Trail.new().formatted_trails(trail_query),
+        trails: Trail.formatted_trails(trail_query),
         campgrounds: campgrounds
       }
       render json: response
     elsif params[:park_name]
       parks = Park.where("name like ?", "%#{params[:park_name].titleize}%")
-      render json: parks.to_json(include: [:trails])
+      render json: Park.jsonify(parks)
     end
   end
 

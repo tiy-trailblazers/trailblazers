@@ -52,7 +52,7 @@ class Trail < ApplicationRecord
     end
   end
 
-  def formatted_trails(trails_array)
+  def self.formatted_trails(trails_array)
     trails = []
     if trails_array.size > 0
       trails_array.each do |trail|

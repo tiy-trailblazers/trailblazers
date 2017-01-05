@@ -1,0 +1,15 @@
+{
+  "total": 1,
+  "data": [
+    {
+      "title": "Park Loop Road is closed for the winter",
+      "id": "0F9ABB32-1DD8-B71B-0BD73A0AB9412AE7",
+      "description": "Two sections remain open: Ocean Drive (between Sand Beach Entrance Station and Otter Cliff Road) and the section near Jordan Pond (with entrance from Jordan Pond Road).",
+      "category": "Information",
+      "url": "https://www.nps.gov/acad/planyourvisit/conditions.htm",
+      "parkCode": "acad"
+    }
+  ],
+  "limit": 600,
+  "start": 1
+}
