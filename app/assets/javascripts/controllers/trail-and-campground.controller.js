@@ -14,13 +14,8 @@
         vm.element = null;
 
         vm.trailPopup = function trailPopup(element){
-            if( vm.element ){
-                vm.element = null;
-                return;
-            } else {
-                vm.element = element;
-                return (vm.element);
-            }
+            vm.element = element;
+            return (vm.element);
         };
     }
 

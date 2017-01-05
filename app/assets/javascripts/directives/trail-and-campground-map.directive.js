@@ -12,6 +12,10 @@
      * @return {Object} Directive config and map setup and event functionality
      */
     function TrailandCampgroundMapDirective($stateParams) {
+        var campgroundMarkers = [];
+        var trailheadMarkers = [];
+        var trailLineLayers = [];
+
         return {
             restrict: 'EA',
             scope: {
@@ -27,12 +31,6 @@
         function setupMap($scope) {
             var element = 'map';
             var map;
-            var vectorArray = [];
-            //var source;
-            var baseLayer;
-            var campgroundMarkers = [];
-            var trailheadMarkers = [];
-            var trailLineLayers = [];
             var i = 0;
             var popupOverlay = new ol.Overlay({
                element: document.getElementById('popup'),
@@ -41,68 +39,6 @@
                    duration: 1000
                }
             });
-
-            $scope.$watch('trail', function(){
-                if ($scope.trail === '') {
-                    if(i <= 1) {
-                        i++;
-                        return;
-                    }
-                    return;
-                } else {
-                    var trailObj = JSON.parse($scope.trail);
-                    var trailCoordinates = ol.proj.fromLonLat([trailObj.longitude, trailObj.latitude]);
-                    popupOverlay.setPosition(trailCoordinates);
-                }
-            });
-
-
-            /**
-             * Configs base Map layer with tiles sourced from MapBox
-             * @return {Object} Vector layer used for map tileing
-             */
-            function buildBaseLayer() {
-                baseLayer = new ol.layer.Tile({
-                    source: new ol.source.XYZ({
-                        url: 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmdhbGFudG93aWN6IiwiYSI6ImNpd3dsNmhyZjAxNWUydHFyNnhjbzZwc3QifQ._xkfHwZJ1FsueAu0K6oQeg'
-                    })
-                });
-                return baseLayer;
-            }
-
-            /**
-             * Builds rectangle layer for user select-radius functionality
-             * @param {Object} icons OpenLayers Feature used to build map vector layer
-             * @return {Object} rectangle vector layer compatible with map
-             */
-            function buildMarker(icons) {
-                icons.forEach(function buildVector(icon) {
-                    //console.log(icon);
-                    var vectorSource = new ol.source.Vector({
-                        features: [icon]
-                    });
-                    var vector = new ol.layer.Vector({
-                        source: vectorSource,
-                        zIndex: setZIndex(icon)
-                        });
-
-                vectorArray.push(vector);
-                });
-                return vectorArray;
-            }
-
-            /**
-             * sets Zindex for map layers based off marker type
-             * @param {Object} icon OpenLayers Feature used to build map vector layer
-             */
-            function setZIndex(icon) {
-                if (icon.H.name === 'Trailhead' || icon.H.name === 'Camping') {
-                    return 2;
-                } else {
-                    return 0;
-                }
-            }
-
 
             /**
              * Constructs openLayers Map
@@ -123,100 +59,12 @@
                     overlays: [popupOverlay],
                     view: new ol.View({
                         center: centerLayers($stateParams.centerCoords),
-                        zoom: 10,
+                        zoom: 12,
                         maxZoom: 20,
                         minZoom: 2
                     })
                 });
                 return map;
-            }
-
-            /**
-             * creates campground markers as open layer feautures
-             * @param {coordinates} coordinates geo coordinates for placement of
-             * markers on map
-             */
-            function addCampgroundMarkers(coordinates) {
-               var iconFeature = new ol.Feature({
-                    geometry: new ol.geom.Point(coordinates),
-                    name: 'Camping'
-                });
-
-                var iconStyle = new ol.style.Style({
-                    image: new ol.style.Icon({
-                        src: 'images/tent-icon.png',
-                        scale: 0.075
-                    })
-                });
-
-                iconFeature.setStyle(iconStyle);
-                campgroundMarkers.push(iconFeature);
-            }
-
-            /**
-             * creates trailhead markers as open layer feautures
-             * @param {coordinates} coordinates geo coordinates for placement of
-             * markers on map
-             */
-            function addTrailheadMarkers(coordinates) {
-               var iconFeature = new ol.Feature({
-                    geometry: new ol.geom.Point(coordinates),
-                    name: 'Trailhead'
-                });
-
-                var iconStyle = new ol.style.Style({
-                    image: new ol.style.Icon({
-                        src: 'images/trailhead.png',
-                        scale: 0.175
-                    }),
-                });
-
-                iconFeature.setStyle(iconStyle);
-                trailheadMarkers.push(iconFeature);
-            }
-
-            /**
-             * creates trail markers as open layer line feautures
-             * @param {trails} trails array of geo coordinates for placement of
-             * trails on map
-             */
-            function createTrailLayers(trails) {
-                var iconFeature = new ol.Feature({
-                    geometry: new ol.geom.LineString(trails),
-                    name: 'Trail'
-                });
-
-                var iconStyle = new ol.style.Style({
-                  stroke: new ol.style.Stroke({
-                      color: [255, 255, 0, 0.6],
-                      width: 12.5
-                  })
-                });
-
-                iconFeature.setStyle(iconStyle);
-                trailLineLayers.push(iconFeature);
-            }
-
-            /**
-             * creates center point for map on page load
-             * @param {coordinates} coordinates geo coordinates for placement of
-             * center on map
-             */
-            function centerLayers(coordinates) {
-                if (!coordinates) {
-                    return;
-                } else if (coordinates.length === 2) {
-                    var transformCoordOne = ol.proj.fromLonLat([ coordinates[0], coordinates[1]]);
-                    var transformCoordTwo = ol.proj.fromLonLat([( coordinates[0] + 0.005), ( coordinates[1] + 0.005 )]);
-                    var markCoordinates = transformCoordOne.concat(transformCoordTwo);
-                    return markCoordinates;
-                }
-                var coordArray = coordinates;
-                var eastWest = (coordArray[0]-((coordArray[0]-coordArray[2])/2));
-                var northSouth = (coordArray[1]-((coordArray[1]-coordArray[3])/2));
-                var center = [ eastWest, northSouth ];
-
-                return center;
             }
 
             /**
@@ -255,6 +103,155 @@
 
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,500);
             $('nav').addClass('tandc');
+
+            $scope.$watch('trail', function(){
+                if ($scope.trail === '') {
+                    if(i <= 1) {
+                        i++;
+                        return;
+                    }
+                    return;
+                } else {
+                    var trailObj = JSON.parse($scope.trail);
+                    var trailCoordinates = ol.proj.fromLonLat([trailObj.longitude, trailObj.latitude]);
+                    popupOverlay.setPosition(trailCoordinates);
+                }
+            });
+        }
+
+        /**
+         * Configs base Map layer with tiles sourced from MapBox
+         * @return {Object} Vector layer used for map tileing
+         */
+        function buildBaseLayer() {
+            var baseLayer = new ol.layer.Tile({
+                source: new ol.source.XYZ({
+                    url: 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmdhbGFudG93aWN6IiwiYSI6ImNpd3dsNmhyZjAxNWUydHFyNnhjbzZwc3QifQ._xkfHwZJ1FsueAu0K6oQeg'
+                })
+            });
+            return baseLayer;
+        }
+
+        /**
+         * Builds rectangle layer for user select-radius functionality
+         * @param {Object} icons OpenLayers Feature used to build map vector layer
+         * @return {Object} rectangle vector layer compatible with map
+         */
+        function buildMarker(icons) {
+            var vectorArray = [];
+            icons.forEach(function buildVector(icon) {
+                //console.log(icon);
+                var vectorSource = new ol.source.Vector({
+                    features: [icon]
+                });
+                var vector = new ol.layer.Vector({
+                    source: vectorSource,
+                    zIndex: setZIndex(icon)
+                    });
+
+            vectorArray.push(vector);
+            });
+            return vectorArray;
+        }
+
+        /**
+         * sets Zindex for map layers based off marker type
+         * @param {Object} icon OpenLayers Feature used to build map vector layer
+         */
+        function setZIndex(icon) {
+            if (icon.H.name === 'Trailhead' || icon.H.name === 'Camping') {
+                return 2;
+            } else {
+                return 0;
+            }
+        }
+
+        /**
+         * creates campground markers as open layer feautures
+         * @param {coordinates} coordinates geo coordinates for placement of
+         * markers on map
+         */
+        function addCampgroundMarkers(coordinates) {
+           var iconFeature = new ol.Feature({
+                geometry: new ol.geom.Point(coordinates),
+                name: 'Camping'
+            });
+
+            var iconStyle = new ol.style.Style({
+                image: new ol.style.Icon({
+                    src: 'images/tent-icon.png',
+                    scale: 0.075
+                })
+            });
+
+            iconFeature.setStyle(iconStyle);
+            campgroundMarkers.push(iconFeature);
+        }
+
+        /**
+         * creates trailhead markers as open layer feautures
+         * @param {coordinates} coordinates geo coordinates for placement of
+         * markers on map
+         */
+        function addTrailheadMarkers(coordinates) {
+           var iconFeature = new ol.Feature({
+                geometry: new ol.geom.Point(coordinates),
+                name: 'Trailhead'
+            });
+
+            var iconStyle = new ol.style.Style({
+                image: new ol.style.Icon({
+                    src: 'images/trailhead.png',
+                    scale: 0.175
+                }),
+            });
+
+            iconFeature.setStyle(iconStyle);
+            trailheadMarkers.push(iconFeature);
+        }
+
+        /**
+         * creates trail markers as open layer line feautures
+         * @param {trails} trails array of geo coordinates for placement of
+         * trails on map
+         */
+        function createTrailLayers(trails) {
+            var iconFeature = new ol.Feature({
+                geometry: new ol.geom.LineString(trails),
+                name: 'Trail'
+            });
+
+            var iconStyle = new ol.style.Style({
+              stroke: new ol.style.Stroke({
+                  color: [255, 255, 0, 0.6],
+                  width: 12.5
+              })
+            });
+
+            iconFeature.setStyle(iconStyle);
+            trailLineLayers.push(iconFeature);
+        }
+
+        /**
+         * creates center point for map on page load
+         * @param {coordinates} coordinates geo coordinates for placement of
+         * center on map
+         */
+        function centerLayers(coordinates) {
+            if (!coordinates) {
+                return;
+            } else if (coordinates.length === 2) {
+                var transformCoordOne = ol.proj.fromLonLat([ coordinates[0], coordinates[1]]);
+                var transformCoordTwo = ol.proj.fromLonLat([( coordinates[0] + 0.005), ( coordinates[1] + 0.005 )]);
+                var markCoordinates = transformCoordOne.concat(transformCoordTwo);
+                return markCoordinates;
+            }
+            var coordArray = coordinates;
+            var eastWest = (coordArray[0]-((coordArray[0]-coordArray[2])/2));
+            var northSouth = (coordArray[1]-((coordArray[1]-coordArray[3])/2));
+            var center = [ eastWest, northSouth ];
+
+            return center;
         }
     }
 }());
