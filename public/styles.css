@@ -406,34 +406,37 @@ nav {
   min-width: 25px;
   border: 1px solid #111111;
   box-sizing: border-box;
-  background-color: #fff700; }
+  background-color: #fff700;
+  background-color: #3e3e3e;
+  font-family: 'Patrick Hand SC', cursive; }
   nav header h1 {
-    font-family: 'Patrick Hand SC', cursive;
-    padding-left: 3%;
-    text-align: center; }
+    font-size: 2.0rem;
+    text-align: left;
+    line-height: 3.5rem;
+    margin: 0;
+    max-width: 230px;
+    color: #ffff5e;
+    padding: 2%; }
   nav ul {
     list-style: none;
     padding-left: 0;
     margin: 0; }
     nav ul a {
-      text-decoration: none; }
+      color: #7c7c7c; }
       nav ul a:hover {
-        background-color: #000000;
-        color: #fff700; }
+        text-decoration: underline;
+        background-color: inherit;
+        color: #ffff5e; }
+        nav ul a:hover li {
+          color: #ffff5e; }
     nav ul li {
       display: block;
-      color: #000000;
+      color: #7c7c7c;
       font-family: 'Patrick Hand SC', cursive;
       font-size: 1rem;
-      border-top: 1px solid #111111;
       padding: 2%;
-      text-align: center;
+      text-align: left;
       transition: 0.3s linear; }
-      nav ul li:hover {
-        background-color: #000000;
-        color: #fff700; }
-      nav ul li a {
-        text-decoration: none; }
       nav ul li span {
         margin-bottom: 20px; }
 
@@ -442,8 +445,7 @@ nav.profile-nav {
   min-width: 135px;
   height: 100vh;
   float: left;
-  font-family: 'Patrick Hand SC', cursive;
-  background-color: #3e3e3e; }
+  font-family: 'Patrick Hand SC', cursive; }
   nav.profile-nav a {
     color: #7c7c7c; }
     nav.profile-nav a:hover {
@@ -495,11 +497,11 @@ nav.profile-nav {
     height: 100vh;
     float: left; }
     nav header h1 {
-      font-size: 3.5rem;
+      font-size: 1.8rem;
       text-align: left;
       line-height: 3.5rem;
       margin: 0;
-      max-width: 204px; }
+      max-width: 230px; }
     nav li {
       padding: 5%; }
 
