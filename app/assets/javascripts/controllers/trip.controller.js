@@ -18,6 +18,10 @@
             vm.tripCreate = true;
         };
 
+        vm.postTrip = function postTrip(trip) {
+            TripService.postTrip(trip);
+        };
+
         function tokenSearch() {
             var token = setInterval(function() {
                 console.log('running');

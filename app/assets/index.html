@@ -20,13 +20,14 @@
                 <a ui-sref='signin'><li>Sign In</li></a>
             </ul>
             <article ng-controller="TripController as trip" ng-show="trip.signedIn">
-                <p ng-click="trip.createTrip()">Create Trip</p>
-                <form ng-show="trip.tripCreate">
+                <p ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Create A Trip</p>
+                <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
                     <input type="text" ng-model="trip.trip.name" placeholder="Trip Name">
-                    <input type="text" ng-model="trip.trip.start_date" placeholder="Start Date">
+                    <input type="date" ng-model="trip.trip.start_date" placeholder="Start Date">
                     <ul>
                         <li ng-repeat="tORc in trip.tsORcs">{{tORc.name}}</li>
                     </ul>
+                    <input type='submit' value='Start Trip'>
                 </form>
             </article>
         </nav>
