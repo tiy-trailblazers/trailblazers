@@ -11,7 +11,7 @@
 
     </head>
     <body>
-        <nav style="display: none;">
+        <nav>
             <header>
                 <h1>The Yellow Dirt Road</h1>
             </header>
@@ -19,7 +19,6 @@
                 <a><li>About</li></a>
                 <a ui-sref='signin'><li>Sign In</li></a>
             </ul>
-<<<<<<< HEAD
             <article ng-controller="TripController as trip" ng-show="trip.signedIn">
                 <p ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Create A Trip</p>
                 <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
@@ -31,14 +30,13 @@
                     <input type='submit' value='Start Trip'>
                 </form>
             </article>
-=======
             <ul>
               <li>
                 FILTERS!
               </li>
             </ul>
         </nav>
-        <nav class="profile-nav">
+        <nav class="profile-nav" style="display: none;">
           <header>
               <h1>The Yellow Dirt Road</h1>
           </header>
@@ -102,7 +100,6 @@
               </li>
             </a>
           </ul>
->>>>>>> d609b142821721949599151cd7eb73b7e0b0a90d
         </nav>
 
         <main ui-view></main>

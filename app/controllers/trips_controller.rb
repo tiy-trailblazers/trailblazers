@@ -25,7 +25,7 @@ class TripsController < ApplicationController
   end
 
   def update
-    trip = Trip.find(session["current_trip_id"])
+    trip = Trip.find(params["id"])
     if current_user && trip.belongs_to?(current_user)
       trip.trails << trip_trails
       trip.campgrounds << trip_campgrounds
