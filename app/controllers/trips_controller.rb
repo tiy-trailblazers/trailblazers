@@ -11,7 +11,8 @@ class TripsController < ApplicationController
         user.trips << trip
         if user.save
           trails = trip.trails
-          render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.new.formatted_trails(trails)}
+          render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.formatted_trails(trails)}
+          session["current_trip_id"] = trip.id
         else
           render json: user.errors
         end
@@ -24,14 +25,14 @@ class TripsController < ApplicationController
   end
 
   def update
-    trip = Trip.find(params[:id])
+    trip = Trip.find(session["current_trip_id"])
     if current_user && trip.belongs_to?(current_user)
       trip.trails << trip_trails
       trip.campgrounds << trip_campgrounds
       trip.parks << trip_parks
       if trip.save && trip.update(trip_params)
         trails = trip.trails
-        render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.new.formatted_trails(trails)}
+        render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.formatted_trails(trails)}
       else
         render json: trip.errors
       end
@@ -54,7 +55,7 @@ class TripsController < ApplicationController
     trip = Trip.find(params[:id])
     if current_user && trip.belongs_to?(current_user)
       trails = trip.trails
-      render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.new.formatted_trails(trails)}
+      render json: {trip: trip.as_json(include: [:campgrounds, :parks, :users]), trails: Trail.formatted_trails(trails)}
     else
       render json: { errors: "User must be the owner of a trip to see it" }
     end
@@ -63,7 +64,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :trip_type, :camping_type)
+    params.require(:trip).permit(:start_date, :end_date, :trip_type, :name, :camping_type)
   end
 
   def trip_trails

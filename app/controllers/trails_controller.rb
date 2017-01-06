@@ -3,7 +3,7 @@ class TrailsController < ApplicationController
   def index
     campgrounds = Campground.within_bounding_box([params[:south].to_f, params[:west].to_f, params[:north].to_f, params[:east].to_f])
 
-    trails = Trail.new().formatted_trails(query)
+    trails = Trail.formatted_trails(query)
     response = {
       "trails"=>trails,
       "campgrounds"=>campgrounds
@@ -13,7 +13,7 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
-    intersections = Trail.new().formatted_trails(@trail.intersections)
+    intersections = Trail.formatted_trails(@trail.intersections)
     response = {
       trail: @trail.attributes,
       intersections: intersections,

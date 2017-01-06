@@ -2,7 +2,7 @@
 <html ng-app='trailblazer'>
     <head>
         <meta charset="utf-8">
-        <title>Trail Balzer</title>
+        <title>Trail Blazer</title>
 
         <link rel='stylesheet' href='ol.css' type='text/css'>
         <link rel='stylesheet' href='angular-openlayers-directive.css' type='text/css'>
@@ -11,14 +11,15 @@
 
     </head>
     <body>
-        <nav>
+        <nav style="display: none;">
             <header>
                 <h1>The Yellow Dirt Road</h1>
             </header>
             <ul>
-                <li>About</li>
+                <a><li>About</li></a>
                 <a ui-sref='signin'><li>Sign In</li></a>
             </ul>
+<<<<<<< HEAD
             <article ng-controller="TripController as trip" ng-show="trip.signedIn">
                 <p ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Create A Trip</p>
                 <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
@@ -30,6 +31,78 @@
                     <input type='submit' value='Start Trip'>
                 </form>
             </article>
+=======
+            <ul>
+              <li>
+                FILTERS!
+              </li>
+            </ul>
+        </nav>
+        <nav class="profile-nav">
+          <header>
+              <h1>The Yellow Dirt Road</h1>
+          </header>
+          <section>
+            <img src="/images/prof.jpg" alt="profile picture" height=180px/>
+          </section>
+          <aside>
+
+            <ul>
+              <li>
+                Firstname Lastname
+              </li>
+              <li>
+                Email
+              </li>
+              <li>
+                123 street st, City
+                <br>
+                State, zip
+              </li>
+              <li>
+                <a>Edit Profile</a>
+              </li>
+            </ul>
+          </aside>
+          <ul>
+            <a>Plan a new trip!</a>
+            <header>
+              <h2>Past Adventures</h2>
+            </header>
+            <a class="trip-link">
+              <li class="trip-item">
+                3 days in Shenandoah National Park
+                <ul>
+                  <li>
+                    March 1st to March 3rd, 2015
+                  </li>
+                  <li>
+                    Hiked 10 miles
+                  </li>
+                  <li>
+                    Stayed in Bear Creek Campground
+                  </li>
+                </ul>
+              </li>
+            </a>
+            <a class="trip-link">
+              <li class="trip-item">
+                1 day in Yellowstone National Park
+                <ul>
+                  <li>
+                    June 23rd, 2015
+                  </li>
+                  <li>
+                    Hiked 5 miles
+                  </li>
+                  <li>
+                    Day hike
+                  </li>
+                </ul>
+              </li>
+            </a>
+          </ul>
+>>>>>>> d609b142821721949599151cd7eb73b7e0b0a90d
         </nav>
 
         <main ui-view></main>

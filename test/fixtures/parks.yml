@@ -5,7 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 park:
-  name: The Park
+  name: The River Park
   description: blah blah blah
   latitude: 73.939393
   longitude: -132.933939
