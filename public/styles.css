@@ -423,6 +423,8 @@ nav {
     margin: 0; }
     nav ul a {
       color: #7c7c7c; }
+      nav ul a li {
+        transition: .4s linear; }
       nav ul a:hover {
         text-decoration: underline;
         background-color: inherit;
@@ -435,8 +437,9 @@ nav {
       font-family: 'Patrick Hand SC', cursive;
       font-size: 1rem;
       padding: 2%;
-      text-align: left;
-      transition: 0.3s linear; }
+      text-align: left; }
+      nav ul li ul li {
+        transition: .3s linear; }
       nav ul li span {
         margin-bottom: 20px; }
 
