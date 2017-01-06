@@ -17,8 +17,7 @@
                 } else {
                     clearInterval(token);
                     $scope.$apply(function() {
-                        vm.user = JSON.parse(sessionStorage.getItem('user'));
-                        
+                        vm.user = JSON.parse(sessionStorage.getItem('user'));            
                     });
                 }
             }, 1000);

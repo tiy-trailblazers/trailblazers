@@ -15,7 +15,7 @@
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
-        
+
         return {
             restrict: 'EA',
             scope: {
@@ -99,7 +99,12 @@
             }
 
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
-            $('nav').addClass('tandc');
+
+            if (JSON.parse(sessionStorage.getItem('user'))) {
+                $('nav').addClass('tandc');
+                console.log($('nav.noprofile-nav'));
+                $('nav.noprofile-nav')[0].style.display = 'none';
+            }
 
             $scope.$watch('popupelm', function(){
                 if ($scope.popupelm === '') {
