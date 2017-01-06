@@ -15,6 +15,9 @@
            name: 'home',
            url: '/',
            templateUrl: 'templates/home.template.html',
+           params: {
+               token: null
+           }
        })
        .state({
            name: 'trails-and-campgrounds',

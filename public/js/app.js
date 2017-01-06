@@ -15,6 +15,9 @@
            name: 'home',
            url: '/',
            templateUrl: 'templates/home.template.html',
+           params: {
+               token: null
+           }
        })
        .state({
            name: 'trails-and-campgrounds',
@@ -118,9 +121,9 @@
     angular.module('trailblazer')
         .controller('SigninController', SigninController);
 
-    SigninController.$inject = [ 'UserService', '$state' ];
+    SigninController.$inject = [ '$state', 'UserService' ];
 
-    function SigninController(UserService, $state){
+    function SigninController( $state, UserService ){
         var vm = this;
         vm.user = {};
         vm.userCreate = false;
@@ -134,14 +137,17 @@
                     if(data.error){
                         vm.message = data.error;
                         return;
+                    } else if (!JSON.parse(sessionStorage.getItem('TsandCs'))) {
+                        $state.go('home', {token: data.token});
+                    } else {
+                        sessionStorage.setItem('userToken', angular.toJson(data.token));
+                        $state.go('trails-and-campgrounds', {
+                            user_token: data.token,
+                            centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                            trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                            campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
+                        });
                     }
-                    sessionStorage.setItem('userToken', angular.toJson(data.token));
-                    $state.go('trails-and-campgrounds', {
-                        user_token: data.token,
-                        centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
-                        trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
-                        campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
-                    });
                 })
                 .catch( function error(err) {
                     console.log(err);
@@ -151,13 +157,20 @@
             } else {
                 UserService.createUser(user)
                     .then( function success(data) {
-                        sessionStorage.setItem('userToken', angular.toJson(data.token));
-                        $state.go('trails-and-campgrounds', {
-                            user_token: data.token,
-                            centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
-                            trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
-                            campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
-                        });
+                        if(data.error){
+                            vm.message = data.error;
+                            return;
+                        } else if (!JSON.parse(sessionStorage.getItem('TsandCs'))) {
+                            $state.go('home');
+                        } else {
+                            sessionStorage.setItem('userToken', angular.toJson(data.token));
+                            $state.go('trails-and-campgrounds', {
+                                user_token: data.token,
+                                centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                                trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                                campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
+                            });
+                        }
                     })
                     .catch( function error(err) {
                         console.log(err);
@@ -187,7 +200,7 @@
         vm.trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
         vm.campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
         vm.element = null;
-
+                                        
         vm.trailPopup = function trailPopup(element){
             vm.element = element;
         };
@@ -206,19 +219,36 @@
     angular.module('trailblazer')
         .controller('TripController', TripController);
 
-    TripController.$inject = [ 'TripService' ];
+    TripController.$inject = [ '$scope', '$stateParams', 'TripService' ];
 
-    function TripController(TripService) {
+    function TripController($scope, $stateParams, TripService) {
+        console.log('new trip');
         var vm = this;
         vm.tripCreate = null;
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
-        vm.signedIn = JSON.parse(sessionStorage.getItem('userToken')) || null;
-
+        vm.signedIn = null;
 
         vm.createTrip = function createTrip() {
             vm.tripCreate = true;
         };
+
+        function tokenSearch() {
+            var token = setInterval(function() {
+                console.log('running');
+                if (!JSON.parse(sessionStorage.getItem('userToken'))) {
+                    return;
+                } else {
+                    clearInterval(token);
+                    $scope.$apply(function() {
+                        vm.signedIn = true;
+                    });
+                }
+            }, 1000);
+        }
+
+        tokenSearch();
+        console.log(vm.signedIn);
     }
 }());
 
