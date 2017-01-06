@@ -5,9 +5,17 @@
     <div class='popup-content'></div>
     <p ng-click="TandC.addTrip(TandC.element)" class="link">Add to Trip</p>
 </div>
+<div id="map-items-list">
+  <h1>Here is what we found for you</h1>
+</div>
+<div class='trails'>
+  <h3>Trails</h3>
+</div>
+<div class='trails'>
+  <h3>Campgrounds</h3>
+</div>
 <section class='trails'>
     <ul>
-        <h3>Trails</h3>
         <li ng-repeat='trail in TandC.trails | length' ng-click='TandC.trailPopup(trail)'>
             {{trail.name}}
         </li>
@@ -15,7 +23,6 @@
 </section>
 <section class='campgrounds'>
     <ul>
-        <h3>Campgrounds</h3>
         <li ng-repeat='camp in TandC.campgrounds' ng-click='TandC.trailPopup(camp)'>
             {{camp.name}}
         </li>

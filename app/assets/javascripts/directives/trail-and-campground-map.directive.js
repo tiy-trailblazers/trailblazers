@@ -112,7 +112,7 @@
                     var trailCoordinates = ol.proj.fromLonLat([tORcObj.longitude, tORcObj.latitude]);
                     $('.popup-content').html(
                         '<p>' + tORcObj.name + '<p>' +
-                        '<p>Length: ' + Math.round((Number(tORcObj.length)*100)/100) + '<p>'
+                        '<p>Length: ' + Math.round(Number(tORcObj.length)*10)/10 + '<p>'
                     );
                     popupOverlay.setPosition(trailCoordinates);
                 }

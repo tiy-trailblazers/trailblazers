@@ -19,7 +19,7 @@
                 <a><li>About</li></a>
                 <a ui-sref='signin'><li>Sign In</li></a>
             </ul>
-            <article ng-controller="TripController as trip" ng-show="trip.signedIn">
+            <article ng-controller="TripController as trip" ng-show="trip.signedIn" class="trip-create">
                 <p ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Create A Trip</p>
                 <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
                     <input type="text" ng-model="trip.trip.name" placeholder="Trip Name">
@@ -31,6 +31,9 @@
                 </form>
             </article>
             <ul>
+              <header>
+                <h2>Search our map</h2>
+              </header>
               <li>
                 FILTERS!
               </li>

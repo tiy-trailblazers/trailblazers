@@ -1,5 +1,17 @@
 
 nav {
+    .trip-create {
+      padding-left: 6%;
+      color: rgb(184, 184, 184);
+      p {
+        margin-top: 12px;
+      }
+      &:hover {
+        text-decoration: underline;
+        color: #ffff5e;
+      }
+    }
+    font-size: 1rem;
     min-width: 135px;
     @include contentBlock;
     background-color: #3e3e3e;
@@ -14,8 +26,13 @@ nav {
       color: #ffff5e;
       padding: 2%;
     }
+    header h2 {
+      color: #ffff5e;
+    }
     a {
       color: rgb(124, 124, 124);
+      text-decoration: none;
+      padding-top: 5px;
       &:hover {
         text-decoration: underline;
         color: #ffff5e;
@@ -29,8 +46,17 @@ nav {
           text-decoration: none;
         }
         a {
+          cursor: pointer;
           &:hover {
             text-decoration: underline;
+            color: #ffff5e;
+          }
+          li {
+            margin-top: 10px;
+            &:hover {
+              text-decoration: underline;
+              color: #ffff5e;
+            }
           }
         }
 
@@ -44,6 +70,7 @@ nav {
             span {
               margin-bottom: 20px;
             }
+
         }
     }
 }
@@ -59,7 +86,8 @@ nav.profile-nav {
         }
         li.trip-item {
           transition: .3s linear;
-          
+          cursor: pointer;
+
           &:hover {
             text-decoration: none;
             background-color: #3e3e3e;
@@ -110,10 +138,10 @@ nav.profile-nav {
 
 @media screen and (min-width: 600px){
     nav {
-        width: 20%;
+        width: 30%;
         min-width: 135px;
-        height: 100vh;
         float: left;
+        height: 100vh;
         li {
             padding: 5%;
         }

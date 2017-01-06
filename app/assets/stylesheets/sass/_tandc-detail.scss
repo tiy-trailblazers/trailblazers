@@ -1,32 +1,47 @@
+#map-items-list {
+  width: 100%;
+  float:left;
+  font-family: 'Patrick Hand SC', cursive;
+  background-color: #eaeaea;
+  text-align: center;
+  padding-top: 5px;
+  h1 {
+    margin: 0;
+  }
+}
+section.trails, section.campgrounds {
+  height: 195px;
+}
 .trails, .campgrounds{
     width: 50%;
     margin-bottom: 0;
-    border: 1px solid #111111;
     box-sizing: border-box;
-    background-color: #fff700;
-    border-top: 0px;
+    background-color: #eaeaea;
     font-family: 'Patrick Hand SC', cursive;
     float:left;
+    overflow: scroll;
+    padding-left: 5px;
     h3 {
         margin-top: 0;
         text-align: center;
+        margin-bottom: 12px;
+        margin-top: 5px;
     }
     ul {
         margin-top: 0;
         padding-left: 0;
         li {
-            padding-left: 0.2em;
+            padding-left: 2.5em;
             display: block;
             list-style: none;
-            border: 1px solid black;
-            border-left: 0px;
-            border-right: 0px;
-
+            padding-top: 2px;
+            padding-bottom: 2px;
+            cursor: pointer;
+            &:hover {
+              background-color: rgb(136, 136, 136);
+            }
         }
     }
-}
-.campgrounds {
-    border-left: 0px;
 }
 
 @media screen and (min-width: 600px){
