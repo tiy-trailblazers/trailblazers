@@ -11,48 +11,35 @@
 
     </head>
     <body>
-        <nav style="display: none;">
+        <nav class='noprofile-nav'>
             <header>
                 <h1>The Yellow Dirt Road</h1>
             </header>
             <ul>
-                <a><li>About</li></a>
                 <a ui-sref='signin'><li>Sign In</li></a>
-            </ul>
-<<<<<<< HEAD
-            <article ng-controller="TripController as trip" ng-show="trip.signedIn">
-                <p ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Create A Trip</p>
-                <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
-                    <input type="text" ng-model="trip.trip.name" placeholder="Trip Name">
-                    <input type="date" ng-model="trip.trip.start_date" placeholder="Start Date">
-                    <ul>
-                        <li ng-repeat="tORc in trip.tsORcs">{{tORc.name}}</li>
-                    </ul>
-                    <input type='submit' value='Start Trip'>
-                </form>
-            </article>
-=======
-            <ul>
-              <li>
-                FILTERS!
-              </li>
+                <li>
+                    Search
+                    <form>
+                        <input type='text' placeholder='By National Park'>
+                    </form>
+                </li>
             </ul>
         </nav>
-        <nav class="profile-nav">
+
+        <nav ng-controller='UserProfileController as profile' ng-show='profile.user' class="profile-nav">
           <header>
               <h1>The Yellow Dirt Road</h1>
           </header>
-          <section>
+          <section class='profile-image'>
             <img src="/images/prof.jpg" alt="profile picture" height=180px/>
           </section>
-          <aside>
-
+          <aside class='user-info'>
             <ul>
               <li>
-                Firstname Lastname
+                {{profile.user.first_name}} {{profile.user.last_name}}
               </li>
               <li>
-                Email
+                {{profile.user.email}}
               </li>
               <li>
                 123 street st, City
@@ -64,15 +51,15 @@
               </li>
             </ul>
           </aside>
-          <ul>
-            <a>Plan a new trip!</a>
+          <section class='past-trips'>
             <header>
               <h2>Past Adventures</h2>
             </header>
-            <a class="trip-link">
-              <li class="trip-item">
-                3 days in Shenandoah National Park
+            <article class="trip-link">
                 <ul>
+                    <li>
+                        3 days in Shenandoah National Park
+                    </li>
                   <li>
                     March 1st to March 3rd, 2015
                   </li>
@@ -84,8 +71,8 @@
                   </li>
                 </ul>
               </li>
-            </a>
-            <a class="trip-link">
+          </article>
+            <!-- <a class="trip-link">
               <li class="trip-item">
                 1 day in Yellowstone National Park
                 <ul>
@@ -100,9 +87,19 @@
                   </li>
                 </ul>
               </li>
-            </a>
-          </ul>
->>>>>>> d609b142821721949599151cd7eb73b7e0b0a90d
+            </a> -->
+            <article class='plan-trip' ng-controller="TripController as trip">
+                <a ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Plan A Trip!</a>
+                <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
+                    <input type="text" ng-model="trip.trip.name" placeholder="Trip Name">
+                    <input type="date" ng-model="trip.trip.start_date" placeholder="Start Date">
+                    <ul>
+                        <li ng-repeat="tORc in trip.tsORcs">{{tORc.name}}</li>
+                    </ul>
+                    <input type='submit' value='Start Trip'>
+                </form>
+            </article>
+        </section>
         </nav>
 
         <main ui-view></main>

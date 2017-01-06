@@ -61,9 +61,16 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
+                if (JSON.parse(sessionStorage.getItem('user'))) {
+                    $state.go('trails-and-campgrounds');
+                } else {
+                    $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
+                }
             });
 
+            if (JSON.parse(sessionStorage.getItem('user'))) {
+                $('.noprofile-nav')[0].style.display = 'none';
+            }
             $('nav').removeClass('tandc');
         }
 

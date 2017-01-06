@@ -4,11 +4,26 @@
     angular.module('trailblazer')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [ '$stateParams' ];
+    UserProfileController.$inject = [  '$scope', '$stateParams' ];
 
-    function UserProfileController($stateParams) {
+    function UserProfileController($scope) {
         var vm = this;
-        console.log($stateParams);
-        vm.user = $stateParams.user_name;
+        vm.user = null;
+
+        function tokenSearch() {
+            var token = setInterval(function() {
+                if (!JSON.parse(sessionStorage.getItem('user'))) {
+                    return;
+                } else {
+                    clearInterval(token);
+                    $scope.$apply(function() {
+                        vm.user = JSON.parse(sessionStorage.getItem('user'));
+                        
+                    });
+                }
+            }, 1000);
+        }
+
+        tokenSearch();
     }
 }());

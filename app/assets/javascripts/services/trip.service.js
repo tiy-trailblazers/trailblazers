@@ -24,6 +24,7 @@
         function postTrip(trip) {
             var tripTrails = [];
             var tripCampgrounds = [];
+            var parks = [];
             tsORcs.forEach(function gettORcID(tORc) {
                 if (tORc.toilets) {
                     tripCampgrounds.push(tORc.id);
@@ -39,17 +40,17 @@
                 method: 'POST',
                 data: {
                     trip: {
-                        start_date: trip.start_date || null,
-                        end_date: trip.end_date || null,
-                        trip_type: trip.type || null,
-                        camping_type: trip.camping_type || null,
+                        start_date: trip.start_date,
+                        end_date: trip.end_date,
+                        trip_type: trip.type,
+                        camping_type: trip.camping_type,
                         trails: tripTrails,
                         campgrounds: tripCampgrounds,
-                        parks: null,
+                        parks: parks,
                     }
                 },
                 headers: {
-                    Authorization: JSON.parse(sessionStorage.getItem('userToken'))
+                    Authorization: JSON.parse(sessionStorage.getItem('user')).token
                 }
             })
             .then(function success(response) {

@@ -11,6 +11,10 @@
         <form ng-submit='signin.userAccount(signin.user)'>
             <input type='text' placeholder='First Name' ng-model='signin.user.firstname' required>
             <input type='text' placeholder='Last Name' ng-model='signin.user.lastname'>
+            <input type='text' placeholder='Address' ng-model='signin.user.address'>
+            <input type='text' placeholder='City' ng-model='signin.user.city'>
+            <input type='text' placeholder='State' ng-model='signin.user.state'>
+            <input type='text' placeholder='Zip' ng-model='signin.user.zip'>
             <input type='file' placeholder='Profile Image' ng-model'signin.user.avatar'>
             <input type='email' placeholder='Email' ng-model='signin.user.email' required>
             <input type='password' placeholder='Password' ng-model='signin.user.password' required>

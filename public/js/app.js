@@ -222,7 +222,6 @@
     TripController.$inject = [ '$scope', '$stateParams', 'TripService' ];
 
     function TripController($scope, $stateParams, TripService) {
-        console.log('new trip');
         var vm = this;
         vm.tripCreate = null;
         vm.trip = {};
@@ -236,23 +235,6 @@
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip);
         };
-
-        function tokenSearch() {
-            var token = setInterval(function() {
-                console.log('running');
-                if (!JSON.parse(sessionStorage.getItem('userToken'))) {
-                    return;
-                } else {
-                    clearInterval(token);
-                    $scope.$apply(function() {
-                        vm.signedIn = true;
-                    });
-                }
-            }, 1000);
-        }
-
-        tokenSearch();
-        console.log(vm.signedIn);
     }
 }());
 
@@ -262,12 +244,27 @@
     angular.module('trailblazer')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [ '$stateParams' ];
+    UserProfileController.$inject = [  '$scope', '$stateParams' ];
 
-    function UserProfileController($stateParams) {
+    function UserProfileController($scope) {
         var vm = this;
-        console.log($stateParams);
-        vm.user = $stateParams.user_name;
+        vm.user = null;
+
+        function tokenSearch() {
+            var token = setInterval(function() {
+                if (!JSON.parse(sessionStorage.getItem('user'))) {
+                    return;
+                } else {
+                    clearInterval(token);
+                    $scope.$apply(function() {
+                        vm.user = JSON.parse(sessionStorage.getItem('user'));
+                        
+                    });
+                }
+            }, 1000);
+        }
+
+        tokenSearch();
     }
 }());
 
@@ -334,9 +331,16 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
+                if (JSON.parse(sessionStorage.getItem('user'))) {
+                    $state.go('trails-and-campgrounds');
+                } else {
+                    $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
+                }
             });
 
+            if (JSON.parse(sessionStorage.getItem('user'))) {
+                $('.noprofile-nav')[0].style.display = 'none';
+            }
             $('nav').removeClass('tandc');
         }
 
@@ -410,8 +414,7 @@
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
-        console.log(JSON.parse(sessionStorage.getItem('TsandCs')));
-
+        
         return {
             restrict: 'EA',
             scope: {
@@ -472,7 +475,6 @@
                     return;
                 }
                 else {
-                    console.log($stateParams);
                     var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
@@ -487,7 +489,6 @@
                         trail.line.forEach(function plotTrail(trailNode){
                             var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
                             trailCoordinates.push(transformTrailNode);
-                            //console.log(trailCoordinates);
                         });
                         createTrailLayers(trailCoordinates);
                     });
@@ -535,7 +536,6 @@
         function buildMarker(icons) {
             var vectorArray = [];
             icons.forEach(function buildVector(icon) {
-                //console.log(icon);
                 var vectorSource = new ol.source.Vector({
                     features: [icon]
                 });
@@ -768,6 +768,7 @@
         function postTrip(trip) {
             var tripTrails = [];
             var tripCampgrounds = [];
+            var parks = [];
             tsORcs.forEach(function gettORcID(tORc) {
                 if (tORc.toilets) {
                     tripCampgrounds.push(tORc.id);
@@ -783,17 +784,17 @@
                 method: 'POST',
                 data: {
                     trip: {
-                        start_date: trip.start_date || null,
-                        end_date: trip.end_date || null,
-                        trip_type: trip.type || null,
-                        camping_type: trip.camping_type || null,
+                        start_date: trip.start_date,
+                        end_date: trip.end_date,
+                        trip_type: trip.type,
+                        camping_type: trip.camping_type,
                         trails: tripTrails,
                         campgrounds: tripCampgrounds,
-                        parks: null,
+                        parks: parks,
                     }
                 },
                 headers: {
-                    Authorization: JSON.parse(sessionStorage.getItem('userToken'))
+                    Authorization: JSON.parse(sessionStorage.getItem('user')).token
                 }
             })
             .then(function success(response) {
@@ -834,13 +835,18 @@
                         first_name: user.firstname,
                         last_name: user.lastname,
                         email: user.email,
+                        profile_image: user.avatar,
+                        street: user.address,
+                        city: user.city,
+                        state: user.state,
+                        zip: user.zip,
                         password: user.password,
                         password_confirmation: user.passwordConf
                     }
                 }
             })
             .then(function success(response) {
-                window.sessionStorage.setItem('userToken', angular.toJson(response.data.token));
+                window.sessionStorage.setItem('user', angular.toJson(response.data));
                 return response.data;
             });
         }
@@ -855,7 +861,7 @@
                 }
             })
             .then(function success(response) {
-                window.sessionStorage.setItem('userToken', angular.toJson(response.data.token));
+                window.sessionStorage.setItem('user', angular.toJson(response.data));
                 return response.data;
             });
         }

@@ -22,13 +22,18 @@
                         first_name: user.firstname,
                         last_name: user.lastname,
                         email: user.email,
+                        profile_image: user.avatar,
+                        street: user.address,
+                        city: user.city,
+                        state: user.state,
+                        zip: user.zip,
                         password: user.password,
                         password_confirmation: user.passwordConf
                     }
                 }
             })
             .then(function success(response) {
-                window.sessionStorage.setItem('userToken', angular.toJson(response.data.token));
+                window.sessionStorage.setItem('user', angular.toJson(response.data));
                 return response.data;
             });
         }
@@ -43,7 +48,7 @@
                 }
             })
             .then(function success(response) {
-                window.sessionStorage.setItem('userToken', angular.toJson(response.data.token));
+                window.sessionStorage.setItem('user', angular.toJson(response.data));
                 return response.data;
             });
         }

@@ -15,8 +15,7 @@
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
-        console.log(JSON.parse(sessionStorage.getItem('TsandCs')));
-
+        
         return {
             restrict: 'EA',
             scope: {
@@ -77,7 +76,6 @@
                     return;
                 }
                 else {
-                    console.log($stateParams);
                     var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
@@ -92,7 +90,6 @@
                         trail.line.forEach(function plotTrail(trailNode){
                             var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
                             trailCoordinates.push(transformTrailNode);
-                            //console.log(trailCoordinates);
                         });
                         createTrailLayers(trailCoordinates);
                     });
@@ -140,7 +137,6 @@
         function buildMarker(icons) {
             var vectorArray = [];
             icons.forEach(function buildVector(icon) {
-                //console.log(icon);
                 var vectorSource = new ol.source.Vector({
                     features: [icon]
                 });
