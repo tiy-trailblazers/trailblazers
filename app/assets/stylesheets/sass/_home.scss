@@ -11,6 +11,13 @@ nav {
         color: #ffff5e;
       }
     }
+    article .park-image {
+      width: 90%;
+      padding: 17px
+    }
+    hr {
+      width: 95%;
+    }
     font-size: 1rem;
     min-width: 135px;
     @include contentBlock;

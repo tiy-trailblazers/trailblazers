@@ -418,6 +418,11 @@ nav {
     nav .trip-create:hover {
       text-decoration: underline;
       color: #ffff5e; }
+  nav article .park-image {
+    width: 90%;
+    padding: 17px; }
+  nav hr {
+    width: 95%; }
   nav header h1 {
     font-size: 1.8rem;
     text-align: left;
@@ -588,7 +593,7 @@ nav.profile-nav {
     margin: 0; }
 
 section.trails, section.campgrounds {
-  height: 195px; }
+  height: 115px; }
 
 .trails, .campgrounds {
   width: 50%;
@@ -601,7 +606,7 @@ section.trails, section.campgrounds {
   padding-left: 5px; }
   .trails h3, .campgrounds h3 {
     margin-top: 0;
-    text-align: center;
+    padding-left: 18px;
     margin-bottom: 12px;
     margin-top: 5px; }
   .trails ul, .campgrounds ul {
@@ -619,7 +624,13 @@ section.trails, section.campgrounds {
 
 @media screen and (min-width: 600px) {
   nav.tandc {
-    height: 75vh; } }
+    height: 100vh; }
+
+  #map-items-list {
+    width: 70%; }
+
+  .trails, .campgrounds {
+    width: 35%; } }
 #popup {
   position: absolute;
   font-size: 13px;
