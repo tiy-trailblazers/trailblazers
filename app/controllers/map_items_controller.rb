@@ -29,11 +29,11 @@ class MapItemsController < ApplicationController
   def trail_query
 
     if params[:max_daily_length]
-      Trail.where("path && ST_MakeEnvelope (#{params[:west]}, #{params[:south]}, #{params[:east]}, #{params[:north]}, 3785)").where("length <= #{max_trail_length}").order(length: :desc).limit(params[:limit]).offset(params[:offset])
+      Trail.where("name is not null and path && ST_MakeEnvelope (#{params[:west]}, #{params[:south]}, #{params[:east]}, #{params[:north]}, 3785)").where("length <= #{max_trail_length}").order(length: :desc).limit(params[:limit]).offset(params[:offset])
     elsif params[:name]
       Trail.where("name like ?", "%#{params[:name].titleize}%").order(length: :desc).limit(params[:limit]).offset(params[:offset])
     else
-      Trail.where("path && ST_MakeEnvelope (#{params[:west]}, #{params[:south]}, #{params[:east]}, #{params[:north]}, 3785)").order(length: :desc).limit(params[:limit]).offset(params[:offset])
+      Trail.where("name is not null and path && ST_MakeEnvelope (#{params[:west]}, #{params[:south]}, #{params[:east]}, #{params[:north]}, 3785)").order(length: :desc).limit(params[:limit]).offset(params[:offset])
     end
   end
 

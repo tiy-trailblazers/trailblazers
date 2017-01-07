@@ -5,6 +5,10 @@ nav {
     @include contentBlock;
     background-color: #3e3e3e;
     font-family: 'Patrick Hand SC', cursive;
+    article .park-image {
+      width: 90%;
+      padding: 5%;
+    }
     header h1 {
       font-size: 2rem;
       text-align: left;
@@ -186,6 +190,7 @@ nav.profile-nav {
         max-width: 355px;
         height: 100vh;
         float: left;
+        height: 100vh;
         li {
             padding: 5%;
         }

@@ -403,24 +403,58 @@ template {
   display: none; }
 
 nav {
+<<<<<<< HEAD
   width: 100%;
+=======
+  font-size: 1rem;
+>>>>>>> master
   min-width: 135px;
   border: 1px solid #111111;
   box-sizing: border-box;
   background-color: #fff700;
   background-color: #3e3e3e;
   font-family: 'Patrick Hand SC', cursive; }
+  nav .trip-create {
+    padding-left: 7%;
+    color: #b8b8b8; }
+    nav .trip-create p {
+      margin-top: 12px; }
+    nav .trip-create:hover {
+      text-decoration: underline;
+      color: #ffff5e; }
+  nav article .park-image {
+    width: 90%;
+    padding: 5%; }
+  nav hr {
+    width: 93%;
+    background-color: #7c7c7c;
+    border: none;
+    height: 1px; }
   nav header h1 {
     font-size: 2rem;
     text-align: left;
     line-height: 3.25rem;
     margin: 0;
     color: #ffff5e;
+<<<<<<< HEAD
     padding: 1%; }
+=======
+    padding: 2%; }
+  nav header h2 {
+    color: #ffff5e; }
+  nav a {
+    color: #7c7c7c;
+    text-decoration: none;
+    padding-top: 5px; }
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffff5e; }
+>>>>>>> master
   nav ul {
     list-style: none;
     padding: 0;
     margin: 0; }
+<<<<<<< HEAD
   nav a {
     color: #7c7c7c;
     text-decoration: none;
@@ -458,6 +492,59 @@ nav {
 
 nav.profile-nav {
   min-width: 225px; }
+=======
+    nav ul:hover {
+      text-decoration: none; }
+    nav ul a {
+      cursor: pointer; }
+      nav ul a:hover {
+        text-decoration: underline;
+        color: #ffff5e; }
+      nav ul a li {
+        margin-top: 10px; }
+        nav ul a li:hover {
+          text-decoration: underline;
+          color: #ffff5e; }
+    nav ul li {
+      display: block;
+      color: #b8b8b8;
+      font-family: 'Patrick Hand SC', cursive;
+      font-size: 1rem;
+      padding: 2%;
+      text-align: left; }
+      nav ul li span {
+        margin-bottom: 20px; }
+
+nav.profile-nav {
+  width: 100%;
+  float: left; }
+  nav.profile-nav ul {
+    clear: left; }
+    nav.profile-nav ul a.trip-link:hover {
+      text-decoration: none; }
+    nav.profile-nav ul a.trip-link li.trip-item {
+      transition: .3s linear;
+      cursor: pointer; }
+      nav.profile-nav ul a.trip-link li.trip-item:hover {
+        text-decoration: none;
+        background-color: #3e3e3e;
+        color: #b8b8b8;
+        color: black;
+        background-color: #ffff5e; }
+        nav.profile-nav ul a.trip-link li.trip-item:hover li {
+          text-decoration: none;
+          color: black;
+          transition: .3s linear; }
+  nav.profile-nav a li {
+    margin-right: 5%; }
+  nav.profile-nav header h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    line-height: 3.5rem;
+    margin: 0;
+    max-width: 204px;
+    color: #ffff5e; }
+>>>>>>> master
   nav.profile-nav section {
     width: 100%;
     margin-left: 5%;
@@ -545,9 +632,14 @@ nav.profile-nav {
   nav {
     width: 30%;
     min-width: 135px;
+<<<<<<< HEAD
     max-width: 355px;
     height: 100vh;
     float: left; }
+=======
+    float: left;
+    height: 100vh; }
+>>>>>>> master
     nav li {
       padding: 5%; }
     nav.noprofile-nav article {
@@ -653,7 +745,6 @@ nav.profile-nav {
 #map {
   display: block;
   margin: 0 auto;
-  border: 1px solid #111111;
   height: 100vh;
   border-left: 0px;
   box-sizing: border-box; }
@@ -668,6 +759,7 @@ nav.profile-nav {
     width: 70%;
     max-width: 100%;
     float: left; } }
+<<<<<<< HEAD
 #buffer {
   min-width: 200px;
   max-width: 350px;
@@ -715,44 +807,100 @@ nav.profile-nav {
     position: absolute;
     top: 20%;
     left: 12%; } }
+=======
+#map-items-list {
+  width: 100%;
+  float: left;
+  font-family: 'Patrick Hand SC', cursive;
+  background-color: #eaeaea;
+  text-align: center;
+  padding-top: 5px; }
+  #map-items-list h1 {
+    margin: 0; }
+
+section.trails, section.campgrounds {
+  height: 115px; }
+
+>>>>>>> master
 .trails, .campgrounds {
   width: 50%;
   margin-bottom: 0;
-  border: 1px solid #111111;
   box-sizing: border-box;
-  background-color: #fff700;
-  border-top: 0px;
+  background-color: #eaeaea;
   font-family: 'Patrick Hand SC', cursive;
-  float: left; }
+  float: left;
+  overflow: scroll;
+  padding-right: 5px; }
+  .trails img, .campgrounds img {
+    height: 25px;
+    float: left;
+    padding-right: 10px;
+    padding-left: 13px; }
   .trails h3, .campgrounds h3 {
     margin-top: 0;
-    text-align: center; }
+    padding-left: 18px;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    width: 50%; }
   .trails ul, .campgrounds ul {
     margin-top: 0;
     padding-left: 0; }
     .trails ul li, .campgrounds ul li {
-      padding-left: 0.2em;
+      padding-left: 3.5em;
       display: block;
       list-style: none;
-      border: 1px solid black;
-      border-left: 0px;
-      border-right: 0px; }
-
-.campgrounds {
-  border-left: 0px; }
+      padding-top: 2px;
+      padding-bottom: 2px;
+      cursor: pointer; }
+      .trails ul li:hover, .campgrounds ul li:hover {
+        background-color: #888888; }
 
 @media screen and (min-width: 600px) {
   nav.tandc {
-    height: 75vh; } }
+    height: 100vh; }
+
+  #map-items-list {
+    width: 70%; }
+
+  .trails, .campgrounds {
+    width: 35%; } }
 #popup {
   position: absolute;
-  bottom: 25px;
-  background-color: #ffffff;
-  height: 100px;
-  width: 250px;
-  color: yellow;
-  border: 2px solid yellow; }
-  #popup p:last-child {
-    margin-bottom: 0.5em; }
+  font-size: 13px;
+  bottom: 33px;
+  left: -31px;
+  background-color: black;
+  opacity: 0.7;
+  min-width: 200px;
+  font-weight: lighter;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px; }
+  #popup p:first-child {
+    padding-left: 20px; }
+  #popup p.link {
+    color: #949494; }
+    #popup p.link:hover {
+      text-decoration: underline;
+      color: #ffff5e; }
+  #popup p {
+    padding-left: 25px;
+    padding-right: 25px; }
+
+#popup:before {
+  content: ' ';
+  position: absolute;
+  left: 25px;
+  bottom: -9px;
+  width: 14px;
+  height: 14px;
+  background-color: black;
+  border-top: none;
+  border-left: none;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg); }
 
 /*# sourceMappingURL=styles.css.map */

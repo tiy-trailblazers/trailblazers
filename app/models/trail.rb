@@ -43,19 +43,20 @@ class Trail < ApplicationRecord
   end
 
   def find_park
+    trail_park = nil
     Park.all.each do |park|
       if park.boundary
-        return park if (park.boundary.contains?(startlonlat) || park.boundary.contains?(endlonlat))
-      else
-        return nil
+        trail_park = park if (park.boundary.contains?(startlonlat) || park.boundary.contains?(endlonlat))
       end
     end
+    trail_park
   end
 
   def self.formatted_trails(trails_array)
     trails = []
     if trails_array.size > 0
       trails_array.each do |trail|
+        trail.description = trail.park.description if trail.park
         trails << trail.attributes.merge({
           line: trail.path_as_array,
           head_lat: (trail.startlonlat.y if trail.startlonlat),

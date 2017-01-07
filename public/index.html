@@ -11,6 +11,7 @@
 
     </head>
     <body>
+<<<<<<< HEAD
         <nav class='noprofile-nav'>
             <header>
                 <h1>The Yellow Dirt Road</h1>
@@ -30,10 +31,47 @@
                         <input type='text' placeholder='By National Park'>
                     </form>
                 </li>
+=======
+        <nav>
+            <header>
+                <h1>The Yellow Dirt Road</h1>
+            </header>
+            <ul>
+                <a><li>About</li></a>
+                <a ui-sref='signin'><li>Sign In</li></a>
             </ul>
+            <article ng-controller="TripController as trip" ng-show="trip.signedIn" class="trip-create">
+                <p ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Create A Trip</p>
+                <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
+                    <input type="text" ng-model="trip.trip.name" placeholder="Trip Name">
+                    <input type="date" ng-model="trip.trip.start_date" placeholder="Start Date">
+                    <ul>
+                        <li ng-repeat="tORc in trip.tsORcs">{{tORc.name}}</li>
+                    </ul>
+                    <input type='submit' value='Start Trip'>
+                </form>
+            </article>
+            <hr />
+            <article>
+              <img src="/images/park.png" class="park-image" alt="image of national park"/>
+            </article>
+            <ul>
+              <header>
+                <h2>Search our map</h2>
+              </header>
+              <li>
+                FILTERS!
+              </li>
+>>>>>>> master
+            </ul>
+
         </nav>
+<<<<<<< HEAD
 
         <nav ng-controller='UserProfileController as profile' ng-show='profile.user' class="profile-nav">
+=======
+        <nav class="profile-nav" style="display: none;">
+>>>>>>> master
           <header>
               <h1>The Yellow Dirt Road</h1>
           </header>
@@ -97,6 +135,7 @@
                   </li>
                 </ul>
               </li>
+<<<<<<< HEAD
             </a> -->
             <article class='plan-trip' ng-controller="TripController as trip" ng-show='trip.madeSearch'>
                 <a ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Plan A Trip!</a>
@@ -112,6 +151,10 @@
                 </form>
             </article>
         </section>
+=======
+            </a>
+          </ul>
+>>>>>>> master
         </nav>
 
         <main ui-view></main>
