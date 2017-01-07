@@ -11,7 +11,7 @@
         vm.tripCreate = null;
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
-        vm.signedIn = null;
+        vm.madeSearch = null;
 
         vm.createTrip = function createTrip() {
             vm.tripCreate = true;
@@ -20,5 +20,20 @@
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip);
         };
+
+        function TandCSearch() {
+            var TandC = setInterval(function() {
+                if (!JSON.parse(sessionStorage.getItem('TsandCs'))) {
+                    return;
+                } else {
+                    clearInterval(TandC);
+                    $scope.$apply(function() {
+                        vm.madeSearch = true;
+                    });
+                }
+            }, 1000);
+        }
+
+        TandCSearch();
     }
 }());

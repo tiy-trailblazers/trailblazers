@@ -15,11 +15,18 @@
             <header>
                 <h1>The Yellow Dirt Road</h1>
             </header>
+            <article ng-hide='signin' class='how-to-use'>
+                <h3>What To Do</h3>
+                <p>In the map zoom to where you would like to adventure.  When you see the
+                    <img src='images/trailhead.png'> icon, click once
+                    and then use your mouse to create a radius box to submit a search.
+            </article>
             <ul>
-                <a ui-sref='signin'><li>Sign In</li></a>
+                <a ng-hide='signin' ng-click='signin = true' ui-sref='signin'>Sign In</a>
                 <li>
-                    Search
-                    <form>
+                    <a ng-click='signin = false' ng-hide='!signin' ui-sref='home'>Home</a>
+                    <a ng-hide='signin' ng-click='search = true'>Search</a>
+                    <form ng-hide='!search'>
                         <input type='text' placeholder='By National Park'>
                     </form>
                 </li>
@@ -46,9 +53,7 @@
                 <br>
                 State, zip
               </li>
-              <li>
-                <a>Edit Profile</a>
-              </li>
+              <a>Edit Profile</a>
             </ul>
           </aside>
           <section class='past-trips'>
@@ -88,7 +93,7 @@
                 </ul>
               </li>
             </a> -->
-            <article class='plan-trip' ng-controller="TripController as trip">
+            <article class='plan-trip' ng-controller="TripController as trip" ng-show='trip.madeSearch'>
                 <a ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Plan A Trip!</a>
                 <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
                     <input type="text" ng-model="trip.trip.name" placeholder="Trip Name">
