@@ -411,7 +411,7 @@ nav {
   background-color: #3e3e3e;
   font-family: 'Patrick Hand SC', cursive; }
   nav .trip-create {
-    padding-left: 6%;
+    padding-left: 7%;
     color: #b8b8b8; }
     nav .trip-create p {
       margin-top: 12px; }
@@ -420,9 +420,12 @@ nav {
       color: #ffff5e; }
   nav article .park-image {
     width: 90%;
-    padding: 17px; }
+    padding: 5%; }
   nav hr {
-    width: 95%; }
+    width: 93%;
+    background-color: #7c7c7c;
+    border: none;
+    height: 1px; }
   nav header h1 {
     font-size: 1.8rem;
     text-align: left;
@@ -603,17 +606,23 @@ section.trails, section.campgrounds {
   font-family: 'Patrick Hand SC', cursive;
   float: left;
   overflow: scroll;
-  padding-left: 5px; }
+  padding-right: 5px; }
+  .trails img, .campgrounds img {
+    height: 25px;
+    float: left;
+    padding-right: 10px;
+    padding-left: 13px; }
   .trails h3, .campgrounds h3 {
     margin-top: 0;
     padding-left: 18px;
     margin-bottom: 12px;
-    margin-top: 5px; }
+    margin-top: 5px;
+    width: 50%; }
   .trails ul, .campgrounds ul {
     margin-top: 0;
     padding-left: 0; }
     .trails ul li, .campgrounds ul li {
-      padding-left: 2.5em;
+      padding-left: 3.5em;
       display: block;
       list-style: none;
       padding-top: 2px;

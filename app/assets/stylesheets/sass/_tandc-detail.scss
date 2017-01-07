@@ -13,6 +13,12 @@ section.trails, section.campgrounds {
   height: 115px;
 }
 .trails, .campgrounds{
+  img {
+    height: 25px;
+    float: left;
+    padding-right: 10px;
+    padding-left: 13px;
+  }
     width: 50%;
     margin-bottom: 0;
     box-sizing: border-box;
@@ -20,18 +26,19 @@ section.trails, section.campgrounds {
     font-family: 'Patrick Hand SC', cursive;
     float:left;
     overflow: scroll;
-    padding-left: 5px;
+    padding-right: 5px;
     h3 {
         margin-top: 0;
         padding-left: 18px;
         margin-bottom: 12px;
         margin-top: 5px;
+        width: 50%;
     }
     ul {
         margin-top: 0;
         padding-left: 0;
         li {
-            padding-left: 2.5em;
+            padding-left: 3.5em;
             display: block;
             list-style: none;
             padding-top: 2px;

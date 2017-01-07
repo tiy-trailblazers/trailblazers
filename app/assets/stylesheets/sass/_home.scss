@@ -1,7 +1,7 @@
 
 nav {
     .trip-create {
-      padding-left: 6%;
+      padding-left: 7%;
       color: rgb(184, 184, 184);
       p {
         margin-top: 12px;
@@ -13,10 +13,13 @@ nav {
     }
     article .park-image {
       width: 90%;
-      padding: 17px
+      padding: 5%;
     }
     hr {
-      width: 95%;
+      width: 93%;
+      background-color: rgb(124, 124, 124);
+      border: none;
+      height: 1px;
     }
     font-size: 1rem;
     min-width: 135px;
