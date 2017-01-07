@@ -267,6 +267,10 @@
         var vm = this;
         vm.user = null;
 
+        vm.signOff = function signOff() {
+
+        };
+
         function tokenSearch() {
             var token = setInterval(function() {
                 if (!JSON.parse(sessionStorage.getItem('user'))) {
@@ -274,7 +278,7 @@
                 } else {
                     clearInterval(token);
                     $scope.$apply(function() {
-                        vm.user = JSON.parse(sessionStorage.getItem('user'));            
+                        vm.user = JSON.parse(sessionStorage.getItem('user'));
                     });
                 }
             }, 1000);

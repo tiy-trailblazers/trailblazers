@@ -469,7 +469,55 @@ nav.profile-nav {
   nav.profile-nav aside.user-info {
     display: none; }
   nav.profile-nav article.plan-trip {
-    margin: 4%; }
+    margin: 4%;
+    width: 80%;
+    margin: 0.5em auto;
+    font-family: 'Patrick Hand SC', cursive; }
+    nav.profile-nav article.plan-trip::after {
+      display: block;
+      content: '';
+      clear: both; }
+    nav.profile-nav article.plan-trip h4 {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 0.2em; }
+    nav.profile-nav article.plan-trip h6 {
+      text-align: center;
+      font-size: 1em;
+      margin: 0.2em; }
+    nav.profile-nav article.plan-trip form {
+      width: 90%;
+      background-color: #ffffff;
+      margin: 0.5em auto;
+      border-radius: 2%;
+      border: 1px solid #000000;
+      box-shadow: 0 0 0.5em #ffffff; }
+      nav.profile-nav article.plan-trip form p {
+        margin: 0.1em;
+        text-decoration: underline; }
+      nav.profile-nav article.plan-trip form h3 {
+        color: #000000;
+        margin: 0.6em 0; }
+      nav.profile-nav article.plan-trip form input {
+        font-family: 'Patrick Hand SC', cursive;
+        width: 90%;
+        box-sizing: border-box; }
+        nav.profile-nav article.plan-trip form input:last-child {
+          background-color: #ffff5e;
+          border: #000000;
+          width: 80px;
+          margin-top: 0.1em;
+          margin-bottom: 0.9em;
+          box-shadow: 0 0 0.5em #000000; }
+        nav.profile-nav article.plan-trip form input:focus {
+          outline: #fff700; }
+      nav.profile-nav article.plan-trip form ul {
+        margin: 0.3em 0;
+        padding: 2%;
+        list-style: circle; }
+        nav.profile-nav article.plan-trip form ul li {
+          padding: 2%;
+          color: #000000; }
     nav.profile-nav article.plan-trip a {
       color: #ffff5e; }
       nav.profile-nav article.plan-trip a:hover {
