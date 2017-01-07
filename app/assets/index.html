@@ -21,16 +21,17 @@
                     <img src='images/trailhead.png'> icon, click once
                     and then use your mouse to create a radius box to submit a search.
             </article>
-            <article>
+            <!-- <article>
               <img src="/images/park.png" class="park-image" alt="image of national park"/>
-            </article>
+            </article> -->
             <ul>
                 <a ng-hide='signin' ng-click='signin = true' ui-sref='signin'>Sign In</a>
                 <li>
                     <a ng-click='signin = false' ng-hide='!signin' ui-sref='home'>Home</a>
-                    <a ng-hide='signin' ng-click='search = true'>Search</a>
-                    <form ng-hide='!search'>
-                        <input type='text' placeholder='By National Park'>
+                    <form>
+                        <h3>Your Adventure Awaits</h3>
+                        <input type='text' placeholder='Park Name'>
+                        <input type='submit' value='Search'>
                     </form>
                 </li>
             </ul>

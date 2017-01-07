@@ -5,10 +5,10 @@ nav {
     @include contentBlock;
     background-color: #3e3e3e;
     font-family: 'Patrick Hand SC', cursive;
-    article .park-image {
-      width: 90%;
-      padding: 5%;
-    }
+    // article .park-image {
+    //   width: 90%;
+    //   padding: 5%;
+    // }
     header h1 {
       font-size: 2rem;
       text-align: left;
@@ -47,6 +47,12 @@ nav {
             color: rgb(124, 124, 124);
             margin: 0.5em;
         }
+        a {
+          color: #ffff5e;
+          &:hover {
+            color: rgb(124, 124, 124);
+          }
+      }
         article {
             width: 80%;
             margin: 0 auto;
@@ -62,8 +68,31 @@ nav {
             text-align: center;
         }
         form {
-            padding: 7%;
-            border: 2px solid rgb(124, 124, 124);
+            width: 90%;
+            background-color: #ffffff;
+            margin: 0.5em auto;
+            border-radius: 2%;
+            border: 1px solid #000000;
+            box-shadow: 0 0 0.5em #ffffff;
+            h3 {
+                color: #000000;
+                margin: 0.6em 0;
+            }
+            input {
+                font-family: 'Patrick Hand SC', cursive;
+                width: 90%;
+                box-sizing: border-box;
+                &:last-child {
+                    background-color: #ffff5e;
+                    border: #000000;
+                    width: 80px;
+                    margin: 0.8em 0;
+                    box-shadow: 0 0 0.5em #000000;
+                }
+                &:focus {
+                    outline: #fff700;
+                }
+            }
         }
     }
 }
@@ -161,7 +190,10 @@ nav.profile-nav {
 @media screen and (min-width: 450px) {
     nav.noprofile-nav {
         article {
-            width: 35%;
+            width: 65%;
+        }
+        form {
+            width: 50%;
         }
     }
     nav.profile-nav {
@@ -197,6 +229,9 @@ nav.profile-nav {
         &.noprofile-nav {
             article {
                 width: 85%;
+            }
+            form {
+                width: 90%;
             }
         }
     }

@@ -202,7 +202,7 @@
         vm.trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
         vm.campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
         vm.element = null;
-                                        
+
         vm.trailPopup = function trailPopup(element){
             vm.element = element;
         };
@@ -489,7 +489,7 @@
                     overlays: [popupOverlay],
                     view: new ol.View({
                         center: centerLayers($stateParams.centerCoords),
-                        zoom: 12,
+                        zoom: 9.5,
                         maxZoom: 20,
                         minZoom: 2
                     })

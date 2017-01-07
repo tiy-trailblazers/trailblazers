@@ -58,7 +58,7 @@
                     overlays: [popupOverlay],
                     view: new ol.View({
                         center: centerLayers($stateParams.centerCoords),
-                        zoom: 12,
+                        zoom: 9.5,
                         maxZoom: 20,
                         minZoom: 2
                     })
