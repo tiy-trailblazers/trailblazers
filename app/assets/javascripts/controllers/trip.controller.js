@@ -12,6 +12,7 @@
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
+        vm.search = null;
 
         vm.createTrip = function createTrip() {
             vm.tripCreate = true;
@@ -19,6 +20,10 @@
 
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip);
+        };
+
+        vm.newSearchForm = function newSearchForm() {
+            vm.search = !vm.search;
         };
 
         function TandCSearch() {

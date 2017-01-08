@@ -107,6 +107,7 @@ nav.profile-nav {
       margin-left: 0;
       &.past-trips {
           h2 {
+              margin-bottom: 0.5em;
               text-align: center;
               color: #ffff5e;
           }
@@ -124,6 +125,11 @@ nav.profile-nav {
             display: block;
             content: '';
             clear: both;
+        }
+        aside.new-search {
+            form {
+                margin-top: 1.5em;
+            }
         }
         h4 {
             text-align: center;

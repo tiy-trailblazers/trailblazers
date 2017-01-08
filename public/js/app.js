@@ -86,6 +86,29 @@
     'use strict';
 
     angular.module('trailblazer')
+        .controller('NavController', NavController);
+
+    NavController.inject = ['$timeout'];
+
+    function NavController($timeout) {
+        var vm = this;
+        vm.signin = null;
+
+        vm.signingIn = function signinIn() {
+            vm.signin = !vm.signin;
+        };
+
+        vm.timer = function timer() {
+            $timeout(vm.signingIn, 180000);
+            return true;
+        };
+    }
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
         .controller('RadiusSearchController', RadiusSearchController);
 
     RadiusSearchController.$inject = [ '$state', '$stateParams', 'TrailandCampgroundService' ];
@@ -228,6 +251,7 @@
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
+        vm.search = null;
 
         vm.createTrip = function createTrip() {
             vm.tripCreate = true;
@@ -235,6 +259,10 @@
 
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip);
+        };
+
+        vm.newSearchForm = function newSearchForm() {
+            vm.search = !vm.search;
         };
 
         function TandCSearch() {
@@ -816,7 +844,7 @@
                     west: west,
                     east: east,
                     min_length: 0.2,
-                    max_length: 2,
+                    max_length: 20,
                 }
             })
             .then( function transformResponse(response) {
