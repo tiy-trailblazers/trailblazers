@@ -96,9 +96,9 @@ namespace :trails do
         {
           length: trail_path.length,
           path: trail_path,
-          startlonlat: RGeo::Geographic.spherical_factory(srid: 4326).point(trail_head.y, trail_head.x),
-          latitude: trail_head.x,
-          longitude: trail_head.y
+          startlonlat: RGeo::Geographic.spherical_factory(srid: 4326).point(trail_head.x, trail_head.y),
+          latitude: trail_head.y,
+          longitude: trail_head.x
         }
       )
       same_name_trails.delete_all

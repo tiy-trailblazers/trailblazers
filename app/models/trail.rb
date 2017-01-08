@@ -61,7 +61,7 @@ class Trail < ApplicationRecord
           line: trail.path_as_array,
           head_lat: (trail.startlonlat.y if trail.startlonlat),
           head_lon: (trail.startlonlat.x if trail.startlonlat),
-          park: (trail.park.attributes if trail.park) || (trail.find_park.attributes if trail.find_park)
+          park: (trail.park.attributes if trail.park)
         })
       end
     end

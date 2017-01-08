@@ -33,8 +33,7 @@
                     south: south,
                     west: west,
                     east: east,
-                    min_length: 0.2,
-                    max_length: 2,
+                    min_length: 0.2
                 }
             })
             .then( function transformResponse(response) {
