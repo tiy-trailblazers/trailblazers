@@ -3,7 +3,7 @@ nav {
     width: 100%;
     min-width: 135px;
     @include contentBlock;
-    background-color: #3e3e3e;
+    background-color: #2f2f2f;
     font-family: 'Patrick Hand SC', cursive;
     // article .park-image {
     //   width: 90%;
@@ -23,7 +23,7 @@ nav {
         margin: 0;
         }
         a {
-          color: rgb(124, 124, 124);
+          color: #cecece;
           text-decoration: none;
           font-size: 1em;
           &:hover {
@@ -34,7 +34,7 @@ nav {
         }
     li {
         display: block;
-        color: rgb(124, 124, 124);
+        color: #cecece;
         font-family: 'Patrick Hand SC', cursive;
         font-size: 1rem;
         padding: 0.5%
@@ -44,13 +44,13 @@ nav {
         h3 {
             font-size: 1.25em;
             text-align: center;
-            color: rgb(124, 124, 124);
+            color: #cecece;
             margin: 0.5em;
         }
         a {
           color: #ffff5e;
           &:hover {
-            color: rgb(124, 124, 124);
+            color: #cecece;
           }
       }
         article {
@@ -58,7 +58,7 @@ nav {
             margin: 0 auto;
         }
         p {
-            color: rgb(124, 124, 124);
+            color: #cecece;
             line-height: 25px;
         }
         img {
@@ -180,7 +180,7 @@ nav.profile-nav {
           color: #ffff5e;
           &:hover {
             text-decoration: underline;
-            color: rgb(124, 124, 124);
+            color: #cecece;
             cursor: pointer;
           }
        }
@@ -236,7 +236,7 @@ nav.profile-nav {
         }
     }
     nav.profile-nav {
-        width: 30%;
+        width: 35%;
         min-width: 325px;
         li {
             padding: 1%;

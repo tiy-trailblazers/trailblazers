@@ -408,7 +408,7 @@ nav {
   border: 1px solid #111111;
   box-sizing: border-box;
   background-color: #fff700;
-  background-color: #3e3e3e;
+  background-color: #2f2f2f;
   font-family: 'Patrick Hand SC', cursive; }
   nav header h1 {
     font-size: 2rem;
@@ -422,7 +422,7 @@ nav {
     padding: 0;
     margin: 0; }
   nav a {
-    color: #7c7c7c;
+    color: #cecece;
     text-decoration: none;
     font-size: 1em; }
     nav a:hover {
@@ -431,7 +431,7 @@ nav {
       cursor: pointer; }
   nav li {
     display: block;
-    color: #7c7c7c;
+    color: #cecece;
     font-family: 'Patrick Hand SC', cursive;
     font-size: 1rem;
     padding: 0.5%; }
@@ -440,17 +440,17 @@ nav {
     nav.noprofile-nav h3 {
       font-size: 1.25em;
       text-align: center;
-      color: #7c7c7c;
+      color: #cecece;
       margin: 0.5em; }
     nav.noprofile-nav a {
       color: #ffff5e; }
       nav.noprofile-nav a:hover {
-        color: #7c7c7c; }
+        color: #cecece; }
     nav.noprofile-nav article {
       width: 80%;
       margin: 0 auto; }
     nav.noprofile-nav p {
-      color: #7c7c7c;
+      color: #cecece;
       line-height: 25px; }
     nav.noprofile-nav img {
       height: 20px; }
@@ -545,7 +545,7 @@ nav.profile-nav {
       color: #ffff5e; }
       nav.profile-nav article.plan-trip a:hover {
         text-decoration: underline;
-        color: #7c7c7c;
+        color: #cecece;
         cursor: pointer; }
 
 @media screen and (min-width: 450px) {
@@ -582,7 +582,7 @@ nav.profile-nav {
       width: 90%; }
 
   nav.profile-nav {
-    width: 30%;
+    width: 35%;
     min-width: 325px; }
     nav.profile-nav li {
       padding: 1%; }

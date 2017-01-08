@@ -45,7 +45,12 @@ namespace :trails do
   desc "TODO"
   task add_parks: :environment do
     Trail.where("park_id is null and state = 'VA'").each do |trail|
-      trail.update!(park: trail.find_park)
+      park = trail.find_park
+      if park
+        trail.update!(park: trail.find_park)
+      else
+        trail.update!(park_id: 0)
+      end
       print "."
     end
   end
