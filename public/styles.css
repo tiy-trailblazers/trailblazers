@@ -568,7 +568,7 @@ nav.profile-nav {
       clear: both; } }
 @media screen and (min-width: 1000px) {
   nav {
-    width: 30%;
+    width: 35%;
     min-width: 135px;
     max-width: 355px;
     height: 100vh;
@@ -682,8 +682,7 @@ nav.profile-nav {
 
 @media screen and (min-width: 1000px) {
   #map {
-    width: 70%;
-    max-width: 100%;
+    width: 65%;
     float: left; } }
 #buffer {
   min-width: 200px;
@@ -779,9 +778,6 @@ section.trails, section.campgrounds {
         background-color: #888888; }
 
 @media screen and (min-width: 600px) {
-  nav.tandc {
-    height: 100vh; }
-
   #map-items-list {
     width: 70%; }
 

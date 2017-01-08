@@ -4,14 +4,26 @@
     angular.module('trailblazer')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [  '$scope', '$stateParams' ];
+    UserProfileController.$inject = [  '$scope', '$state', 'UserService' ];
 
-    function UserProfileController($scope) {
+    function UserProfileController($scope, $state, UserService) {
         var vm = this;
         vm.user = null;
 
         vm.signOff = function signOff() {
-
+            UserService.signoffUser()
+            .then(function success(data) {
+                console.log(data);
+                window.sessionStorage.removeItem('TsandCs');
+                window.sessionStorage.removeItem('user');
+                window.sessionStorage.removeItem('userToken');
+                vm.user = null;
+                $('.noprofile-nav')[0].style.display = 'block';
+                $state.go('home');
+            })
+            .catch(function error(err) {
+                console.log(err);
+            });
         };
 
         function tokenSearch() {

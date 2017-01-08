@@ -101,8 +101,6 @@
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
 
             if (JSON.parse(sessionStorage.getItem('user'))) {
-                $('nav').addClass('tandc');
-                console.log($('nav.noprofile-nav'));
                 $('nav.noprofile-nav')[0].style.display = 'none';
             }
 

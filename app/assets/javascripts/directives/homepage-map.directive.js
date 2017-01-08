@@ -83,7 +83,6 @@
             if (JSON.parse(sessionStorage.getItem('user'))) {
                 $('.noprofile-nav')[0].style.display = 'none';
             }
-            $('nav').removeClass('tandc');
         }
 
         /**

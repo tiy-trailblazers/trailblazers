@@ -10,7 +10,8 @@
 
         return {
             createUser: createUser,
-            signinUser: signinUser
+            signinUser: signinUser,
+            signoffUser: signoffUser
         };
 
         function createUser(user) {
@@ -50,6 +51,13 @@
             .then(function success(response) {
                 window.sessionStorage.setItem('user', angular.toJson(response.data));
                 return response.data;
+            });
+        }
+
+        function signoffUser() {
+            return $http({
+                url: '/session',
+                method: 'DELETE'
             });
         }
     }

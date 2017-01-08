@@ -261,14 +261,26 @@
     angular.module('trailblazer')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [  '$scope', '$stateParams' ];
+    UserProfileController.$inject = [  '$scope', '$state', 'UserService' ];
 
-    function UserProfileController($scope) {
+    function UserProfileController($scope, $state, UserService) {
         var vm = this;
         vm.user = null;
 
         vm.signOff = function signOff() {
-
+            UserService.signoffUser()
+            .then(function success(data) {
+                console.log(data);
+                window.sessionStorage.removeItem('TsandCs');
+                window.sessionStorage.removeItem('user');
+                window.sessionStorage.removeItem('userToken');
+                vm.user = null;
+                $('.noprofile-nav')[0].style.display = 'block';
+                $state.go('home');
+            })
+            .catch(function error(err) {
+                console.log(err);
+            });
         };
 
         function tokenSearch() {
@@ -373,7 +385,6 @@
             if (JSON.parse(sessionStorage.getItem('user'))) {
                 $('.noprofile-nav')[0].style.display = 'none';
             }
-            $('nav').removeClass('tandc');
         }
 
         /**
@@ -532,8 +543,6 @@
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
 
             if (JSON.parse(sessionStorage.getItem('user'))) {
-                $('nav').addClass('tandc');
-                console.log($('nav.noprofile-nav'));
                 $('nav.noprofile-nav')[0].style.display = 'none';
             }
 
@@ -859,7 +868,8 @@
 
         return {
             createUser: createUser,
-            signinUser: signinUser
+            signinUser: signinUser,
+            signoffUser: signoffUser
         };
 
         function createUser(user) {
@@ -899,6 +909,13 @@
             .then(function success(response) {
                 window.sessionStorage.setItem('user', angular.toJson(response.data));
                 return response.data;
+            });
+        }
+
+        function signoffUser() {
+            return $http({
+                url: '/session',
+                method: 'DELETE'
             });
         }
     }
