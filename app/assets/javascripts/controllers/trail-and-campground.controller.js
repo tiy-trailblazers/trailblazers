@@ -18,7 +18,6 @@
         };
 
         vm.addTrip = function addTrip(tripItem) {
-            console.log(tripItem);
             TripService.addTorCtoTrip(tripItem);
         };
     }

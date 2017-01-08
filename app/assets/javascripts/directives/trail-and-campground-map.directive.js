@@ -75,14 +75,14 @@
                     var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
-                        addCampgroundMarkers(centerLayers(campgroundCoord), campground.name);
+                        addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground');
                     });
 
                     var trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
                     trails.forEach( function markAndPlottrails(trail){
                         var trailCoordinates = [];
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
-                        addTrailheadMarkers(centerLayers(trailheadCoord), trail.name);
+                        addTrailheadMarkers(centerLayers(trailheadCoord), trail.name, 'trail');
                         trail.line.forEach(function plotTrail(trailNode){
                             var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
                             trailCoordinates.push(transformTrailNode);
@@ -90,7 +90,8 @@
                         createTrailLayers(trailCoordinates);
                     });
                     window.clearInterval(waitForMarkerData);
-                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
+                    // trailheadMarkers = checkDupTrailheads(trailheadMarkers);
+                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(checkDupTrailheads(trailheadMarkers)), buildMarker(trailLineLayers));
                     markerClick();
                 }
             }
@@ -118,7 +119,7 @@
                             '<p>Length: ' + Math.round(Number(tORcObj.length)*10)/10 + ' miles<p>'
                         );
                     }
-                    map.getView().animate({zoom: 11}, {center: trailCoordinates});
+                    map.getView().animate({zoom: 12}, {center: trailCoordinates});
                     popupOverlay.setPosition(trailCoordinates);
                 }
             });
@@ -130,12 +131,15 @@
                             return feature;
                         });
                         if (feature) {
+                            if (feature.get('name') === 'TrailLine') {
+                                return;
+                            }
                             var geometry = feature.getGeometry();
                             var coord = geometry.getCoordinates();
                             $('.popup-content').html(
                                 '<p>' + feature.get('name') + '</p>'
                             );
-                            map.getView().animate({zoom: 11}, {center: coord});
+                            map.getView().animate({zoom: 12}, {center: coord});
                             popupOverlay.setPosition(coord);
                         }
                 });
@@ -181,7 +185,7 @@
          * @param {Object} icon OpenLayers Feature used to build map vector layer
          */
         function setZIndex(icon) {
-            if (icon.H.name === 'Trailhead' || icon.H.name === 'Camping') {
+            if (icon.H.type === 'trail' || icon.H.type === 'campground') {
                 return 2;
             } else {
                 return 0;
@@ -193,10 +197,11 @@
          * @param {coordinates} coordinates geo coordinates for placement of
          * markers on map
          */
-        function addCampgroundMarkers(coordinates, name) {
+        function addCampgroundMarkers(coordinates, name, type) {
            var iconFeature = new ol.Feature({
                 geometry: new ol.geom.Point(coordinates),
-                name: name
+                name: name,
+                type: type
             });
 
             var iconStyle = new ol.style.Style({
@@ -215,10 +220,11 @@
          * @param {coordinates} coordinates geo coordinates for placement of
          * markers on map
          */
-        function addTrailheadMarkers(coordinates, name) {
+        function addTrailheadMarkers(coordinates, name, type) {
            var iconFeature = new ol.Feature({
                 geometry: new ol.geom.Point(coordinates),
-                name: name
+                name: name,
+                type: type
             });
 
             var iconStyle = new ol.style.Style({
@@ -240,7 +246,7 @@
         function createTrailLayers(trails) {
             var iconFeature = new ol.Feature({
                 geometry: new ol.geom.LineString(trails),
-                name: 'Trail'
+                name: 'TrailLine'
             });
 
             var iconStyle = new ol.style.Style({
@@ -274,6 +280,21 @@
             var center = [ eastWest, northSouth ];
 
             return center;
+        }
+
+        function checkDupTrailheads(icons) {
+            var tocheckarr = [];
+            icons.forEach(function(a) {
+                var tocheck = a.H.name;
+                tocheckarr.push(tocheck);
+            });
+            var checked = icons;
+            tocheckarr.filter(function(value, index, array){
+                if(array.indexOf(value) !== index){
+                    icons.splice(array.indexOf(value), (array.indexOf(value) + 1));
+                }
+            });
+            return checked;
         }
     }
 }());
