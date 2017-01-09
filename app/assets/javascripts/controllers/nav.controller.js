@@ -15,7 +15,7 @@
         };
 
         vm.timer = function timer() {
-            $timeout(vm.signingIn, 180000);
+            $timeout(vm.signingIn, 60000);
             return true;
         };
     }

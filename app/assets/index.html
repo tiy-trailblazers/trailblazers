@@ -66,10 +66,10 @@
                 </ul>
             </aside>
             <section ng-controller='TripController as trip' class='past-trips'>
-                <header ng-show='!trip.search'>
+                <header ng-show='!trip.search' ng-hide='trip.tripCreate'>
                     <h2>Past Adventures</h2>
                 </header>
-                <article ng-show='!trip.search' class="trip-link">
+                <article ng-show='!trip.search' ng-hide='trip.tripCreate' class="trip-link">
                     <ul>
                         <li>
                             3 days in Shenandoah National Park

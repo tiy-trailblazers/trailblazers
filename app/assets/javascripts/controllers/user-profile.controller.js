@@ -18,7 +18,7 @@
                 window.sessionStorage.removeItem('user');
                 window.sessionStorage.removeItem('userToken');
                 vm.user = null;
-                $('.noprofile-nav')[0].style.display = 'block';
+                $('#map')[0].style.height = '100vh';
                 $state.go('home');
             })
             .catch(function error(err) {

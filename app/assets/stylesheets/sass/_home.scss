@@ -5,10 +5,6 @@ nav {
     @include contentBlock;
     background-color: #4a4a4a;
     font-family: 'Patrick Hand SC', cursive;
-    // article .park-image {
-    //   width: 90%;
-    //   padding: 5%;
-    // }
     header h1 {
       font-size: 2rem;
       text-align: left;
@@ -99,19 +95,24 @@ nav {
 
 
 nav.profile-nav {
-    min-width: 225px;
     section {
       width: 100%;
       margin-left: 5%;
       text-align: center;
       margin-left: 0;
       &.past-trips {
-          h2 {
-              margin-bottom: 0.5em;
-              text-align: center;
-              color: #ffff5e;
+          header{
+              display: none;
+              h2 {
+                  margin-bottom: 0.5em;
+                  text-align: center;
+                  color: #ffff5e;
+              }
           }
-      }
+          .trip-link {
+              display: none;
+          }
+       }
     }
     aside.user-info {
         display: none;
@@ -203,10 +204,25 @@ nav.profile-nav {
         }
     }
     nav.profile-nav {
-        section.profile-image {
-            text-align: right;
-            width: 50%;
-            float: left;
+        section {
+            &.profile-image {
+                text-align: right;
+                width: 50%;
+                float: left;
+            }
+            &.past-trips {
+                header{
+                    display: block;
+                    h2 {
+                        margin-bottom: 0.5em;
+                        text-align: center;
+                        color: #ffff5e;
+                    }
+                }
+                .trip-link {
+                    display: block;
+                }
+            }
         }
         aside.user-info {
             display: block;
@@ -218,17 +234,36 @@ nav.profile-nav {
                 clear: both;
             }
         }
+        .past-trips {
+            header {
+            display: block;
+            }
+            article {
+                &.trip-link {
+                    display: block;
+                }
+            }
+            section {
+                .past-trips {
+                    header {
+                    display: block;
+                    }
+                    article {
+                        &.trip-link {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 @media screen and (min-width: 1000px){
     nav {
-        width: 35%;
-        min-width: 135px;
-        max-width: 355px;
+        width: 32%;
         height: 100vh;
         float: left;
-        height: 100vh;
         li {
             padding: 5%;
         }
@@ -241,9 +276,9 @@ nav.profile-nav {
             }
         }
     }
+
     nav.profile-nav {
-        width: 35%;
-        min-width: 325px;
+        width: 32%;
         li {
             padding: 1%;
         }
@@ -254,5 +289,5 @@ nav.profile-nav {
             text-align: center;
             padding-left: 4%;
         }
-      }
+    }
 }

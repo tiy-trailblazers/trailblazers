@@ -99,7 +99,7 @@
         };
 
         vm.timer = function timer() {
-            $timeout(vm.signingIn, 180000);
+            $timeout(vm.signingIn, 60000);
             return true;
         };
     }
@@ -302,7 +302,7 @@
                 window.sessionStorage.removeItem('user');
                 window.sessionStorage.removeItem('userToken');
                 vm.user = null;
-                $('.noprofile-nav')[0].style.display = 'block';
+                $('#map')[0].style.height = '100vh';
                 $state.go('home');
             })
             .catch(function error(err) {
@@ -562,6 +562,7 @@
                     // trailheadMarkers = checkDupTrailheads(trailheadMarkers);
                     map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(checkDupTrailheads(trailheadMarkers)), buildMarker(trailLineLayers));
                     markerClick();
+                    $('#map')[0].style.height = '72vh';
                 }
             }
 
