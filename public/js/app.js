@@ -323,6 +323,7 @@
                 window.sessionStorage.removeItem('TsandCs');
                 window.sessionStorage.removeItem('user');
                 window.sessionStorage.removeItem('userToken');
+                window.sessionStorage.removeItem('trip');
                 vm.user = null;
                 $('#map')[0].style.height = '100vh';
                 $state.go('home');
@@ -523,7 +524,7 @@
             var element = 'map';
             var map;
             var popupOverlay = new ol.Overlay({
-               element: document.getElementById('popup')
+               element: $('#popup')[0]
             });
 
             /**
@@ -618,8 +619,10 @@
 
             function markerClick() {
                 map.on('click', function(evt) {
+                    console.log('event', evt);
                     var feature = map.forEachFeatureAtPixel(evt.pixel,
                         function(feature) {
+                            console.log(feature);
                             return feature;
                         });
                         if (feature) {
@@ -629,7 +632,8 @@
                             var geometry = feature.getGeometry();
                             var coord = geometry.getCoordinates();
                             $('.popup-content').html(
-                                '<p>' + feature.get('name') + '</p>'
+                                '<p>' + feature.get('name') + '</p>' +
+                                '<p ng-click="TandC.addTrip(TandC.element)" class="link">Add to Trip</p>'
                             );
                             map.getView().animate({zoom: 12}, {center: coord});
                             popupOverlay.setPosition(coord);
@@ -812,7 +816,6 @@
         return {
             restrict: 'E',
             scope: {
-                popupelm: '@',
                 tripData: '@',
             },
             link: setupMap
@@ -826,8 +829,11 @@
             var element = 'map';
             var map;
             var popupOverlay = new ol.Overlay({
-                element: $('#popup')[0]
+                element: $('trip#popup')[0]
             });
+            // var summary = new ol.Overlay({
+            //     element: $('#summary')[0],
+            // });
 
             console.log('trip data', $scope.tripData);
 
@@ -850,7 +856,7 @@
                     overlays: [popupOverlay],
                     view: new ol.View({
                         center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
-                        zoom: 9.5,
+                        zoom: 11,
                         maxZoom: 20,
                         minZoom: 2
                     })
@@ -858,42 +864,33 @@
                 return builtMap;
             }
 
-            /**
-             * transforms resolved ajaxed data passed via StateParams to pass into
-             * configuration functions.  Used by setInterval to wait for stateParams data
-             * @return {void}
-             */
-            function findTrip() {
-                if (!JSON.parse(sessionStorage.getItem('trip')).trip) {
-                    return;
-                }
-                else {
-                    var campgrounds = JSON.parse(sessionStorage.getItem('trip')).trip.campgrounds;
-                    campgrounds.forEach(function markAndPlotCampgrounds(campground) {
-                        var campgroundCoord = [campground.longitude, campground.latitude];
-                        addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground');
-                    });
+            var campgrounds = JSON.parse($scope.tripData).trip.campgrounds ||  JSON.parse(sessionStorage.getItem('trip')).trip.campgrounds;
+            campgrounds.forEach(function markAndPlotCampgrounds(campground) {
+                var campgroundCoord = [campground.longitude, campground.latitude];
+                addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground');
+            });
 
-                    var trails = JSON.parse(sessionStorage.getItem('trip')).trails;
-                    trails.forEach( function markAndPlottrails(trail){
-                        var trailCoordinates = [];
-                        var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
-                        addTrailheadMarkers(centerLayers(trailheadCoord), trail.name, 'trail');
-                        trail.line.forEach(function plotTrail(trailNode){
-                            var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
-                            trailCoordinates.push(transformTrailNode);
-                        });
-                        createTrailLayers(trailCoordinates);
-                    });
-                    window.clearInterval(waitForMarkerData);
-                    // trailheadMarkers = checkDupTrailheads(trailheadMarkers);
-                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
-                    markerClick();
-                }
-            }
-
-            var waitForMarkerData = window.setInterval(findTrip,100);
-
+            var trails = JSON.parse($scope.tripData).trails ||  JSON.parse(sessionStorage.getItem('trip')).trails;
+            trails.forEach( function markAndPlottrails(trail){
+                var trailCoordinates = [];
+                var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
+                addTrailheadMarkers(centerLayers(trailheadCoord), trail.name, 'trail');
+                trail.line.forEach(function plotTrail(trailNode){
+                    var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
+                    trailCoordinates.push(transformTrailNode);
+                });
+                createTrailLayers(trailCoordinates);
+            });
+            map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
+            $('.popup-content').html(
+                '<h4>' + JSON.parse($scope.tripData).trip.name + '</h4>' +
+                '<p>Date: ' + JSON.parse($scope.tripData).trip.start_date + '</p>' +
+                '<h5>Staying At</h5>' +
+                '<p>-'+ JSON.parse($scope.tripData).trip.campgrounds[0].name +'</p>' +
+                '<h5>Exploring</h5>'
+                // '<p>'+ JSON.parse($scope.tripData).trails[0].name + '</p>'
+            );
+            popupOverlay.setPosition(JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords);
             // $scope.$watch('popupelm', function(){
             //     if ($scope.popupelm === '') {
             //         return;
@@ -916,26 +913,26 @@
             //     }
             // });
 
-            function markerClick() {
-                map.on('click', function(evt) {
-                    var feature = map.forEachFeatureAtPixel(evt.pixel,
-                        function(feature) {
-                            return feature;
-                        });
-                        if (feature) {
-                            if (feature.get('name') === 'TrailLine') {
-                                return;
-                            }
-                            var geometry = feature.getGeometry();
-                            var coord = geometry.getCoordinates();
-                            $('.popup-content').html(
-                                '<p>' + feature.get('name') + '</p>'
-                            );
-                            map.getView().animate({zoom: 12}, {center: coord});
-                            popupOverlay.setPosition(coord);
+
+            map.on('click', function(evt) {
+                var feature = map.forEachFeatureAtPixel(evt.pixel,
+                    function(feature) {
+                        return feature;
+                    });
+                    if (feature) {
+                        if (feature.get('name') === 'TrailLine') {
+                            return;
                         }
-                });
-            }
+                        var geometry = feature.getGeometry();
+                        var coord = geometry.getCoordinates();
+                        $('.popup-content').html(
+                            '<p>' + feature.get('name') + '</p>'
+                        );
+                        map.getView().animate({zoom: 12}, {center: coord});
+                        popupOverlay.setPosition(coord);
+                    }
+            });
+
         }
 
         /**
@@ -1204,6 +1201,7 @@
                 method: 'POST',
                 data: {
                     trip: {
+                        name: trip.name,
                         start_date: trip.start_date,
                         end_date: trip.end_date,
                         trip_type: trip.type,
@@ -1218,6 +1216,7 @@
                 }
             })
             .then(function success(response) {
+                console.log(response);
                 return response.data;
             })
             .catch(function error(err) {

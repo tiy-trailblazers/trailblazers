@@ -17,6 +17,7 @@
                 window.sessionStorage.removeItem('TsandCs');
                 window.sessionStorage.removeItem('user');
                 window.sessionStorage.removeItem('userToken');
+                window.sessionStorage.removeItem('trip');
                 vm.user = null;
                 $('#map')[0].style.height = '100vh';
                 $state.go('home');

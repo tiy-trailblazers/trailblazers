@@ -36,6 +36,7 @@
                 method: 'POST',
                 data: {
                     trip: {
+                        name: trip.name,
                         start_date: trip.start_date,
                         end_date: trip.end_date,
                         trip_type: trip.type,
@@ -50,6 +51,7 @@
                 }
             })
             .then(function success(response) {
+                console.log(response);
                 return response.data;
             })
             .catch(function error(err) {

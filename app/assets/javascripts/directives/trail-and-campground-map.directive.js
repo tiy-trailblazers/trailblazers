@@ -32,7 +32,7 @@
             var element = 'map';
             var map;
             var popupOverlay = new ol.Overlay({
-               element: document.getElementById('popup')
+               element: $('#popup')[0]
             });
 
             /**
@@ -127,8 +127,10 @@
 
             function markerClick() {
                 map.on('click', function(evt) {
+                    console.log('event', evt);
                     var feature = map.forEachFeatureAtPixel(evt.pixel,
                         function(feature) {
+                            console.log(feature);
                             return feature;
                         });
                         if (feature) {
@@ -138,7 +140,8 @@
                             var geometry = feature.getGeometry();
                             var coord = geometry.getCoordinates();
                             $('.popup-content').html(
-                                '<p>' + feature.get('name') + '</p>'
+                                '<p>' + feature.get('name') + '</p>' +
+                                '<p ng-click="TandC.addTrip(TandC.element)" class="link">Add to Trip</p>'
                             );
                             map.getView().animate({zoom: 12}, {center: coord});
                             popupOverlay.setPosition(coord);
