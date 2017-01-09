@@ -4,12 +4,13 @@
     angular.module('trailblazer')
         .controller('TripController', TripController);
 
-    TripController.$inject = [ '$scope', '$stateParams', 'TripService' ];
+    TripController.$inject = [ '$scope', '$state', 'TripService' ];
 
-    function TripController($scope, $stateParams, TripService) {
+    function TripController($scope, $state, TripService) {
         var vm = this;
         vm.tripCreate = null;
         vm.trip = {};
+        vm.plannedTrip = null;
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
         vm.search = null;
@@ -19,7 +20,12 @@
         };
 
         vm.postTrip = function postTrip(trip) {
-            TripService.postTrip(trip);
+            TripService.postTrip(trip)
+            .then(function success(data) {
+                vm.plannedTrip = data;
+                window.sessionStorage.setItem('trip', angular.toJson(data));
+                $state.go('trip', {id: data.trip.id, trip:data});
+            });
         };
 
         vm.newSearchForm = function newSearchForm() {

@@ -18,7 +18,6 @@
 
         function addTorCtoTrip (tORc) {
             tsORcs.push(tORc);
-            console.log('array', tsORcs);
         }
 
         function postTrip(trip) {
@@ -26,15 +25,12 @@
             var tripCampgrounds = [];
             var parks = [];
             tsORcs.forEach(function gettORcID(tORc) {
-                if (tORc.toilets) {
+                if (tORc.campground_type || tORc.campground_type === null) {
                     tripCampgrounds.push(tORc.id);
                 } else {
                     tripTrails.push(tORc.id);
                 }
-                console.log('trails', tripTrails);
-                console.log('campgrounds', tripCampgrounds);
             });
-            console.log(trip);
             return $http({
                 url: '/trips',
                 method: 'POST',
@@ -54,7 +50,7 @@
                 }
             })
             .then(function success(response) {
-                console.log(response);
+                return response.data;
             })
             .catch(function error(err) {
                 console.log(err);

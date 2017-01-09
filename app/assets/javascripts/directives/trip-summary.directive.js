@@ -2,24 +2,25 @@
     'use strict';
 
     angular.module('trailblazer')
-        .directive('tandcmap', TrailandCampgroundMapDirective);
+        .directive('trip', TripSummaryDirective);
 
-    TrailandCampgroundMapDirective.$inject = ['$stateParams'];
+    TripSummaryDirective.$inject = [];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function TrailandCampgroundMapDirective($stateParams) {
+    function TripSummaryDirective() {
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
 
         return {
-            restrict: 'EA',
+            restrict: 'E',
             scope: {
                 popupelm: '@',
+                tripData: '@',
             },
             link: setupMap
         };
@@ -32,8 +33,10 @@
             var element = 'map';
             var map;
             var popupOverlay = new ol.Overlay({
-               element: document.getElementById('popup')
+                element: $('#popup')[0]
             });
+
+            console.log('trip data', $scope.tripData);
 
             /**
              * Constructs openLayers Map
@@ -53,7 +56,7 @@
                     layers: vectorLayers,
                     overlays: [popupOverlay],
                     view: new ol.View({
-                        center: centerLayers($stateParams.centerCoords),
+                        center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
                         zoom: 9.5,
                         maxZoom: 20,
                         minZoom: 2
@@ -67,18 +70,18 @@
              * configuration functions.  Used by setInterval to wait for stateParams data
              * @return {void}
              */
-            function findCampgroundsAndTrails() {
-                if (!$stateParams.campgrounds || !JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds) {
+            function findTrip() {
+                if (!JSON.parse(sessionStorage.getItem('trip')).trip) {
                     return;
                 }
                 else {
-                    var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+                    var campgrounds = JSON.parse(sessionStorage.getItem('trip')).trip.campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
                         addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground');
                     });
 
-                    var trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+                    var trails = JSON.parse(sessionStorage.getItem('trip')).trails;
                     trails.forEach( function markAndPlottrails(trail){
                         var trailCoordinates = [];
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
@@ -91,39 +94,34 @@
                     });
                     window.clearInterval(waitForMarkerData);
                     // trailheadMarkers = checkDupTrailheads(trailheadMarkers);
-                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(checkDupTrailheads(trailheadMarkers)), buildMarker(trailLineLayers));
+                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
                     markerClick();
-                    $('tandcmap[id="map"]')[0].style.height = '72vh';
                 }
             }
 
-            var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
+            var waitForMarkerData = window.setInterval(findTrip,100);
 
-            if (JSON.parse(sessionStorage.getItem('user'))) {
-                $('nav.noprofile-nav')[0].style.display = 'none';
-            }
-
-            $scope.$watch('popupelm', function(){
-                if ($scope.popupelm === '') {
-                    return;
-                } else {
-                    var tORcObj = JSON.parse($scope.popupelm);
-                    console.log(tORcObj);
-                    var trailCoordinates = ol.proj.fromLonLat([tORcObj.longitude, tORcObj.latitude]);
-                    if (tORcObj.campground_type) {
-                        $('.popup-content').html(
-                            '<p>' + tORcObj.name + '<p>'
-                        );
-                    } else {
-                        $('.popup-content').html(
-                            '<p>' + tORcObj.name + '<p>' +
-                            '<p>Length: ' + Math.round(Number(tORcObj.length)*10)/10 + ' miles<p>'
-                        );
-                    }
-                    map.getView().animate({zoom: 12}, {center: trailCoordinates});
-                    popupOverlay.setPosition(trailCoordinates);
-                }
-            });
+            // $scope.$watch('popupelm', function(){
+            //     if ($scope.popupelm === '') {
+            //         return;
+            //     } else {
+            //         var tORcObj = JSON.parse($scope.popupelm);
+            //         console.log(tORcObj);
+            //         var trailCoordinates = ol.proj.fromLonLat([tORcObj.longitude, tORcObj.latitude]);
+            //         if (tORcObj.campground_type) {
+            //             $('.popup-content').html(
+            //                 '<p>' + tORcObj.name + '<p>'
+            //             );
+            //         } else {
+            //             $('.popup-content').html(
+            //                 '<p>' + tORcObj.name + '<p>' +
+            //                 '<p>Length: ' + Math.round(Number(tORcObj.length)*10)/10 + ' miles<p>'
+            //             );
+            //         }
+            //         map.getView().animate({zoom: 12}, {center: trailCoordinates});
+            //         popupOverlay.setPosition(trailCoordinates);
+            //     }
+            // });
 
             function markerClick() {
                 map.on('click', function(evt) {
@@ -281,21 +279,6 @@
             var center = [ eastWest, northSouth ];
 
             return center;
-        }
-
-        function checkDupTrailheads(icons) {
-            var tocheckarr = [];
-            icons.forEach(function(a) {
-                var tocheck = a.H.name;
-                tocheckarr.push(tocheck);
-            });
-            var checked = icons;
-            tocheckarr.filter(function(value, index, array){
-                if(array.indexOf(value) !== index){
-                    icons.splice(array.indexOf(value), (array.indexOf(value) + 1));
-                }
-            });
-            return checked;
         }
     }
 }());
