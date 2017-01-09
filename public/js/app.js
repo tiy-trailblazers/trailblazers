@@ -86,6 +86,29 @@
     'use strict';
 
     angular.module('trailblazer')
+        .controller('NavController', NavController);
+
+    NavController.inject = ['$timeout'];
+
+    function NavController($timeout) {
+        var vm = this;
+        vm.signin = null;
+
+        vm.signingIn = function signinIn() {
+            vm.signin = !vm.signin;
+        };
+
+        vm.timer = function timer() {
+            $timeout(vm.signingIn, 60000);
+            return true;
+        };
+    }
+}());
+
+(function() {
+    'use strict';
+
+    angular.module('trailblazer')
         .controller('RadiusSearchController', RadiusSearchController);
 
     RadiusSearchController.$inject = [ '$state', '$stateParams', 'TrailandCampgroundService' ];
@@ -228,6 +251,7 @@
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
+        vm.search = null;
 
         vm.createTrip = function createTrip() {
             vm.tripCreate = true;
@@ -235,6 +259,10 @@
 
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip);
+        };
+
+        vm.newSearchForm = function newSearchForm() {
+            vm.search = !vm.search;
         };
 
         function TandCSearch() {
@@ -274,7 +302,7 @@
                 window.sessionStorage.removeItem('user');
                 window.sessionStorage.removeItem('userToken');
                 vm.user = null;
-                $('.noprofile-nav')[0].style.display = 'block';
+                $('#map')[0].style.height = '100vh';
                 $state.go('home');
             })
             .catch(function error(err) {
@@ -534,6 +562,7 @@
                     // trailheadMarkers = checkDupTrailheads(trailheadMarkers);
                     map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(checkDupTrailheads(trailheadMarkers)), buildMarker(trailLineLayers));
                     markerClick();
+                    $('#map')[0].style.height = '72vh';
                 }
             }
 
@@ -815,7 +844,8 @@
                     south: south,
                     west: west,
                     east: east,
-                    min_length: 0.2
+                    min_length: 0.2,
+                    max_length: 20,
                 }
             })
             .then( function transformResponse(response) {

@@ -479,74 +479,79 @@ nav {
         nav.noprofile-nav form input:focus {
           outline: #fff700; }
 
-nav.profile-nav {
-  min-width: 225px; }
-  nav.profile-nav section {
-    width: 100%;
-    margin-left: 5%;
-    text-align: center;
-    margin-left: 0; }
-    nav.profile-nav section.past-trips h2 {
-      text-align: center;
-      color: #ffff5e; }
-  nav.profile-nav aside.user-info {
+nav.profile-nav section {
+  width: 100%;
+  margin-left: 5%;
+  text-align: center;
+  margin-left: 0; }
+  nav.profile-nav section.past-trips header {
     display: none; }
-  nav.profile-nav article.plan-trip {
-    margin: 4%;
-    width: 80%;
-    margin: 0.5em auto;
-    font-family: 'Patrick Hand SC', cursive; }
-    nav.profile-nav article.plan-trip::after {
-      display: block;
-      content: '';
-      clear: both; }
-    nav.profile-nav article.plan-trip h4 {
+    nav.profile-nav section.past-trips header h2 {
+      margin-bottom: 0.5em;
       text-align: center;
-      font-size: 1.2em;
-      margin-bottom: 0.2em; }
-    nav.profile-nav article.plan-trip h6 {
-      text-align: center;
-      font-size: 1em;
-      margin: 0.2em; }
-    nav.profile-nav article.plan-trip form {
-      width: 90%;
-      background-color: #ffffff;
-      margin: 0.5em auto;
-      border-radius: 2%;
-      border: 1px solid #000000;
-      box-shadow: 0 0 0.5em #ffffff; }
-      nav.profile-nav article.plan-trip form p {
-        margin: 0.1em;
-        text-decoration: underline; }
-      nav.profile-nav article.plan-trip form h3 {
-        color: #000000;
-        margin: 0.6em 0; }
-      nav.profile-nav article.plan-trip form input {
-        font-family: 'Patrick Hand SC', cursive;
-        width: 90%;
-        box-sizing: border-box; }
-        nav.profile-nav article.plan-trip form input:last-child {
-          background-color: #ffff5e;
-          border: #000000;
-          width: 80px;
-          margin-top: 0.1em;
-          margin-bottom: 0.9em;
-          box-shadow: 0 0 0.5em #000000; }
-        nav.profile-nav article.plan-trip form input:focus {
-          outline: #fff700; }
-      nav.profile-nav article.plan-trip form ul {
-        margin: 0.3em 0;
-        padding: 2%;
-        list-style: circle; }
-        nav.profile-nav article.plan-trip form ul li {
-          padding: 2%;
-          color: #000000; }
-    nav.profile-nav article.plan-trip a {
       color: #ffff5e; }
-      nav.profile-nav article.plan-trip a:hover {
-        text-decoration: underline;
-        color: #cecece;
-        cursor: pointer; }
+  nav.profile-nav section.past-trips .trip-link {
+    display: none; }
+nav.profile-nav aside.user-info {
+  display: none; }
+nav.profile-nav article.plan-trip {
+  margin: 4%;
+  width: 80%;
+  margin: 0.5em auto;
+  font-family: 'Patrick Hand SC', cursive; }
+  nav.profile-nav article.plan-trip::after {
+    display: block;
+    content: '';
+    clear: both; }
+  nav.profile-nav article.plan-trip aside.new-search form {
+    margin-top: 1.5em; }
+  nav.profile-nav article.plan-trip h4 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 0.2em; }
+  nav.profile-nav article.plan-trip h6 {
+    text-align: center;
+    font-size: 1em;
+    margin: 0.2em; }
+  nav.profile-nav article.plan-trip form {
+    width: 90%;
+    background-color: #ffffff;
+    margin: 0.5em auto;
+    border-radius: 2%;
+    border: 1px solid #000000;
+    box-shadow: 0 0 0.5em #ffffff; }
+    nav.profile-nav article.plan-trip form p {
+      margin: 0.1em;
+      text-decoration: underline; }
+    nav.profile-nav article.plan-trip form h3 {
+      color: #000000;
+      margin: 0.6em 0; }
+    nav.profile-nav article.plan-trip form input {
+      font-family: 'Patrick Hand SC', cursive;
+      width: 90%;
+      box-sizing: border-box; }
+      nav.profile-nav article.plan-trip form input:last-child {
+        background-color: #ffff5e;
+        border: #000000;
+        width: 80px;
+        margin-top: 0.1em;
+        margin-bottom: 0.9em;
+        box-shadow: 0 0 0.5em #000000; }
+      nav.profile-nav article.plan-trip form input:focus {
+        outline: #fff700; }
+    nav.profile-nav article.plan-trip form ul {
+      margin: 0.3em 0;
+      padding: 2%;
+      list-style: circle; }
+      nav.profile-nav article.plan-trip form ul li {
+        padding: 2%;
+        color: #000000; }
+  nav.profile-nav article.plan-trip a {
+    color: #ffff5e; }
+    nav.profile-nav article.plan-trip a:hover {
+      text-decoration: underline;
+      color: #cecece;
+      cursor: pointer; }
 
 @media screen and (min-width: 450px) {
   nav.noprofile-nav article {
@@ -558,6 +563,14 @@ nav.profile-nav {
     text-align: right;
     width: 50%;
     float: left; }
+  nav.profile-nav section.past-trips header {
+    display: block; }
+    nav.profile-nav section.past-trips header h2 {
+      margin-bottom: 0.5em;
+      text-align: center;
+      color: #ffff5e; }
+  nav.profile-nav section.past-trips .trip-link {
+    display: block; }
   nav.profile-nav aside.user-info {
     display: block;
     padding-top: 6%;
@@ -565,15 +578,20 @@ nav.profile-nav {
     nav.profile-nav aside.user-info::after {
       display: block;
       content: '';
-      clear: both; } }
+      clear: both; }
+  nav.profile-nav .past-trips header {
+    display: block; }
+  nav.profile-nav .past-trips article.trip-link {
+    display: block; }
+  nav.profile-nav .past-trips section .past-trips header {
+    display: block; }
+  nav.profile-nav .past-trips section .past-trips article.trip-link {
+    display: block; } }
 @media screen and (min-width: 1000px) {
   nav {
-    width: 35%;
-    min-width: 135px;
-    max-width: 355px;
+    width: 32%;
     height: 100vh;
-    float: left;
-    height: 100vh; }
+    float: left; }
     nav li {
       padding: 5%; }
     nav.noprofile-nav article {
@@ -582,8 +600,7 @@ nav.profile-nav {
       width: 90%; }
 
   nav.profile-nav {
-    width: 35%;
-    min-width: 325px; }
+    width: 32%; }
     nav.profile-nav li {
       padding: 1%; }
     nav.profile-nav aside.user-info {
@@ -592,10 +609,10 @@ nav.profile-nav {
       text-align: center;
       padding-left: 4%; } }
 #signin {
-  min-width: 200px;
+  min-width: 250px;
   max-width: 350px;
   width: 50%;
-  margin: 0 auto;
+  margin: 1em auto;
   margin-bottom: 3em;
   border: 1px solid #111111;
   margin-top: 3em;
@@ -630,12 +647,12 @@ nav.profile-nav {
         outline: none;
         white-space: nowrap;
         -webkit-user-select: none;
-        cursor: pointer;
         text-shadow: 1px 1px #fff;
         font-weight: 700;
         font-size: 10pt; }
       #signin form input.file:hover::before {
-        border-color: black; }
+        border-color: black;
+        cursor: pointer; }
       #signin form input.file:active::before {
         background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }
       #signin form input:last-child {
@@ -647,16 +664,17 @@ nav.profile-nav {
         text-align: center;
         border-radius: 5%;
         border: 1px solid #000000;
-        box-shadow: 0 0 0.5em #000000; }
+        box-shadow: 0 0 0.5em #000000;
+        cursor: pointer; }
         #signin form input:last-child:focus {
           outline: none; }
   #signin a {
     display: block;
     font-family: 'Patrick Hand SC', cursive;
     text-align: center;
-    margin-bottom: 0.5em; }
+    margin-bottom: 0.5em;
+    cursor: pointer; }
     #signin a:hover {
-      cursor: pointer;
       text-decoration: underline; }
   #signin article.create-user input:last-child {
     margin-top: -10px;
@@ -664,10 +682,10 @@ nav.profile-nav {
 
 @media screen and (min-width: 1000px) {
   #signin {
-    margin-left: 35%;
     position: absolute;
-    top: 20%;
-    left: 12%; } }
+    top: 25%;
+    left: 36%;
+    margin-top: 0; } }
 #map {
   display: block;
   margin: 0 auto;
@@ -677,12 +695,9 @@ nav.profile-nav {
   #map canvas {
     display: block; }
 
-#map.tandc {
-  height: 75vh; }
-
 @media screen and (min-width: 1000px) {
   #map {
-    width: 65%;
+    width: 68%;
     float: left; } }
 #buffer {
   min-width: 200px;
@@ -731,62 +746,57 @@ nav.profile-nav {
     position: absolute;
     top: 20%;
     left: 12%; } }
-#map-items-list {
+#map-item-list {
   width: 100%;
-  float: left;
+  height: 28vh;
+  float: right;
   font-family: 'Patrick Hand SC', cursive;
-  background-color: #eaeaea;
   text-align: center;
-  padding-top: 5px; }
-  #map-items-list h1 {
-    margin: 0; }
-
-section.trails, section.campgrounds {
-  height: 115px; }
-
-.trails, .campgrounds {
-  width: 50%;
-  margin-bottom: 0;
+  padding-top: 5px;
+  border: 1px solid #999999;
   box-sizing: border-box;
-  background-color: #eaeaea;
-  font-family: 'Patrick Hand SC', cursive;
-  float: left;
-  overflow: scroll;
-  padding-right: 5px; }
-  .trails img, .campgrounds img {
-    height: 25px;
+  box-shadow: inset 0 0 1em #ffff5e; }
+  #map-item-list h1 {
+    margin: 0;
+    text-decoration: underline; }
+  #map-item-list .trails, #map-item-list .campgrounds {
+    width: 50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand SC', cursive;
     float: left;
-    padding-right: 10px;
-    padding-left: 13px; }
-  .trails h3, .campgrounds h3 {
-    margin-top: 0;
-    padding-left: 18px;
-    margin-bottom: 12px;
-    margin-top: 5px;
-    width: 50%; }
-  .trails ul, .campgrounds ul {
-    margin-top: 0;
-    padding-left: 0; }
-    .trails ul li, .campgrounds ul li {
-      padding-left: 3.5em;
+    padding-right: 5px; }
+    #map-item-list .trails h3, #map-item-list .campgrounds h3 {
+      margin: 0.3em 0; }
+      #map-item-list .trails h3 img, #map-item-list .campgrounds h3 img {
+        height: 25px;
+        padding-left: 13px; }
+    #map-item-list .trails ul, #map-item-list .campgrounds ul {
+      box-sizing: border-box;
+      margin-top: 0;
+      padding-left: 0;
       display: block;
-      list-style: none;
-      padding-top: 2px;
-      padding-bottom: 2px;
-      cursor: pointer; }
-      .trails ul li:hover, .campgrounds ul li:hover {
-        background-color: #888888; }
+      height: 12vh;
+      overflow: scroll; }
+      #map-item-list .trails ul li, #map-item-list .campgrounds ul li {
+        text-align: left;
+        display: block;
+        list-style: none;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        cursor: pointer; }
+        #map-item-list .trails ul li:hover, #map-item-list .campgrounds ul li:hover {
+          background-color: #888888; }
+  #map-item-list .trails:first-child h3 {
+    padding-right: 40px; }
 
-@media screen and (min-width: 600px) {
-  #map-items-list {
-    width: 70%; }
-
-  .trails, .campgrounds {
-    width: 35%; } }
+@media screen and (min-width: 1000px) {
+  #map-item-list {
+    width: 68%; } }
 #popup {
   position: absolute;
   font-size: 13px;
-  bottom: 33px;
+  bottom: 130px;
   left: -31px;
   background-color: black;
   opacity: 0.7;

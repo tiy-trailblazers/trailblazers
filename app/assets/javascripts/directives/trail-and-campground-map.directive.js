@@ -93,6 +93,7 @@
                     // trailheadMarkers = checkDupTrailheads(trailheadMarkers);
                     map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(checkDupTrailheads(trailheadMarkers)), buildMarker(trailLineLayers));
                     markerClick();
+                    $('#map')[0].style.height = '72vh';
                 }
             }
 
