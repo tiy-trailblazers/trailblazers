@@ -1,45 +1,22 @@
 namespace :trails do
+
   desc "TODO"
   task create: :environment do
-    usa = {south: 36.56845660148896, west:
--81.52469239955084, north:
-37.772723556626474, east: -78.03284022920927}
+    bounding_box = { south: 47.183150925877044, west: -124.80914762375481, north: 48.3301196276428, east: -122.55153714060215 }
 
-    height = usa[:north] - usa[:south]
+    height = bounding_box[:north] - bounding_box[:south]
 
-    width = usa[:east] - usa[:west]
+    width = bounding_box[:east] - bounding_box[:west]
 
     box_height = height / 5
     box_width = width / 5
 
-    (0..5).to_a.each do |x|
+    [5].each do |x|
       (0..5).to_a.each do |y|
         p "(#{x}, #{y})"
-        area = OverpassArea.new(usa[:south] + y * box_height, usa[:west] + x * box_width, usa[:south] + (y + 1) * box_height, usa[:west] + (x + 1) * box_width)
-
-        p area.query_string
-        p area.all_trails.size
-
-        area.all_trails.each do |trail|
-          next if Trail.find_by(osm_id: trail[:id])
-          my_trail = Trail.create!({
-            osm_id: trail[:id],
-            startlonlat: area.start_lonlat(trail),
-            length: area.length_of_trail(trail),
-            name: trail[:tags]["name"],
-            bicycle: trail[:tags]["bicyle"]=="yes",
-            foot: trail[:tags]["foot"]=="yes",
-            path: area.linestring(trail),
-            latitude: area.members_as_nodes(trail).first[:lat],
-            longitude: area.members_as_nodes(trail).first[:lon]
-          })
-          trail.delete(:members)
-          my_trail.update!(source: trail)
-          print "."
-        end
+        OverpassArea.new(bounding_box[:south] + y * box_height, bounding_box[:west] + x * box_width, bounding_box[:south] + (y + 1) * box_height, bounding_box[:west] + (x + 1) * box_width).create_trails
       end
     end
-
   end
 
   desc "TODO"
@@ -73,37 +50,12 @@ namespace :trails do
 
   desc "TODO"
   task merge_trails: :environment do
-    Trail.select("name, count(*)").where("state = 'VA' and name is not null").group("name").having("count(*)>1").each do |group|
-
-      clean_name = group.name.gsub("'", "''")
-
-      line_merge_array = Trail.select("name, ST_Linemerge(ST_Union(path)) as path, count(*)").where("name = '#{clean_name}' and state = 'VA'").group("name").to_a
-
-      line_merge = line_merge_array.first
-
-      begin
-        trail_path = Trail.join_multi_line_string(line_merge.path)
-      rescue
-        next
+    Trail.duplicate_trail_names.each do |name|
+      clean_name = name.gsub("'", "''")
+      trails = Trail.where("name = '#{clean_name}'").to_a
+      Trail.cluster_trails(trails).each do |trail_cluster|
+        Trail.merge_connected_trails!(trail_cluster)
       end
-
-      trail_head = trail_path.start_point
-      clean_name = line_merge.name.gsub("'", "''")
-      same_name_trails = Trail.where("name = '#{clean_name}'")
-
-      first_trail = same_name_trails.to_a.shift
-      first_trail.update!(
-        {
-          length: trail_path.length,
-          path: trail_path,
-          startlonlat: RGeo::Geographic.spherical_factory(srid: 4326).point(trail_head.x, trail_head.y),
-          latitude: trail_head.y,
-          longitude: trail_head.x
-        }
-      )
-      same_name_trails.delete_all
-
     end
   end
-
 end

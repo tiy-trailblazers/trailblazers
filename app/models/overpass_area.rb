@@ -29,6 +29,27 @@ class OverpassArea
     @list_of_trails ||= overpass.raw_query(query_string)
   end
 
+  def create_trails
+    p all_trails.size
+    all_trails.each do |trail|
+      next if Trail.find_by(osm_id: trail[:id])
+      my_trail = Trail.create!({
+        osm_id: trail[:id],
+        startlonlat: start_lonlat(trail),
+        length: length_of_trail(trail),
+        name: trail[:tags]["name"],
+        bicycle: trail[:tags]["bicyle"]=="yes",
+        foot: trail[:tags]["foot"]=="yes",
+        path: linestring(trail),
+        latitude: members_as_nodes(trail).first[:lat],
+        longitude: members_as_nodes(trail).first[:lon]
+      })
+      trail.delete(:members)
+      my_trail.update!(source: trail)
+      print "."
+    end
+  end
+
   def all_nodes
     @all_nodes ||= list_of_trails.select {|object| object[:type] == "node"}
   end
@@ -88,4 +109,5 @@ class OverpassArea
       length_of_trail(trail) > 0.1
     end
   end
+
 end

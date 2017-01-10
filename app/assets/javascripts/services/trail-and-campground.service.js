@@ -33,7 +33,7 @@
                     south: south,
                     west: west,
                     east: east,
-                    min_length: 0.2,
+                    min_length: 0.01,
                     max_length: 20
                 }
             })
