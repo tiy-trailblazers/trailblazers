@@ -8,16 +8,30 @@
 
     function TripService($http) {
         var tsORcs = [];
+        var markerTorC = null;
 
         return {
             tsORcs: tsORcs,
             addTorCtoTrip: addTorCtoTrip,
             postTrip: postTrip,
             patchTrip: patchTrip,
+            mapClickedpopup: mapClickedpopup,
+            addMapClickedPopup: addMapClickedPopup
         };
 
         function addTorCtoTrip (tORc) {
+            console.log('in trip service', tORc);
             tsORcs.push(tORc);
+        }
+
+        function mapClickedpopup (tORc) {
+            console.log('service marker', tORc);
+            markerTorC = tORc;
+        }
+
+        function addMapClickedPopup() {
+            console.log('addMarkerElement');
+            tsORcs.push(markerTorC);
         }
 
         function postTrip(trip) {
@@ -25,7 +39,7 @@
             var tripCampgrounds = [];
             var parks = [];
             tsORcs.forEach(function gettORcID(tORc) {
-                if (tORc.campground_type || tORc.campground_type === null) {
+                if (tORc.num_sites) {
                     tripCampgrounds.push(tORc.id);
                 } else {
                     tripTrails.push(tORc.id);

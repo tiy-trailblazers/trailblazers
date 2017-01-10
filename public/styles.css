@@ -793,7 +793,8 @@ nav.profile-nav article.plan-trip {
 @media screen and (min-width: 1000px) {
   #map-item-list {
     width: 68%; } }
-#popup {
+#popup, #trailpopup, #mapClicked-popup {
+  font-family: 'Patrick Hand SC', cursive;
   position: absolute;
   font-size: 13px;
   bottom: 33px;
@@ -805,18 +806,19 @@ nav.profile-nav article.plan-trip {
   color: white;
   border: 2px solid black;
   border-radius: 5px; }
-  #popup p:first-child {
+  #popup p:first-child, #trailpopup p:first-child, #mapClicked-popup p:first-child {
     padding-left: 20px; }
-  #popup p.link {
+  #popup p.link, #trailpopup p.link, #mapClicked-popup p.link {
+    cursor: pointer;
     color: #949494; }
-    #popup p.link:hover {
+    #popup p.link:hover, #trailpopup p.link:hover, #mapClicked-popup p.link:hover {
       text-decoration: underline;
       color: #ffff5e; }
-  #popup p {
+  #popup p, #trailpopup p, #mapClicked-popup p {
     padding-left: 25px;
     padding-right: 25px; }
 
-#popup:before {
+#popup:before, #mapClicked-popup:before {
   content: ' ';
   position: absolute;
   left: 25px;
@@ -831,5 +833,23 @@ nav.profile-nav article.plan-trip {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg); }
+
+#trailpopup {
+  font-family: 'Patrick Hand SC', cursive;
+  height: 180px;
+  width: 350px;
+  bottom: 55px;
+  text-align: center; }
+  #trailpopup h4 {
+    margin-bottom: 0; }
+  #trailpopup h5 {
+    color: #ffff5e;
+    margin: 0.2em 0; }
+  #trailpopup h5:last-child {
+    margin-top: 0.5em;
+    clear: both; }
+  #trailpopup section {
+    width: 50%;
+    float: left; }
 
 /*# sourceMappingURL=styles.css.map */

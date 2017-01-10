@@ -1,4 +1,5 @@
-#popup {
+#popup, #trailpopup, #mapClicked-popup {
+    font-family: 'Patrick Hand SC', cursive;
     position: absolute;
     font-size: 13px;
     bottom: 33px;
@@ -15,6 +16,7 @@
       padding-left: 20px;
     }
     p.link {
+      cursor: pointer;
       color: #949494;
       &:hover {
         text-decoration: underline;
@@ -26,7 +28,7 @@
       padding-right: 25px;
     }
 }
-#popup:before {
+#popup:before, #mapClicked-popup:before {
 	content: ' ';
 	position: absolute;
 	left: 25px;
@@ -41,4 +43,27 @@
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
+}
+
+#trailpopup {
+    font-family: 'Patrick Hand SC', cursive;
+    height: 180px;
+    width: 350px;
+    bottom: 55px;
+    text-align: center;
+    h4 {
+        margin-bottom: 0;
+    }
+    h5 {
+        color: #ffff5e;
+        margin: 0.2em 0;
+    }
+    h5:last-child {
+        margin-top: 0.5em;
+        clear: both;
+    }
+    section {
+        width: 50%;
+        float: left;
+    }
 }

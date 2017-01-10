@@ -32,13 +32,14 @@
             var element = 'map';
             var map;
             var popupOverlay = new ol.Overlay({
-                element: $('trip#popup')[0]
+                element: $('#popup')[0]
             });
-            // var summary = new ol.Overlay({
-            //     element: $('#summary')[0],
-            // });
+            console.log($('#trailpopup'));
+            var summary = new ol.Overlay({
+                element: $('#trailpopup')[0],
+            });
 
-            console.log('trip data', $scope.tripData);
+            // console.log('trip data', $scope.tripData);
 
             /**
              * Constructs openLayers Map
@@ -56,7 +57,7 @@
                     controls: ol.control.defaults(),
                     renderer: 'canvas',
                     layers: vectorLayers,
-                    overlays: [popupOverlay],
+                    overlays: [popupOverlay, summary],
                     view: new ol.View({
                         center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
                         zoom: 11,
@@ -85,15 +86,16 @@
                 createTrailLayers(trailCoordinates);
             });
             map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
-            $('.popup-content').html(
-                '<h4>' + JSON.parse($scope.tripData).trip.name + '</h4>' +
-                '<p>Date: ' + JSON.parse($scope.tripData).trip.start_date + '</p>' +
-                '<h5>Staying At</h5>' +
-                '<p>-'+ JSON.parse($scope.tripData).trip.campgrounds[0].name +'</p>' +
-                '<h5>Exploring</h5>'
-                // '<p>'+ JSON.parse($scope.tripData).trails[0].name + '</p>'
+            $('#trailpopup .popup-content').html(
+                '<h4>Your "' + JSON.parse($scope.tripData).trip.name + '" Adventure</h4>' +
+                '<p>Begins on ' + JSON.parse($scope.tripData).trip.start_date + '.</p>' +
+                '<section><h5>Staying At</h5>' +
+                '<p>-'+ JSON.parse($scope.tripData).trip.campgrounds[0].name +'</p></section>' +
+                '<section><h5>Exploring</h5>' +
+                '<p>'+  JSON.parse($scope.tripData).trails[0].name + '</p></section>' +
+                '<h5>There is no place like outside!</h5>'
             );
-            popupOverlay.setPosition(JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords);
+            summary.setPosition(JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords);
             // $scope.$watch('popupelm', function(){
             //     if ($scope.popupelm === '') {
             //         return;
@@ -128,7 +130,7 @@
                         }
                         var geometry = feature.getGeometry();
                         var coord = geometry.getCoordinates();
-                        $('.popup-content').html(
+                        $('#popup .popup-content').html(
                             '<p>' + feature.get('name') + '</p>'
                         );
                         map.getView().animate({zoom: 12}, {center: coord});
