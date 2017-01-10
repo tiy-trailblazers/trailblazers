@@ -48,13 +48,27 @@
 
         function findTsandCsSearchForm(searchValues) {
             console.log(searchValues);
-            // return $http({
-            //     url: 'map_items/search',
-            //     data: {
-            //         name: trail || campground
-            //         park_name: park
-            //     }
-            // });
+            var trail = searchValues.trail;
+            var campground = searchValues.campground;
+            var park = searchValues.park;
+            return $http({
+                url: 'map_items/search',
+                method: 'POST',
+                data: {
+                    name: trail || campground,
+                    park_name: park
+                }
+            })
+            .then(function success(response){
+                console.log(response);
+                var trails = response.data[0].trails;
+                var campgrounds = response.data[0].campgrounds;
+                $rootScope.searched = true;
+                return { trails: trails, campgrounds: campgrounds};
+            })
+            .catch(function error(err) {
+                console.log(err);
+            });
         }
 
     }

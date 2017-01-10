@@ -98,7 +98,15 @@
         vm.searchValues = {};
 
         vm.submitSearch = function submitSearch(searchValues) {
-            TrailandCampgroundService.findTsandCsSearchForm(searchValues);
+            TrailandCampgroundService.findTsandCsSearchForm(searchValues)
+                .then(function success(data) {
+                    var center = ol.proj.fromLonLat([ data.longitude, data.latitude]);
+                    //sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: center, transCoords: null}));
+                    $state.go('trails-and-campgrounds', {centerCoords: center, trails: data.trails, campgrounds: data.campgrounds });
+                })
+                .catch(function error(err){
+                    console.log(err);
+                });
         };
 
         vm.signingIn = function signinIn() {
@@ -301,7 +309,15 @@
         vm.searchValues = {};
 
         vm.submitSearch = function submitSearch(searchValues) {
-            TrailandCampgroundService.findTsandCsSearchForm(searchValues);
+            TrailandCampgroundService.findTsandCsSearchForm(searchValues)
+                .then(function success(data) {
+                    var center = ol.proj.fromLonLat([ data.longitude, data.latitude]);
+                    sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: center, transCoords: null}));
+                    $state.go('trails-and-campgrounds', {centerCoords: center, trails: data.trails, campgrounds: data.campgrounds });
+                })
+                .catch(function error(err){
+                    console.log(err);
+                });
         };
 
         vm.newSearchForm = function newSearchForm() {
@@ -590,13 +606,19 @@
                     return;
                 }
                 else {
-                    var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+                    var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds || [];
+                    if (campgrounds === [] ) {
+                        return;
+                    }
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
                         addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground', campground);
                     });
 
-                    var trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+                    var trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails || [];
+                    if (trails === [] ) {
+                        return;
+                    }
                     trails.forEach( function markAndPlottrails(trail){
                         var trailCoordinates = [];
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
@@ -1151,13 +1173,27 @@
 
         function findTsandCsSearchForm(searchValues) {
             console.log(searchValues);
-            // return $http({
-            //     url: 'map_items/search',
-            //     data: {
-            //         name: trail || campground
-            //         park_name: park
-            //     }
-            // });
+            var trail = searchValues.trail;
+            var campground = searchValues.campground;
+            var park = searchValues.park;
+            return $http({
+                url: 'map_items/search',
+                method: 'POST',
+                data: {
+                    name: trail || campground,
+                    park_name: park
+                }
+            })
+            .then(function success(response){
+                console.log(response);
+                var trails = response.data[0].trails;
+                var campgrounds = response.data[0].campgrounds;
+                $rootScope.searched = true;
+                return { trails: trails, campgrounds: campgrounds};
+            })
+            .catch(function error(err) {
+                console.log(err);
+            });
         }
 
     }
