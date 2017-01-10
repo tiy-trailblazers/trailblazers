@@ -30,7 +30,7 @@ class Park < ApplicationRecord
     parks_array.map do |park|
       park.attributes.merge({
         trails: Trail.formatted_trails(park.trails),
-        alerts: park.alerts
+        campgrounds: park.campgrounds.attributes
       })
     end
   end
