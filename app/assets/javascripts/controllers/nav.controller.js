@@ -4,22 +4,25 @@
     angular.module('trailblazer')
         .controller('NavController', NavController);
 
-    NavController.inject = ['$timeout', '$rootScope', '$state'];
+    NavController.inject = ['$timeout', '$rootScope', '$state', 'TrailandCampgroundService'];
 
-    function NavController($timeout, $rootScope, $state) {
+    function NavController($timeout, $rootScope, $state, TrailandCampgroundService) {
         var vm = this;
         vm.signedIn = null;
         vm.searched = null;
         vm.hasSearched = null;
+        vm.searchValues = {};
+
+        vm.submitSearch = function submitSearch(searchValues) {
+            TrailandCampgroundService.findTsandCsSearchForm(searchValues);
+        };
 
         vm.signingIn = function signinIn() {
             vm.signedIn = true;
         };
 
         $rootScope.$watch('user', function() {
-            console.log('watching user');
-            if($rootScope.user) {
-                console.log('user found');
+            if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
                 vm.signedIn = true;
             }
             else {
@@ -30,15 +33,15 @@
 
         vm.newSearch = function newSearch() {
             vm.hasSearched =  null;
-            window.sessionStorage.removeItem('TsandCs');
+            sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            console.log('watching for search');
-            if($rootScope.searched) {
-                console.log('search found');
+            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
                 vm.hasSearched = true;
+            } else {
+                vm.hasSearched = null;
             }
         });
     }

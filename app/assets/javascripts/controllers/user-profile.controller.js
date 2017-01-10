@@ -4,11 +4,12 @@
     angular.module('trailblazer')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [  '$scope', '$state', 'UserService' ];
+    UserProfileController.$inject = [  '$scope', '$state', '$rootScope', 'UserService' ];
 
-    function UserProfileController($scope, $state, UserService) {
+    function UserProfileController($scope, $state, $rootScope, UserService) {
         var vm = this;
-        vm.user = null;
+        vm.user = JSON.parse(sessionStorage.getItem('user'));
+        vm.signedIn = null;
 
         vm.signOff = function signOff() {
             UserService.signoffUser()
@@ -22,19 +23,13 @@
             });
         };
 
-        function tokenSearch() {
-            var token = setInterval(function() {
-                if (!JSON.parse(sessionStorage.getItem('user'))) {
-                    return;
-                } else {
-                    clearInterval(token);
-                    $scope.$apply(function() {
-                        vm.user = JSON.parse(sessionStorage.getItem('user'));
-                    });
-                }
-            }, 1000);
-        }
-
-        tokenSearch();
+        $rootScope.$watch('user', function() {
+            if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
+                vm.signedIn = true;
+            }
+            else {
+                vm.signedIn = null;
+            }
+        });
     }
 }());

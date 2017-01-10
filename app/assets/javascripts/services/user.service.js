@@ -34,8 +34,8 @@
                 }
             })
             .then(function success(response) {
-
-                window.sessionStorage.setItem('user', angular.toJson(response.data));
+                sessionStorage.setItem('user', angular.toJson(response.data));
+                $rootScope.user = true;
                 return response.data;
             });
         }
@@ -50,7 +50,7 @@
                 }
             })
             .then(function success(response) {
-                window.sessionStorage.setItem('user', angular.toJson(response.data));
+                sessionStorage.setItem('user', angular.toJson(response.data));
                 $rootScope.user = true;
                 return response.data;
             });
@@ -66,7 +66,8 @@
                 sessionStorage.removeItem('user');
                 sessionStorage.removeItem('userToken');
                 sessionStorage.removeItem('trip');
-                $rootScope.user = false;
+                $rootScope.user = null;
+                $rootScope.searched = null;
             });
         }
     }

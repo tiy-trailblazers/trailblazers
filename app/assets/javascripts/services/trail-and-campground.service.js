@@ -13,7 +13,8 @@
     function TrailandCampgroundService($http, $rootScope){
 
         return {
-            findTsandCs: findTsandCs
+            findTsandCs: findTsandCs,
+            findTsandCsSearchForm: findTsandCsSearchForm
         };
         /**
          * executes http request to app backend for trail and campground data
@@ -43,6 +44,17 @@
                 $rootScope.searched = true;
                 return { trails: trails, campgrounds: campgrounds};
             });
+        }
+
+        function findTsandCsSearchForm(searchValues) {
+            console.log(searchValues);
+            // return $http({
+            //     url: 'map_items/search',
+            //     data: {
+            //         name: trail || campground
+            //         park_name: park
+            //     }
+            // });
         }
 
     }

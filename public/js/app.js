@@ -88,22 +88,25 @@
     angular.module('trailblazer')
         .controller('NavController', NavController);
 
-    NavController.inject = ['$timeout', '$rootScope', '$state'];
+    NavController.inject = ['$timeout', '$rootScope', '$state', 'TrailandCampgroundService'];
 
-    function NavController($timeout, $rootScope, $state) {
+    function NavController($timeout, $rootScope, $state, TrailandCampgroundService) {
         var vm = this;
         vm.signedIn = null;
         vm.searched = null;
         vm.hasSearched = null;
+        vm.searchValues = {};
+
+        vm.submitSearch = function submitSearch(searchValues) {
+            TrailandCampgroundService.findTsandCsSearchForm(searchValues);
+        };
 
         vm.signingIn = function signinIn() {
             vm.signedIn = true;
         };
 
         $rootScope.$watch('user', function() {
-            console.log('watching user');
-            if($rootScope.user) {
-                console.log('user found');
+            if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
                 vm.signedIn = true;
             }
             else {
@@ -114,15 +117,15 @@
 
         vm.newSearch = function newSearch() {
             vm.hasSearched =  null;
-            window.sessionStorage.removeItem('TsandCs');
+            sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            console.log('watching for search');
-            if($rootScope.searched) {
-                console.log('search found');
+            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
                 vm.hasSearched = true;
+            } else {
+                vm.hasSearched = null;
             }
         });
     }
@@ -286,15 +289,24 @@
     angular.module('trailblazer')
         .controller('TripController', TripController);
 
-    TripController.$inject = [ '$scope', '$state', '$rootScope', 'TripService' ];
+    TripController.$inject = [ '$scope', '$state', '$rootScope', 'TrailandCampgroundService', 'TripService' ];
 
-    function TripController($scope, $state, $rootScope, TripService) {
+    function TripController($scope, $state, $rootScope, TrailandCampgroundService, TripService) {
         var vm = this;
         vm.tripCreate = null;
         vm.trip = {};
-        vm.plannedTrip = null;
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
+        vm.search = null;
+        vm.searchValues = {};
+
+        vm.submitSearch = function submitSearch(searchValues) {
+            TrailandCampgroundService.findTsandCsSearchForm(searchValues);
+        };
+
+        vm.newSearchForm = function newSearchForm() {
+            vm.search = true;
+        };
 
         vm.createTrip = function createTrip() {
             vm.tripCreate = true;
@@ -303,21 +315,25 @@
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip)
             .then(function success(data) {
-                vm.plannedTrip = data;
                 sessionStorage.setItem('trip', angular.toJson(data));
                 $state.go('trip', {id: data.trip.id, trip:data});
+                vm.trip = {};
+                vm.tripCreate = null;
             });
         };
 
         vm.newSearch = function newSearch() {
-            vm.madeSearch =  null;
+            $rootScope.searched =  null;
             sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched) {
-                vm.madeSearched = true;
+            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
+                console.log('in if');
+                vm.madeSearch = true;
+            } else {
+                vm.madeSearch = false;
             }
         });
 
@@ -330,11 +346,12 @@
     angular.module('trailblazer')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [  '$scope', '$state', 'UserService' ];
+    UserProfileController.$inject = [  '$scope', '$state', '$rootScope', 'UserService' ];
 
-    function UserProfileController($scope, $state, UserService) {
+    function UserProfileController($scope, $state, $rootScope, UserService) {
         var vm = this;
-        vm.user = null;
+        vm.user = JSON.parse(sessionStorage.getItem('user'));
+        vm.signedIn = null;
 
         vm.signOff = function signOff() {
             UserService.signoffUser()
@@ -348,20 +365,14 @@
             });
         };
 
-        function tokenSearch() {
-            var token = setInterval(function() {
-                if (!JSON.parse(sessionStorage.getItem('user'))) {
-                    return;
-                } else {
-                    clearInterval(token);
-                    $scope.$apply(function() {
-                        vm.user = JSON.parse(sessionStorage.getItem('user'));
-                    });
-                }
-            }, 1000);
-        }
-
-        tokenSearch();
+        $rootScope.$watch('user', function() {
+            if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
+                vm.signedIn = true;
+            }
+            else {
+                vm.signedIn = null;
+            }
+        });
     }
 }());
 
@@ -431,7 +442,7 @@
                 if (JSON.parse(sessionStorage.getItem('user'))) {
                     TrailandCampgroundService.findTsandCs(coordinates)
                         .then(function success(data) {
-                            window.sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: coordArray, transCoords: coordinates}));
+                            sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: coordArray, transCoords: coordinates}));
                             $state.go('trails-and-campgrounds', {
                                 trails: data.trails,
                                 campgrounds: data.campgrounds,
@@ -446,10 +457,6 @@
                     $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
                 }
             });
-
-            if (JSON.parse(sessionStorage.getItem('user'))) {
-                $('.noprofile-nav')[0].style.display = 'none';
-            }
         }
 
         /**
@@ -609,10 +616,6 @@
             }
 
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
-
-            if (JSON.parse(sessionStorage.getItem('user'))) {
-                $('nav.noprofile-nav')[0].style.display = 'none';
-            }
 
             $scope.$watch('popupelm', function(){
                 if ($scope.popupelm === '') {
@@ -1113,7 +1116,8 @@
     function TrailandCampgroundService($http, $rootScope){
 
         return {
-            findTsandCs: findTsandCs
+            findTsandCs: findTsandCs,
+            findTsandCsSearchForm: findTsandCsSearchForm
         };
         /**
          * executes http request to app backend for trail and campground data
@@ -1143,6 +1147,17 @@
                 $rootScope.searched = true;
                 return { trails: trails, campgrounds: campgrounds};
             });
+        }
+
+        function findTsandCsSearchForm(searchValues) {
+            console.log(searchValues);
+            // return $http({
+            //     url: 'map_items/search',
+            //     data: {
+            //         name: trail || campground
+            //         park_name: park
+            //     }
+            // });
         }
 
     }
@@ -1214,6 +1229,7 @@
             })
             .then(function success(response) {
                 console.log(response);
+                tsORcs = [];
                 return response.data;
             })
             .catch(function error(err) {
@@ -1263,8 +1279,8 @@
                 }
             })
             .then(function success(response) {
-
-                window.sessionStorage.setItem('user', angular.toJson(response.data));
+                sessionStorage.setItem('user', angular.toJson(response.data));
+                $rootScope.user = true;
                 return response.data;
             });
         }
@@ -1279,7 +1295,7 @@
                 }
             })
             .then(function success(response) {
-                window.sessionStorage.setItem('user', angular.toJson(response.data));
+                sessionStorage.setItem('user', angular.toJson(response.data));
                 $rootScope.user = true;
                 return response.data;
             });
@@ -1295,7 +1311,8 @@
                 sessionStorage.removeItem('user');
                 sessionStorage.removeItem('userToken');
                 sessionStorage.removeItem('trip');
-                $rootScope.user = false;
+                $rootScope.user = null;
+                $rootScope.searched = null;
             });
         }
     }

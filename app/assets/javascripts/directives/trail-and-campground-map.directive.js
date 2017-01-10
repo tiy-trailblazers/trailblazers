@@ -103,10 +103,6 @@
 
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
 
-            if (JSON.parse(sessionStorage.getItem('user'))) {
-                $('nav.noprofile-nav')[0].style.display = 'none';
-            }
-
             $scope.$watch('popupelm', function(){
                 if ($scope.popupelm === '') {
                     return;
