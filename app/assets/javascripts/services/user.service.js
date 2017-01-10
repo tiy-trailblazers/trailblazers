@@ -4,9 +4,9 @@
     angular.module('trailblazer')
         .factory('UserService', UserService);
 
-    UserService.$inject = [ '$http', '$state' ];
+    UserService.$inject = [ '$http', '$rootScope' ];
 
-    function UserService($http) {
+    function UserService($http, $rootScope) {
 
         return {
             createUser: createUser,
@@ -34,6 +34,7 @@
                 }
             })
             .then(function success(response) {
+
                 window.sessionStorage.setItem('user', angular.toJson(response.data));
                 return response.data;
             });
@@ -50,6 +51,7 @@
             })
             .then(function success(response) {
                 window.sessionStorage.setItem('user', angular.toJson(response.data));
+                $rootScope.user = true;
                 return response.data;
             });
         }
@@ -58,6 +60,13 @@
             return $http({
                 url: '/session',
                 method: 'DELETE'
+            })
+            .then(function success() {
+                sessionStorage.removeItem('TsandCs');
+                sessionStorage.removeItem('user');
+                sessionStorage.removeItem('userToken');
+                sessionStorage.removeItem('trip');
+                $rootScope.user = false;
             });
         }
     }

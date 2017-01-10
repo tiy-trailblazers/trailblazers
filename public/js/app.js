@@ -88,20 +88,43 @@
     angular.module('trailblazer')
         .controller('NavController', NavController);
 
-    NavController.inject = ['$timeout'];
+    NavController.inject = ['$timeout', '$rootScope', '$state'];
 
-    function NavController($timeout) {
+    function NavController($timeout, $rootScope, $state) {
         var vm = this;
-        vm.signin = null;
+        vm.signedIn = null;
+        vm.searched = null;
+        vm.hasSearched = null;
 
         vm.signingIn = function signinIn() {
-            vm.signin = !vm.signin;
+            vm.signedIn = true;
         };
 
-        vm.timer = function timer() {
-            $timeout(vm.signingIn, 60000);
-            return true;
+        $rootScope.$watch('user', function() {
+            console.log('watching user');
+            if($rootScope.user) {
+                console.log('user found');
+                vm.signedIn = true;
+            }
+            else {
+                console.log('in else');
+                vm.signedIn = null;
+            }
+        });
+
+        vm.newSearch = function newSearch() {
+            vm.hasSearched =  null;
+            window.sessionStorage.removeItem('TsandCs');
+            $state.go('home');
         };
+
+        $rootScope.$watch('searched', function() {
+            console.log('watching for search');
+            if($rootScope.searched) {
+                console.log('search found');
+                vm.hasSearched = true;
+            }
+        });
     }
 }());
 
@@ -111,9 +134,9 @@
     angular.module('trailblazer')
         .controller('RadiusSearchController', RadiusSearchController);
 
-    RadiusSearchController.$inject = [ '$state', '$stateParams', 'TrailandCampgroundService' ];
+    RadiusSearchController.$inject = [ '$state', '$stateParams', '$rootScope', 'TrailandCampgroundService' ];
 
-    function RadiusSearchController($state, $stateParams, TrailandCampgroundService) {
+    function RadiusSearchController($state, $stateParams, $rootScope, TrailandCampgroundService) {
         var vm = this;
         vm.coordinates = $stateParams.transCoords || JSON.parse(sessionStorage.getItem('TsandCs')).transCoords;
         vm.trails = null;
@@ -122,7 +145,7 @@
             .then(function transformData(data) {
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
-                window.sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: $stateParams.centerCoords || JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords, transCoords: $stateParams.transCoords || JSON.parse(sessionStorage.getItem('TsandCs')).transCoords}));
+                sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: $stateParams.centerCoords || JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords, transCoords: $stateParams.transCoords || JSON.parse(sessionStorage.getItem('TsandCs')).transCoords}));
             })
             .catch(function errHandler(err) {
                 console.log(err);
@@ -158,7 +181,6 @@
             if (Object.keys(user).length === 2) {
             UserService.signinUser(user)
                 .then( function success(data) {
-                    console.log(data);
                     if(data.error){
                         vm.message = data.error;
                         return;
@@ -228,30 +250,16 @@
         vm.markerElement = null;
 
         vm.trailPopup = function trailPopup(element){
-            console.log(element);
             vm.element = element;
         };
 
         vm.addTrip = function addTrip(tripItem) {
-            console.log('add trip from popup', tripItem);
             TripService.addTorCtoTrip(tripItem);
         };
 
         vm.addMapClickedPopup = function addMapClickedPopup() {
             TripService.addMapClickedPopup();
         };
-
-        // $scope.$watch('popupelmClicked', function(){
-        //     console.log($scope.popupelmClicked);
-        //     if ($scope.popupelmClicked === undefined) {
-        //         console.log('watch undefined');
-        //         return;
-        //     } else {
-        //         var tORcObj = JSON.parse($scope.popupelmClicked);
-        //         vm.markerElement = tORcObj;
-        //         console.log('change OBj', tORcObj);
-        //     }
-        // });
     }
 
 }());
@@ -267,8 +275,6 @@
     function TripSummaryController($stateParams) {
         var vm = this;
 
-        console.log($stateParams);
-
         vm.trip = $stateParams.trip ||  JSON.parse(sessionStorage.getItem('trip'));
 
     }
@@ -280,16 +286,15 @@
     angular.module('trailblazer')
         .controller('TripController', TripController);
 
-    TripController.$inject = [ '$scope', '$state', 'TripService' ];
+    TripController.$inject = [ '$scope', '$state', '$rootScope', 'TripService' ];
 
-    function TripController($scope, $state, TripService) {
+    function TripController($scope, $state, $rootScope, TripService) {
         var vm = this;
         vm.tripCreate = null;
         vm.trip = {};
         vm.plannedTrip = null;
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
-        vm.search = null;
 
         vm.createTrip = function createTrip() {
             vm.tripCreate = true;
@@ -299,29 +304,23 @@
             TripService.postTrip(trip)
             .then(function success(data) {
                 vm.plannedTrip = data;
-                window.sessionStorage.setItem('trip', angular.toJson(data));
+                sessionStorage.setItem('trip', angular.toJson(data));
                 $state.go('trip', {id: data.trip.id, trip:data});
             });
         };
 
-        vm.newSearchForm = function newSearchForm() {
-            vm.search = !vm.search;
+        vm.newSearch = function newSearch() {
+            vm.madeSearch =  null;
+            sessionStorage.removeItem('TsandCs');
+            $state.go('home');
         };
 
-        function TandCSearch() {
-            var TandC = setInterval(function() {
-                if (!JSON.parse(sessionStorage.getItem('TsandCs'))) {
-                    return;
-                } else {
-                    clearInterval(TandC);
-                    $scope.$apply(function() {
-                        vm.madeSearch = true;
-                    });
-                }
-            }, 1000);
-        }
+        $rootScope.$watch('searched', function() {
+            if($rootScope.searched) {
+                vm.madeSearched = true;
+            }
+        });
 
-        TandCSearch();
     }
 }());
 
@@ -339,12 +338,7 @@
 
         vm.signOff = function signOff() {
             UserService.signoffUser()
-            .then(function success(data) {
-                console.log(data);
-                window.sessionStorage.removeItem('TsandCs');
-                window.sessionStorage.removeItem('user');
-                window.sessionStorage.removeItem('userToken');
-                window.sessionStorage.removeItem('trip');
+            .then(function success() {
                 vm.user = null;
                 $('#map')[0].style.height = '100vh';
                 $state.go('home');
@@ -625,7 +619,6 @@
                     return;
                 } else {
                     var tORcObj = JSON.parse($scope.popupelm);
-                    console.log('torc obj in element', tORcObj);
                     var trailCoordinates = ol.proj.fromLonLat([tORcObj.longitude, tORcObj.latitude]);
                     if (tORcObj.campground_type) {
                         $('#popup .popup-content').html(
@@ -645,10 +638,8 @@
 
             function markerClick() {
                 map.on('click', function(evt) {
-                    console.log('event', evt);
                     var feature = map.forEachFeatureAtPixel(evt.pixel,
                         function(feature) {
-                            console.log('feature', feature);
                             return feature;
                         });
                         if (feature) {
@@ -860,12 +851,6 @@
             var popupOverlay = new ol.Overlay({
                 element: $('#popup')[0]
             });
-            // console.log($('#trailpopup'));
-            // var summary = new ol.Overlay({
-            //     element: $('#trailpopup')[0],
-            // });
-
-            // console.log('trip data', $scope.tripData);
 
             /**
              * Constructs openLayers Map
@@ -913,38 +898,6 @@
             });
             map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
             $('#map')[0].style.height = '72vh';
-            // $('#trailpopup .popup-content').html(
-            //     '<h4>Your "' + JSON.parse($scope.tripData).trip.name + '" Adventure</h4>' +
-            //     '<p>Begins on ' + JSON.parse($scope.tripData).trip.start_date + '.</p>' +
-            //     '<section><h5>Staying At</h5>' +
-            //     '<p>-'+ JSON.parse($scope.tripData).trip.campgrounds[0].name +'</p></section>' +
-            //     '<section><h5>Exploring</h5>' +
-            //     '<p>'+  JSON.parse($scope.tripData).trails[0].name + '</p></section>' +
-            //     '<h5>There is no place like outside!</h5>'
-            // );
-            // summary.setPosition(JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords);
-            // $scope.$watch('popupelm', function(){
-            //     if ($scope.popupelm === '') {
-            //         return;
-            //     } else {
-            //         var tORcObj = JSON.parse($scope.popupelm);
-            //         console.log(tORcObj);
-            //         var trailCoordinates = ol.proj.fromLonLat([tORcObj.longitude, tORcObj.latitude]);
-            //         if (tORcObj.campground_type) {
-            //             $('.popup-content').html(
-            //                 '<p>' + tORcObj.name + '<p>'
-            //             );
-            //         } else {
-            //             $('.popup-content').html(
-            //                 '<p>' + tORcObj.name + '<p>' +
-            //                 '<p>Length: ' + Math.round(Number(tORcObj.length)*10)/10 + ' miles<p>'
-            //             );
-            //         }
-            //         map.getView().animate({zoom: 12}, {center: trailCoordinates});
-            //         popupOverlay.setPosition(trailCoordinates);
-            //     }
-            // });
-
 
             map.on('click', function(evt) {
                 var feature = map.forEachFeatureAtPixel(evt.pixel,
@@ -1151,13 +1104,13 @@
     angular.module('trailblazer')
         .factory('TrailandCampgroundService', TrailandCampgroundService);
 
-    TrailandCampgroundService.$inject = [ '$http' ];
+    TrailandCampgroundService.$inject = [ '$http', '$rootScope' ];
 
     /**
      * Constructs angular service for trail and campground http requests
      * @param {Service} $http core angular service for http requests
      */
-    function TrailandCampgroundService($http){
+    function TrailandCampgroundService($http, $rootScope){
 
         return {
             findTsandCs: findTsandCs
@@ -1187,6 +1140,7 @@
             .then( function transformResponse(response) {
                 var trails = response.data.trails;
                 var campgrounds = response.data.campgrounds;
+                $rootScope.searched = true;
                 return { trails: trails, campgrounds: campgrounds};
             });
         }
@@ -1217,17 +1171,14 @@
         };
 
         function addTorCtoTrip (tORc) {
-            console.log('in trip service', tORc);
             tsORcs.push(tORc);
         }
 
         function mapClickedpopup (tORc) {
-            console.log('service marker', tORc);
             markerTorC = tORc;
         }
 
         function addMapClickedPopup() {
-            console.log('addMarkerElement');
             tsORcs.push(markerTorC);
         }
 
@@ -1282,9 +1233,9 @@
     angular.module('trailblazer')
         .factory('UserService', UserService);
 
-    UserService.$inject = [ '$http', '$state' ];
+    UserService.$inject = [ '$http', '$rootScope' ];
 
-    function UserService($http) {
+    function UserService($http, $rootScope) {
 
         return {
             createUser: createUser,
@@ -1312,6 +1263,7 @@
                 }
             })
             .then(function success(response) {
+
                 window.sessionStorage.setItem('user', angular.toJson(response.data));
                 return response.data;
             });
@@ -1328,6 +1280,7 @@
             })
             .then(function success(response) {
                 window.sessionStorage.setItem('user', angular.toJson(response.data));
+                $rootScope.user = true;
                 return response.data;
             });
         }
@@ -1336,6 +1289,13 @@
             return $http({
                 url: '/session',
                 method: 'DELETE'
+            })
+            .then(function success() {
+                sessionStorage.removeItem('TsandCs');
+                sessionStorage.removeItem('user');
+                sessionStorage.removeItem('userToken');
+                sessionStorage.removeItem('trip');
+                $rootScope.user = false;
             });
         }
     }

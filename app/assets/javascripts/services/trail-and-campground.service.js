@@ -4,13 +4,13 @@
     angular.module('trailblazer')
         .factory('TrailandCampgroundService', TrailandCampgroundService);
 
-    TrailandCampgroundService.$inject = [ '$http' ];
+    TrailandCampgroundService.$inject = [ '$http', '$rootScope' ];
 
     /**
      * Constructs angular service for trail and campground http requests
      * @param {Service} $http core angular service for http requests
      */
-    function TrailandCampgroundService($http){
+    function TrailandCampgroundService($http, $rootScope){
 
         return {
             findTsandCs: findTsandCs
@@ -40,6 +40,7 @@
             .then( function transformResponse(response) {
                 var trails = response.data.trails;
                 var campgrounds = response.data.campgrounds;
+                $rootScope.searched = true;
                 return { trails: trails, campgrounds: campgrounds};
             });
         }

@@ -11,7 +11,7 @@
 
     </head>
     <body>
-        <nav ng-controller='NavController as nav' ng-show='!nav.signin' class='noprofile-nav'>
+        <nav ng-controller='NavController as nav' ng-show='!nav.signedIn' class='noprofile-nav'>
             <header>
                 <h1>The Yellow Dirt Road</h1>
             </header>
@@ -22,7 +22,7 @@
                     and then use your mouse to create a radius box to submit a search.
             </article>
             <ul>
-                <a ng-click='nav.timer() && nav.signingIn()' ui-sref='signin'>Sign In</a>
+                <a ng-click='nav.signingIn()' ui-sref='signin'>Sign In</a>
                 <li>
                     <form>
                         <h3>Your Adventure Awaits</h3>
@@ -31,6 +31,7 @@
                         <input type='submit' value='Search'>
                     </form>
                 </li>
+                <a ng-show='nav.hasSearched' ng-click='nav.newSearch()'>New Search</a>
             </ul>
         </nav>
 
@@ -103,6 +104,7 @@
                     </ul>
                     <input type='submit' value='Start Trip'>
                 </form>
+                <a ng-show='trip.madeSearched' ng-click='trip.newSearch()'>New Search</a>
             </article>
         </section>
     </nav>

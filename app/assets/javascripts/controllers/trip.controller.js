@@ -4,16 +4,15 @@
     angular.module('trailblazer')
         .controller('TripController', TripController);
 
-    TripController.$inject = [ '$scope', '$state', 'TripService' ];
+    TripController.$inject = [ '$scope', '$state', '$rootScope', 'TripService' ];
 
-    function TripController($scope, $state, TripService) {
+    function TripController($scope, $state, $rootScope, TripService) {
         var vm = this;
         vm.tripCreate = null;
         vm.trip = {};
         vm.plannedTrip = null;
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
-        vm.search = null;
 
         vm.createTrip = function createTrip() {
             vm.tripCreate = true;
@@ -23,28 +22,22 @@
             TripService.postTrip(trip)
             .then(function success(data) {
                 vm.plannedTrip = data;
-                window.sessionStorage.setItem('trip', angular.toJson(data));
+                sessionStorage.setItem('trip', angular.toJson(data));
                 $state.go('trip', {id: data.trip.id, trip:data});
             });
         };
 
-        vm.newSearchForm = function newSearchForm() {
-            vm.search = !vm.search;
+        vm.newSearch = function newSearch() {
+            vm.madeSearch =  null;
+            sessionStorage.removeItem('TsandCs');
+            $state.go('home');
         };
 
-        function TandCSearch() {
-            var TandC = setInterval(function() {
-                if (!JSON.parse(sessionStorage.getItem('TsandCs'))) {
-                    return;
-                } else {
-                    clearInterval(TandC);
-                    $scope.$apply(function() {
-                        vm.madeSearch = true;
-                    });
-                }
-            }, 1000);
-        }
+        $rootScope.$watch('searched', function() {
+            if($rootScope.searched) {
+                vm.madeSearched = true;
+            }
+        });
 
-        TandCSearch();
     }
 }());
