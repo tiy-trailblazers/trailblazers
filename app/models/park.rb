@@ -2,6 +2,7 @@ require './lib/nps_load'
 
 class Park < ApplicationRecord
   has_many :trails
+  has_many :campgrounds
   has_and_belongs_to_many :trips
 
   def clean_name
