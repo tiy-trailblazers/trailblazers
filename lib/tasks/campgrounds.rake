@@ -22,4 +22,13 @@ namespace :campgrounds do
     Campground.delete_all
   end
 
+  desc "TODO"
+  task add_parks: :environment do
+    Campground.where("park_id is null").each do |cg|
+      cg.park_id = 0 unless cg.set_park
+      cg.save
+      print "."
+    end
+  end
+
 end

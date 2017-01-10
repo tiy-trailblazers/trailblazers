@@ -2,6 +2,7 @@ require './lib/nps_load'
 
 class Park < ApplicationRecord
   has_many :trails
+  has_many :campgrounds
   has_and_belongs_to_many :trips
 
   def clean_name
@@ -29,7 +30,9 @@ class Park < ApplicationRecord
   def self.jsonify(parks_array)
     parks_array.map do |park|
       park.attributes.merge({
-        trails: Trail.formatted_trails(park.trails)
+        trails: Trail.formatted_trails(park.trails),
+        campgrounds: park.campgrounds.attributes
+
       })
     end
   end

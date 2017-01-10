@@ -3,7 +3,7 @@
   height: 28vh;
   float: right;
   font-family: 'Patrick Hand SC', cursive;
-  text-align: center;
+  text-align: left;
   padding-top: 5px;
   border: 1px solid #999999;
   box-sizing: border-box;
@@ -11,6 +11,7 @@
   h1 {
     margin: 0;
     text-decoration: underline;
+    text-align: center;
   }
   .trails, .campgrounds{
       width: 50%;
@@ -25,6 +26,10 @@
           img {
             height: 25px;
             padding-left: 13px;
+            padding-right: 10px;
+          }
+          #campground-img {
+            padding-right: 17px;
           }
       }
       ul {
@@ -32,7 +37,7 @@
           margin-top: 0;
           padding-left: 0;
           display: block;
-          height: 12vh;
+          height: 15vh;
           overflow: scroll;
           li {
               text-align: left;
@@ -41,6 +46,7 @@
               padding-top: 2px;
               padding-bottom: 2px;
               cursor: pointer;
+              padding-left: 20px;
               &:hover {
                 background-color: rgb(136, 136, 136);
               }
