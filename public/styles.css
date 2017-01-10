@@ -420,8 +420,8 @@ nav {
     color: #ffff5e;
     padding: 1%; }
   nav ul.upper-nav {
-    margin-left: 9%;
-    margin-top: 2%; }
+    margin-top: 2%;
+    text-align: center; }
     nav ul.upper-nav li a {
       font-size: 1.1em; }
   nav ul {
@@ -627,8 +627,15 @@ nav.profile-nav article.plan-trip {
         margin-bottom: 2%; }
     nav.profile-nav section.past-trips {
       text-align: left; }
-      nav.profile-nav section.past-trips header {
-        text-align: left; } }
+      nav.profile-nav section.past-trips header h2 {
+        text-align: left;
+        padding-left: 5%; }
+    nav.profile-nav ul.upper-nav {
+      text-align: left;
+      margin-left: 9%;
+      margin-top: 2%; }
+      nav.profile-nav ul.upper-nav li a {
+        font-size: 1.1em; } }
 #signin {
   min-width: 250px;
   max-width: 350px;

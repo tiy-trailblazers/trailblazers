@@ -19,8 +19,8 @@ nav {
       padding: 1%;
     }
     ul.upper-nav {
-      margin-left: 9%;
       margin-top: 2%;
+      text-align: center;
       li a {
       font-size: 1.1em
       }
@@ -319,7 +319,18 @@ nav.profile-nav {
         section.past-trips {
           text-align: left;
           header {
-            text-align: left;
+            h2 {
+              text-align: left;
+              padding-left: 5%;
+            }
+          }
+        }
+        ul.upper-nav {
+          text-align: left;
+          margin-left: 9%;
+          margin-top: 2%;
+          li a {
+          font-size: 1.1em
           }
         }
     }
