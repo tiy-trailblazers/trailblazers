@@ -62,12 +62,13 @@
                 method: 'DELETE'
             })
             .then(function success() {
-                sessionStorage.removeItem('TsandCs');
+                // sessionStorage.removeItem('TsandCs');
                 sessionStorage.removeItem('user');
                 sessionStorage.removeItem('userToken');
                 sessionStorage.removeItem('trip');
                 $rootScope.user = null;
                 $rootScope.searched = null;
+                $rootScope.TsandCs = null;
             });
         }
     }

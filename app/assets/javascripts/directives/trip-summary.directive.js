@@ -4,14 +4,14 @@
     angular.module('trailblazer')
         .directive('trip', TripSummaryDirective);
 
-    TripSummaryDirective.$inject = [];
+    TripSummaryDirective.$inject = [ '$rootScope' ];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function TripSummaryDirective() {
+    function TripSummaryDirective($rootScope) {
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
@@ -53,7 +53,7 @@
                     layers: vectorLayers,
                     overlays: [popupOverlay],
                     view: new ol.View({
-                        center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                        center: JSON.parse($rootScope.TsandCs).centerCoords,
                         zoom: 11,
                         maxZoom: 20,
                         minZoom: 2

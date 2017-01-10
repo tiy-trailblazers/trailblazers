@@ -4,14 +4,14 @@
     angular.module('trailblazer')
         .directive('tandcmap', TrailandCampgroundMapDirective);
 
-    TrailandCampgroundMapDirective.$inject = ['$stateParams', 'TripService'];
+    TrailandCampgroundMapDirective.$inject = ['$stateParams', '$rootScope', 'TripService'];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function TrailandCampgroundMapDirective($stateParams, TripService) {
+    function TrailandCampgroundMapDirective($stateParams, $rootScope, TripService) {
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
@@ -72,23 +72,18 @@
              * @return {void}
              */
             function findCampgroundsAndTrails() {
-                if (!$stateParams.campgrounds || !JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds) {
+                if (!$stateParams.campgrounds ) {
                     return;
                 }
                 else {
-                    var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds || [];
-                    if (campgrounds === [] ) {
-                        return;
-                    }
+                    console.log($stateParams);
+                    var campgrounds = $stateParams.campgrounds || JSON.parse($rootScope.TsandCs).campgrounds;
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
                         addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground', campground);
                     });
 
-                    var trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails || [];
-                    if (trails === [] ) {
-                        return;
-                    }
+                    var trails = $stateParams.trails || JSON.parse($rootScope.TsandCs).trails || 'none';
                     trails.forEach( function markAndPlottrails(trail){
                         var trailCoordinates = [];
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);

@@ -19,7 +19,7 @@
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
                 .then(function success(data) {
                     var center = ol.proj.fromLonLat([ data.longitude, data.latitude]);
-                    sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: center, transCoords: null}));
+                    $rootScope.TsandCs = angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: center, transCoords: null});
                     $state.go('trails-and-campgrounds', {centerCoords: center, trails: data.trails, campgrounds: data.campgrounds });
                 })
                 .catch(function error(err){
@@ -47,12 +47,12 @@
 
         vm.newSearch = function newSearch() {
             $rootScope.searched =  null;
-            sessionStorage.removeItem('TsandCs');
+            $rootScope.TsandCs = null;
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
+            if($rootScope.searched) {
                 console.log('in if');
                 vm.madeSearch = true;
             } else {
