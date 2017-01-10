@@ -267,6 +267,8 @@
     function TripSummaryController($stateParams) {
         var vm = this;
 
+        console.log($stateParams);
+
         vm.trip = $stateParams.trip ||  JSON.parse(sessionStorage.getItem('trip'));
 
     }
@@ -858,10 +860,10 @@
             var popupOverlay = new ol.Overlay({
                 element: $('#popup')[0]
             });
-            console.log($('#trailpopup'));
-            var summary = new ol.Overlay({
-                element: $('#trailpopup')[0],
-            });
+            // console.log($('#trailpopup'));
+            // var summary = new ol.Overlay({
+            //     element: $('#trailpopup')[0],
+            // });
 
             // console.log('trip data', $scope.tripData);
 
@@ -881,7 +883,7 @@
                     controls: ol.control.defaults(),
                     renderer: 'canvas',
                     layers: vectorLayers,
-                    overlays: [popupOverlay, summary],
+                    overlays: [popupOverlay],
                     view: new ol.View({
                         center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
                         zoom: 11,
@@ -910,16 +912,17 @@
                 createTrailLayers(trailCoordinates);
             });
             map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
-            $('#trailpopup .popup-content').html(
-                '<h4>Your "' + JSON.parse($scope.tripData).trip.name + '" Adventure</h4>' +
-                '<p>Begins on ' + JSON.parse($scope.tripData).trip.start_date + '.</p>' +
-                '<section><h5>Staying At</h5>' +
-                '<p>-'+ JSON.parse($scope.tripData).trip.campgrounds[0].name +'</p></section>' +
-                '<section><h5>Exploring</h5>' +
-                '<p>'+  JSON.parse($scope.tripData).trails[0].name + '</p></section>' +
-                '<h5>There is no place like outside!</h5>'
-            );
-            summary.setPosition(JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords);
+            $('#map')[0].style.height = '72vh';
+            // $('#trailpopup .popup-content').html(
+            //     '<h4>Your "' + JSON.parse($scope.tripData).trip.name + '" Adventure</h4>' +
+            //     '<p>Begins on ' + JSON.parse($scope.tripData).trip.start_date + '.</p>' +
+            //     '<section><h5>Staying At</h5>' +
+            //     '<p>-'+ JSON.parse($scope.tripData).trip.campgrounds[0].name +'</p></section>' +
+            //     '<section><h5>Exploring</h5>' +
+            //     '<p>'+  JSON.parse($scope.tripData).trails[0].name + '</p></section>' +
+            //     '<h5>There is no place like outside!</h5>'
+            // );
+            // summary.setPosition(JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords);
             // $scope.$watch('popupelm', function(){
             //     if ($scope.popupelm === '') {
             //         return;
@@ -1233,10 +1236,10 @@
             var tripCampgrounds = [];
             var parks = [];
             tsORcs.forEach(function gettORcID(tORc) {
-                if (tORc.num_sites) {
-                    tripCampgrounds.push(tORc.id);
-                } else {
+                if (tORc.line) {
                     tripTrails.push(tORc.id);
+                } else {
+                    tripCampgrounds.push(tORc.id);
                 }
             });
             return $http({

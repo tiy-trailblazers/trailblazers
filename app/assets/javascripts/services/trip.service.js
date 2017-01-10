@@ -39,10 +39,10 @@
             var tripCampgrounds = [];
             var parks = [];
             tsORcs.forEach(function gettORcID(tORc) {
-                if (tORc.num_sites) {
-                    tripCampgrounds.push(tORc.id);
-                } else {
+                if (tORc.line) {
                     tripTrails.push(tORc.id);
+                } else {
+                    tripCampgrounds.push(tORc.id);
                 }
             });
             return $http({
