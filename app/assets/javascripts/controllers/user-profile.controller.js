@@ -12,8 +12,7 @@
 
         vm.signOff = function signOff() {
             UserService.signoffUser()
-            .then(function success(data) {
-                console.log(data);
+            .then(function success() {
                 window.sessionStorage.removeItem('TsandCs');
                 window.sessionStorage.removeItem('user');
                 window.sessionStorage.removeItem('userToken');

@@ -112,7 +112,6 @@
                     return;
                 } else {
                     var tORcObj = JSON.parse($scope.popupelm);
-                    console.log('torc obj in element', tORcObj);
                     var trailCoordinates = ol.proj.fromLonLat([tORcObj.longitude, tORcObj.latitude]);
                     if (tORcObj.campground_type) {
                         $('#popup .popup-content').html(
@@ -132,10 +131,8 @@
 
             function markerClick() {
                 map.on('click', function(evt) {
-                    console.log('event', evt);
                     var feature = map.forEachFeatureAtPixel(evt.pixel,
                         function(feature) {
-                            console.log('feature', feature);
                             return feature;
                         });
                         if (feature) {

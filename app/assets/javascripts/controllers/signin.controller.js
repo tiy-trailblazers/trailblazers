@@ -16,7 +16,6 @@
             if (Object.keys(user).length === 2) {
             UserService.signinUser(user)
                 .then( function success(data) {
-                    console.log(data);
                     if(data.error){
                         vm.message = data.error;
                         return;

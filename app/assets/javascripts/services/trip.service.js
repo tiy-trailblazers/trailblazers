@@ -20,17 +20,14 @@
         };
 
         function addTorCtoTrip (tORc) {
-            console.log('in trip service', tORc);
             tsORcs.push(tORc);
         }
 
         function mapClickedpopup (tORc) {
-            console.log('service marker', tORc);
             markerTorC = tORc;
         }
 
         function addMapClickedPopup() {
-            console.log('addMarkerElement');
             tsORcs.push(markerTorC);
         }
 
