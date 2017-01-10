@@ -1,0 +1,26 @@
+<trip id='map' trip-data='{{tripSum.trip}}'></trip>
+
+<div id='popup' class='ol-popup'>
+    <div class='popup-content'></div>
+</div>
+
+<section id='trip-item-list'>
+    <h1>Your "{{tripSum.trip.trip.name}}" Adventure</h1>
+    <h2>Starting at {{tripSum.trip.trip.start_date | date:"fullDate"}}</h2>
+    <section class='campgrounds'>
+        <h3>Staying At <img src="/images/tent-icon.png" /></h3>
+        <ul>
+            <li ng-repeat='campground in tripSum.trip.trip.campgrounds'>
+                {{campground.name}}
+            </li>
+        </ul>
+    </section>
+    <section class='trails'>
+        <h3>Exploring <img src="/images/trailhead.png" /></h3>
+        <ul>
+            <li ng-repeat='trail in tripSum.trip.trails'>
+                {{trail.name}}
+            </li>
+        </ul>
+    </section>
+</section>

@@ -8,17 +8,27 @@
 
     function TripService($http) {
         var tsORcs = [];
+        var markerTorC = null;
 
         return {
             tsORcs: tsORcs,
             addTorCtoTrip: addTorCtoTrip,
             postTrip: postTrip,
             patchTrip: patchTrip,
+            mapClickedpopup: mapClickedpopup,
+            addMapClickedPopup: addMapClickedPopup
         };
 
         function addTorCtoTrip (tORc) {
             tsORcs.push(tORc);
-            console.log('array', tsORcs);
+        }
+
+        function mapClickedpopup (tORc) {
+            markerTorC = tORc;
+        }
+
+        function addMapClickedPopup() {
+            tsORcs.push(markerTorC);
         }
 
         function postTrip(trip) {
@@ -26,20 +36,18 @@
             var tripCampgrounds = [];
             var parks = [];
             tsORcs.forEach(function gettORcID(tORc) {
-                if (tORc.toilets) {
-                    tripCampgrounds.push(tORc.id);
-                } else {
+                if (tORc.line) {
                     tripTrails.push(tORc.id);
+                } else {
+                    tripCampgrounds.push(tORc.id);
                 }
-                console.log('trails', tripTrails);
-                console.log('campgrounds', tripCampgrounds);
             });
-            console.log(trip);
             return $http({
                 url: '/trips',
                 method: 'POST',
                 data: {
                     trip: {
+                        name: trip.name,
                         start_date: trip.start_date,
                         end_date: trip.end_date,
                         trip_type: trip.type,
@@ -55,6 +63,7 @@
             })
             .then(function success(response) {
                 console.log(response);
+                return response.data;
             })
             .catch(function error(err) {
                 console.log(err);

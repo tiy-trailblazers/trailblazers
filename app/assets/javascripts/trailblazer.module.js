@@ -51,14 +51,14 @@
            controllerAs: 'signin'
        })
        .state({
-           name: 'profile',
-           url: '/profile/:id',
-           templateUrl: 'templates/profile.template.html',
-           controller: 'UserProfileController',
-           controllerAs: 'user',
+           name: 'trip',
+           url: '/trip-summary/:id',
+           templateUrl: 'templates/trip-summary.template.html',
+           controller: 'TripSummaryController',
+           controllerAs: 'tripSum',
            params: {
                id: null,
-               user_name: null
+               trip: null,
            }
        });
 

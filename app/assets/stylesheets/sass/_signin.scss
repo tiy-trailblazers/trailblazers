@@ -1,8 +1,8 @@
 #signin {
-    min-width: 200px;
+    min-width: 250px;
     max-width: 350px;
     width: 50%;
-    margin: 0 auto;
+    margin: 1em auto;
     margin-bottom: 3em;
     border: 1px solid #111111;
     margin-top: 3em;
@@ -41,13 +41,13 @@
                 outline: none;
                 white-space: nowrap;
                 -webkit-user-select: none;
-                cursor: pointer;
                 text-shadow: 1px 1px #fff;
                 font-weight: 700;
                 font-size: 10pt;
             }
             &.file:hover::before {
                 border-color: black;
+                cursor: pointer;
             }
             &.file:active::before {
                 background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
@@ -62,6 +62,7 @@
                 border-radius: 5%;
                 border: 1px solid #000000;
                 box-shadow: 0 0 0.5em #000000;
+                cursor: pointer;
                 &:focus {
                     outline: none;
                 }
@@ -73,8 +74,8 @@
         font-family: 'Patrick Hand SC', cursive;
         text-align: center;
         margin-bottom: 0.5em;
+        cursor: pointer;
         &:hover {
-            cursor: pointer;
             text-decoration: underline;
         }
     }
@@ -88,9 +89,9 @@
 
 @media screen and (min-width: 1000px){
     #signin {
-        margin-left: 35%;
         position: absolute;
-        top: 20%;
-        left: 12%;
+        top: 25%;
+        left: 36%;
+        margin-top: 0;
     }
 }

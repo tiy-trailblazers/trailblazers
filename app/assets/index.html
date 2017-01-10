@@ -11,24 +11,20 @@
 
     </head>
     <body>
-        <nav class='noprofile-nav'>
+        <nav ng-controller='NavController as nav' ng-show='!nav.signin' class='noprofile-nav'>
             <header>
                 <h1>The Yellow Dirt Road</h1>
             </header>
-            <article ng-hide='signin' class='how-to-use'>
+            <article class='how-to-use'>
                 <h3>What To Do</h3>
                 <p>In the map zoom to where you would like to adventure.  When you see the
                     <img src='images/trailhead.png'> icon, click once
                     and then use your mouse to create a radius box to submit a search.
             </article>
-            <!-- <article>
-              <img src="/images/park.png" class="park-image" alt="image of national park"/>
-            </article> -->
             <ul>
-                <a ng-hide='signin' ng-click='signin = true' ui-sref='signin'>Sign In</a>
+                <a ng-click='nav.timer() && nav.signingIn()' ui-sref='signin'>Sign In</a>
                 <li>
-                    <a ng-click='signin = false' ng-hide='!signin' ui-sref='home'>Home</a>
-                    <form ng-hide='signin'>
+                    <form>
                         <h3>Your Adventure Awaits</h3>
                         <input type='text' placeholder='Park Name'>
                         <input type='text' placeholder='Trail Name'>
@@ -66,11 +62,11 @@
                     </li>
                 </ul>
             </aside>
-            <section class='past-trips'>
-                <header>
+            <section ng-controller='TripController as trip' class='past-trips'>
+                <header ng-show='!trip.search' ng-hide='trip.tripCreate'>
                     <h2>Past Adventures</h2>
                 </header>
-                <article class="trip-link">
+                <article ng-show='!trip.search' ng-hide='trip.tripCreate' class="trip-link">
                     <ul>
                         <li>
                             3 days in Shenandoah National Park
@@ -85,10 +81,18 @@
                             Stayed in Bear Creek Campground
                         </li>
                     </ul>
-                </li>
             </article>
-            <article class='plan-trip' ng-controller="TripController as trip" ng-show='trip.madeSearch'>
-                <a ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Plan A Trip!</a>
+            <article class='plan-trip'>
+                <aside ng-show='!trip.madeSearch' class='new-search'>
+                    <a class='newadv-link' ng-click='trip.newSearchForm()' ng-hide='trip.search'>Find New Adventure</a>
+                    <form ng-show='trip.search'>
+                        <h3>Your Adventure Awaits</h3>
+                        <input type='text' placeholder='Park Name'>
+                        <input type='text' placeholder='Trail Name'>
+                        <input type='submit' value='Search'>
+                    </form>
+                </aside>
+                <a ng-show='trip.madeSearch' ng-hide='trip.tripCreate' ng-click="trip.createTrip()">Plan A Trip!</a>
                 <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
                     <h3>Trip Plans</h3>
                     <input type="text" ng-model="trip.trip.name" placeholder="Trip Name">

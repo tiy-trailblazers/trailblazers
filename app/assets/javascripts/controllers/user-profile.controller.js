@@ -12,13 +12,13 @@
 
         vm.signOff = function signOff() {
             UserService.signoffUser()
-            .then(function success(data) {
-                console.log(data);
+            .then(function success() {
                 window.sessionStorage.removeItem('TsandCs');
                 window.sessionStorage.removeItem('user');
                 window.sessionStorage.removeItem('userToken');
+                window.sessionStorage.removeItem('trip');
                 vm.user = null;
-                $('.noprofile-nav')[0].style.display = 'block';
+                $('#map')[0].style.height = '100vh';
                 $state.go('home');
             })
             .catch(function error(err) {

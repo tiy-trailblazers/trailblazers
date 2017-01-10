@@ -2,25 +2,24 @@
     'use strict';
 
     angular.module('trailblazer')
-        .directive('tandcmap', TrailandCampgroundMapDirective);
+        .directive('trip', TripSummaryDirective);
 
-    TrailandCampgroundMapDirective.$inject = ['$stateParams', 'TripService'];
+    TripSummaryDirective.$inject = [];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function TrailandCampgroundMapDirective($stateParams, TripService) {
+    function TripSummaryDirective() {
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
 
         return {
-            restrict: 'EA',
+            restrict: 'E',
             scope: {
-                popupelm: '@',
-                popupelmClicked: '@',
+                tripData: '@',
             },
             link: setupMap
         };
@@ -33,10 +32,7 @@
             var element = 'map';
             var map;
             var popupOverlay = new ol.Overlay({
-               element: $('#popup')[0]
-            });
-            var markerClickedPopup = new ol.Overlay({
-                element: $('#mapClicked-popup')[0]
+                element: $('#popup')[0]
             });
 
             /**
@@ -55,10 +51,10 @@
                     controls: ol.control.defaults(),
                     renderer: 'canvas',
                     layers: vectorLayers,
-                    overlays: [popupOverlay, markerClickedPopup],
+                    overlays: [popupOverlay],
                     view: new ol.View({
-                        center: centerLayers($stateParams.centerCoords),
-                        zoom: 9.5,
+                        center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                        zoom: 11,
                         maxZoom: 20,
                         minZoom: 2
                     })
@@ -66,91 +62,45 @@
                 return builtMap;
             }
 
-            /**
-             * transforms resolved ajaxed data passed via StateParams to pass into
-             * configuration functions.  Used by setInterval to wait for stateParams data
-             * @return {void}
-             */
-            function findCampgroundsAndTrails() {
-                if (!$stateParams.campgrounds || !JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds) {
-                    return;
-                }
-                else {
-                    var campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
-                    campgrounds.forEach(function markAndPlotCampgrounds(campground) {
-                        var campgroundCoord = [campground.longitude, campground.latitude];
-                        addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground', campground);
-                    });
-
-                    var trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
-                    trails.forEach( function markAndPlottrails(trail){
-                        var trailCoordinates = [];
-                        var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
-                        addTrailheadMarkers(centerLayers(trailheadCoord), trail.name, 'trail', trail);
-                        trail.line.forEach(function plotTrail(trailNode){
-                            var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
-                            trailCoordinates.push(transformTrailNode);
-                        });
-                        createTrailLayers(trailCoordinates);
-                    });
-                    window.clearInterval(waitForMarkerData);
-                    // trailheadMarkers = checkDupTrailheads(trailheadMarkers);
-                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(checkDupTrailheads(trailheadMarkers)), buildMarker(trailLineLayers));
-                    markerClick();
-                    $('#map')[0].style.height = '72vh';
-                }
-            }
-
-            var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
-
-            if (JSON.parse(sessionStorage.getItem('user'))) {
-                $('nav.noprofile-nav')[0].style.display = 'none';
-            }
-
-            $scope.$watch('popupelm', function(){
-                if ($scope.popupelm === '') {
-                    return;
-                } else {
-                    var tORcObj = JSON.parse($scope.popupelm);
-                    var trailCoordinates = ol.proj.fromLonLat([tORcObj.longitude, tORcObj.latitude]);
-                    if (tORcObj.campground_type) {
-                        $('#popup .popup-content').html(
-                            '<p>' + tORcObj.name + '<p>'
-                        );
-                    } else {
-                        $('#popup .popup-content').html(
-                            '<p>' + tORcObj.name + '<p>' +
-                            '<p>Length: ' + Math.round(Number(tORcObj.length)*10)/10 + ' miles<p>'
-                        );
-                    }
-                    map.getView().animate({zoom: 12}, {center: trailCoordinates});
-                    popupOverlay.setPosition(trailCoordinates);
-                    markerClickedPopup.setPosition(undefined);
-                }
+            var campgrounds = JSON.parse($scope.tripData).trip.campgrounds ||  JSON.parse(sessionStorage.getItem('trip')).trip.campgrounds;
+            campgrounds.forEach(function markAndPlotCampgrounds(campground) {
+                var campgroundCoord = [campground.longitude, campground.latitude];
+                addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground');
             });
 
-            function markerClick() {
-                map.on('click', function(evt) {
-                    var feature = map.forEachFeatureAtPixel(evt.pixel,
-                        function(feature) {
-                            return feature;
-                        });
-                        if (feature) {
-                            if (feature.get('name') === 'TrailLine') {
-                                return;
-                            }
-                            var geometry = feature.getGeometry();
-                            var coord = geometry.getCoordinates();
-                            $('#mapClicked-popup .popup-content').html(
-                                '<p>' + feature.get('name') + '</p>'
-                            );
-                            TripService.mapClickedpopup(feature.get('data'));
-                            map.getView().animate({zoom: 12}, {center: coord});
-                            markerClickedPopup.setPosition(coord);
-                            popupOverlay.setPosition(undefined);
-                        }
+            var trails = JSON.parse($scope.tripData).trails ||  JSON.parse(sessionStorage.getItem('trip')).trails;
+            trails.forEach( function markAndPlottrails(trail){
+                var trailCoordinates = [];
+                var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
+                addTrailheadMarkers(centerLayers(trailheadCoord), trail.name, 'trail');
+                trail.line.forEach(function plotTrail(trailNode){
+                    var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
+                    trailCoordinates.push(transformTrailNode);
                 });
-            }
+                createTrailLayers(trailCoordinates);
+            });
+            map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
+            $('#map')[0].style.height = '72vh';
+
+            map.on('click', function(evt) {
+                var feature = map.forEachFeatureAtPixel(evt.pixel,
+                    function(feature) {
+                        return feature;
+                    });
+                    if (feature) {
+                        if (feature.get('name') === 'TrailLine') {
+                            return;
+                        }
+                        var geometry = feature.getGeometry();
+                        var coord = geometry.getCoordinates();
+                        $('#popup .popup-content').html(
+                            '<p>' + feature.get('name') + '</p>'
+                        );
+                        map.getView().animate({zoom: 12}, {center: coord});
+                        popupOverlay.setPosition(coord);
+                    }
+            });
+
         }
 
         /**
@@ -204,12 +154,11 @@
          * @param {coordinates} coordinates geo coordinates for placement of
          * markers on map
          */
-        function addCampgroundMarkers(coordinates, name, type, data) {
+        function addCampgroundMarkers(coordinates, name, type) {
            var iconFeature = new ol.Feature({
                 geometry: new ol.geom.Point(coordinates),
                 name: name,
-                type: type,
-                data: data
+                type: type
             });
 
             var iconStyle = new ol.style.Style({
@@ -228,12 +177,11 @@
          * @param {coordinates} coordinates geo coordinates for placement of
          * markers on map
          */
-        function addTrailheadMarkers(coordinates, name, type, data) {
+        function addTrailheadMarkers(coordinates, name, type) {
            var iconFeature = new ol.Feature({
                 geometry: new ol.geom.Point(coordinates),
                 name: name,
-                type: type,
-                data: data
+                type: type
             });
 
             var iconStyle = new ol.style.Style({
@@ -289,21 +237,6 @@
             var center = [ eastWest, northSouth ];
 
             return center;
-        }
-
-        function checkDupTrailheads(icons) {
-            var tocheckarr = [];
-            icons.forEach(function(a) {
-                var tocheck = a.H.name;
-                tocheckarr.push(tocheck);
-            });
-            var checked = icons;
-            tocheckarr.filter(function(value, index, array){
-                if(array.indexOf(value) !== index){
-                    icons.splice(array.indexOf(value), (array.indexOf(value) + 1));
-                }
-            });
-            return checked;
         }
     }
 }());
