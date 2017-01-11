@@ -32,6 +32,7 @@ class Park < ApplicationRecord
       park.attributes.merge({
         trails: Trail.formatted_trails(park.trails),
         campgrounds: park.campgrounds
+
       })
     end
   end

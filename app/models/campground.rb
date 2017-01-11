@@ -7,7 +7,7 @@ class Campground < ApplicationRecord
     cg_point = RGeo::Geographic.spherical_factory(srid: 4326).point(longitude, latitude)
     Park.all.each do |park|
       if park.boundary
-        self.park = park if (park.boundary.contains?(cg_point))
+        self.update(park: park) if (park.boundary.contains?(cg_point))
       end
     end
     self.park

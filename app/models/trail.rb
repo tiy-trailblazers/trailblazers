@@ -99,12 +99,14 @@ class Trail < ApplicationRecord
     if trails_array.size > 0
       trails_array.each do |trail|
         trail.description = trail.park.description if trail.park
-        trails << trail.attributes.merge({
-          line: trail.path_as_array,
-          head_lat: (trail.startlonlat.y if trail.startlonlat),
-          head_lon: (trail.startlonlat.x if trail.startlonlat),
-          park: (trail.park.attributes if trail.park)
-        })
+        trails << trail.attributes.merge(
+          {
+            line: trail.path_as_array,
+            head_lat: (trail.startlonlat.y if trail.startlonlat),
+            head_lon: (trail.startlonlat.x if trail.startlonlat),
+            park: (trail.park.attributes if trail.park)
+          }
+        )
       end
     end
     trails
