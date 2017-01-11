@@ -13,7 +13,6 @@
         vm.message = null;
 
         vm.userAccount = function userAccount(user) {
-            console.log(user);
             if (Object.keys(user).length === 2) {
             UserService.signinUser(user)
                 .then( function success(data) {

@@ -47,7 +47,6 @@
         }
 
         function findTsandCsSearchForm(searchValues) {
-            console.log(searchValues);
             var trail = searchValues.trail;
             var campground = searchValues.campground;
             var park = searchValues.park;
@@ -60,13 +59,13 @@
                 }
             })
             .then(function success(response){
-                console.log(response);
                 var trails = response.data[0].trails;
                 var campgrounds = response.data[0].campgrounds;
-                //NEED TO FIX CENTER COORDINATES HERE\\
-                //ALSO Find out how to handle data Storage\\
+                var center = ol.proj.fromLonLat([ response.data[0].longitude, response.data[0].latitude]);
+                console.log(center);
+                sessionStorage.setItem('TsandCs', angular.toJson({ trails: trails, campgrounds: campgrounds, centerCoords: center}));
                 $rootScope.searched = true;
-                return { trails: trails, campgrounds: campgrounds};
+                return { trails: trails, campgrounds: campgrounds };
             })
             .catch(function error(err) {
                 console.log(err);

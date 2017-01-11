@@ -4,14 +4,14 @@
     angular.module('trailblazer')
         .directive('trip', TripSummaryDirective);
 
-    TripSummaryDirective.$inject = [ '$rootScope' ];
+    TripSummaryDirective.$inject = [ ];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function TripSummaryDirective($rootScope) {
+    function TripSummaryDirective() {
         var campgroundMarkers = [];
         var trailheadMarkers = [];
         var trailLineLayers = [];
@@ -53,7 +53,7 @@
                     layers: vectorLayers,
                     overlays: [popupOverlay],
                     view: new ol.View({
-                        center: JSON.parse($rootScope.TsandCs).centerCoords,
+                        center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
                         zoom: 11,
                         maxZoom: 20,
                         minZoom: 2
@@ -62,24 +62,34 @@
                 return builtMap;
             }
 
-            var campgrounds = JSON.parse($scope.tripData).trip.campgrounds;
-            campgrounds.forEach(function markAndPlotCampgrounds(campground) {
-                var campgroundCoord = [campground.longitude, campground.latitude];
-                addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground');
-            });
+            function findCampgroundsAndTrails() {
+                if ($scope.tripData) {
+                    return;
+                }
+                else {
+                    var campgrounds = JSON.parse($scope.tripData).trip.campgrounds;
+                    campgrounds.forEach(function markAndPlotCampgrounds(campground) {
+                        var campgroundCoord = [campground.longitude, campground.latitude];
+                        addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground', campground);
+                    });
+                    var trails = JSON.parse($scope.tripData).trails;
+                    trails.forEach( function markAndPlottrails(trail){
+                        var trailCoordinates = [];
+                        var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
+                        addTrailheadMarkers(centerLayers(trailheadCoord), trail.name, 'trail', trail);
+                        trail.line.forEach(function plotTrail(trailNode){
+                            var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
+                            trailCoordinates.push(transformTrailNode);
+                        });
+                        createTrailLayers(trailCoordinates);
+                    });
+                    window.clearInterval(waitForMarkerData);
+                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
+                }
+            }
 
-            var trails = JSON.parse($scope.tripData).trails;
-            trails.forEach( function markAndPlottrails(trail){
-                var trailCoordinates = [];
-                var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
-                addTrailheadMarkers(centerLayers(trailheadCoord), trail.name, 'trail');
-                trail.line.forEach(function plotTrail(trailNode){
-                    var transformTrailNode = ol.proj.fromLonLat([ Number(trailNode.lon), Number(trailNode.lat) ]);
-                    trailCoordinates.push(transformTrailNode);
-                });
-                createTrailLayers(trailCoordinates);
-            });
-            map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
+            var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
+
 
             map.on('click', function(evt) {
                 var feature = map.forEachFeatureAtPixel(evt.pixel,

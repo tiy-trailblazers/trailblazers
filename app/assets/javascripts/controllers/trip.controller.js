@@ -18,9 +18,7 @@
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
                 .then(function success(data) {
-                    var center = ol.proj.fromLonLat([ data.longitude, data.latitude]);
-                    $rootScope.TsandCs = angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: center, transCoords: null});
-                    $state.go('trails-and-campgrounds', {centerCoords: center, trails: data.trails, campgrounds: data.campgrounds });
+                    $state.go('trails-and-campgrounds', {trails: data.trails, campgrounds: data.campgrounds });
                 })
                 .catch(function error(err){
                     console.log(err);

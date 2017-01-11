@@ -28,7 +28,7 @@
         };
 
         $rootScope.$watch('user', function() {
-            if($rootScope.user) {
+            if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
                 vm.signedIn = true;
             }
             else {

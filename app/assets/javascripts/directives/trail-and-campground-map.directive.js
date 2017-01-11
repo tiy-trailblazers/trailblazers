@@ -42,9 +42,6 @@
                 element: $('#mapClicked-popup')[0]
             });
 
-            console.log($scope.trails);
-            console.log($scope.campgrounds);
-
             /**
              * Constructs openLayers Map
              * @param  {Object} baseLayer MapBox tiles

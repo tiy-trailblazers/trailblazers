@@ -14,8 +14,6 @@
         vm.signOff = function signOff() {
             UserService.signoffUser()
             .then(function success() {
-                vm.user = null;
-                $('#map')[0].style.height = '100vh';
                 $state.go('home');
             })
             .catch(function error(err) {
@@ -26,6 +24,7 @@
         $rootScope.$watch('user', function() {
             if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
                 vm.signedIn = true;
+                vm.user = JSON.parse(sessionStorage.getItem('user'));
             }
             else {
                 vm.signedIn = null;
