@@ -627,10 +627,6 @@ nav.profile-nav article.plan-trip {
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
 
 ::-webkit-scrollbar-corner {
-  /*
-  background-image: url(resources/corner.png);
-  background-repeat: no-repeat;
-  */
   background-color: #464646; }
 
 #signin {
@@ -776,7 +772,7 @@ nav.profile-nav article.plan-trip {
     left: 12%; } }
 #map-item-list {
   width: 100%;
-  height: 34vh;
+  height: 28vh;
   float: right;
   font-family: 'Patrick Hand SC', cursive;
   text-align: left;
@@ -843,17 +839,27 @@ nav.profile-nav article.plan-trip {
   height: 28vh;
   float: right;
   font-family: 'Patrick Hand SC', cursive;
-  text-align: center;
+  text-align: left;
   padding-top: 5px;
   border: 1px solid #999999;
   box-sizing: border-box;
-  box-shadow: inset 0 0 1em #ffff5e; }
+  opacity: .8;
+  z-index: 2;
+  position: absolute;
+  background-color: #464646;
+  border-radius: 4px;
+  margin-top: 200%;
+  color: white; }
   #trip-item-list h1 {
     margin: 0;
-    text-decoration: underline; }
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 9px; }
   #trip-item-list h2 {
     margin: 0.2em;
-    font-size: 0.3em; }
+    font-size: 0.5em;
+    text-align: center; }
   #trip-item-list .trails, #trip-item-list .campgrounds {
     width: 50%;
     margin-bottom: 0;
@@ -862,7 +868,8 @@ nav.profile-nav article.plan-trip {
     float: left;
     padding-right: 5px; }
     #trip-item-list .trails h3, #trip-item-list .campgrounds h3 {
-      margin: 0.3em 0; }
+      margin: 0.3em 0;
+      padding-left: 5px; }
       #trip-item-list .trails h3 img, #trip-item-list .campgrounds h3 img {
         height: 25px;
         padding-left: 13px; }
@@ -879,7 +886,8 @@ nav.profile-nav article.plan-trip {
         list-style: none;
         padding-top: 2px;
         padding-bottom: 2px;
-        cursor: pointer; }
+        cursor: pointer;
+        padding-left: 20px; }
         #trip-item-list .trails ul li:hover, #trip-item-list .campgrounds ul li:hover {
           background-color: #888888; }
   #trip-item-list .campgrounds:first-child h3 {
@@ -887,7 +895,11 @@ nav.profile-nav article.plan-trip {
 
 @media screen and (min-width: 1000px) {
   #trip-item-list {
-    width: 68%; } }
+    width: 31%;
+    margin: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0; } }
 #popup, #trailpopup, #mapClicked-popup {
   font-family: 'Patrick Hand SC', cursive;
   position: absolute;
