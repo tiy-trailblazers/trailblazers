@@ -3,7 +3,10 @@ nav {
     width: 100%;
     min-width: 135px;
     @include contentBlock;
-    background-color: #4a4a4a;
+    background-color: black;
+    z-index: 2;
+    opacity: .8;
+    position: absolute;
     font-family: 'Patrick Hand SC', cursive;
     header h1 {
       font-size: 2rem;
@@ -70,6 +73,10 @@ nav {
             border-radius: 2%;
             border: 1px solid #000000;
             box-shadow: 0 0 0.5em #ffffff;
+            ul {
+              max-height: 65px;
+              overflow-y: scroll;
+            }
             h3 {
                 color: #000000;
                 margin: 0.6em 0;
@@ -130,6 +137,7 @@ nav.profile-nav {
         aside.new-search {
             form {
                 margin-top: 1.5em;
+
             }
         }
         h4 {
@@ -177,9 +185,12 @@ nav.profile-nav {
                 margin: 0.3em 0;
                 padding: 2%;
                 list-style: circle;
+                max-height: 86px;
+                overflow-y: scroll;
                 li {
-                    padding: 2%;
+                    padding: 1%;
                     color: #000000;
+                    text-align: left;
                 }
             }
         }
@@ -290,4 +301,21 @@ nav.profile-nav {
             padding-left: 4%;
         }
     }
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+::-webkit-scrollbar-corner {
+/*
+background-image: url(resources/corner.png);
+background-repeat: no-repeat;
+*/
+background-color: #464646;
 }

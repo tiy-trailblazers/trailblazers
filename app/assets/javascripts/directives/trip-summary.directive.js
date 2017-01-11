@@ -80,7 +80,6 @@
                 createTrailLayers(trailCoordinates);
             });
             map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
-            $('#map')[0].style.height = '72vh';
 
             map.on('click', function(evt) {
                 var feature = map.forEachFeatureAtPixel(evt.pixel,
