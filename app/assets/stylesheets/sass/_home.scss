@@ -6,7 +6,7 @@ nav {
     background-color: black;
     z-index: 2;
     opacity: .8;
-    position: absolute;
+
     font-family: 'Patrick Hand SC', cursive;
     header h1 {
       font-size: 2rem;
@@ -277,6 +277,7 @@ nav.profile-nav {
         width: 32%;
         height: 100vh;
         float: left;
+        position: absolute;
         li {
             padding: 5%;
         }
