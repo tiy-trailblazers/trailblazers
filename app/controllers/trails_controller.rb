@@ -31,7 +31,7 @@ class TrailsController < ApplicationController
     if params[:limit]
       limit = params[:limit]
     else
-      limit = 100
+      limit = 25
     end
 
     if params[:max_length] && params[:min_length]
