@@ -31,7 +31,7 @@ class Park < ApplicationRecord
 
     parks_array.map do |park|
       trails_to_send = park.trails.sort{|a,b| b.length <=> a.length}
-      limit = 80
+      limit = 25
       park.attributes.merge({
         trails: Trail.formatted_trails(trails_to_send[0, limit]),
         campgrounds: park.campgrounds

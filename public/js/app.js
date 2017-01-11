@@ -1183,7 +1183,7 @@
             .then(function success(response){
                 var trails = response.data[0].trails;
                 var campgrounds = response.data[0].campgrounds;
-                var center = ol.proj.fromLonLat([ response.data[0].longitude, response.data[0].latitude]);
+                var center = ([ response.data[0].longitude, response.data[0].latitude]);
                 console.log(center);
                 sessionStorage.setItem('TsandCs', angular.toJson({ trails: trails, campgrounds: campgrounds, centerCoords: center}));
                 $rootScope.searched = true;
