@@ -25,6 +25,7 @@ gem 'mail'
 gem 'httparty'
 gem 'overpass-api-ruby'
 gem 'geocoder'
+gem 'airbrake'
 
 gem 'nokogiri'
 
