@@ -33,7 +33,6 @@ class MapItemsControllerTest < ActionDispatch::IntegrationTest
   test "can search for parks by name" do
     post search_map_items_path, params: { park_name: "river" }
     assert_equal 1, response.parsed_body.length
-    assert_match(/Park Loop Road is closed for the winter/ , response.parsed_body.first["alerts"])
     assert_equal 2, response.parsed_body.first["trails"].size
   end
 
