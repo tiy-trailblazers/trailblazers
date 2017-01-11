@@ -4,16 +4,17 @@
     angular.module('trailblazer')
         .factory('TrailandCampgroundService', TrailandCampgroundService);
 
-    TrailandCampgroundService.$inject = [ '$http' ];
+    TrailandCampgroundService.$inject = [ '$http', '$rootScope' ];
 
     /**
      * Constructs angular service for trail and campground http requests
      * @param {Service} $http core angular service for http requests
      */
-    function TrailandCampgroundService($http){
+    function TrailandCampgroundService($http, $rootScope){
 
         return {
-            findTsandCs: findTsandCs
+            findTsandCs: findTsandCs,
+            findTsandCsSearchForm: findTsandCsSearchForm
         };
         /**
          * executes http request to app backend for trail and campground data
@@ -40,7 +41,34 @@
             .then( function transformResponse(response) {
                 var trails = response.data.trails;
                 var campgrounds = response.data.campgrounds;
+                $rootScope.searched = true;
                 return { trails: trails, campgrounds: campgrounds};
+            });
+        }
+
+        function findTsandCsSearchForm(searchValues) {
+            console.log(searchValues);
+            var trail = searchValues.trail;
+            var campground = searchValues.campground;
+            var park = searchValues.park;
+            return $http({
+                url: 'map_items/search',
+                method: 'POST',
+                data: {
+                    name: trail || campground,
+                    park_name: park
+                }
+            })
+            .then(function success(response){
+                console.log(response);
+                var trails = response.data[0].trails;
+                var campgrounds = response.data[0].campgrounds;
+                var center = [response.data[0].longitude, response.data[0].latitude];
+                $rootScope.searched = true;
+                return { trails: trails, campgrounds: campgrounds, center:center};
+            })
+            .catch(function error(err) {
+                console.log(err);
             });
         }
 

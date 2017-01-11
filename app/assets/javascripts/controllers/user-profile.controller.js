@@ -4,19 +4,16 @@
     angular.module('trailblazer')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [  '$scope', '$state', 'UserService' ];
+    UserProfileController.$inject = [  '$scope', '$state', '$rootScope', 'UserService' ];
 
-    function UserProfileController($scope, $state, UserService) {
+    function UserProfileController($scope, $state, $rootScope, UserService) {
         var vm = this;
-        vm.user = null;
+        vm.user = JSON.parse(sessionStorage.getItem('user'));
+        vm.signedIn = null;
 
         vm.signOff = function signOff() {
             UserService.signoffUser()
             .then(function success() {
-                window.sessionStorage.removeItem('TsandCs');
-                window.sessionStorage.removeItem('user');
-                window.sessionStorage.removeItem('userToken');
-                window.sessionStorage.removeItem('trip');
                 vm.user = null;
                 $('#map')[0].style.height = '100vh';
                 $state.go('home');
@@ -26,19 +23,13 @@
             });
         };
 
-        function tokenSearch() {
-            var token = setInterval(function() {
-                if (!JSON.parse(sessionStorage.getItem('user'))) {
-                    return;
-                } else {
-                    clearInterval(token);
-                    $scope.$apply(function() {
-                        vm.user = JSON.parse(sessionStorage.getItem('user'));
-                    });
-                }
-            }, 1000);
-        }
-
-        tokenSearch();
+        $rootScope.$watch('user', function() {
+            if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
+                vm.signedIn = true;
+            }
+            else {
+                vm.signedIn = null;
+            }
+        });
     }
 }());

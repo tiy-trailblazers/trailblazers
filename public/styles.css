@@ -716,7 +716,8 @@ nav.profile-nav article.plan-trip {
   border-left: 0px;
   box-sizing: border-box; }
   #map canvas {
-    display: block; }
+    display: block;
+    height: none; }
 
 @media screen and (min-width: 1000px) {
   #map {

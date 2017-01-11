@@ -4,14 +4,14 @@
     angular.module('trailblazer')
     .directive('map', MapDirective);
 
-    MapDirective.$inject = [ '$state', 'TrailandCampgroundService' ];
+    MapDirective.$inject = [ '$state', '$rootScope', 'TrailandCampgroundService' ];
 
     /**
      * Creates Directive for OpenLayers Map Element
      * @param {Service} MapService Angular Service used for http request from map data
      * @return {Object} Directive config and map setup and event functionality
      */
-    function MapDirective($state, TrailandCampgroundService) {
+    function MapDirective($state, $rootScope, TrailandCampgroundService) {
         return {
             restrict: 'EA',
             scope: {
@@ -64,7 +64,7 @@
                 if (JSON.parse(sessionStorage.getItem('user'))) {
                     TrailandCampgroundService.findTsandCs(coordinates)
                         .then(function success(data) {
-                            window.sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: coordArray, transCoords: coordinates}));
+                            $rootScope.TsandCs = angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: coordArray, transCoords: coordinates});
                             $state.go('trails-and-campgrounds', {
                                 trails: data.trails,
                                 campgrounds: data.campgrounds,
@@ -79,10 +79,6 @@
                     $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
                 }
             });
-
-            if (JSON.parse(sessionStorage.getItem('user'))) {
-                $('.noprofile-nav')[0].style.display = 'none';
-            }
         }
 
         /**

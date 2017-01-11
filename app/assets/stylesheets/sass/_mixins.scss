@@ -4,3 +4,19 @@
     background-color: #fff700;
     //box-shadow: 0 0 1em black;
 }
+
+@mixin borderShadowElm {
+    border: 1px solid #000000;
+    box-shadow: 0 0 0.5em #ffffff;
+}
+
+@mixin psuedoAfter {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+@mixin autoMarginElm($mrg, $wdth) {
+    width: $wdth;
+    margin: $mrg;
+}

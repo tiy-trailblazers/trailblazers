@@ -63,6 +63,7 @@
             })
             .then(function success(response) {
                 console.log(response);
+                tsORcs = [];
                 return response.data;
             })
             .catch(function error(err) {

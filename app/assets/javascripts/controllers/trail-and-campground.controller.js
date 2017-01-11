@@ -4,13 +4,13 @@
     angular.module('trailblazer')
         .controller('TrailandCampgroundController', TrailandCampgroundController);
 
-    TrailandCampgroundController.$inject = ['$scope', '$stateParams', 'TripService'];
+    TrailandCampgroundController.$inject = ['$scope', '$stateParams', '$rootScope', 'TripService'];
 
-    function TrailandCampgroundController($scope, $stateParams, TripService) {
+    function TrailandCampgroundController($scope, $stateParams, $rootScope, TripService) {
         var vm = this;
 
-        vm.trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
-        vm.campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+        vm.trails = $stateParams.trails || JSON.parse($rootScope.TsandCs).trails;
+        vm.campgrounds = $stateParams.campgrounds || JSON.parse($rootScope.TsandCs).campgrounds;
         vm.element = null;
         vm.markerElement = null;
 

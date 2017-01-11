@@ -9,8 +9,10 @@
     box-sizing: border-box;
     canvas {
         display: block;
+        height: none;
     }
 }
+
 
 @media screen and (min-width: 1000px){
     #map {

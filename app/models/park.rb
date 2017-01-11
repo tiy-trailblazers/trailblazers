@@ -30,8 +30,9 @@ class Park < ApplicationRecord
   def self.jsonify(parks_array)
     parks_array.map do |park|
       park.attributes.merge({
-        trails: Trail.formatted_trails(park.trails.select {|trail| trail.name}),
-        campgrounds: park.campgrounds.attributes
+        trails: Trail.formatted_trails(park.trails),
+        campgrounds: park.campgrounds
+
       })
     end
   end
