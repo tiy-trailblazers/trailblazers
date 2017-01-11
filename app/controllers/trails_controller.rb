@@ -27,14 +27,21 @@ class TrailsController < ApplicationController
   def query
     base_query = Trail.where("name is not null and path && ST_MakeEnvelope (#{params[:west]}, #{params[:south]}, #{params[:east]}, #{params[:north]}, 3785)")
 
-    if params[:max_length] && params[:min_length]
-      base_query.where("length <= #{params[:max_length]} and length >= #{params[:min_length]}").order(length: :desc).limit(params[:limit]).offset(params[:offset])
-    elsif params[:max_length]
-      base_query.where("length <= #{params[:max_length]}").order(length: :desc).limit(params[:limit]).offset(params[:offset])
-    elsif params[:min_length]
-      base_query.where("length >= #{params[:min_length]}").order(length: :desc).limit(params[:limit]).offset(params[:offset])
+    limit = nil
+    if params[:limit]
+      limit = params[:limit]
     else
-      base_query.order(length: :desc).limit(params[:limit]).offset(params[:offset])
+      limit = 100
+    end
+
+    if params[:max_length] && params[:min_length]
+      base_query.where("length <= #{params[:max_length]} and length >= #{params[:min_length]}").order(length: :desc).limit(limit).offset(params[:offset])
+    elsif params[:max_length]
+      base_query.where("length <= #{params[:max_length]}").order(length: :desc).limit(limit).offset(params[:offset])
+    elsif params[:min_length]
+      base_query.where("length >= #{params[:min_length]}").order(length: :desc).limit(limit).offset(params[:offset])
+    else
+      base_query.order(length: :desc).limit(limit).offset(params[:offset])
     end
   end
 end

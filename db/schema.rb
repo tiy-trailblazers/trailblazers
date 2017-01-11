@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110212638) do
+ActiveRecord::Schema.define(version: 20170111164741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 20170110212638) do
     t.integer   "osm_id"
     t.boolean   "bicycle"
     t.boolean   "foot"
-    t.text      "source"
     t.geography "startlonlat", limit: {:srid=>4326, :type=>"point", :geographic=>true}
     t.float     "latitude"
     t.float     "longitude"

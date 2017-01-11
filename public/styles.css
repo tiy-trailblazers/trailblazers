@@ -475,7 +475,8 @@ nav {
       nav.noprofile-nav form input {
         font-family: 'Patrick Hand SC', cursive;
         width: 90%;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        margin: 2px; }
         nav.noprofile-nav form input:last-child {
           background-color: #ffff5e;
           border: #000000;
@@ -535,7 +536,8 @@ nav.profile-nav article.plan-trip {
     nav.profile-nav article.plan-trip form input {
       font-family: 'Patrick Hand SC', cursive;
       width: 90%;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      margin: 2px; }
       nav.profile-nav article.plan-trip form input:last-child {
         background-color: #ffff5e;
         border: #000000;
@@ -648,7 +650,7 @@ nav.profile-nav article.plan-trip {
     #signin form input {
       display: inline-block;
       width: 100%;
-      margin: 0;
+      margin: 2px;
       box-sizing: border-box; }
       #signin form input:focus {
         outline-color: #ffff5e; }
@@ -773,7 +775,7 @@ nav.profile-nav article.plan-trip {
     left: 12%; } }
 #map-item-list {
   width: 100%;
-  height: 28vh;
+  height: 33vh;
   float: right;
   font-family: 'Patrick Hand SC', cursive;
   text-align: left;
@@ -837,7 +839,7 @@ nav.profile-nav article.plan-trip {
     left: 0; } }
 #trip-item-list {
   width: 100%;
-  height: 28vh;
+  height: 33vh;
   float: right;
   font-family: 'Patrick Hand SC', cursive;
   text-align: left;
@@ -859,7 +861,7 @@ nav.profile-nav article.plan-trip {
     padding-bottom: 9px; }
   #trip-item-list h2 {
     margin: 0.2em;
-    font-size: 0.5em;
+    font-size: 0.8em;
     text-align: center; }
   #trip-item-list .trails, #trip-item-list .campgrounds {
     width: 50%;

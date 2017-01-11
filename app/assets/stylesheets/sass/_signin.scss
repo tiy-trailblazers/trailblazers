@@ -18,8 +18,9 @@
         input {
             display: inline-block;
             width: 100%;
-            margin: 0;
+            margin: 2px;
             box-sizing: border-box;
+
             &:focus {
                 outline-color: #ffff5e;
             }

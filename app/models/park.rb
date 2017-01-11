@@ -28,9 +28,12 @@ class Park < ApplicationRecord
   end
 
   def self.jsonify(parks_array)
+
     parks_array.map do |park|
+      trails_to_send = park.trails.sort{|a,b| b.length <=> a.length}
+      limit = 80
       park.attributes.merge({
-        trails: Trail.formatted_trails(park.trails),
+        trails: Trail.formatted_trails(trails_to_send[0, limit]),
         campgrounds: park.campgrounds
 
       })
