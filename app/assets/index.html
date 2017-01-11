@@ -25,7 +25,10 @@
                 <a ng-click='nav.signingIn()' ui-sref='signin'>Sign In</a>
                 <li>
                     <form ng-show='!nav.hasSearched' ng-submit='nav.submitSearch(nav.searchValues)'>
-                        <h3>Your Adventure Awaits</h3>
+                        <h3>Your Adventure Awaits
+                          <br />
+                          <small>search our map!</small>
+                        </h3>
                         <input type='text' placeholder='Park Name' ng-model='nav.searchValues.park'>
                         <input type='text' placeholder='Trail Name' ng-model='nav.searchValues.trail'>
                         <input type='text' placeholder='Campground Name' ng-model='nav.searchValues.campground'>
