@@ -300,7 +300,6 @@
 
     function TripController($scope, $state, $rootScope, TrailandCampgroundService, TripService) {
         var vm = this;
-        vm.tripCreate = null;
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
@@ -317,30 +316,22 @@
                 });
         };
 
-        vm.newSearchForm = function newSearchForm() {
-            vm.search = true;
-        };
-
-        vm.createTrip = function createTrip() {
-            vm.tripCreate = true;
-        };
-
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip)
             .then(function success(data) {
                 vm.trip = {};
-                vm.tripCreate = null;
                 $state.go('trip', {id: data.trip.id, trip:data});
             });
         };
 
         vm.newSearch = function newSearch() {
             $rootScope.searched =  null;
+            sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched) {
+            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
                 vm.madeSearch = true;
             } else {
                 vm.madeSearch = false;
@@ -834,7 +825,7 @@
     angular.module('trailblazer')
         .directive('trip', TripSummaryDirective);
 
-    TripSummaryDirective.$inject = [ ];
+    TripSummaryDirective.$inject = [];
 
     /**
      * Creates Directive for OpenLayers Map Element
@@ -884,7 +875,7 @@
                     overlays: [popupOverlay],
                     view: new ol.View({
                         center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
-                        zoom: 11,
+                        zoom: 9.5,
                         maxZoom: 20,
                         minZoom: 2
                     })
@@ -893,7 +884,7 @@
             }
 
             function findCampgroundsAndTrails() {
-                if ($scope.tripData) {
+                if (!$scope.tripData) {
                     return;
                 }
                 else {
@@ -915,30 +906,32 @@
                     });
                     window.clearInterval(waitForMarkerData);
                     map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
+                    markerClick();
                 }
             }
 
             var waitForMarkerData = window.setInterval(findCampgroundsAndTrails,100);
 
-
-            map.on('click', function(evt) {
-                var feature = map.forEachFeatureAtPixel(evt.pixel,
-                    function(feature) {
-                        return feature;
-                    });
-                    if (feature) {
-                        if (feature.get('name') === 'TrailLine') {
-                            return;
+            function markerClick() {
+                map.on('click', function(evt) {
+                    var feature = map.forEachFeatureAtPixel(evt.pixel,
+                        function(feature) {
+                            return feature;
+                        });
+                        if (feature) {
+                            if (feature.get('name') === 'TrailLine') {
+                                return;
+                            }
+                            var geometry = feature.getGeometry();
+                            var coord = geometry.getCoordinates();
+                            $('#popup .popup-content').html(
+                                '<p>' + feature.get('name') + '</p>'
+                            );
+                            map.getView().animate({zoom: 12}, {center: coord});
+                            popupOverlay.setPosition(coord);
                         }
-                        var geometry = feature.getGeometry();
-                        var coord = geometry.getCoordinates();
-                        $('#popup .popup-content').html(
-                            '<p>' + feature.get('name') + '</p>'
-                        );
-                        map.getView().animate({zoom: 12}, {center: coord});
-                        popupOverlay.setPosition(coord);
-                    }
-            });
+                });
+            }
 
         }
 

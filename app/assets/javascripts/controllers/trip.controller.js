@@ -8,7 +8,6 @@
 
     function TripController($scope, $state, $rootScope, TrailandCampgroundService, TripService) {
         var vm = this;
-        vm.tripCreate = null;
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
@@ -25,30 +24,22 @@
                 });
         };
 
-        vm.newSearchForm = function newSearchForm() {
-            vm.search = true;
-        };
-
-        vm.createTrip = function createTrip() {
-            vm.tripCreate = true;
-        };
-
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip)
             .then(function success(data) {
                 vm.trip = {};
-                vm.tripCreate = null;
                 $state.go('trip', {id: data.trip.id, trip:data});
             });
         };
 
         vm.newSearch = function newSearch() {
             $rootScope.searched =  null;
+            sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched) {
+            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
                 vm.madeSearch = true;
             } else {
                 vm.madeSearch = false;
