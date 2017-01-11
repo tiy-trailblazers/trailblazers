@@ -65,10 +65,10 @@
                 </ul>
             </aside>
             <section ng-controller='TripController as trip' class='past-trips'>
-                <header ng-show='!trip.search' ng-hide='trip.tripCreate'>
+                <header ng-show='!trip.madeSearch'>
                     <h2>Past Adventures</h2>
                 </header>
-                <article ng-show='!trip.search' ng-hide='trip.tripCreate' class="trip-link">
+                <article ng-show='!trip.madeSearch' class="trip-link">
                     <ul>
                         <li>
                             3 days in Shenandoah National Park
@@ -86,8 +86,7 @@
             </article>
             <article class='plan-trip'>
                 <aside ng-show='!trip.madeSearch' class='new-search'>
-                    <a class='newadv-link' ng-click='trip.newSearchForm()' ng-hide='trip.madeSearch'>Find New Adventure</a>
-                    <form ng-show='trip.search' ng-submit='trip.submitSearch(trip.searchValues)'>
+                    <form ng-submit='trip.submitSearch(trip.searchValues)'>
                         <h3>Your Adventure Awaits</h3>
                         <input type='text' placeholder='Park Name' ng-model='trip.searchValues.park'>
                         <input type='text' placeholder='Trail Name' ng-model='trip.searchValues.trail'>
@@ -95,8 +94,7 @@
                         <input type='submit' value='Search'>
                     </form>
                 </aside>
-                <a ng-hide='!trip.madeSearch || trip.tripCreate' ng-click="trip.createTrip()">Plan A Trip!</a>
-                <form ng-show="trip.tripCreate" ng-submit='trip.postTrip(trip.trip)'>
+                <form ng-show="trip.madeSearch" ng-submit='trip.postTrip(trip.trip)'>
                     <h3>Trip Plans</h3>
                     <input type="text" ng-model="trip.trip.name" placeholder="Trip Name">
                     <input type="date" ng-model="trip.trip.start_date" placeholder="Start Date">
