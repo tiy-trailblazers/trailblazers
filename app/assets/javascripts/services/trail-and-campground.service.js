@@ -63,9 +63,10 @@
                 console.log(response);
                 var trails = response.data[0].trails;
                 var campgrounds = response.data[0].campgrounds;
-                var center = [response.data[0].longitude, response.data[0].latitude];
+                //NEED TO FIX CENTER COORDINATES HERE\\
+                //ALSO Find out how to handle data Storage\\
                 $rootScope.searched = true;
-                return { trails: trails, campgrounds: campgrounds, center:center};
+                return { trails: trails, campgrounds: campgrounds};
             })
             .catch(function error(err) {
                 console.log(err);

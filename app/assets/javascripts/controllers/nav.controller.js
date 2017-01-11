@@ -16,9 +16,7 @@
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
                 .then(function success(data) {
-                    var center = ol.proj.fromLonLat(data.center);
-                    //sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: center, transCoords: null}));
-                    $state.go('trails-and-campgrounds', {centerCoords: center, trails: data.trails, campgrounds: data.campgrounds });
+                    $state.go('trails-and-campgrounds', {centerCoords: data.center, trails: data.trails, campgrounds: data.campgrounds });
                 })
                 .catch(function error(err){
                     console.log(err);
@@ -34,14 +32,13 @@
                 vm.signedIn = true;
             }
             else {
-                console.log('in else');
                 vm.signedIn = null;
             }
         });
 
         vm.newSearch = function newSearch() {
-            vm.hasSearched =  null;
-            $rootScope.TsandCs = null;
+            $rootScope.searched = null;
+            sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 

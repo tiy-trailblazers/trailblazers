@@ -24,7 +24,7 @@
             <ul>
                 <a ng-click='nav.signingIn()' ui-sref='signin'>Sign In</a>
                 <li>
-                    <form ng-show='!nav.hasSearched' ng-submit='nav.submitSearch(nav.searchValues)'>
+                    <form ng-submit='nav.submitSearch(nav.searchValues)'>
                         <h3>Your Adventure Awaits</h3>
                         <input type='text' placeholder='Park Name' ng-model='nav.searchValues.park'>
                         <input type='text' placeholder='Trail Name' ng-model='nav.searchValues.trail'>
@@ -32,7 +32,7 @@
                         <input type='submit' value='Search'>
                     </form>
                 </li>
-                <a ng-show='nav.hasSearched' ng-click='nav.newSearch()'>New Search</a>
+                <a ng-show='nav.hasSearched' ng-click='nav.newSearch()'>New Map Search</a>
             </ul>
         </nav>
 

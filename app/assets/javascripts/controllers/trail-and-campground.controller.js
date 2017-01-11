@@ -9,8 +9,9 @@
     function TrailandCampgroundController($scope, $stateParams, $rootScope, TripService) {
         var vm = this;
 
-        vm.trails = $stateParams.trails || JSON.parse($rootScope.TsandCs).trails;
-        vm.campgrounds = $stateParams.campgrounds || JSON.parse($rootScope.TsandCs).campgrounds;
+        vm.trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+        vm.campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+        vm.center = $stateParams.centerCoords || JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
         vm.element = null;
         vm.markerElement = null;
 

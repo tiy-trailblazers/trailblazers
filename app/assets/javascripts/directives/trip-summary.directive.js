@@ -62,13 +62,13 @@
                 return builtMap;
             }
 
-            var campgrounds = JSON.parse($scope.tripData).trip.campgrounds ||  JSON.parse(sessionStorage.getItem('trip')).trip.campgrounds;
+            var campgrounds = JSON.parse($scope.tripData).trip.campgrounds;
             campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                 var campgroundCoord = [campground.longitude, campground.latitude];
                 addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground');
             });
 
-            var trails = JSON.parse($scope.tripData).trails ||  JSON.parse(sessionStorage.getItem('trip')).trails;
+            var trails = JSON.parse($scope.tripData).trails;
             trails.forEach( function markAndPlottrails(trail){
                 var trailCoordinates = [];
                 var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);

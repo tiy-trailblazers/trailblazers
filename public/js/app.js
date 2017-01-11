@@ -26,10 +26,10 @@
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
-               user_token: checkSessionStorage('token'),
-               centerCoords: checkSessionStorage('center'),
-               trails: checkSessionStorage('trails'),
-               campgrounds: checkSessionStorage('campgrounds')
+               user_token: null,
+               centerCoords: null,
+               trails: null,
+               campgrounds: null
            }
        })
        .state({
@@ -62,19 +62,19 @@
            }
        });
 
-       function checkSessionStorage(param) {
-           if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'center') {
-               return JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
-           } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'trails') {
-               return JSON.parse(sessionStorage.getItem('TsandCs')).trails;
-           } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'campgrounds') {
-               return JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
-           } else if(JSON.parse(sessionStorage.getItem('user')) && param === 'token') {
-               return JSON.parse(sessionStorage.getItem('user')).token;
-           } else {
-               return null;
-           }
-       }
+    //    function checkSessionStorage(param) {
+    //        if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'center') {
+    //            return JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
+    //        } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'trails') {
+    //            return JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+    //        } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'campgrounds') {
+    //            return JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+    //        } else if(JSON.parse(sessionStorage.getItem('user')) && param === 'token') {
+    //            return JSON.parse(sessionStorage.getItem('user')).token;
+    //        } else {
+    //            return null;
+    //        }
+    //    }
 
     }
 
@@ -100,9 +100,7 @@
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
                 .then(function success(data) {
-                    var center = ol.proj.fromLonLat(data.center);
-                    //sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: center, transCoords: null}));
-                    $state.go('trails-and-campgrounds', {centerCoords: center, trails: data.trails, campgrounds: data.campgrounds });
+                    $state.go('trails-and-campgrounds', {centerCoords: data.center, trails: data.trails, campgrounds: data.campgrounds });
                 })
                 .catch(function error(err){
                     console.log(err);
@@ -118,14 +116,13 @@
                 vm.signedIn = true;
             }
             else {
-                console.log('in else');
                 vm.signedIn = null;
             }
         });
 
         vm.newSearch = function newSearch() {
-            vm.hasSearched =  null;
-            $rootScope.TsandCs = null;
+            $rootScope.searched = null;
+            sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 
@@ -156,8 +153,8 @@
             .then(function transformData(data) {
                 vm.trails = data.trails;
                 vm.campgrounds = data.campgrounds;
-                $rootScope.TsandCs = angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: $stateParams.centerCoords});
-                //sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: $stateParams.centerCoords || JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords, transCoords: $stateParams.transCoords || JSON.parse(sessionStorage.getItem('TsandCs')).transCoords}));
+                //$rootScope.TsandCs = angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: $stateParams.centerCoords});
+                sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: $stateParams.centerCoords, transCoords: $stateParams.transCoords}));
             })
             .catch(function errHandler(err) {
                 console.log(err);
@@ -257,8 +254,9 @@
     function TrailandCampgroundController($scope, $stateParams, $rootScope, TripService) {
         var vm = this;
 
-        vm.trails = $stateParams.trails || JSON.parse($rootScope.TsandCs).trails;
-        vm.campgrounds = $stateParams.campgrounds || JSON.parse($rootScope.TsandCs).campgrounds;
+        vm.trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+        vm.campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+        vm.center = $stateParams.centerCoords || JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
         vm.element = null;
         vm.markerElement = null;
 
@@ -333,22 +331,19 @@
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip)
             .then(function success(data) {
-                sessionStorage.setItem('trip', angular.toJson(data));
-                $state.go('trip', {id: data.trip.id, trip:data});
                 vm.trip = {};
                 vm.tripCreate = null;
+                $state.go('trip', {id: data.trip.id, trip:data});
             });
         };
 
         vm.newSearch = function newSearch() {
             $rootScope.searched =  null;
-            $rootScope.TsandCs = null;
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
             if($rootScope.searched) {
-                console.log('in if');
                 vm.madeSearch = true;
             } else {
                 vm.madeSearch = false;
@@ -457,10 +452,10 @@
                 var transCoordOne = ol.proj.transform([ coordArray[0], coordArray[1]], 'EPSG:3857', 'EPSG:4326');
                 var transCoordTwo = ol.proj.transform([ coordArray[2], coordArray[3]], 'EPSG:3857', 'EPSG:4326');
                 var coordinates = transCoordOne.concat(transCoordTwo);
-                if (JSON.parse(sessionStorage.getItem('user'))) {
+                if ($rootScope.user) {
                     TrailandCampgroundService.findTsandCs(coordinates)
                         .then(function success(data) {
-                            $rootScope.TsandCs = angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: coordArray, transCoords: coordinates});
+                            sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: coordArray, transCoords: coordinates}));
                             $state.go('trails-and-campgrounds', {
                                 trails: data.trails,
                                 campgrounds: data.campgrounds,
@@ -553,6 +548,9 @@
             scope: {
                 popupelm: '@',
                 popupelmClicked: '@',
+                trails: '@',
+                campgrounds: '@',
+                center: '@',
             },
             link: setupMap
         };
@@ -570,6 +568,9 @@
             var markerClickedPopup = new ol.Overlay({
                 element: $('#mapClicked-popup')[0]
             });
+
+            console.log($scope.trails);
+            console.log($scope.campgrounds);
 
             /**
              * Constructs openLayers Map
@@ -589,7 +590,7 @@
                     layers: vectorLayers,
                     overlays: [popupOverlay, markerClickedPopup],
                     view: new ol.View({
-                        center: centerLayers($stateParams.centerCoords),
+                        center: centerLayers(JSON.parse($scope.center)),
                         zoom: 9.5,
                         maxZoom: 20,
                         minZoom: 2
@@ -604,18 +605,16 @@
              * @return {void}
              */
             function findCampgroundsAndTrails() {
-                if (!$stateParams.campgrounds ) {
+                if ($scope.campgrounds.length === 0 && $scope.campgrounds.length === 0) {
                     return;
                 }
                 else {
-                    console.log($stateParams);
-                    var campgrounds = $stateParams.campgrounds || JSON.parse($rootScope.TsandCs).campgrounds;
+                    var campgrounds = JSON.parse($scope.campgrounds);
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
                         addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground', campground);
                     });
-
-                    var trails = $stateParams.trails || JSON.parse($rootScope.TsandCs).trails || 'none';
+                    var trails = JSON.parse($scope.trails);
                     trails.forEach( function markAndPlottrails(trail){
                         var trailCoordinates = [];
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
@@ -900,13 +899,13 @@
                 return builtMap;
             }
 
-            var campgrounds = JSON.parse($scope.tripData).trip.campgrounds ||  JSON.parse(sessionStorage.getItem('trip')).trip.campgrounds;
+            var campgrounds = JSON.parse($scope.tripData).trip.campgrounds;
             campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                 var campgroundCoord = [campground.longitude, campground.latitude];
                 addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground');
             });
 
-            var trails = JSON.parse($scope.tripData).trails ||  JSON.parse(sessionStorage.getItem('trip')).trails;
+            var trails = JSON.parse($scope.tripData).trails;
             trails.forEach( function markAndPlottrails(trail){
                 var trailCoordinates = [];
                 var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);
@@ -1183,9 +1182,10 @@
                 console.log(response);
                 var trails = response.data[0].trails;
                 var campgrounds = response.data[0].campgrounds;
-                var center = [response.data[0].longitude, response.data[0].latitude];
+                //NEED TO FIX CENTER COORDINATES HERE\\
+                //ALSO Find out how to handle data Storage\\
                 $rootScope.searched = true;
-                return { trails: trails, campgrounds: campgrounds, center:center};
+                return { trails: trails, campgrounds: campgrounds};
             })
             .catch(function error(err) {
                 console.log(err);
@@ -1262,6 +1262,7 @@
             .then(function success(response) {
                 console.log(response);
                 tsORcs = [];
+                sessionStorage.setItem('trip', angular.toJson(response.data));
                 return response.data;
             })
             .catch(function error(err) {

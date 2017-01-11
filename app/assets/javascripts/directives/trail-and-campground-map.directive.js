@@ -21,6 +21,9 @@
             scope: {
                 popupelm: '@',
                 popupelmClicked: '@',
+                trails: '@',
+                campgrounds: '@',
+                center: '@',
             },
             link: setupMap
         };
@@ -38,6 +41,9 @@
             var markerClickedPopup = new ol.Overlay({
                 element: $('#mapClicked-popup')[0]
             });
+
+            console.log($scope.trails);
+            console.log($scope.campgrounds);
 
             /**
              * Constructs openLayers Map
@@ -57,7 +63,7 @@
                     layers: vectorLayers,
                     overlays: [popupOverlay, markerClickedPopup],
                     view: new ol.View({
-                        center: centerLayers($stateParams.centerCoords),
+                        center: centerLayers(JSON.parse($scope.center)),
                         zoom: 9.5,
                         maxZoom: 20,
                         minZoom: 2
@@ -72,18 +78,16 @@
              * @return {void}
              */
             function findCampgroundsAndTrails() {
-                if (!$stateParams.campgrounds ) {
+                if ($scope.campgrounds.length === 0 && $scope.campgrounds.length === 0) {
                     return;
                 }
                 else {
-                    console.log($stateParams);
-                    var campgrounds = $stateParams.campgrounds || JSON.parse($rootScope.TsandCs).campgrounds;
+                    var campgrounds = JSON.parse($scope.campgrounds);
                     campgrounds.forEach(function markAndPlotCampgrounds(campground) {
                         var campgroundCoord = [campground.longitude, campground.latitude];
                         addCampgroundMarkers(centerLayers(campgroundCoord), campground.name, 'campground', campground);
                     });
-
-                    var trails = $stateParams.trails || JSON.parse($rootScope.TsandCs).trails || 'none';
+                    var trails = JSON.parse($scope.trails);
                     trails.forEach( function markAndPlottrails(trail){
                         var trailCoordinates = [];
                         var trailheadCoord = ([ Number(trail.head_lon), Number(trail.head_lat) ]);

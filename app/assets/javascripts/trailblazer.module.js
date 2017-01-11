@@ -26,10 +26,10 @@
            controller: 'TrailandCampgroundController',
            controllerAs: 'TandC',
            params: {
-               user_token: checkSessionStorage('token'),
-               centerCoords: checkSessionStorage('center'),
-               trails: checkSessionStorage('trails'),
-               campgrounds: checkSessionStorage('campgrounds')
+               user_token: null,
+               centerCoords: null,
+               trails: null,
+               campgrounds: null
            }
        })
        .state({
@@ -62,19 +62,19 @@
            }
        });
 
-       function checkSessionStorage(param) {
-           if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'center') {
-               return JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
-           } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'trails') {
-               return JSON.parse(sessionStorage.getItem('TsandCs')).trails;
-           } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'campgrounds') {
-               return JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
-           } else if(JSON.parse(sessionStorage.getItem('user')) && param === 'token') {
-               return JSON.parse(sessionStorage.getItem('user')).token;
-           } else {
-               return null;
-           }
-       }
+    //    function checkSessionStorage(param) {
+    //        if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'center') {
+    //            return JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
+    //        } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'trails') {
+    //            return JSON.parse(sessionStorage.getItem('TsandCs')).trails;
+    //        } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'campgrounds') {
+    //            return JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
+    //        } else if(JSON.parse(sessionStorage.getItem('user')) && param === 'token') {
+    //            return JSON.parse(sessionStorage.getItem('user')).token;
+    //        } else {
+    //            return null;
+    //        }
+    //    }
 
     }
 

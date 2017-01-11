@@ -64,6 +64,7 @@
             .then(function success(response) {
                 console.log(response);
                 tsORcs = [];
+                sessionStorage.setItem('trip', angular.toJson(response.data));
                 return response.data;
             })
             .catch(function error(err) {

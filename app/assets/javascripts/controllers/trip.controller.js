@@ -38,22 +38,19 @@
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip)
             .then(function success(data) {
-                sessionStorage.setItem('trip', angular.toJson(data));
-                $state.go('trip', {id: data.trip.id, trip:data});
                 vm.trip = {};
                 vm.tripCreate = null;
+                $state.go('trip', {id: data.trip.id, trip:data});
             });
         };
 
         vm.newSearch = function newSearch() {
             $rootScope.searched =  null;
-            $rootScope.TsandCs = null;
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
             if($rootScope.searched) {
-                console.log('in if');
                 vm.madeSearch = true;
             } else {
                 vm.madeSearch = false;
