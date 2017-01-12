@@ -6,13 +6,12 @@ class ParkTest < ActiveSupport::TestCase
     WebMock.allow_net_connect!
   end
 
-  test "can log in" do
+  test "can search for a park" do
     visit("/")
-    click_link('Sign In')
-    fill_in("email", with: "test@gmail.com")
-    fill_in("password", with: "password")
-    find_button('Sign In').click
-    find('nav.profile-nav')
+    fill_in("Park Name", with: "river")
+    find_button('Search').click
+    find('section#map-item-list')
+    assert_match(/Trail Two/, page.body)
   end
 
 end
