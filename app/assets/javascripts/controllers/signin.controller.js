@@ -19,15 +19,15 @@
                     if(data.error){
                         vm.message = data.error;
                         return;
-                    } else if (!$rootScope.TsandCs) {
+                    } else if (!$rootScope.searched) {
                         $state.go('home', {token: data.token});
                     } else {
                         sessionStorage.setItem('userToken', angular.toJson(data.token));
                         $state.go('trails-and-campgrounds', {
                             user_token: data.token,
-                            centerCoords: JSON.parse($rootScope.TsandCs).centerCoords,
-                            trails: JSON.parse($rootScope.TsandCs).trails,
-                            campgrounds: JSON.parse($rootScope.TsandCs).campgrounds,
+                            centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                            trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                            campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
                         });
                     }
                 })
@@ -42,15 +42,15 @@
                         if(data.error){
                             vm.message = data.error;
                             return;
-                        } else if ($rootScope.TsandCs) {
+                        } else if (!$rootScope.searched) {
                             $state.go('home');
                         } else {
                             sessionStorage.setItem('userToken', angular.toJson(data.token));
                             $state.go('trails-and-campgrounds', {
                                 user_token: data.token,
-                                centerCoords: JSON.parse($rootScope.TsandCs).centerCoords,
-                                trails: JSON.parse($rootScope.TsandCs).trails,
-                                campgrounds: JSON.parse($rootScope.TsandCs).campgrounds,
+                                centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                                trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                                campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
                             });
                         }
                     })
