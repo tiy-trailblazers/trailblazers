@@ -714,15 +714,12 @@ nav.profile-nav article.plan-trip {
     margin-top: 0; } }
 #map {
   display: block;
-  position: absolute;
   z-index: 1;
   margin: 0 auto;
-  height: 83vh;
   border-left: 0px;
   box-sizing: border-box; }
   #map canvas {
-    display: block;
-    height: none; }
+    display: block; }
 
 @media screen and (min-width: 1000px) {
   #map {
@@ -788,10 +785,9 @@ nav.profile-nav article.plan-trip {
   opacity: .8;
   z-index: 2;
   position: absolute;
-  background-color: #464646;
+  background-color: black;
   border-radius: 4px;
-  margin-top: 450px;
-  color: white; }
+  color: #cecece; }
   #map-item-list h1 {
     margin: 0;
     text-align: center;
@@ -852,10 +848,10 @@ nav.profile-nav article.plan-trip {
   opacity: .8;
   z-index: 2;
   position: absolute;
-  background-color: #464646;
+  background-color: black;
   border-radius: 4px;
   margin-top: 450px;
-  color: white; }
+  color: #cecece; }
   #trip-item-list h1 {
     margin: 0;
     text-align: center;

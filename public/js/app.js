@@ -127,7 +127,7 @@
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched) {
+            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
                 vm.hasSearched = true;
             } else {
                 vm.hasSearched = null;
