@@ -34,7 +34,9 @@ class Park < ApplicationRecord
       limit = 25
       park.attributes.merge({
         trails: Trail.formatted_trails(trails_to_send[0, limit]),
-        campgrounds: park.campgrounds
+        campgrounds: park.campgrounds,
+        boundary: "",
+        multi_line_boundary: ""
 
       })
     end

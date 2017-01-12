@@ -202,6 +202,7 @@ class Trail < ApplicationRecord
   # filters an array of trails and returns array of groups of connected trails
   def self.cluster_trails(trail_array)
     cluster_array = []
+
     trail_array.each do |trail|
       next if cluster_array.flatten.include?(trail)
       cluster = [trail]
@@ -238,6 +239,7 @@ class Trail < ApplicationRecord
       trails_to_delete.each { |trail| trail.delete if trail }
       trail_array.first
     end
+    trail_array.first
   end
 
   def self.combined_path(trail_name, state)
