@@ -15,7 +15,7 @@
 <section id='map-item-list'>
     <h1>Here is what we found for you</h1>
     <section class='trails'>
-        <h3><img src="/images/trailhead.png" /> Trails</h3>
+        <h3><img src="/images/yellow-trailhead.png" /> Trails</h3>
         <ul>
             <li ng-repeat='trail in TandC.trails | length' ng-click='TandC.trailPopup(trail)'>
                 {{trail.name}}
@@ -23,7 +23,7 @@
         </ul>
     </section>
     <section class='campgrounds'>
-        <h3><img src="/images/tent-icon.png" id="campground-img"/>Campgrounds</h3>
+        <h3><img src="/images/yellow-tent-icon.png" id="campground-img"/>Campgrounds</h3>
         <ul>
             <li ng-repeat='camp in TandC.campgrounds' ng-click='TandC.trailPopup(camp)'>
                 {{camp.name}}

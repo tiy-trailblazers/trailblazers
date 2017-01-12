@@ -4,11 +4,12 @@
     angular.module('trailblazer', [  'openlayers-directive', 'ngSanitize', 'ui.router'])
         .config(viewConfig);
 
-    viewConfig.$inject = [ '$stateProvider', '$urlRouterProvider' ];
+    viewConfig.$inject = [ '$stateProvider', '$locationProvider', '$urlRouterProvider' ];
 
-    function viewConfig($stateProvider, $urlRouterProvider) {
+    function viewConfig($stateProvider, $locationProvider, $urlRouterProvider) {
 
        $urlRouterProvider.when('', '/');
+       $locationProvider.hashPrefix('');
 
        $stateProvider
        .state({
@@ -127,7 +128,7 @@
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched) {
+            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
                 vm.hasSearched = true;
             } else {
                 vm.hasSearched = null;
@@ -193,15 +194,15 @@
                     if(data.error){
                         vm.message = data.error;
                         return;
-                    } else if (!$rootScope.TsandCs) {
+                    } else if (!$rootScope.searched) {
                         $state.go('home', {token: data.token});
                     } else {
                         sessionStorage.setItem('userToken', angular.toJson(data.token));
                         $state.go('trails-and-campgrounds', {
                             user_token: data.token,
-                            centerCoords: JSON.parse($rootScope.TsandCs).centerCoords,
-                            trails: JSON.parse($rootScope.TsandCs).trails,
-                            campgrounds: JSON.parse($rootScope.TsandCs).campgrounds,
+                            centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                            trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                            campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
                         });
                     }
                 })
@@ -216,15 +217,15 @@
                         if(data.error){
                             vm.message = data.error;
                             return;
-                        } else if ($rootScope.TsandCs) {
+                        } else if (!$rootScope.searched) {
                             $state.go('home');
                         } else {
                             sessionStorage.setItem('userToken', angular.toJson(data.token));
                             $state.go('trails-and-campgrounds', {
                                 user_token: data.token,
-                                centerCoords: JSON.parse($rootScope.TsandCs).centerCoords,
-                                trails: JSON.parse($rootScope.TsandCs).trails,
-                                campgrounds: JSON.parse($rootScope.TsandCs).campgrounds,
+                                centerCoords: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                                trails: JSON.parse(sessionStorage.getItem('TsandCs')).trails,
+                                campgrounds: JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds,
                             });
                         }
                     })
@@ -427,6 +428,12 @@
                 })
             });
 
+            console.log($(window).width());
+
+            if ( ($(window).width()) < 480) {
+                $('#map')[0].style.display = 'none';
+            }
+
             map.getView().on('change:resolution', function setRaduisBox() {
                 if (map.getView().getZoom() > 7.5) {
                         $('map').css('cursor','none');
@@ -556,6 +563,11 @@
                 element: $('#mapClicked-popup')[0]
             });
 
+            console.log($(window).width());
+            if ( ($(window).width()) < 480) {
+                $('#map')[0].style.display = 'block';
+            }
+
             /**
              * Constructs openLayers Map
              * @param  {Object} baseLayer MapBox tiles
@@ -647,14 +659,24 @@
                             return feature;
                         });
                         if (feature) {
-                            if (feature.get('name') === 'TrailLine') {
-                                return;
-                            }
                             var geometry = feature.getGeometry();
                             var coord = geometry.getCoordinates();
-                            $('#mapClicked-popup .popup-content').html(
-                                '<p>' + feature.get('name') + '</p>'
-                            );
+                            if (feature.get('name') === 'TrailLine') {
+                                return;
+                            } else if (feature.get('type') === 'trail') {
+                                geometry = feature.getGeometry();
+                                coord = geometry.getCoordinates();
+                                $('#mapClicked-popup .popup-content').html(
+                                    '<p>' + feature.get('name') + '</p>' +
+                                    '<p>' + Math.round(Number(feature.get('data').length)*10)/10 + ' miles</p>'
+                                );
+                            } else {
+                                geometry = feature.getGeometry();
+                                coord = geometry.getCoordinates();
+                                $('#mapClicked-popup .popup-content').html(
+                                    '<p>' + feature.get('name') + '</p>'
+                                );
+                            }
                             TripService.mapClickedpopup(feature.get('data'));
                             map.getView().animate({zoom: 12}, {center: coord});
                             markerClickedPopup.setPosition(coord);
@@ -874,7 +896,7 @@
                     layers: vectorLayers,
                     overlays: [popupOverlay],
                     view: new ol.View({
-                        center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                        center: centerLayers(JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords),
                         zoom: 9.5,
                         maxZoom: 20,
                         minZoom: 2

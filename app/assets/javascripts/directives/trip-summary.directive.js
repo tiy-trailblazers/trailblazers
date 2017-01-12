@@ -53,7 +53,7 @@
                     layers: vectorLayers,
                     overlays: [popupOverlay],
                     view: new ol.View({
-                        center: JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords,
+                        center: centerLayers(JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords),
                         zoom: 9.5,
                         maxZoom: 20,
                         minZoom: 2

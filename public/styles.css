@@ -404,14 +404,14 @@ template {
 
 nav {
   width: 100%;
-  min-width: 135px;
+  min-width: navMinWidth;
   border: 1px solid #111111;
   box-sizing: border-box;
   background-color: #fff700;
   background-color: black;
   z-index: 2;
   opacity: .8;
-  font-family: 'Patrick Hand SC', cursive; }
+  font-family: "Patrick Hand SC", cursive; }
   nav header h1 {
     font-size: 2rem;
     text-align: left;
@@ -426,7 +426,7 @@ nav {
   nav a {
     color: #cecece;
     text-decoration: none;
-    font-size: 1em; }
+    font-size: 1.1em; }
     nav a:hover {
       text-decoration: underline;
       color: #ffff5e;
@@ -434,8 +434,8 @@ nav {
   nav li {
     display: block;
     color: #cecece;
-    font-family: 'Patrick Hand SC', cursive;
-    font-size: 1rem;
+    font-family: "Patrick Hand SC", cursive;
+    font-size: 1.1em;
     padding: 0.5%; }
   nav.noprofile-nav {
     min-width: 300px; }
@@ -450,7 +450,8 @@ nav {
         color: #cecece; }
     nav.noprofile-nav article {
       width: 80%;
-      margin: 0 auto; }
+      margin: 0 auto;
+      display: none; }
     nav.noprofile-nav p {
       color: #cecece;
       line-height: 25px; }
@@ -460,11 +461,12 @@ nav {
       text-align: center; }
     nav.noprofile-nav form {
       width: 90%;
-      background-color: #ffffff;
       margin: 0.5em auto;
-      border-radius: 2%;
       border: 1px solid #000000;
-      box-shadow: 0 0 0.5em #ffffff; }
+      box-shadow: 0 0 0.5em #ffffff;
+      border-radius: 2%;
+      background-color: #ffffff;
+      opacity: 2; }
       nav.noprofile-nav form ul {
         max-height: 65px;
         overflow-y: scroll; }
@@ -472,7 +474,7 @@ nav {
         color: #000000;
         margin: 0.6em 0; }
       nav.noprofile-nav form input {
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: "Patrick Hand SC", cursive;
         width: 90%;
         box-sizing: border-box;
         margin: 2px; }
@@ -480,16 +482,19 @@ nav {
           background-color: #ffff5e;
           border: #000000;
           width: 80px;
-          margin: 0.8em 0;
+          margin: 0.8em auto;
           box-shadow: 0 0 0.5em #000000; }
         nav.noprofile-nav form input:focus {
           outline: #fff700; }
 
 nav.profile-nav section {
   width: 100%;
-  margin-left: 5%;
   text-align: center;
   margin-left: 0; }
+  nav.profile-nav section.profile-image {
+    float: left;
+    width: 60%;
+    opacity: 2; }
   nav.profile-nav section.past-trips header {
     display: none; }
     nav.profile-nav section.past-trips header h2 {
@@ -499,18 +504,34 @@ nav.profile-nav section {
   nav.profile-nav section.past-trips .trip-link {
     display: none; }
 nav.profile-nav aside.user-info {
-  display: none; }
+  display: block;
+  padding-top: 4%;
+  padding-left: 60%; }
+  nav.profile-nav aside.user-info a {
+    display: block;
+    color: #ffff5e;
+    padding-left: 0.5%;
+    padding-top: 3%; }
+    nav.profile-nav aside.user-info a:last-child {
+      padding-top: 0; }
+    nav.profile-nav aside.user-info a:hover {
+      color: #cecece; }
+  nav.profile-nav aside.user-info::after {
+    display: block;
+    content: '';
+    clear: both; }
 nav.profile-nav article.plan-trip {
   margin: 4%;
   width: 80%;
   margin: 0.5em auto;
-  font-family: 'Patrick Hand SC', cursive; }
+  font-family: "Patrick Hand SC", cursive; }
   nav.profile-nav article.plan-trip::after {
     display: block;
     content: '';
     clear: both; }
   nav.profile-nav article.plan-trip aside.new-search form {
-    margin-top: 1.5em; }
+    margin-top: 1.5em;
+    opacity: 2; }
   nav.profile-nav article.plan-trip h4 {
     text-align: center;
     font-size: 1.2em;
@@ -521,12 +542,13 @@ nav.profile-nav article.plan-trip {
     margin: 0.2em; }
   nav.profile-nav article.plan-trip form {
     width: 90%;
-    background-color: #ffffff;
     margin: 0.5em auto;
+    background-color: #ffffff;
     margin-top: 4em;
     border-radius: 2%;
     border: 1px solid #000000;
-    box-shadow: 0 0 0.5em #ffffff; }
+    box-shadow: 0 0 0.5em #ffffff;
+    opacity: 2; }
     nav.profile-nav article.plan-trip form p {
       margin: 0.1em;
       text-decoration: underline; }
@@ -534,7 +556,7 @@ nav.profile-nav article.plan-trip {
       color: #000000;
       margin: 0.4em 0; }
     nav.profile-nav article.plan-trip form input {
-      font-family: 'Patrick Hand SC', cursive;
+      font-family: "Patrick Hand SC", cursive;
       width: 90%;
       box-sizing: border-box;
       margin: 2px; }
@@ -561,67 +583,10 @@ nav.profile-nav article.plan-trip {
     color: #ffff5e; }
     nav.profile-nav article.plan-trip a:hover {
       text-decoration: underline;
-      color: #cecece;
-      cursor: pointer; }
+      color: #ffff5e;
+      cursor: pointer;
+      color: #cecece; }
 
-@media screen and (min-width: 450px) {
-  nav.noprofile-nav article {
-    width: 65%; }
-  nav.noprofile-nav form {
-    width: 50%; }
-
-  nav.profile-nav section.profile-image {
-    text-align: right;
-    width: 50%;
-    float: left; }
-  nav.profile-nav section.past-trips {
-    margin-top: 4em; }
-    nav.profile-nav section.past-trips header {
-      display: block; }
-      nav.profile-nav section.past-trips header h2 {
-        margin-bottom: 0.5em;
-        text-align: center;
-        color: #ffff5e; }
-    nav.profile-nav section.past-trips .trip-link {
-      display: block; }
-  nav.profile-nav aside.user-info {
-    display: block;
-    padding-top: 6%;
-    padding-left: 52%; }
-    nav.profile-nav aside.user-info::after {
-      display: block;
-      content: '';
-      clear: both; }
-  nav.profile-nav .past-trips header {
-    display: block; }
-  nav.profile-nav .past-trips article.trip-link {
-    display: block; }
-  nav.profile-nav .past-trips section .past-trips header {
-    display: block; }
-  nav.profile-nav .past-trips section .past-trips article.trip-link {
-    display: block; } }
-@media screen and (min-width: 1000px) {
-  nav {
-    width: 32%;
-    height: 100vh;
-    float: left;
-    position: absolute; }
-    nav li {
-      padding: 5%; }
-    nav.noprofile-nav article {
-      width: 85%; }
-    nav.noprofile-nav form {
-      width: 90%; }
-
-  nav.profile-nav {
-    width: 32%; }
-    nav.profile-nav li {
-      padding: 1%; }
-    nav.profile-nav aside.user-info {
-      padding-left: 63%; }
-    nav.profile-nav section.profile-image {
-      text-align: center;
-      padding-left: 4%; } }
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px; }
@@ -634,17 +599,63 @@ nav.profile-nav article.plan-trip {
 ::-webkit-scrollbar-corner {
   background-color: #464646; }
 
+@media screen and (min-width: 480px) {
+  nav.noprofile-nav article {
+    display: block;
+    width: 65%; }
+  nav.noprofile-nav form {
+    width: 50%; }
+
+  nav.profile-nav section.profile-image {
+    text-align: right;
+    padding-right: 5%;
+    width: 47%; }
+  nav.profile-nav aside.user-info {
+    padding-left: 56%; } }
+@media screen and (min-width: 1000px) {
+  nav {
+    width: 365px;
+    height: 100vh;
+    float: left;
+    position: absolute; }
+    nav li {
+      padding: 5%; }
+    nav.noprofile-nav article {
+      width: 85%; }
+    nav.noprofile-nav form {
+      width: 90%; }
+
+  nav.profile-nav {
+    width: 365px; }
+    nav.profile-nav li {
+      padding: 1%; }
+    nav.profile-nav aside.user-info a {
+      padding-top: 15%; }
+    nav.profile-nav section.profile-image {
+      text-align: center;
+      padding-left: 4%; }
+    nav.profile-nav section.past-trips {
+      margin-top: 2em; }
+      nav.profile-nav section.past-trips header {
+        display: block; }
+        nav.profile-nav section.past-trips header h2 {
+          margin-bottom: 0.5em;
+          text-align: center;
+          color: #ffff5e; }
+      nav.profile-nav section.past-trips .trip-link {
+        display: block; }
+    nav.profile-nav form ul {
+      max-height: 86px; } }
 #signin {
   min-width: 250px;
   max-width: 350px;
   width: 50%;
-  margin: 1em auto;
-  margin-bottom: 3em;
+  margin: 3em auto;
+  margin-top: 4.5em;
   border: 1px solid #111111;
-  margin-top: 3em;
   box-shadow: 0 0 1em #000000; }
   #signin h2 {
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: "Patrick Hand SC", cursive;
     text-align: center;
     margin-bottom: 0.5rem; }
   #signin form {
@@ -677,7 +688,7 @@ nav.profile-nav article.plan-trip {
         font-weight: 700;
         font-size: 10pt; }
       #signin form input.file:hover::before {
-        border-color: black;
+        border-color: #000000;
         cursor: pointer; }
       #signin form input.file:active::before {
         background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }
@@ -696,7 +707,7 @@ nav.profile-nav article.plan-trip {
           outline: none; }
   #signin a {
     display: block;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: "Patrick Hand SC", cursive;
     text-align: center;
     margin-bottom: 0.5em;
     cursor: pointer; }
@@ -714,21 +725,21 @@ nav.profile-nav article.plan-trip {
     margin-top: 0; } }
 #map {
   display: block;
-  position: absolute;
   z-index: 1;
   margin: 0 auto;
-  height: 83vh;
   border-left: 0px;
   box-sizing: border-box; }
   #map canvas {
-    display: block;
-    height: none; }
+    display: block; }
 
 @media screen and (min-width: 1000px) {
   #map {
     width: 100%;
     height: 100vh;
-    float: left; } }
+    float: left; }
+
+  div.ol-zoom {
+    display: none; } }
 #buffer {
   min-width: 200px;
   max-width: 350px;
@@ -777,21 +788,20 @@ nav.profile-nav article.plan-trip {
     top: 20%;
     left: 12%; } }
 #map-item-list {
-  width: 100%;
   height: 200px;
+  width: 100%;
   float: right;
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: "Patrick Hand SC", cursive;
   text-align: left;
   padding-top: 5px;
   border: 1px solid #999999;
   box-sizing: border-box;
-  opacity: .8;
+  opacity: 0.8;
   z-index: 2;
   position: absolute;
-  background-color: #464646;
+  background-color: #000000;
   border-radius: 4px;
-  margin-top: 450px;
-  color: white; }
+  color: #cecece; }
   #map-item-list h1 {
     margin: 0;
     text-align: center;
@@ -802,17 +812,9 @@ nav.profile-nav article.plan-trip {
     width: 50%;
     margin-bottom: 0;
     box-sizing: border-box;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: "Patrick Hand SC", cursive;
     float: left;
     padding-right: 5px; }
-    #map-item-list .trails h3, #map-item-list .campgrounds h3 {
-      margin: 0.3em 0; }
-      #map-item-list .trails h3 img, #map-item-list .campgrounds h3 img {
-        height: 25px;
-        padding-left: 13px;
-        padding-right: 10px; }
-      #map-item-list .trails h3 #campground-img, #map-item-list .campgrounds h3 #campground-img {
-        padding-right: 17px; }
     #map-item-list .trails ul, #map-item-list .campgrounds ul {
       box-sizing: border-box;
       margin-top: 0;
@@ -830,6 +832,14 @@ nav.profile-nav article.plan-trip {
         padding-left: 20px; }
         #map-item-list .trails ul li:hover, #map-item-list .campgrounds ul li:hover {
           background-color: #888888; }
+    #map-item-list .trails h3, #map-item-list .campgrounds h3 {
+      margin: 0.3em 0; }
+      #map-item-list .trails h3 img, #map-item-list .campgrounds h3 img {
+        height: 25px;
+        padding-left: 13px;
+        padding-right: 10px; }
+      #map-item-list .trails h3 #campground-img, #map-item-list .campgrounds h3 #campground-img {
+        padding-right: 17px; }
   #map-item-list .trails:first-child h3 {
     padding-right: 40px; }
 
@@ -841,21 +851,20 @@ nav.profile-nav article.plan-trip {
     top: 0;
     right: 0; } }
 #trip-item-list {
-  width: 100%;
   height: 209px;
+  width: 100%;
   float: right;
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: "Patrick Hand SC", cursive;
   text-align: left;
   padding-top: 5px;
   border: 1px solid #999999;
   box-sizing: border-box;
-  opacity: .8;
+  opacity: 0.8;
   z-index: 2;
   position: absolute;
-  background-color: #464646;
+  background-color: #000000;
   border-radius: 4px;
-  margin-top: 450px;
-  color: white; }
+  color: #cecece; }
   #trip-item-list h1 {
     margin: 0;
     text-align: center;
@@ -870,15 +879,9 @@ nav.profile-nav article.plan-trip {
     width: 50%;
     margin-bottom: 0;
     box-sizing: border-box;
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: "Patrick Hand SC", cursive;
     float: left;
     padding-right: 5px; }
-    #trip-item-list .trails h3, #trip-item-list .campgrounds h3 {
-      margin: 0.3em 0;
-      padding-left: 5px; }
-      #trip-item-list .trails h3 img, #trip-item-list .campgrounds h3 img {
-        height: 25px;
-        padding-left: 13px; }
     #trip-item-list .trails ul, #trip-item-list .campgrounds ul {
       box-sizing: border-box;
       margin-top: 0;
@@ -896,6 +899,12 @@ nav.profile-nav article.plan-trip {
         padding-left: 20px; }
         #trip-item-list .trails ul li:hover, #trip-item-list .campgrounds ul li:hover {
           background-color: #888888; }
+    #trip-item-list .trails h3, #trip-item-list .campgrounds h3 {
+      margin: 0.3em 0;
+      padding-left: 5px; }
+      #trip-item-list .trails h3 img, #trip-item-list .campgrounds h3 img {
+        height: 25px;
+        padding-left: 13px; }
   #trip-item-list .campgrounds:first-child h3 {
     padding-right: 40px; }
 
@@ -907,17 +916,17 @@ nav.profile-nav article.plan-trip {
     top: 0;
     right: 0; } }
 #popup, #trailpopup, #mapClicked-popup {
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: "Patrick Hand SC", cursive;
   position: absolute;
   font-size: 13px;
   bottom: 33px;
   left: -31px;
-  background-color: black;
+  background-color: #000000;
   opacity: 0.7;
   min-width: 200px;
   font-weight: lighter;
-  color: white;
-  border: 2px solid black;
+  color: #ffffff;
+  border: 2px solid #000000;
   border-radius: 5px; }
   #popup p:first-child, #trailpopup p:first-child, #mapClicked-popup p:first-child {
     padding-left: 20px; }
@@ -938,17 +947,17 @@ nav.profile-nav article.plan-trip {
   bottom: -9px;
   width: 14px;
   height: 14px;
-  background-color: black;
+  background-color: #000000;
   border-top: none;
   border-left: none;
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
+  border-bottom: 2px solid #000000;
+  border-right: 2px solid #000000;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg); }
 
 #trailpopup {
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: "Patrick Hand SC", cursive;
   height: 180px;
   width: 350px;
   bottom: 55px;

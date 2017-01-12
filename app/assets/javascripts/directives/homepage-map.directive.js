@@ -49,6 +49,12 @@
                 })
             });
 
+            console.log($(window).width());
+
+            if ( ($(window).width()) < 480) {
+                $('#map')[0].style.display = 'none';
+            }
+
             map.getView().on('change:resolution', function setRaduisBox() {
                 if (map.getView().getZoom() > 7.5) {
                         $('map').css('cursor','none');
