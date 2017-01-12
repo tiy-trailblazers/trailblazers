@@ -1,15 +1,12 @@
 
 #map {
     display: block;
-    position: absolute;
     z-index: 1;
     margin: 0 auto;
-    height: 83vh;
     border-left: 0px;
     box-sizing: border-box;
     canvas {
         display: block;
-        height: none;
     }
 }
 
@@ -19,5 +16,8 @@
         width: 100%;
         height: 100vh;
         float: left;
+    }
+    div.ol-zoom {
+        display: none;
     }
 }

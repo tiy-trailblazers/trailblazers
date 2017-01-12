@@ -1,20 +1,17 @@
 #signin {
     min-width: 250px;
     max-width: 350px;
-    width: 50%;
-    margin: 1em auto;
-    margin-bottom: 3em;
+    @include autoMarginElm(50%, 3em);
+    margin-top: 4.5em;
     border: 1px solid #111111;
-    margin-top: 3em;
-    box-shadow: 0 0 1em #000000;
+    box-shadow: 0 0 1em $appBlack;
     h2 {
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: $appFont;
         text-align: center;
         margin-bottom: 0.5rem;
     }
     form {
-        width: 90%;
-        margin: 0 auto;
+        @include autoMarginElm(90%, 0);
 
         input {
             display: inline-block;
@@ -48,7 +45,7 @@
                 font-size: 10pt;
             }
             &.file:hover::before {
-                border-color: black;
+                border-color: $appBlack;
                 cursor: pointer;
             }
             &.file:active::before {
@@ -73,7 +70,7 @@
     }
     a {
         display: block;
-        font-family: 'Patrick Hand SC', cursive;
+        font-family: $appFont;
         text-align: center;
         margin-bottom: 0.5em;
         cursor: pointer;

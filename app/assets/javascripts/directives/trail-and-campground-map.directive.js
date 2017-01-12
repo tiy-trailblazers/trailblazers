@@ -42,6 +42,11 @@
                 element: $('#mapClicked-popup')[0]
             });
 
+            console.log($(window).width());
+            if ( ($(window).width()) < 480) {
+                $('#map')[0].style.display = 'block';
+            }
+
             /**
              * Constructs openLayers Map
              * @param  {Object} baseLayer MapBox tiles
@@ -133,14 +138,24 @@
                             return feature;
                         });
                         if (feature) {
-                            if (feature.get('name') === 'TrailLine') {
-                                return;
-                            }
                             var geometry = feature.getGeometry();
                             var coord = geometry.getCoordinates();
-                            $('#mapClicked-popup .popup-content').html(
-                                '<p>' + feature.get('name') + '</p>'
-                            );
+                            if (feature.get('name') === 'TrailLine') {
+                                return;
+                            } else if (feature.get('type') === 'trail') {
+                                geometry = feature.getGeometry();
+                                coord = geometry.getCoordinates();
+                                $('#mapClicked-popup .popup-content').html(
+                                    '<p>' + feature.get('name') + '</p>' +
+                                    '<p>' + Math.round(Number(feature.get('data').length)*10)/10 + ' miles</p>'
+                                );
+                            } else {
+                                geometry = feature.getGeometry();
+                                coord = geometry.getCoordinates();
+                                $('#mapClicked-popup .popup-content').html(
+                                    '<p>' + feature.get('name') + '</p>'
+                                );
+                            }
                             TripService.mapClickedpopup(feature.get('data'));
                             map.getView().animate({zoom: 12}, {center: coord});
                             markerClickedPopup.setPosition(coord);

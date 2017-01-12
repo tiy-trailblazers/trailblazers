@@ -1,16 +1,15 @@
 #popup, #trailpopup, #mapClicked-popup {
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: $appFont;
     position: absolute;
     font-size: 13px;
     bottom: 33px;
     left: -31px;
-    background-color: black;
+    background-color: $appBlack;
     opacity: 0.7;
-    //height: 100px;
     min-width: 200px;
     font-weight: lighter;
-    color: white;
-    border: 2px solid black;
+    color: $appWhite;
+    border: 2px solid $appBlack;
     border-radius: 5px;
     p:first-child {
       padding-left: 20px;
@@ -20,7 +19,7 @@
       color: #949494;
       &:hover {
         text-decoration: underline;
-        color: #ffff5e;
+        color: $appYellow;
       }
     }
     p {
@@ -35,18 +34,18 @@
 	bottom: -9px;
 	width: 14px;
 	height: 14px;
-	background-color: black;
+	background-color: $appBlack;
 	border-top: none;
 	border-left: none;
-	border-bottom: 2px solid black;
-	border-right: 2px solid black;
+	border-bottom: 2px solid $appBlack;
+	border-right: 2px solid $appBlack;
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 }
 
 #trailpopup {
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: $appFont;
     height: 180px;
     width: 350px;
     bottom: 55px;
@@ -55,7 +54,7 @@
         margin-bottom: 0;
     }
     h5 {
-        color: #ffff5e;
+        color: $appYellow;
         margin: 0.2em 0;
     }
     h5:last-child {

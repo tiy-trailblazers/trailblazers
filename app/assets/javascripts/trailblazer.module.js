@@ -4,11 +4,12 @@
     angular.module('trailblazer', [  'openlayers-directive', 'ngSanitize', 'ui.router'])
         .config(viewConfig);
 
-    viewConfig.$inject = [ '$stateProvider', '$urlRouterProvider' ];
+    viewConfig.$inject = [ '$stateProvider', '$locationProvider', '$urlRouterProvider' ];
 
-    function viewConfig($stateProvider, $urlRouterProvider) {
+    function viewConfig($stateProvider, $locationProvider, $urlRouterProvider) {
 
        $urlRouterProvider.when('', '/');
+       $locationProvider.hashPrefix('');
 
        $stateProvider
        .state({

@@ -2,12 +2,12 @@
     border: 1px solid #111111;
     box-sizing: border-box;
     background-color: #fff700;
-    //box-shadow: 0 0 1em black;
 }
 
 @mixin borderShadowElm {
-    border: 1px solid #000000;
-    box-shadow: 0 0 0.5em #ffffff;
+    border: 1px solid $appBlack;
+    box-shadow: 0 0 0.5em $appWhite;
+    border-radius: 2%;
 }
 
 @mixin psuedoAfter {
@@ -16,7 +16,77 @@
     clear: both;
 }
 
-@mixin autoMarginElm($mrg, $wdth) {
+@mixin autoMarginElm($wdth, $mrg) {
     width: $wdth;
-    margin: $mrg;
+    margin: $mrg auto;
+}
+
+@mixin tripAndtANDcZandOpacity {
+    z-index: 2;
+    opacity: .8;
+}
+
+@mixin navInputStyles {
+    font-family: $appFont;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+@mixin aHover {
+    text-decoration: underline;
+    color: $appYellow;
+    cursor: pointer;
+}
+
+@mixin tripANDmapResults {
+    width: 100%;
+    float: right;
+    font-family: $appFont;
+    text-align: left;
+    padding-top: 5px;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    opacity: 0.8;
+    z-index: 2;
+    position: absolute;
+    background-color: $appBlack;
+    border-radius: 4px;
+    color: $appGrey;
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 1.5em;
+      padding-top: 5px;
+      padding-bottom: 9px;
+    }
+}
+
+@mixin tANDcClassStyles {
+    width: 50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    font-family: $appFont;
+    float:left;
+    padding-right: 5px;
+    ul {
+        box-sizing: border-box;
+        margin-top: 0;
+        padding-left: 0;
+        display: block;
+        height: 100px;
+        overflow: scroll;
+        li {
+          text-align: left;
+          display: block;
+          list-style: none;
+          padding-top: 2px;
+          padding-bottom: 2px;
+          cursor: pointer;
+          padding-left: 20px;
+          &:hover {
+            background-color: #888888;
+          }
+        }
+    }
 }
