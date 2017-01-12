@@ -34,12 +34,11 @@
 
         vm.newSearch = function newSearch() {
             $rootScope.searched =  null;
-            sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched || JSON.parse(sessionStorage.getItem('TsandCs'))) {
+            if($rootScope.searched) {
                 vm.madeSearch = true;
             } else {
                 vm.madeSearch = false;

@@ -27,9 +27,7 @@
         function setupMap() {
             var element = 'map';
             var vector = buildRectangle();
-
             var map = buildMap(buildBaseLayer(), vector, element);
-
             var draw = new ol.interaction.Draw({
                 source: new ol.source.Vector({wrapX: false}),
                 type: 'Circle',
@@ -49,11 +47,15 @@
                 })
             });
 
-            console.log($(window).width());
-
             if ( ($(window).width()) < 480) {
                 $('#map')[0].style.display = 'none';
             }
+
+            if (!$rootScope.user) {
+                sessionStorage.removeItem('TsandCs');
+            }
+
+            $rootScope.searched = null;
 
             map.getView().on('change:resolution', function setRaduisBox() {
                 if (map.getView().getZoom() > 7.5) {
@@ -71,6 +73,7 @@
                     TrailandCampgroundService.findTsandCs(coordinates)
                         .then(function success(data) {
                             sessionStorage.setItem('TsandCs', angular.toJson({trails: data.trails, campgrounds: data.campgrounds, centerCoords: coordArray, transCoords: coordinates}));
+                            $rootScope.searched = true;
                             $state.go('trails-and-campgrounds', {
                                 trails: data.trails,
                                 campgrounds: data.campgrounds,
@@ -121,13 +124,17 @@
          * @return {Object}           OpenLayers Map and configuration
          */
         function buildMap(baseLayer, vector, element) {
+            var center = [ -12053463.910959221, 4789639.227729736 ];
+            if ( ($(window).width()) < 1000) {
+                center = [ -10853463.910959221, 4789639.227729736 ];
+            }
             var map = new ol.Map({
                 target: element,
                 controls: ol.control.defaults(),
                 renderer: 'canvas',
                 layers: [baseLayer, vector],
                 view: new ol.View({
-                    center: [ -10853463.910959221, 4789639.227729736 ],
+                    center: center,
                     zoom: 4,
                     maxZoom: 18,
                     minZoom: 2
