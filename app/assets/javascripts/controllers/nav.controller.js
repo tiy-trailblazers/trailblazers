@@ -23,11 +23,8 @@
                 });
         };
 
-        vm.signingIn = function signinIn() {
-            vm.signedIn = true;
-        };
-
         $rootScope.$watch('user', function() {
+            console.log('nav checking user');
             if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
                 vm.signedIn = true;
             }
@@ -38,7 +35,6 @@
 
         vm.newSearch = function newSearch() {
             $rootScope.searched = null;
-            sessionStorage.removeItem('TsandCs');
             $state.go('home');
         };
 

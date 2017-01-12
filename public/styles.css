@@ -593,11 +593,10 @@ nav.profile-nav article.plan-trip {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+  background-color: #ffff5e; }
 
 ::-webkit-scrollbar-corner {
-  background-color: #464646; }
+  background-color: #000000; }
 
 @media screen and (min-width: 480px) {
   nav.noprofile-nav article {
@@ -721,7 +720,7 @@ nav.profile-nav article.plan-trip {
   #signin {
     position: absolute;
     top: 25%;
-    left: 36%;
+    left: 50%;
     margin-top: 0; } }
 #map {
   display: block;

@@ -42,9 +42,12 @@
                 element: $('#mapClicked-popup')[0]
             });
 
-            console.log($(window).width());
             if ( ($(window).width()) < 480) {
                 $('#map')[0].style.display = 'block';
+            }
+
+            if (JSON.parse(sessionStorage.getItem('user'))) {
+                $rootScope.user = true;
             }
 
             /**

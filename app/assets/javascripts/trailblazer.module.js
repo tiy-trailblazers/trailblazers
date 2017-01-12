@@ -62,23 +62,5 @@
                trip: null,
            }
        });
-
-    //    function checkSessionStorage(param) {
-    //        if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'center') {
-    //            return JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
-    //        } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'trails') {
-    //            return JSON.parse(sessionStorage.getItem('TsandCs')).trails;
-    //        } else if(JSON.parse(sessionStorage.getItem('TsandCs')) && param === 'campgrounds') {
-    //            return JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
-    //        } else if(JSON.parse(sessionStorage.getItem('user')) && param === 'token') {
-    //            return JSON.parse(sessionStorage.getItem('user')).token;
-    //        } else {
-    //            return null;
-    //        }
-    //    }
-
     }
-
-
-
 }());
