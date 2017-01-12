@@ -332,6 +332,8 @@
         vm.user = JSON.parse(sessionStorage.getItem('user'));
         vm.signedIn = null;
 
+        console.log(vm.user);
+
         vm.signOff = function signOff() {
             UserService.signoffUser()
             .then(function success() {
@@ -610,7 +612,7 @@
                     });
                     window.clearInterval(waitForMarkerData);
                     // trailheadMarkers = checkDupTrailheads(trailheadMarkers);
-                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(checkDupTrailheads(trailheadMarkers)), buildMarker(trailLineLayers));
+                    map = buildMap(buildBaseLayer(), buildMarker(campgroundMarkers), buildMarker(trailheadMarkers), buildMarker(trailLineLayers));
                     markerClick();
                 }
             }
@@ -809,21 +811,6 @@
             var center = [ eastWest, northSouth ];
 
             return center;
-        }
-
-        function checkDupTrailheads(icons) {
-            var tocheckarr = [];
-            icons.forEach(function(a) {
-                var tocheck = a.H.name;
-                tocheckarr.push(tocheck);
-            });
-            var checked = icons;
-            tocheckarr.filter(function(value, index, array){
-                if(array.indexOf(value) !== index){
-                    icons.splice(array.indexOf(value), (array.indexOf(value) + 1));
-                }
-            });
-            return checked;
         }
     }
 }());
