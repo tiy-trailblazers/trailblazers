@@ -83,6 +83,7 @@
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
                 .then(function success(data) {
+                    vm.searchValues = {};
                     $state.go('trails-and-campgrounds', {centerCoords: data.center, trails: data.trails, campgrounds: data.campgrounds });
                 })
                 .catch(function error(err){
@@ -91,7 +92,6 @@
         };
 
         $rootScope.$watch('user', function() {
-            console.log('nav checking user');
             if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
                 vm.signedIn = true;
             }
@@ -285,9 +285,12 @@
         vm.search = null;
         vm.searchValues = {};
 
+        console.log('creating new trip');
+
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
                 .then(function success(data) {
+                    vm.searchValues = {};
                     $state.go('trails-and-campgrounds', {trails: data.trails, campgrounds: data.campgrounds });
                 })
                 .catch(function error(err){
@@ -311,6 +314,7 @@
         $rootScope.$watch('searched', function() {
             if($rootScope.searched) {
                 vm.madeSearch = true;
+                vm.tsORcs = TripService.tsORcs;
             } else {
                 vm.madeSearch = false;
             }
@@ -1171,7 +1175,6 @@
                 var trails = response.data[0].trails;
                 var campgrounds = response.data[0].campgrounds;
                 var center = ([ response.data[0].longitude, response.data[0].latitude]);
-                console.log(center);
                 sessionStorage.setItem('TsandCs', angular.toJson({ trails: trails, campgrounds: campgrounds, centerCoords: center}));
                 $rootScope.searched = true;
                 return { trails: trails, campgrounds: campgrounds };

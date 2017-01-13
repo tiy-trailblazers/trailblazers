@@ -16,6 +16,7 @@
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
                 .then(function success(data) {
+                    vm.searchValues = {};
                     $state.go('trails-and-campgrounds', {centerCoords: data.center, trails: data.trails, campgrounds: data.campgrounds });
                 })
                 .catch(function error(err){
@@ -24,7 +25,6 @@
         };
 
         $rootScope.$watch('user', function() {
-            console.log('nav checking user');
             if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
                 vm.signedIn = true;
             }

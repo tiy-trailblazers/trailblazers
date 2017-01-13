@@ -14,9 +14,12 @@
         vm.search = null;
         vm.searchValues = {};
 
+        console.log('creating new trip');
+
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
                 .then(function success(data) {
+                    vm.searchValues = {};
                     $state.go('trails-and-campgrounds', {trails: data.trails, campgrounds: data.campgrounds });
                 })
                 .catch(function error(err){
@@ -40,6 +43,7 @@
         $rootScope.$watch('searched', function() {
             if($rootScope.searched) {
                 vm.madeSearch = true;
+                vm.tsORcs = TripService.tsORcs;
             } else {
                 vm.madeSearch = false;
             }
