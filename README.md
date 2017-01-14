@@ -1,4 +1,4 @@
-# The Yellow Dirt Road
+# The Yellow Dirt Road [![yellow-trailhead.png](https://s23.postimg.org/bfyx7x52z/yellow_trailhead.png)](https://postimg.org/image/fp3na38c7/)
 
 The Yellow Dirt Road is a hiking and camping trip planner that provides users with an interactive map of trails and campgrounds that they can search in a variety of ways, including by name, location, and length. Users can create a new trip to save in their profiles by adding trails and campgrounds to a prospective  trip.
 
@@ -40,7 +40,7 @@ All map feature's (ie: markers, popups, drawn polygons, the map) are constructor
 
 ##### Testing
 
-The test directory holds unit tests in a bdd format for the current repo's code.  Testing is corraborated with [mocha](https://mochajs.org/) and [chai](http://chaijs.com/).  Link to documentation if necessary.  Add tests directly to test files if necessary.
+The test directory in ```app\assets\tests``` holds unit tests in a bdd format for the current repo's code.  Testing is corroborated with [mocha](https://mochajs.org/) and [chai](http://chaijs.com/).  Link to documentation if necessary.  Add tests directly to test files if necessary.
 
 ### Back End
 
