@@ -2,13 +2,13 @@
 
 The Yellow Dirt Road is a hiking and camping trip planner that provides users with an interactive map of trails and campgrounds that they can search in a variety of ways, including by name, location, and length. Users can create a new trip to save in their profiles by adding trails and campgrounds to a prospective trip.
 
-### Front End
+## Front End
 
 Built with [angular](http://angular.com),               [jQuery](http://jquery.com/),              [openLayers](http://openlayers.org/), [SASS](http://sass-lang.com/), and [grunt](http://gruntjs.com/)
 
 [![TYDR.gif](https://s23.postimg.org/tp3py1kiz/TYDR.gif)](https://postimg.org/image/tccbrv293/)
 
-##### Using openLayers
+#### Using openLayers
 
 [OpenLayers](http://openlayers.org/) v3 is free and completely open source.  AngularJS provides an OpenLayers directive for developers combining both technologies.   
 
@@ -32,7 +32,7 @@ Built with [angular](http://angular.com),               [jQuery](http://jquery.c
 
 All map feature's (ie: markers, popups, drawn polygons, the map) are constructor objects with chained prototype methods allowing for endless customization.
 
-###### Application Development
+#### Application Development
 
 1. Fork or download app directory
     - Review the ```package.json``` file
@@ -61,7 +61,7 @@ All map feature's (ie: markers, popups, drawn polygons, the map) are constructor
 3. Review ```gruntfile.js``` and make sure file path's for build tasks are correct in your project directory.  
     - ```grunt watch``` will launch automated build process during development on save of app files
 
-###### Testing: Front End
+#### Testing: Front End
 
 The test directory in ```app\assets\tests``` holds unit tests in a bdd format for the current repo's code.  Testing is corroborated with [mocha](https://mochajs.org/),  [chai](http://chaijs.com/), and [grunt](http://gruntjs.com/).  Link to documentation if necessary.  
 ```javascript
@@ -83,7 +83,7 @@ The test directory in ```app\assets\tests``` holds unit tests in a bdd format fo
 ```
   While watching, grunt has been configured to automatically run test suites during development.  Add more test assertions directly to test files or create more test files during development and remember to ALWAYS ALWAYS TEST!   
 
-### Back End
+## Back End
 
 * Ruby version
 
