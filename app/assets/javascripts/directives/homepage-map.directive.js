@@ -51,9 +51,7 @@
                 $('#map')[0].style.display = 'none';
             }
 
-            if (!$rootScope.user) {
-                sessionStorage.removeItem('TsandCs');
-            }
+            sessionStorage.removeItem('TsandCs');
 
             $rootScope.searched = null;
 

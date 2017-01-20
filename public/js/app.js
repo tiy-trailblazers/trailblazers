@@ -282,10 +282,7 @@
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
-        vm.search = null;
         vm.searchValues = {};
-
-        console.log('creating new trip');
 
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
@@ -301,20 +298,21 @@
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip)
             .then(function success(data) {
+                vm.tsORcs = TripService.clearTsorCs();
                 vm.trip = {};
                 $state.go('trip', {id: data.trip.id, trip:data});
             });
         };
 
         vm.newSearch = function newSearch() {
+            vm.tsORcs = TripService.clearTsorCs();
             $rootScope.searched =  null;
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched) {
+            if($rootScope.searched   || JSON.parse(sessionStorage.getItem('TsandCs'))) {
                 vm.madeSearch = true;
-                vm.tsORcs = TripService.tsORcs;
             } else {
                 vm.madeSearch = false;
             }
@@ -411,9 +409,7 @@
                 $('#map')[0].style.display = 'none';
             }
 
-            if (!$rootScope.user) {
-                sessionStorage.removeItem('TsandCs');
-            }
+            sessionStorage.removeItem('TsandCs');
 
             $rootScope.searched = null;
 
@@ -1206,7 +1202,8 @@
             postTrip: postTrip,
             patchTrip: patchTrip,
             mapClickedpopup: mapClickedpopup,
-            addMapClickedPopup: addMapClickedPopup
+            addMapClickedPopup: addMapClickedPopup,
+            clearTsorCs: clearTsorCs
         };
 
         function addTorCtoTrip (tORc) {
@@ -1219,6 +1216,11 @@
 
         function addMapClickedPopup() {
             tsORcs.push(markerTorC);
+        }
+
+        function clearTsorCs(){
+            tsORcs = [];
+            return tsORcs;
         }
 
         function postTrip(trip) {
@@ -1252,7 +1254,6 @@
                 }
             })
             .then(function success(response) {
-                tsORcs = [];
                 sessionStorage.setItem('trip', angular.toJson(response.data));
                 return response.data;
             })

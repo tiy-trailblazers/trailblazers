@@ -16,7 +16,8 @@
             postTrip: postTrip,
             patchTrip: patchTrip,
             mapClickedpopup: mapClickedpopup,
-            addMapClickedPopup: addMapClickedPopup
+            addMapClickedPopup: addMapClickedPopup,
+            clearTsorCs: clearTsorCs
         };
 
         function addTorCtoTrip (tORc) {
@@ -29,6 +30,11 @@
 
         function addMapClickedPopup() {
             tsORcs.push(markerTorC);
+        }
+
+        function clearTsorCs(){
+            tsORcs = [];
+            return tsORcs;
         }
 
         function postTrip(trip) {
@@ -62,7 +68,6 @@
                 }
             })
             .then(function success(response) {
-                tsORcs = [];
                 sessionStorage.setItem('trip', angular.toJson(response.data));
                 return response.data;
             })

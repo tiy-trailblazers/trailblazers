@@ -11,10 +11,7 @@
         vm.trip = {};
         vm.tsORcs = TripService.tsORcs;
         vm.madeSearch = null;
-        vm.search = null;
         vm.searchValues = {};
-
-        console.log('creating new trip');
 
         vm.submitSearch = function submitSearch(searchValues) {
             TrailandCampgroundService.findTsandCsSearchForm(searchValues)
@@ -30,20 +27,21 @@
         vm.postTrip = function postTrip(trip) {
             TripService.postTrip(trip)
             .then(function success(data) {
+                vm.tsORcs = TripService.clearTsorCs();
                 vm.trip = {};
                 $state.go('trip', {id: data.trip.id, trip:data});
             });
         };
 
         vm.newSearch = function newSearch() {
+            vm.tsORcs = TripService.clearTsorCs();
             $rootScope.searched =  null;
             $state.go('home');
         };
 
         $rootScope.$watch('searched', function() {
-            if($rootScope.searched) {
+            if($rootScope.searched   || JSON.parse(sessionStorage.getItem('TsandCs'))) {
                 vm.madeSearch = true;
-                vm.tsORcs = TripService.tsORcs;
             } else {
                 vm.madeSearch = false;
             }
