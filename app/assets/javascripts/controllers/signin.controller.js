@@ -12,6 +12,10 @@
         vm.userCreate = false;
         vm.message = null;
 
+        vm.fileUpload = function fileUpload(file) {
+            console.log(file);
+        };
+
         vm.userAccount = function userAccount(user) {
             if (Object.keys(user).length === 2) {
             UserService.signinUser(user)

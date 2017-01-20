@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('trailblazer', [  'openlayers-directive', 'ngSanitize', 'ui.router'])
+    angular.module('trailblazer', [  'openlayers-directive', 'ngSanitize', 'ui.router', 'ngFileUpload' ])
         .config(viewConfig);
 
     viewConfig.$inject = [ '$stateProvider', '$locationProvider', '$urlRouterProvider' ];
@@ -164,6 +164,10 @@
         vm.user = {};
         vm.userCreate = false;
         vm.message = null;
+
+        vm.fileUpload = function fileUpload(file) {
+            console.log(file);
+        };
 
         vm.userAccount = function userAccount(user) {
             if (Object.keys(user).length === 2) {
