@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       not_found = true if !User.find_by(token: token)
     end
     user.token = token
-    user.avatar = params[:file]
+    user.avatar = params[:user][:avatar]
 
     if user.save
       render json: user.as_json(include: [:trips])
