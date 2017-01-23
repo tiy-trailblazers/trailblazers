@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('trailblazer', [  'openlayers-directive', 'ngSanitize', 'ui.router'])
+    angular.module('trailblazer', [  'openlayers-directive', 'ngSanitize', 'ui.router', 'ngFileUpload' ])
         .config(viewConfig);
 
     viewConfig.$inject = [ '$stateProvider', '$locationProvider', '$urlRouterProvider' ];
