@@ -8,7 +8,7 @@
     <a ng-show='!signin.userCreate' ng-click='signin.userCreateSwitch()'>Create Account</a>
     <a ng-show='signin.userCreate' ng-click='signin.userCreateSwitch()'>Already Have An Account</a>
     <article class='create-user' ng-if='signin.userCreate'>
-        <form ng-submit='signin.userAccount(signin.user)'>
+        <form ng-submit='signin.userAccount(signin.user, signin.avatar)'>
             <input type='text' placeholder='First Name' ng-model='signin.user.firstname' required>
             <input type='text' placeholder='Last Name' ng-model='signin.user.lastname'>
             <input type='text' placeholder='Street Address' ng-model='signin.user.address'>

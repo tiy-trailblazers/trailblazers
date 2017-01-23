@@ -11,13 +11,14 @@
         vm.user = {};
         vm.userCreate = false;
         vm.message = null;
+        vm.avatar = null;
 
         vm.fileUpload = function fileUpload(file) {
-            console.log(file);
+            vm.avatar = file;
         };
 
-        vm.userAccount = function userAccount(user) {
-            if (Object.keys(user).length === 2) {
+        vm.userAccount = function userAccount(user, img) {
+            if (!img) {
             UserService.signinUser(user)
                 .then( function success(data) {
                     if(data.error){
@@ -41,7 +42,7 @@
                 vm.user = {};
                 vm.userCreate = false;
             } else {
-                UserService.createUser(user)
+                UserService.createUser(user, img)
                     .then( function success(data) {
                         if(data.error){
                             vm.message = data.error;

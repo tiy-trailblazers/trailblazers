@@ -14,7 +14,7 @@
             signoffUser: signoffUser
         };
 
-        function createUser(user) {
+        function createUser(user, img) {
             return $http({
                 url: '/users',
                 method: 'POST',
@@ -29,7 +29,8 @@
                         state: user.state,
                         zip: user.zip,
                         password: user.password,
-                        password_confirmation: user.passwordConf
+                        password_confirmation: user.passwordConf,
+                        avatar: img
                     }
                 }
             })
