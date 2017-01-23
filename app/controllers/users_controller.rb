@@ -9,6 +9,8 @@ class UsersController < ApplicationController
       not_found = true if !User.find_by(token: token)
     end
     user.token = token
+    user.avatar = params[:file]
+
     if user.save
       render json: user.as_json(include: [:trips])
     else
@@ -33,6 +35,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :profile_image, :password, :password_confirmation, :street, :city, :state, :zip)
+    params.require(:user).permit(:email, :first_name, :last_name, :profile_image, :password, :password_confirmation, :street, :city, :state, :zip, :file)
   end
 end
