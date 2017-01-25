@@ -1290,7 +1290,9 @@
         };
 
         function createUser(user, img) {
-            img = angular.toJson(img);
+          // console.log(img);
+          //   img = angular.toJson(img);
+          //   console.log(img);
             return $http({
                 url: '/users',
                 method: 'POST',
