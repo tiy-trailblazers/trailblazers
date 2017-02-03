@@ -418,6 +418,13 @@
 
             $rootScope.searched = null;
 
+            function removeNotice() {
+                $('#data-notice').css('display', 'none');
+            }
+
+            setTimeout(function(){removeNotice();}, 12500);
+
+
             map.getView().on('change:resolution', function setRaduisBox() {
                 if (map.getView().getZoom() > 7.5) {
                         $('map').css('cursor','none');

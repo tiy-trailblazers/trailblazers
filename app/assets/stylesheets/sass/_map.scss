@@ -10,6 +10,40 @@
     }
 }
 
+#data-notice {
+    position: absolute;
+    top: 150px;
+    right: 25px;
+    width: 350px;
+    font-family: $appFont;
+    text-align: left;
+    padding-top: 5px;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    z-index: 4;
+    background-color: $appBlack;
+    border-radius: 4px;
+    color: $appWhite;
+    h3 {
+        color: $appYellow;
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 0;
+    }
+    p {
+        padding: 1rem;
+        margin-top: 0;
+    }
+    span {
+        color: $appYellow;
+    }
+}
+
+@media screen and (min-width: 600px){
+    #data-notice{
+        right: 120px;
+    }
+}
 
 @media screen and (min-width: 1000px){
     #map {
@@ -19,5 +53,8 @@
     }
     div.ol-zoom {
         display: none;
+    }
+    #data-notice{
+        right: 195px;
     }
 }

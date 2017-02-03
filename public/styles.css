@@ -731,6 +731,34 @@ nav.profile-nav article.plan-trip {
   #map canvas {
     display: block; }
 
+#data-notice {
+  position: absolute;
+  top: 150px;
+  right: 25px;
+  width: 350px;
+  font-family: "Patrick Hand SC", cursive;
+  text-align: left;
+  padding-top: 5px;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+  z-index: 4;
+  background-color: #000000;
+  border-radius: 4px;
+  color: #ffffff; }
+  #data-notice h3 {
+    color: #ffff5e;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 0; }
+  #data-notice p {
+    padding: 1rem;
+    margin-top: 0; }
+  #data-notice span {
+    color: #ffff5e; }
+
+@media screen and (min-width: 600px) {
+  #data-notice {
+    right: 120px; } }
 @media screen and (min-width: 1000px) {
   #map {
     width: 100%;
@@ -738,7 +766,10 @@ nav.profile-nav article.plan-trip {
     float: left; }
 
   div.ol-zoom {
-    display: none; } }
+    display: none; }
+
+  #data-notice {
+    right: 195px; } }
 #buffer {
   min-width: 200px;
   max-width: 350px;
