@@ -47,8 +47,6 @@ GEM
     airbrake (5.6.1)
       airbrake-ruby (~> 1.6)
     airbrake-ruby (1.6.0)
-    airbrussh (1.1.2)
-      sshkit (>= 1.6.1, != 1.7.0)
     arel (7.1.4)
     bcrypt (3.1.11)
     better_errors (2.1.1)
@@ -59,25 +57,6 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.6)
-    capistrano (3.7.1)
-      airbrussh (>= 1.0.0)
-      capistrano-harrow
-      i18n
-      rake (>= 10.0.0)
-      sshkit (>= 1.9.0)
-    capistrano-bundler (1.2.0)
-      capistrano (~> 3.1)
-      sshkit (~> 1.2)
-    capistrano-harrow (0.5.3)
-    capistrano-rails (1.2.2)
-      capistrano (~> 3.1)
-      capistrano-bundler (~> 1.1)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
-    capistrano3-puma (1.2.1)
-      capistrano (~> 3.0)
-      puma (>= 2.6)
     capybara (2.11.0)
       addressable
       mime-types (>= 1.16)
@@ -264,9 +243,6 @@ GEM
     minitest (5.10.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
-    net-scp (1.2.1)
-      net-ssh (>= 2.6.5)
-    net-ssh (4.0.1)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -349,9 +325,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sshkit (1.11.5)
-      net-scp (>= 1.1.2)
-      net-ssh (>= 2.8.0)
     thor (0.19.4)
     thread_safe (0.3.5)
     trollop (2.1.2)
@@ -379,11 +352,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   byebug
-  capistrano
-  capistrano-bundler
-  capistrano-rails
-  capistrano-rvm
-  capistrano3-puma
   capybara
   carrierwave (~> 1.0)
   ffaker
@@ -413,4 +381,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.13.7
+   1.14.3
