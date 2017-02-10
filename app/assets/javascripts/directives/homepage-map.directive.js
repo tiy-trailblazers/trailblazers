@@ -57,9 +57,13 @@
 
             function removeNotice() {
                 $('#data-notice').css('display', 'none');
+                $rootScope.notice = true;
             }
-
-            setTimeout(function(){removeNotice();}, 12500);
+            if ($rootScope.notice) {
+                $('#data-notice').css('display', 'none');
+            } else {
+                setTimeout(function(){removeNotice();}, 12000);
+            }
 
 
             map.getView().on('change:resolution', function setRaduisBox() {

@@ -157,17 +157,20 @@
     angular.module('trailblazer')
         .controller('SigninController', SigninController);
 
-    SigninController.$inject = [ '$state', '$rootScope', 'UserService' ];
+    SigninController.$inject = [ '$state', '$rootScope', 'Upload', 'UserService' ];
 
-    function SigninController( $state, $rootScope, UserService ){
+    function SigninController( $state, $rootScope, Upload, UserService ){
         var vm = this;
         vm.user = {};
         vm.userCreate = false;
         vm.message = null;
         vm.avatar = null;
+        vm.avatarUrl = null;
 
-        vm.fileUpload = function fileUpload(file) {
-            vm.avatar = file;
+        vm.convertAvatar = function convertAvatar(avatar) {
+            Upload.base64DataUrl(avatar).then(function(url){
+                vm.avatarUrl = url;
+            });
         };
 
         vm.userAccount = function userAccount(user, img) {
@@ -332,12 +335,17 @@
     angular.module('trailblazer')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = [  '$scope', '$state', '$rootScope', 'UserService' ];
+    UserProfileController.$inject = [  '$scope', '$state', '$rootScope', 'Upload', 'UserService' ];
 
-    function UserProfileController($scope, $state, $rootScope, UserService) {
+    function UserProfileController($scope, $state, $rootScope, Upload, UserService) {
         var vm = this;
         vm.user = JSON.parse(sessionStorage.getItem('user'));
         vm.signedIn = null;
+        vm.avatar = null;
+
+        if (vm.user) {
+            vm.avatar = Upload.dataUrltoBlob(vm.user.profile_image, 'prof');
+        }
 
         vm.signOff = function signOff() {
             UserService.signoffUser()
@@ -353,6 +361,7 @@
             if($rootScope.user || JSON.parse(sessionStorage.getItem('user'))) {
                 vm.signedIn = true;
                 vm.user = JSON.parse(sessionStorage.getItem('user'));
+                vm.avatar = Upload.dataUrltoBlob(vm.user.profile_image, 'prof');
             }
             else {
                 vm.signedIn = null;
@@ -420,9 +429,13 @@
 
             function removeNotice() {
                 $('#data-notice').css('display', 'none');
+                $rootScope.notice = true;
             }
-
-            setTimeout(function(){removeNotice();}, 12500);
+            if ($rootScope.notice) {
+                $('#data-notice').css('display', 'none');
+            } else {
+                setTimeout(function(){removeNotice();}, 12000);
+            }
 
 
             map.getView().on('change:resolution', function setRaduisBox() {
@@ -1305,7 +1318,7 @@
                         first_name: user.firstname,
                         last_name: user.lastname,
                         email: user.email,
-                        profile_image: user.avatar,
+                        profile_image: img,
                         street: user.address,
                         city: user.city,
                         state: user.state,

@@ -712,6 +712,13 @@ nav.profile-nav article.plan-trip {
     cursor: pointer; }
     #signin a:hover {
       text-decoration: underline; }
+  #signin article.create-user .thumb {
+    margin-bottom: 20px;
+    margin-top: -20px; }
+    #signin article.create-user .thumb img {
+      display: block;
+      margin: 0 auto;
+      height: 80px; }
   #signin article.create-user input:last-child {
     margin-top: -10px;
     margin-bottom: 1em; }

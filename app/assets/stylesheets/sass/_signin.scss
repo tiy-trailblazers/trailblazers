@@ -12,7 +12,6 @@
     }
     form {
         @include autoMarginElm(90%, 0);
-
         input {
             display: inline-block;
             width: 100%;
@@ -79,6 +78,15 @@
         }
     }
     article.create-user{
+        .thumb {
+            margin-bottom: 20px;
+            margin-top: -20px;
+              img{
+                display: block;
+                margin: 0 auto;
+                height: 80px;
+            }
+        }
         input:last-child {
             margin-top: -10px;
             margin-bottom: 1em;

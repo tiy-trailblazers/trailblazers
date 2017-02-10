@@ -23,7 +23,7 @@
                         first_name: user.firstname,
                         last_name: user.lastname,
                         email: user.email,
-                        profile_image: user.avatar,
+                        profile_image: img,
                         street: user.address,
                         city: user.city,
                         state: user.state,

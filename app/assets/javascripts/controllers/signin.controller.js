@@ -4,17 +4,20 @@
     angular.module('trailblazer')
         .controller('SigninController', SigninController);
 
-    SigninController.$inject = [ '$state', '$rootScope', 'UserService' ];
+    SigninController.$inject = [ '$state', '$rootScope', 'Upload', 'UserService' ];
 
-    function SigninController( $state, $rootScope, UserService ){
+    function SigninController( $state, $rootScope, Upload, UserService ){
         var vm = this;
         vm.user = {};
         vm.userCreate = false;
         vm.message = null;
         vm.avatar = null;
+        vm.avatarUrl = null;
 
-        vm.fileUpload = function fileUpload(file) {
-            vm.avatar = file;
+        vm.convertAvatar = function convertAvatar(avatar) {
+            Upload.base64DataUrl(avatar).then(function(url){
+                vm.avatarUrl = url;
+            });
         };
 
         vm.userAccount = function userAccount(user, img) {
