@@ -1,7 +1,49 @@
 <map radius-coords='{{TandC.coordinates}}' data-title='map' id='map'></map>
 
 <div id='search-popup' class='ol-popup'>
-    <div class='popup-content'></div>
+    <div class='popup-content'>
+        <form>
+            <aside>
+                    <label>Search:</label>
+                    <label for='campgrounds'>Campgrounds</label>
+                    <input type='checkbox' id='campgrounds' name='campgrounds'>
+                    <label for='trails'>Trails</label>
+                    <input type='checkbox' id='trails' name='trails'>
+            </aside>
+            <aside>
+                <label for='radius'>Radius</label>
+                    <select id='radius' name='radius'>
+                        <option value='5'>5 miles</option>
+                        <option value='10'>10 miles</option>
+                        <option value='15'>15 miles</option>
+                        <option value='20'>20 miles</option>
+                    </select>
+            </aside>
+            <aside>
+                    <label>Campground Amenities:</label>
+                    <label for='water'>Water Source</label>
+                    <input type='checkbox' id='water' name='water'>
+                    <label for='shower'>Showers</label>
+                    <input type='checkbox' id='shower' name='shower'>
+                    <label for='toilets'>Toilets</label>
+                    <input type='checkbox' id='toilets' name='toilets'>
+                    <label for='hookups'>RV Hookups</label>
+                    <input type='checkbox' id='hookups' name='hookups'>
+                    <label for='dump'>RV Dump</label>
+                    <input type='checkbox' id='dump' name='dump'>
+            </aside>
+            <aside>
+                <label for='length'>Trail Length</label>
+                    <select id='length' name='length'>
+                        <option value='1'>1 mile</option>
+                        <option value='5'>5 miles</option>
+                        <option value='10'>10 miles</option>
+                        <option value='20'>20 miles</option>
+                        <option value='max'>Max</option>
+                    </select>
+            </aside>
+        </form>
+    </div>
 </div>
 
 <section id='data-notice'>

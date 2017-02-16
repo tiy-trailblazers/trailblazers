@@ -986,17 +986,15 @@ nav.profile-nav article.plan-trip {
   color: #ffffff;
   border: 2px solid #000000;
   border-radius: 5px; }
-  #search-popup p:first-child {
-    padding-left: 20px; }
-  #search-popup p.link {
-    cursor: pointer;
-    color: #949494; }
-    #search-popup p.link:hover {
-      text-decoration: underline;
-      color: #ffff5e; }
-  #search-popup p {
-    padding-left: 25px;
-    padding-right: 25px; }
+  #search-popup form {
+    text-align: center; }
+    #search-popup form aside {
+      padding: 0.4em 0.2em; }
+      #search-popup form aside label:first-child {
+        display: block;
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 0.2em; }
 
 #popup:before, #mapClicked-popup:before, #search-popup:before {
   content: ' ';

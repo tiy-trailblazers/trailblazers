@@ -41,20 +41,17 @@
     color: $appWhite;
     border: 2px solid $appBlack;
     border-radius: 5px;
-    p:first-child {
-      padding-left: 20px;
-    }
-    p.link {
-      cursor: pointer;
-      color: #949494;
-      &:hover {
-        text-decoration: underline;
-        color: $appYellow;
-      }
-    }
-    p {
-      padding-left: 25px;
-      padding-right: 25px;
+    form {
+        text-align: center;
+        aside {
+            padding: 0.4em 0.2em;
+            label:first-child {
+            display: block;
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 0.2em;
+            }
+        }
     }
 }
 

@@ -103,9 +103,6 @@
 
             map.on('click', function(evt) {
                 console.log('gotchya', evt);
-                $('#search-popup .popup-content').html(
-                    '<p>Coordinates: ' + evt.coordinate + '</p>'
-                );
                 popupOverlay.setPosition(evt.coordinate);
             });
         }
