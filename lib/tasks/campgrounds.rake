@@ -35,12 +35,15 @@ namespace :campgrounds do
   task add_hookup: :environment do
     Campground.all.each do |campground|
       source_string = campground.source
-      amen_string = source_string.match(/(AMEN:)\S{1,3}/)[0]
-      hookup_codes = amen_string.split(":")[1]
-      campground.water_hookup = true if hookup_codes.chars.include?("W")
-      campground.sewer_hookup = true if hookup_codes.chars.include?("S")
-      campground.electric_hookup = true if hookup_codes.chars.include?("E")
-      campground.save!
+      amen_match = source_string.match(/(AMEN:)\S{1,3}/)
+      if amen_match
+        amen_string = amen_match[0]
+        hookup_codes = amen_string.split(":")[1]
+        campground.water_hookup = true if hookup_codes.chars.include?("W")
+        campground.sewer_hookup = true if hookup_codes.chars.include?("S")
+        campground.electric_hookup = true if hookup_codes.chars.include?("E")
+        campground.save!
+      end
     end
   end
 
