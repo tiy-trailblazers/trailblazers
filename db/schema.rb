@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170123202003) do
+ActiveRecord::Schema.define(version: 20170216203158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,16 @@ ActiveRecord::Schema.define(version: 20170123202003) do
     t.string    "directions"
     t.float     "latitude"
     t.float     "longitude"
-    t.datetime  "created_at",                                                               null: false
-    t.datetime  "updated_at",                                                               null: false
+    t.datetime  "created_at",                                                                               null: false
+    t.datetime  "updated_at",                                                                               null: false
     t.text      "source"
     t.string    "state"
     t.geography "lonlat",          limit: {:srid=>4326, :type=>"point", :geographic=>true}
     t.integer   "park_id"
+    t.boolean   "water_hookup",                                                             default: false
+    t.boolean   "sewer_hookup",                                                             default: false
+    t.boolean   "electric_hookup",                                                          default: false
+    t.boolean   "showers",                                                                  default: false
   end
 
   create_table "campgrounds_trips", id: false, force: :cascade do |t|
