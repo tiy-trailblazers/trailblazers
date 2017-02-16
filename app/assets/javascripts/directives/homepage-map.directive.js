@@ -27,7 +27,10 @@
         function setupMap() {
             var element = 'map';
             var vector = buildRectangle();
-            var map = buildMap(buildBaseLayer(), vector, element);
+            var popupOverlay = new ol.Overlay({
+               element: $('#search-popup')[0]
+            });
+            var map = buildMap(buildBaseLayer(), vector, element, popupOverlay);
             var draw = new ol.interaction.Draw({
                 source: new ol.source.Vector({wrapX: false}),
                 type: 'Circle',
@@ -62,7 +65,7 @@
             if ($rootScope.notice) {
                 $('#data-notice').css('display', 'none');
             } else {
-                setTimeout(function(){removeNotice();}, 12000);
+                setTimeout(function(){removeNotice();}, 10000);
             }
 
 
@@ -96,6 +99,14 @@
                 } else {
                     $state.go('buffer', {transCoords: coordinates, centerCoords: coordArray});
                 }
+            });
+
+            map.on('click', function(evt) {
+                console.log('gotchya', evt);
+                $('#search-popup .popup-content').html(
+                    '<p>Coordinates: ' + evt.coordinate + '</p>'
+                );
+                popupOverlay.setPosition(evt.coordinate);
             });
         }
 
@@ -132,7 +143,7 @@
          * @param  {Object} vector    Rectangle radius vector object
          * @return {Object}           OpenLayers Map and configuration
          */
-        function buildMap(baseLayer, vector, element) {
+        function buildMap(baseLayer, vector, element, popupOverlay) {
             var center = [ -12053463.910959221, 4789639.227729736 ];
             if ( ($(window).width()) < 1000) {
                 center = [ -10853463.910959221, 4789639.227729736 ];
@@ -142,6 +153,7 @@
                 controls: ol.control.defaults(),
                 renderer: 'canvas',
                 layers: [baseLayer, vector],
+                overlays: [popupOverlay],
                 view: new ol.View({
                     center: center,
                     zoom: 4,
