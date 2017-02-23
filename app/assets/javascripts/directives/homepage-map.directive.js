@@ -104,6 +104,7 @@
             map.on('click', function(evt) {
                 //console.log('gotchya', evt);
                 popupOverlay.setPosition(evt.coordinate);
+                $rootScope.coordinates = evt.coordinate;
             });
         }
 
