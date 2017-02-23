@@ -102,7 +102,7 @@
             });
 
             map.on('click', function(evt) {
-                console.log('gotchya', evt);
+                //console.log('gotchya', evt);
                 popupOverlay.setPosition(evt.coordinate);
             });
         }

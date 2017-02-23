@@ -240,11 +240,16 @@
     function TrailandCampgroundController($scope, $stateParams, $rootScope, TripService) {
         var vm = this;
 
-        vm.trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails;
-        vm.campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds;
-        vm.center = $stateParams.centerCoords || JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords;
+        //vm.trails = $stateParams.trails || JSON.parse(sessionStorage.getItem('TsandCs')).trails || null;
+        //vm.campgrounds = $stateParams.campgrounds || JSON.parse(sessionStorage.getItem('TsandCs')).campgrounds || null;
+        //vm.center = $stateParams.centerCoords || JSON.parse(sessionStorage.getItem('TsandCs')).centerCoords || null;
         vm.element = null;
         vm.markerElement = null;
+        vm.searchForm = {};
+
+        vm.search = function findTsandCs(formData) {
+            console.log(formData);
+        };
 
         vm.trailPopup = function trailPopup(element){
             vm.element = element;
@@ -474,7 +479,7 @@
             });
 
             map.on('click', function(evt) {
-                console.log('gotchya', evt);
+                //console.log('gotchya', evt);
                 popupOverlay.setPosition(evt.coordinate);
             });
         }
